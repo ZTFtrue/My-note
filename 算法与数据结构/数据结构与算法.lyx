@@ -1,0 +1,9965 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass amsbook
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Base
+\end_layout
+
+\begin_layout Chapter
+基础
+\end_layout
+
+\begin_layout Section
+数据结构
+\end_layout
+
+\begin_layout Subsection
+数组
+\end_layout
+
+\begin_layout Standard
+对数据的随机访问
+\end_layout
+
+\begin_layout Standard
+数组的长度是固定的
+\end_layout
+
+\begin_layout Subsection
+列表
+\end_layout
+
+\begin_layout Subsection
+栈
+\end_layout
+
+\begin_layout Standard
+栈(下压栈)(Stack | LIFO) 后进先出 .
+ 
+\end_layout
+
+\begin_layout Standard
+双栈算术表达式求值算法
+\end_layout
+
+\begin_layout Enumerate
+将操作数压入操作数栈； 
+\end_layout
+
+\begin_layout Enumerate
+将运算符压入运算符栈；
+\end_layout
+
+\begin_layout Enumerate
+忽略左括号； 
+\end_layout
+
+\begin_layout Enumerate
+在遇到右括号时, 弹出一个运算符, 弹出所需数量的操作数, 并将运算符和操作数的运算结果压入操作数栈.
+ 
+\end_layout
+
+\begin_layout Subsection
+队列
+\end_layout
+
+\begin_layout Standard
+队列(Queue | FIFO)先进先出
+\end_layout
+
+\begin_layout Subsection
+链表
+\end_layout
+
+\begin_layout Standard
+链表是由一组节点组成的集合.
+ 每个节点都使用一个对象的引用指向它的后继.
+ 指向另一个节点的引用叫做链.
+\end_layout
+
+\begin_layout Standard
+数组元素靠它们的位置进行引用, 链表元素则是靠相互之间的关系进行引用.
+ 
+\end_layout
+
+\begin_layout Standard
+链表几乎可以用在任何可以使用一维数组的情况中.
+ 如果需要随机访问, 数组仍然是更好的选择
+\end_layout
+
+\begin_layout Standard
+双向链表
+\end_layout
+
+\begin_layout Standard
+循环链表
+\end_layout
+
+\begin_layout Subsection
+背包(Bag)容器
+\end_layout
+
+\begin_layout Standard
+无序取出
+\end_layout
+
+\begin_layout Subsection
+字典(符号表)
+\end_layout
+
+\begin_layout Standard
+字典是一种以键-值对形式存储数据的数据结构, 键是指你用来查找的东西, 值是查找得到的结果.
+\end_layout
+
+\begin_layout Subsection
+集合
+\end_layout
+
+\begin_layout Standard
+集合(set)是一种包含不同元素的数据结构.
+ 集合中的元素称为成员.
+ 集合的两个最重要特性是: 首先, 集合中的成员是无序的；其次, 集合中
+\series bold
+不允许相同成员存在
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public boolean add(data) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if (this.dataStore.indexOf(data) < 0) 
+\end_layout
+
+\begin_layout Plain Layout
+
+  {
+\end_layout
+
+\begin_layout Plain Layout
+
+      this.dataStore.push(data);
+\end_layout
+
+\begin_layout Plain Layout
+
+      return true;
+\end_layout
+
+\begin_layout Plain Layout
+
+   } else { 
+\end_layout
+
+\begin_layout Plain Layout
+
+      return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+习题答案
+\end_layout
+
+\begin_layout Paragraph
+利用两个栈实现一个队列
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class StackQueue {
+\end_layout
+
+\begin_layout Plain Layout
+
+    static class Queue {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Stack<Integer> s1 = new Stack<>();
+\end_layout
+
+\begin_layout Plain Layout
+
+        Stack<Integer> s2 = new Stack<>();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        void push(int x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            while (!s1.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                s2.push(s1.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            s1.push(x);
+\end_layout
+
+\begin_layout Plain Layout
+
+            while (!s2.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                s1.push(s2.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        int pop() {
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (s1.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                System.out.println("Q is Empty");
+\end_layout
+
+\begin_layout Plain Layout
+
+                System.exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            return s1.pop();
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Queue q = new Queue();
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(2);
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+方法2
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class StackQueue {
+\end_layout
+
+\begin_layout Plain Layout
+
+    static class Queue {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Stack<Integer> s1 = new Stack<>();
+\end_layout
+
+\begin_layout Plain Layout
+
+        Stack<Integer> returnStack = new Stack<>();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        void push(int x) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            s1.push(x);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        // peek()   returnStack.pop() 替换为peek
+\end_layout
+
+\begin_layout Plain Layout
+
+        int pop() {
+\end_layout
+
+\begin_layout Plain Layout
+
+            while (!s1.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                returnStack.push(s1.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            int returnVlaue = returnStack.pop();
+\end_layout
+
+\begin_layout Plain Layout
+
+            while (!returnStack.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                s1.push(returnStack.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            return returnVlaue;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Queue q = new Queue();
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(2);
+\end_layout
+
+\begin_layout Plain Layout
+
+        q.push(3);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+        System.out.println(q.pop());
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+利用三个栈实现一个队列
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "How to implement a queue with three stacks?"
+target "https://stackoverflow.com/questions/5538192/how-to-implement-a-queue-with-three-stacks"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+检索算法
+\end_layout
+
+\begin_layout Standard
+在列表中查找数据有两种方式: 顺序查找和二分查找.
+ 顺序查找适用于元素随机排列的列表；二分查找适用于元素已排序的列表.
+ 二分查找效率更高, 但是你必须在进行查找之前花费额外的时间将列表中的
+\series bold
+元素排序
+\series default
+.
+\end_layout
+
+\begin_layout Subsection
+使用自组织数据
+\end_layout
+
+\begin_layout Standard
+对于未排序的数据集来说, 当被查找的数据位于数据集的起始位置时, 查找是最快、最成功的.
+ 通过将成功找到的元素置于数据集的起始位置, 可以保证在以后的操作中该元素能被更快地查找到.
+\end_layout
+
+\begin_layout Standard
+该策略背后的理论是: 通过将频繁查找到的元素置于数据集的起始位置来最小化查找次数.
+\end_layout
+
+\begin_layout Standard
+一般使用这种方式是因为可能这个数据经常使用, 经常使用的数据放置在开始可以加快速度(有点类似输入法)
+\end_layout
+
+\begin_layout Subsection
+二分法查找
+\end_layout
+
+\begin_layout Standard
+在插入第i个元素时, 对前面的0～i-1元素进行折半, 先跟他们中间的那个元素比, 如果小, 则对前半再进行折半, 否则对后半进行折半, 直到left<righ
+t, 然后再把第i个元素前1位与目标位置之间的所有元素后移, 再把第i个元素放在目标位置上.
+ 
+\end_layout
+
+\begin_layout Section
+算法分析
+\end_layout
+
+\begin_layout Subsection
+O表示法
+\end_layout
+
+\begin_layout Standard
+在一定的条件因素下, O表示法指明一个函数的上限.
+ 大O表示法计算的是
+\series bold
+操作单元数量(算机运行一行基础代码)
+\end_layout
+
+\begin_layout Standard
+为了计算时间复杂度, 我们通常会估计算法的
+\series bold
+操作单元数量
+\series default
+, 每个单元运行的时间都是相同的.
+ 因此, 总运行时间和算法的操作单元数量最多相差一个常量系数.
+ 在循环中执行的, 这样一些
+\series bold
+操作单元数量
+\series default
+所消耗的资源必须乘上迭代的次数
+\end_layout
+
+\begin_layout Standard
+一个算法的增长速率或者说一个算法的增长规律非常重要, 因为当输入数据量变得无穷大时, 它可以用来描述算法的效率到底有多高.
+ 资源消耗的大小往往与算法所需要处理的数据量的大小相辅相成.
+ 
+\end_layout
+
+\begin_layout Standard
+算法的复杂度并没有具体的计量单位.
+ 它只是表明当计算数据量的大小变化时, 将如何影响算法所消耗的资源.
+ 常量很大时,消耗资源也会变大.
+\end_layout
+
+\begin_layout Standard
+算法的速度指的并非时间, 而是操作数的增速.
+\end_layout
+
+\begin_layout Standard
+谈论算法的速度时, 我们说的是随着输入的增加, 其运行时间将以什么样的速度增加.
+ 
+\end_layout
+
+\begin_layout Standard
+O表示法的简单规则:
+\end_layout
+
+\begin_layout Itemize
+忽略常数项, 因为随着n的值变得越来越大, 常数项最终变得可忽略不计
+\end_layout
+
+\begin_layout Itemize
+忽略常数因子
+\end_layout
+
+\begin_layout Itemize
+常数项用
+\begin_inset Formula $O(1)$
+\end_inset
+
+表示
+\end_layout
+
+\begin_layout Itemize
+常量因子往往被忽略
+\end_layout
+
+\begin_layout Itemize
+加法运算取最大值
+\end_layout
+
+\begin_layout Itemize
+乘法结果不需要改变, 但往往可以用更紧凑的方法表示.
+ 当分析一个算法的运行时间时, 如果一个任务的执行引起了另一个任务的迭代执行, 可以运用此规则.
+ 例如：在一个嵌套循环中, 外层迭代为
+\begin_inset Formula $T1$
+\end_inset
+
+, 内层迭代为T2, 如果
+\begin_inset Formula $T1(n)=n$
+\end_inset
+
+,
+\begin_inset Formula $T2(n)=n$
+\end_inset
+
+, 那么运行结果表示为
+\begin_inset Formula $O(n)O(n)$
+\end_inset
+
+或
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+.
+ 正式地表述为：
+\begin_inset Formula $O(T1)O(T2)=O(T1T2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+假设某算法的运行时间由函数
+\begin_inset Formula $T(n)=3n2+10n+10$
+\end_inset
+
+来表示.
+ 若用O表示法, 此函数可以简化为: 
+\begin_inset Formula $O(T(n))=O(3n2+10n+10)=O(3n2)=O(n2)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这表明, 当
+\begin_inset Formula $n$
+\end_inset
+
+增长到任意大时, 算法的运行时间将主要由
+\begin_inset Formula $n2$
+\end_inset
+
+项来决定.
+ 随着n不断增大, 我们可以通过每一项所占整个运行时间的百分比来证明这一点.
+ 当两种算法有同样的复杂度时, 就得考虑对算法影响不太大的条件和因素
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public int func(int n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	for(int i = 0; i<n; i++) { // 需要执行(n+1)次;运行不是计算  
+\end_layout
+
+\begin_layout Plain Layout
+
+  	  printf("Hello, World!
+\backslash
+n");  // 需要执行 n 次
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0; // 需要执行 1 次
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这个方法需要 (n + 1 + n + 1) = 2n + 2 次运算.
+\end_layout
+
+\begin_layout Standard
+我们把 算法需要执行的运算次数 用 输入大小n 的函数 表示, 即 T(n) .
+ 
+\end_layout
+
+\begin_layout Subsubsection
+最坏情况分析
+\end_layout
+
+\begin_layout Standard
+最坏情况可以告诉我们算法性能的上限.
+ 分析一个算法的最坏情况可以保证在任何情况下此算法的表现都不会比最坏情况差, 而其他情况肯定比最坏情况要好.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+最佳情况
+\end_layout
+
+\begin_layout Standard
+在最佳情况下, 几乎所有搜索算法都可以在一次查询中找到元素, 而这并不能说明到底哪种算法更好, 所以分析算法的最佳情况没有太多的意义.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+平均情况
+\end_layout
+
+\begin_layout Standard
+分析算法平均情况下的性能往往不是那么容易.
+ 甚至我们很难去界定哪种情况叫做“平均情况”.
+ 通常我们不能精确地获得平均情况下的算法性能, 这是因为我们无法准确地控制算法的执行状态.
+ 
+\end_layout
+
+\begin_layout Standard
+一般来说, 在给定一定标准的情况下, 能够使此算法表现最佳时, 我们就认为此算法是高效的.
+ 通常, 在解决同一个问题时, 如果一种算法的复杂度比其他算法的复杂度都低, 并且没有过多的常数项, 我们就可以认为此算法是高效的.
+ 但也会有一些棘手的问题, 在这些问题中, 如果不设定一个近似值就无法找到一个“有效的”解决方法.
+ 这是一类特殊的问题, 称为NP完全问题(NP-complete problem)
+\end_layout
+
+\begin_layout Subsection
+时间复杂度(Time complexity)
+\end_layout
+
+\begin_layout Standard
+一个程序运行的总时间主要和两点有关: 
+\end_layout
+
+\begin_layout Standard
+执行每条语句的耗时；
+\end_layout
+
+\begin_layout Standard
+执行每条语句的频率.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+算法分析中常用的近似函数:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+描述
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+近似函数
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+调和级数求和
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+等差数列求和
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+等比数列求和
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+斯特灵公式
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+二项式系数
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+指数函数
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+增长数量级的常见假设的总结:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+描述(对于空间也一样)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+增长的数量级
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+典型的代码
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+说明
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+举例
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+常数级别, 耗时与输入数据大小无关, 无论输入数据多大, 耗时间都不变
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(1)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a = b + c;
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+普通语句
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+将两个数相加,哈希算法
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+对数级别, 数据增大
+\begin_inset Formula $n$
+\end_inset
+
+倍时，耗时增大
+\begin_inset Formula $\log_{2}n$
+\end_inset
+
+倍
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+对数级别
+\begin_inset Formula $O(\lg n)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+二分策略
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+二分查找
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+线性级别, 数据量增加多少，耗时也增加多少
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(n)$
+\end_inset
+
+或
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+循环
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+找出最大元素,冒泡排序
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+线性对数级别,数据增大
+\begin_inset Formula $n$
+\end_inset
+
+倍时，耗时增大
+\begin_inset Formula $n\log_{2}n$
+\end_inset
+
+倍
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(nlgn)$
+\end_inset
+
+或 
+\begin_inset Formula $N\log N$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+分治
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+归并排序
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+平方级别
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(n^{2})$
+\end_inset
+
+
+\begin_inset Formula $N^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+双层循环
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+检查所有元素对
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+立方级别
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(N^{3})$
+\end_inset
+
+或
+\begin_inset Formula $N^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+三层循环
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+检查所有三元组
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+指数级别
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(2^{n})$
+\end_inset
+
+或
+\begin_inset Formula $2^{N}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+穷举查找
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+检查所有子集
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O(n!)$
+\end_inset
+
+或
+\begin_inset Formula $N!$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+排列组合
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+排序
+\end_layout
+
+\begin_layout Section
+冒泡排序(Bubble Sort)
+\end_layout
+
+\begin_layout Standard
+一次比较两个元素, 如果它们的顺序错误就把它们交换过来
+\end_layout
+
+\begin_layout Section
+选择排序(Selection Sort)
+\end_layout
+
+\begin_layout Standard
+找到数组中
+\series bold
+最小
+\series default
+的那个元素, 其次, 将它和数组的第一个元素交换位置(如果第一个元素就是最小元素那么它就和自己交换.
+ ).
+ 再次, 在剩下的元素中找到最小的元素, 将它与数组的第二个元素交换位置.
+ 如此往复, 直到将整个数组排序.
+ (第一小到第一个位置, 第二小到第二个位置)
+\end_layout
+
+\begin_layout Standard
+分析: 对于长度为
+\begin_inset Formula $N$
+\end_inset
+
+的数组:
+\end_layout
+
+\begin_layout Standard
+交换的总次数是
+\begin_inset Formula $N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+比较的次数: 
+\begin_inset Formula $(N-1)+(N-2)\cdots+2+1=\frac{N^{2}}{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+插入排序(Insertion Sort)
+\end_layout
+
+\begin_layout Standard
+取一个数, 恰当的放入已经有序的数据中.
+\end_layout
+
+\begin_layout Standard
+插入排序有两个循环.
+ 外循环将数组元素挨个移动,而内循环则对外循环中选中的元素及它后面的那个元素进行比较.
+ 如果外循环中选中的元素比内循环中选中的元素小,那么数组元素会向右移动,为内循环中的这个元素腾出位置.
+\end_layout
+
+\begin_layout Standard
+分析: 对于长度为
+\begin_inset Formula $N$
+\end_inset
+
+的数组:
+\end_layout
+
+\begin_layout Standard
+移动次数: 最好情况不需要移动, 最坏的情况所有元素都需要移动, 移动次数是
+\begin_inset Formula $\frac{N^{2}}{2}$
+\end_inset
+
+, 在平均情况下每个元素都可能向后移动半个数组的长度,移动次数是
+\begin_inset Formula $\frac{N^{2}}{4}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+比较次数: 比较的总次数是交换的次数加上一个额外的项, 该项为 减去被插入的元素正好是已知的最小元素的次数.
+ 在最坏情况下(逆序数组), 这一项相对于总数可以忽略不计；在最好情况下(数组已经有序), 这一项等于
+\begin_inset Formula $N-1$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/InsertionSort.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+插入排序的轨迹
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+部分有序的数组: 
+\end_layout
+
+\begin_layout Itemize
+数组中每个元素距离它的最终位置都不远； 
+\end_layout
+
+\begin_layout Itemize
+一个有序的大数组接一个小数组； 
+\end_layout
+
+\begin_layout Itemize
+数组中只有几个元素的位置不正确.
+ 
+\end_layout
+
+\begin_layout Standard
+链表,向右移动
+\end_layout
+
+\begin_layout Section
+希尔排序(Shell Sort)
+\end_layout
+
+\begin_layout Standard
+插入排序升级版, 一个有序数组就是 h 个互相独立的有序数组
+\series bold
+编织
+\series default
+在一起组成的一个数组.
+ 
+\end_layout
+
+\begin_layout Standard
+希尔排序的核心理念与插入排序不同, 它会首先比较 
+\series bold
+距离较远
+\series default
+的元素, 而非相邻的元素(有间距了).
+ 和简单地比较相邻元素相比, 使用这种方案可以使离正确位置很远的元素更快地回到合适的位置.
+ 当开始用这个算法遍历数据集时, 所有元素之间的距离会不断减小, 直到处理到数据集的末尾, 这时算法比较的就是相邻元素了.
+ 
+\end_layout
+
+\begin_layout Standard
+通过定义一个间隔序列来表示在排序过程中进行比较的元素之间有多远的间隔.
+\end_layout
+
+\begin_layout Standard
+算法的性能不仅取决于 h, 还取决于 h 之间的数学性质.
+\end_layout
+
+\begin_layout Standard
+适用大数组.
+\end_layout
+
+\begin_layout Fact
+使用递增序列 1, 4, 13, 40, 121, 364… 的希尔排序所需的比较次数不会超出N的若干倍乘以递增序列的长度.
+ 
+\end_layout
+
+\begin_layout Fact
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/ShellSort.png
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ShellSort
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+归并排序
+\end_layout
+
+\begin_layout Standard
+要将一个数组排序, 可以先将它分成两半分别排序, 然后将结果归(合)并起来.
+\end_layout
+
+\begin_layout Subsection
+自顶向下的归并排序
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/归并排序-自顶向下.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+自顶向下的归并排序
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+对小规模子数组使用插入排序.
+\end_layout
+
+\begin_layout Subsection
+自底向上的归并排序
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/归并排序-自底向上.svg
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+归并排序-自底向上
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+自顶向下
+\series default
+: 排好一组就合并
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+自底向上
+\series default
+:先排好小的一组, 然后合并, 再排再合并.
+\end_layout
+
+\begin_layout Section
+快速排序
+\end_layout
+
+\begin_layout Standard
+首先要在列表中选择一个元素作为基准值(pivot), 数据排序围绕基准值进行, 将列表中小于
+\series bold
+基准值
+\series default
+的元素移到数组的底部, 将大于基准值的元素移到数组的顶部.
+ 接着再拆分数组, 在小数组中再选择一个
+\series bold
+基准值
+\series default
+处理.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/快速排序.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+快速排序
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+堆排序(Heap Sort)
+\end_layout
+
+\begin_layout Standard
+堆积是一个近似完全二叉树的结构, 并同时满足堆积的性质: 即子结点的键值或索引总是小于(或者大于)它的父节点.
+ (堆不是二叉树)
+\end_layout
+
+\begin_layout Section
+计数排序(Counting Sort)
+\end_layout
+
+\begin_layout Standard
+计数排序不是基于比较的排序算法, 其核心在于将输入的数据值转化为键存储在额外开辟的数组空间中.
+  作为一种线性时间复杂度的排序, 计数排序要求输入的数据必须是有确定范围的整数.
+ 
+\end_layout
+
+\begin_layout Standard
+新建一个数组, 将原有数据按下标放入新的数组.
+\end_layout
+
+\begin_layout Section
+桶排序(Bucket Sort)
+\end_layout
+
+\begin_layout Standard
+计数排序的升级版, 将计数排序的新数组按映射关系多放几个数据.
+ 比如 下标为1 可以放 10,11,12 ; 下标为2放20,22 等.
+\end_layout
+
+\begin_layout Section
+基数排序(Radix Sort)
+\end_layout
+
+\begin_layout Standard
+将所有待比较数值(正整数)统一为同样的数位长度, 数位较短的数前面补零.
+ 然后, 从最低位(个,十,百,千)开始, 依次进行一次排序.
+ 这样从最低位排序一直到最高位排序完成以后, 数列就变成一个有序序列(字符串也可以用这种方式).
+ 过程可以使用桶排序的方式将数据(以当前位映射)放入桶中.
+\end_layout
+
+\begin_layout Section
+分类
+\end_layout
+
+\begin_layout Standard
+内排序(在内存中的排序)
+\end_layout
+
+\begin_layout Itemize
+插入排序: 直接插入排序、折半插入、希尔排序 
+\end_layout
+
+\begin_layout Itemize
+交换排序: 冒泡排序、快速排序 
+\end_layout
+
+\begin_layout Itemize
+选择排序: 简单选择排序、锦标赛排序、堆排序 
+\end_layout
+
+\begin_layout Itemize
+归并排序: 二路归并
+\end_layout
+
+\begin_layout Itemize
+分布排序: 基数排序、MSD 基数排序、LSD 基数排序
+\end_layout
+
+\begin_layout Standard
+外排序
+\end_layout
+
+\begin_layout Section
+优先队列
+\end_layout
+
+\begin_layout Chapter
+散列表
+\end_layout
+
+\begin_layout Section
+散列函数
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+散列函数
+\series default
+将被查找的键转化为数组的一个索引, 理想情况下, 散列函数会将每个键值映射为一个唯一的数组索引.
+ 然而, 键的数量是无限的, 数组的长度是有限的, 一个更现实的目标是让散列函数尽量将键均匀地映射到数组中.
+\end_layout
+
+\begin_layout Standard
+即使使用一个高效的散列函数, 仍然存在将两个键映射成同一个值的可能, 这种现象称为碰撞(collision).
+ 
+\end_layout
+
+\begin_layout Standard
+一般方法是先将键转成一个整数,然后用一个数M取模(除留余数法), M一般是数组的长度,且是素数.
+\end_layout
+
+\begin_layout Standard
+如果键是浮点数, 可以将它乘以
+\begin_inset Formula $M$
+\end_inset
+
+并四舍五入得到一个 0 至
+\begin_inset Formula $M-1$
+\end_inset
+
+之间的索引值.
+ 尽管这个方法很容易理解, 但它是有缺陷的, 因为这种情况下键的高位起的作用更大, 最低位对散列的结果没有影响.
+ 修正这个问题的办法是将键表示为二进制数然后再使用
+\series bold
+除留余数法
+\series default
+.
+ (算法第4版)
+\end_layout
+
+\begin_layout Subsection
+Horner 方法
+\end_layout
+
+\begin_layout Standard
+对R值进行
+\begin_inset Formula $N$
+\end_inset
+
+ 次乘法、加法和取余来计算一个字符串的散列值.
+ 只要 R 足够小, 不造成溢出, 那么结果就能够落在 0 至
+\begin_inset Formula $M-1$
+\end_inset
+
+ 之内.
+ 使用一个较小的素数, 例如 31, 可以保证字符串中的所有字符都能发挥作用.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "Why does Java's hashCode() in String use 31 as a multiplier?"
+target "https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public static int hashCode(byte[] value) {
+\end_layout
+
+\begin_layout Plain Layout
+
+   int h = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+   for (byte v : value) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      h = 31 * h + (v & 0xff);
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+   return h;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+组合键
+\end_layout
+
+\begin_layout Standard
+也可以将整型变量直接求值.
+\end_layout
+
+\begin_layout Standard
+比如java 中的Integer
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public int hashCode() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  return Integer.hashCode(value);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+散列函数最重要的就是
+\series bold
+保证均匀性.
+ 
+\series default
+保证均匀性的最好办法也许就是保证键的
+\series bold
+每一位
+\series default
+都在散列值的计算中起到了相同的作用; 实现散列函数最常见的错误也许就是忽略了键的高位.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+假设 J(均匀散列假设）
+\series default
+我们使用的散列函数能够均匀并独立地将所有的键散布于 0 到 之间.
+ 实际上是不可能的.
+\end_layout
+
+\begin_layout Standard
+首先, 设计散列函数时尽量避免随意指定参数以防止大量的碰撞, 这是我们的重要目标；其次, 尽管我们可能无法验证假设本身, 它提示我们使用数学分析来预测散列算法的
+性能并在实验中进行验证.
+ 
+\end_layout
+
+\begin_layout Section
+开链法
+\end_layout
+
+\begin_layout Standard
+开链法是指实现散列表的底层数组中, 每个数组元素又是一个新的数据结构, 比如另一个数组, 这样就能存储多个键了.
+ 使用这种技术, 即使两个键散列后的值相同, 依然被保存在同样的位置, 只不过它们在第二个数组中的位置不一样罢了.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/开链法.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+开链法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+线性探测法
+\end_layout
+
+\begin_layout Standard
+线性探测法隶属于一种更一般化的散列技术: 开放寻址散列.
+ 
+\end_layout
+
+\begin_layout Enumerate
+当发生碰撞时, 线性探测法检查散列表中的下一个位置是否为空.
+ 
+\end_layout
+
+\begin_layout Enumerate
+如果为空, 就将数据存入该位置；
+\end_layout
+
+\begin_layout Enumerate
+如果不为空, 则继续检查下一个位置, 直到找到一个空的位置为止.
+ 
+\end_layout
+
+\begin_layout Standard
+该技术是基于这样一个事实: 每个散列表都会有很多空的单元格, 可以使用它们来存储数据.
+\end_layout
+
+\begin_layout Standard
+线性探测的平均成本取决于元素在插入数组后聚集成的一组连续的条目, 也叫做键簇.
+\end_layout
+
+\begin_layout Standard
+当存储数据使用的数组特别大时, 选择线性探测法要比开链法好.
+ 这里有一个公式, 常常可以帮助我们选择使用哪种碰撞解决办法: 
+\end_layout
+
+\begin_layout Standard
+如果数组的大小是待存储数据个数的1.5倍, 那么使用开链法；如果数组的大小是待存储数据的两倍及两倍以上时, 那么使用线性探测法.
+\end_layout
+
+\begin_layout Section
+稀疏向量
+\end_layout
+
+\begin_layout Standard
+给定一个矩阵和一个向量并计算结果向量，其中第
+\begin_inset Formula $i$
+\end_inset
+
+项的值为矩阵的第
+\begin_inset Formula $i$
+\end_inset
+
+行和给定的向量的点乘。
+\end_layout
+
+\begin_layout Standard
+N行N列的矩阵, 向量大小为N, 点乘如下:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{bmatrix}0 & 0.90 & 0 & 0 & 0\\
+0 & 0 & 0.36 & 0.36 & 0.18\\
+0 & 0 & 0 & 0.90 & 0\\
+0.90 & 0 & 0 & 0 & 0\\
+0.47 & 0 & 0.47 & 0 & 0
+\end{bmatrix}\begin{bmatrix}0.05\\
+0.04\\
+0.36\\
+0.37\\
+0.19
+\end{bmatrix}=\begin{bmatrix}0.90*0.04\\
+0.36*0.36+0.36*0.37+0.18*0.19\\
+0.90*0.37\\
+0.90*0.05\\
+0.47*0.05+0.47*0.36
+\end{bmatrix}=\begin{bmatrix}0.036\\
+0.297\\
+0.333\\
+0.045\\
+0.1927
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+上边这种计算需要每次遍历数组.
+ 当数组大的时候会非常耗时.
+\end_layout
+
+\begin_layout Standard
+可以通过另一种方式计算, 写一个 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+SparseVector<Integer,Double> 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Integer 表示位置, 再数组中的列数, Double 就是值了.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $\begin{bmatrix}0 & 0.90 & 0 & 0 & 0\\
+0 & 0 & 0.36 & 0.36 & 0.18\\
+0 & 0 & 0 & 0.90 & 0\\
+0.90 & 0 & 0 & 0 & 0\\
+0.47 & 0 & 0.47 & 0 & 0
+\end{bmatrix}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+转化为(忽略0值,对于稀疏矩阵可以级大的减少计算消耗)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $1$
+\end_inset
+
+,
+\begin_inset Formula $0.90$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $2$
+\end_inset
+
+,
+\begin_inset Formula $0.36$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $3$
+\end_inset
+
+,
+\begin_inset Formula $0.36$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $4$
+\end_inset
+
+,
+\begin_inset Formula $0.18$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $3$
+\end_inset
+
+,
+\begin_inset Formula $0.90$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $0$
+\end_inset
+
+,
+\begin_inset Formula $0.90$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $0$
+\end_inset
+
+,
+\begin_inset Formula $0.47$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SparseVector<
+\begin_inset Formula $2$
+\end_inset
+
+,
+\begin_inset Formula $0.47$
+\end_inset
+
+>
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+通过这种方式对于一个矩阵, 无需再使用 a[i][j] 来访问矩阵中第 i 行第 j 列的元素, 而是使用 a[i].
+\series bold
+put
+\series default
+(j, val) 来表示矩阵中的值并使用 a[i].
+\series bold
+get
+\series default
+(j) 来获取它.
+\end_layout
+
+\begin_layout Standard
+这个计算正是 S.
+ Brin 和 L.
+ Page 发明的 PageRank 算法的核心，这个算法在 2000 年左右造就了 Google(它同时也是一个著名的数学抽象模型，在很多其他场景中都会用到)
+。
+\end_layout
+
+\begin_layout Chapter
+树
+\end_layout
+
+\begin_layout Standard
+树是一种非线性的数据结构.
+\end_layout
+
+\begin_layout Standard
+树可以分为几个层次, 根节点是第0层, 它的子节点是第1层, 子节点的子节点是第2层, 以此类推.
+ 树中任何一层的节点可以都看做是子树的根, 该子树包含根节点的子节点, 子节点的子节点等.
+ 我们定义树的层数就是树的深度.
+ 其中, 每个节点都有一个与之相关的值, 该值有时被称为键.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+树的高度
+\series default
+: 即树中任意结点的最大深度.
+\end_layout
+
+\begin_layout Section
+遍历方式
+\end_layout
+
+\begin_layout Subsection
+广度优先遍历(BFS,Breadth First Traversal)
+\end_layout
+
+\begin_layout Standard
+一层一层的遍历
+\end_layout
+
+\begin_layout Subsection
+深度遍历(DFS,Depth First Traversals)
+\end_layout
+
+\begin_layout Subsubsection
+先序遍历 Preorder Traversal (Root-Left-Right ) 
+\end_layout
+
+\begin_layout Standard
+先访问根节点, 然后以同样方式访问左子树和右子树.
+\end_layout
+
+\begin_layout Subsubsection
+中序遍历 Inorder Traversal (Left-Root-Right) 
+\end_layout
+
+\begin_layout Standard
+中序遍历首先遍历左子树, 然后访问根结点, 最后遍历右子树
+\end_layout
+
+\begin_layout Subsubsection
+后序遍历 Postorder Traversal (Left-Right-Root)
+\end_layout
+
+\begin_layout Standard
+后序遍历先访问叶子节点, 从左子树到右子树, 再到根节点.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/遍历方式.svg
+	lyxscale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+遍历方式
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+let jsonTree = { name: '', children: [] };
+\end_layout
+
+\begin_layout Plain Layout
+
+let jsonNode = this.jsonTree;
+\end_layout
+
+\begin_layout Plain Layout
+
+    const stack = [];
+\end_layout
+
+\begin_layout Plain Layout
+
+    stack.push(jsonNode);
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (stack.length !== 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      jsonNode = stack.pop();
+\end_layout
+
+\begin_layout Plain Layout
+
+      if (jsonNode.children.length > 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        const childrens = jsonNode.children.reverse();
+\end_layout
+
+\begin_layout Plain Layout
+
+        jsonNode.children = [];
+\end_layout
+
+\begin_layout Plain Layout
+
+        stack.push(jsonNode);
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (const item of childrens) {
+\end_layout
+
+\begin_layout Plain Layout
+
+          stack.push(item);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+      } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        console.log(jsonNode.name);
+\end_layout
+
+\begin_layout Plain Layout
+
+      }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+二叉树
+\end_layout
+
+\begin_layout Standard
+每个节点最多只有两个分支(即不存在分支度大于2的节点)的树结构.
+ 通常分支被称作“左子树”或“右子树”.
+ 没有子节点的节点称为
+\series bold
+叶子
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+二叉树的分支具有左右次序, 不能随意颠倒.
+ 二叉树的第
+\begin_inset Formula $i$
+\end_inset
+
+层至多拥有
+\begin_inset Formula $2^{i-1}$
+\end_inset
+
+个节点; 深度为
+\begin_inset Formula $k$
+\end_inset
+
+的二叉树至多总共有
+\begin_inset Formula $2^{k}-1$
+\end_inset
+
+个节点(定义根节点所在深度
+\begin_inset Formula $k_{0}=0$
+\end_inset
+
+), 而总计拥有节点数符合的, 称为“满二叉树”; 深度为 k有 n个节点的二叉树, 当且仅当其中的每一节点, 都可以和同样深度k的满二叉树,
+ 序号为1到n的节点一对一对应时, 称为完全二叉树.完全二叉树 在一颗二叉树中, 若除最后一层外的其余层都是满的, 并且最后一层要么是满的, 要么在
+\series bold
+右边
+\series default
+缺少连续若干节点, 则此二叉树为完全二叉树 .
+\end_layout
+
+\begin_layout Subsection
+节点定义示例
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+// 定义一个节点java代码
+\end_layout
+
+\begin_layout Plain Layout
+
+class Node{
+\end_layout
+
+\begin_layout Plain Layout
+
+ public int value;
+\end_layout
+
+\begin_layout Plain Layout
+
+ public Node left;
+\end_layout
+
+\begin_layout Plain Layout
+
+ public Node right;
+\end_layout
+
+\begin_layout Plain Layout
+
+ public Node(int v){
+\end_layout
+
+\begin_layout Plain Layout
+
+  this.value=v;
+\end_layout
+
+\begin_layout Plain Layout
+
+  this.left=null;
+\end_layout
+
+\begin_layout Plain Layout
+
+  this.right=null;
+\end_layout
+
+\begin_layout Plain Layout
+
+ }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+二叉查找树
+\end_layout
+
+\begin_layout Standard
+二叉查找树
+\series bold
+(binary search tree)
+\series default
+是一种特殊的二叉树, 当前根节点的左边全部比根节点小, 当前根节点的右边全部比根节点大..
+ 这一特性使得查找的效率很高, 对于数值型和非数值型的数据, 比如单词和字符串, 都是如此.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/查找二叉树.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+二叉查找树
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+随机键构造的二叉查找树的平均高度为树中结点数的对数级别.
+\end_layout
+
+\begin_layout Section
+
+\series bold
+AVL树
+\end_layout
+
+\begin_layout Standard
+是最早被发明的自平衡二叉查找树, 在AVL树中, 任一节点对应的两棵子树的最大高度差为1, 因此它也被称为高度平衡树.
+ 查找、插入和删除在平均和最坏情况下的时间复杂度都是
+\begin_inset Formula $O(\log n)$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+平衡查找树
+\end_layout
+
+\begin_layout Subsection
+2-3 查找树
+\end_layout
+
+\begin_layout Standard
+一个节点可以有两个链接(子节点)也可以有三个链接(子节点).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/2-3 查找树.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2-3 查找树
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2- 结点: 含有一个键(及其对应的值)和两条链接, 左链接指向的 2-3 树中的键都小于该结点, 右链接指向的 2-3 树中的键都大于该结点.
+ 
+\end_layout
+
+\begin_layout Standard
+3- 结点: 含有两个键(及其对应的值)和三条链接, 左链接指向的 2-3 树中的键都小于该结点, 中链接指向的 2-3 树中的键都位于该结点的两个键之间,
+ 右链接指向的 2-3 树中的键都大于该结点.
+ 
+\end_layout
+
+\begin_layout Standard
+一棵完美平衡的 2-3 查找树中的所有空链接到根结点的距离都应该是相同的.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+向 2- 结点中插入新键
+\end_layout
+
+\begin_layout Standard
+如果未命中的查找结束于一个 2- 结点, 只需要把这个 2- 结点替换为一个 3- 结点, 将要插入的键保存在其中即可.
+\end_layout
+
+\begin_layout Subsubsection
+向一棵只含有一个 3- 结点的树中插入新键
+\end_layout
+
+\begin_layout Standard
+把 3- 结点 增加一个节点变成4节点.
+ 然后将4节点变成 2-3 树.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/2-3 查找树-插入.svg
+	lyxscale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2-3 树的插入
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+2-3 树到红黑二叉查找树
+\end_layout
+
+\begin_layout Standard
+红黑二叉查找树背后的基本思想是用标准的二叉查找树(完全由 2- 结点构成)和一些额外的信息(替换 3- 结点)来表示 2-3 树.
+ 红链接将两个 2- 结点连接起来构成一个 3- 结点, 黑链接则是 2-3 树中的普通链接.
+\end_layout
+
+\begin_layout Itemize
+红链接均为
+\series bold
+左链接
+\series default
+;
+\end_layout
+
+\begin_layout Itemize
+没有任何一个结点同时和两条红链接相连;
+\end_layout
+
+\begin_layout Itemize
+该树是完美黑色平衡的, 即任意空链接到根结点的路径上的黑链接数量相同.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/2-3 查找树 - 红黑树.svg
+	lyxscale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+2-3 查找树 - 红黑树与旋转
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+树的旋转与插入
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/2-3 查找树-红黑树-插入.svg
+	lyxscale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+树的旋转与插入
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+红黑树(红黑二叉查找树)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/644px-Red-black_tree_example.svg.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Black Red Tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+红黑树 一种自平衡二叉查找树.
+
+\series default
+ 红黑树是每个节点都带有颜色属性的二叉查找树, 颜色为红色或黑色.
+ 
+\end_layout
+
+\begin_layout Paragraph
+等价的定义
+\end_layout
+
+\begin_layout Standard
+在二叉查找树强制一般要求以外, 对于任何有效的红黑树我们增加了如下的额外要求: 
+\end_layout
+
+\begin_layout Enumerate
+节点是红色或黑色.
+\end_layout
+
+\begin_layout Enumerate
+根是黑色.
+\end_layout
+
+\begin_layout Enumerate
+所有叶子(
+\series bold
+NIL节点
+\series default
+)都是黑色.
+\end_layout
+
+\begin_layout Enumerate
+每个红色节点必须有两个黑色的子节点.
+ (
+\series bold
+ 从每个叶子到根的所有路径上不能有两个连续的红色节点
+\series default
+.
+ 可以有黑色的,因为叶子节点必须是黑色的)
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点.
+ 违反此规则的称为黑色违规.
+\end_layout
+
+\begin_layout Standard
+红黑树并不是标准平衡二叉树, 它以性质 
+\series bold
+5
+\series default
+ 作为一种平衡方法, 使自己的性能得到了提升.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+黑色深度(Black Depth)
+\series default
+ 从根节点到该节点的路径上黑色节点的个数
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+黑色高度
+\series default
+ 从根节点到叶节点(
+\series bold
+NIL节点
+\series default
+)的路径上黑色节点的个数, 叫做树的黑色高度.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+红黑树的关键属性
+\series default
+: 从根到最远的叶子节点的路径的长度不超过从根到最近叶子的路径的两倍.
+\end_layout
+
+\begin_layout Standard
+因为每一个红黑树也是一个特化的二叉查找树, 因此红黑树上的只读操作与普通二叉查找树上的只读操作相同.
+ 然而, 在红黑树上进行插入操作和删除操作会导致不再符合红黑树的性质.
+ 恢复红黑树的性质需要少量(
+\begin_inset Formula ${\displaystyle \text{O}(\log n)}$
+\end_inset
+
+) 的颜色变更(实际是非常快速的)和不超过三次树旋转(对于插入操作是两次).
+ 虽然插入和删除很复杂, 但操作时间仍可以保持为
+\begin_inset Formula ${\displaystyle O(\log n)}$
+\end_inset
+
+次.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/Red-black_tree_example_(B-tree_analogy).svg.png
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+类比4阶B tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+红黑树的旋转
+\end_layout
+
+\begin_layout Paragraph
+左旋步骤:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+    private void rotateLeft(Entry<K,V> p) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (p != null) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            Entry<K,V> r = p.right; // p 是上图中右侧的 x, r 就是 y
+\end_layout
+
+\begin_layout Plain Layout
+
+            p.right = r.left; // x 的右子树(转之前y所在的点)成了 y 的左子树 β 
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (r.left != null)//
+\end_layout
+
+\begin_layout Plain Layout
+
+                r.left.parent = p;// 修改β 的父亲为x
+\end_layout
+
+\begin_layout Plain Layout
+
+            r.parent = p.parent; // 修改r(图中y) 的父为 p(图中x) 的父
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (p.parent == null)
+\end_layout
+
+\begin_layout Plain Layout
+
+                root = r; //要是 x 没有父亲, 那 y 就是最老的根节点
+\end_layout
+
+\begin_layout Plain Layout
+
+            else if (p.parent.left == p)// 如果x有父亲并且是它父亲的左子树
+\end_layout
+
+\begin_layout Plain Layout
+
+                p.parent.left = r;// x 的父亲现在认 y 为左子树
+\end_layout
+
+\begin_layout Plain Layout
+
+            else // 如果x有父亲并且是它父亲的右子树
+\end_layout
+
+\begin_layout Plain Layout
+
+                p.parent.right = r;
+\end_layout
+
+\begin_layout Plain Layout
+
+            r.left = p;
+\end_layout
+
+\begin_layout Plain Layout
+
+            p.parent = r;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+ private void rotateRight(Entry<K,V> p) {         if (p != null) {     
+        Entry<K,V> l = p.left;             p.left = l.right;             if
+ (l.right != null) l.right.parent = p;             l.parent = p.parent;     
+        if (p.parent == null)                 root = l;             else
+ if (p.parent.right == p)                 p.parent.right = l;             else
+ p.parent.left = l;             l.right = p;             p.parent = l;     
+    }     }
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+插入
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+插入
+\series default
+一个节点后要担心违反特征 4 和 5.
+ 
+\series bold
+把插入的节点直接染成红色
+\series default
+, 这样就不会影响特征 5, 只要专心调整满足特征 4 就好了.
+ 这样比同时满足 4、5 要简单一些.
+\end_layout
+
+\begin_layout Standard
+染成红色后, 我们只要关心父节点是否为红, 如果是红的, 就要把父节点进行变化, 让父节点变成黑色, 或者换一个黑色节点当父亲, 这些操作的同时不能影响不同路径
+上的黑色节点数一致的规则.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+插入、染红后的调整有 2 种情况: 
+\end_layout
+
+\begin_layout Paragraph
+情况1.父亲节点和叔叔节点都是红色: 
+\end_layout
+
+\begin_layout Section
+
+\series bold
+B树(B-tree)(B-树)
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B-$
+\end_inset
+
+树的结点可以有许多子女, 从几个到几千个.
+ 可以外查找的树.
+\end_layout
+
+\begin_layout Standard
+B树有个概念叫
+\series bold
+阶
+\series default
+, 就是一个节点最多可以有多少个子节点.一般用字母
+\begin_inset Formula $M$
+\end_inset
+
+表示.
+\begin_inset Formula $M$
+\end_inset
+
+阶代表一个树节点最多有多少个查找路径, 当
+\begin_inset Formula $M=2$
+\end_inset
+
+则是
+\begin_inset Formula $2$
+\end_inset
+
+叉(不是二叉树), 
+\begin_inset Formula $M=3$
+\end_inset
+
+则是
+\begin_inset Formula $3$
+\end_inset
+
+叉.
+ 
+\end_layout
+
+\begin_layout Standard
+页: 表示一块连续的数据
+\end_layout
+
+\begin_layout Standard
+探查: 表示访问一个页
+\end_layout
+
+\begin_layout Standard
+内部结点: 含有与页相关联的键的副本.
+\end_layout
+
+\begin_layout Standard
+外部结点: 含有指向实际数据的引用.
+\end_layout
+
+\begin_layout Standard
+B树中每一个
+\series bold
+内部节点
+\series default
+会包含一定数量的
+\series bold
+键
+\series default
+, 键将节点的
+\series bold
+子树
+\series default
+分开, 最少含有 M/2 对键和链接（以提供足够多的分支来保证查找路径较短）。根结点是个例外，它可以含有少于 M/2 对键和链接，但也不能少于
+ 2 对。每个结点最多含有 M-1 对键和链接.
+ 例如, 如果一个内部节点有3个子节点(子树), 那么它就必须有两个键: 
+\begin_inset Formula $a_{1}$
+\end_inset
+
+和 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+ .
+ 左边子树的所有值都必须小于
+\begin_inset Formula $a_{1}$
+\end_inset
+
+ , 中间子树的所有值都必须在
+\begin_inset Formula $a_{1}$
+\end_inset
+
+和 
+\begin_inset Formula $a_{2}$
+\end_inset
+
+之间, 右边子树的所有值都必须大于
+\begin_inset Formula $a2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+内部结点中的每个键都与一个结点相关联，以此结点为根的子树中，所有的键都
+\series bold
+大于等于
+\series default
+与此结点关联的键，但小于原内部结点中更大的键（如果存在的话）。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/B-Tree.svg
+	lyxscale 70
+	scale 70
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+B-tree
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B-tree$
+\end_inset
+
+的叶子可以保存完整的数据记录；也可以只保存了指向数据记录的指针(外部查找的应用).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B-tree$
+\end_inset
+
+ 横向增多可以在同一高度下可以比二叉树放更多的数据.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $B-tree$
+\end_inset
+
+ 的插入和
+\begin_inset Formula $2-3$
+\end_inset
+
+树类似.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/B-Tree-insert.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+B-tree 插入
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+所有节点关键字是按递增次序排列, 并遵循左小右大原则;
+\end_layout
+
+\begin_layout Itemize
+树中每个结点最多含有m个孩子(m>=2);
+\end_layout
+
+\begin_layout Itemize
+除根结点和叶子结点外, 其它每个结点至少有[ceil(m / 2)]个孩子(其中ceil(x)是一个取上限的函数, 即向上取整);
+\end_layout
+
+\begin_layout Itemize
+若根结点不是叶子结点, 则至少有2个孩子(特殊情况: 没有孩子的根结点, 即根结点为叶子结点, 整棵树只有一个根节点);
+\end_layout
+
+\begin_layout Itemize
+所有叶子节点均在同一层、叶子节点除了包含了关键字和关键字记录的指针外也有指向其子节点的指针只不过其指针地址都为null对应下图最后一层节点的空格子;
+\end_layout
+
+\begin_layout Itemize
+每个非终端结点中包含有n个关键字信息:  (n, P0, K1, P1, K2, P2, ......, Kn, Pn).
+ 其中:
+\end_layout
+
+\begin_layout Itemize
+a)   Ki (i=1...n)为关键字, 且关键字按顺序升序排序K(i-1)< Ki.
+\end_layout
+
+\begin_layout Itemize
+b)   Pi为指向子树根的接点, 且指针P(i-1)指向子树种所有结点的关键字均小于Ki, 但都大于K(i-1).
+\end_layout
+
+\begin_layout Itemize
+ c)   关键字的个数n必须满足:  [ceil(m / 2)-1]<= n <= m-1
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+性能
+\end_layout
+
+\begin_layout Standard
+B树相对于平衡二叉树的不同是, 每个节点包含的关键字增多了,它支持对保存在磁盘或者网络上的符号表进行外部查找， 特别是在B树应用到数据库中的时候,
+ 数据库充分利用了磁盘块的原理(磁盘数据存储是采用块的形式存储的, 每个块的大小为4K, 每次IO进行数据读取时, 同一个磁盘块的数据可以一次性读取出来,
+ 页表示一块连续的数据, 假设 M 足够小，使得每个 M 向结点都能够存放在一个页中), 把节点大小限制和充分使用在磁盘快大小范围；把树的节点关键字增多后树的层
+级比原来的二叉树少了, 减少数据查找的次数和复杂度.
+\end_layout
+
+\begin_layout Section
+B+tree: 
+\end_layout
+
+\begin_layout Standard
+是应文件系统所需而产生的一种B-tree的变形树
+\end_layout
+
+\begin_layout Standard
+B+跟B树不同, B+树的非叶子节点不保存关键字记录的指针, 只进行数据索引, 这样使得B+树每个非叶子节点所能保存的关键字大大增加；
+\end_layout
+
+\begin_layout Standard
+B+树叶子节点保存了父节点的所有关键字记录的指针, 所有数据地址必须要到叶子节点才能获取到.
+ 所以每次数据查询的次数都一样；
+\end_layout
+
+\begin_layout Standard
+B+树叶子节点的关键字从小到大有序排列, 左边结尾数据都会保存右边节点开始数据的指针.
+ 
+\end_layout
+
+\begin_layout Standard
+非叶子节点的子节点数=关键字数
+\end_layout
+
+\begin_layout Standard
+B*树: 一棵丰满的B+树.
+ 
+\end_layout
+
+\begin_layout Section
+
+\series bold
+R(Rectangle)树
+\series default
+: 
+\end_layout
+
+\begin_layout Standard
+处理空间存储问题
+\end_layout
+
+\begin_layout Standard
+R树是B树在高维空间的扩展.
+ 每个R树的叶子结点包含了多个指向
+\series bold
+不同数据
+\series default
+的指针, 这些数据可以是存放在硬盘中的, 也可以是存在内存中.
+\end_layout
+
+\begin_layout Section
+树的平衡(个人看法)
+\end_layout
+
+\begin_layout Standard
+对于一个形似链表的树, 平衡就是把这个树从某一位置提起, 两头掉下去.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/树的平衡.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+不停的往上提, 最终实现平衡
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+对于平衡树就是增加了一个子树的
+\begin_inset Quotes erd
+\end_inset
+
+替换
+\begin_inset Quotes erd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Chapter
+图
+\end_layout
+
+\begin_layout Standard
+图由边的集合及顶点的集合组成.
+ 顶点也有权重,也称为成本.
+\end_layout
+
+\begin_layout Standard
+如果一个图的顶点对是有序的,则可以称之为有向图.
+ 在对有向图中的顶点对排序后,便可以在两个顶点之间绘制一个箭头.
+ 有向图表明了顶点的流向.
+ 计算机程序中用来表明计算方向的流程图就是一个有向图的例子.
+\end_layout
+
+\begin_layout Itemize
+无向图: 即图的边没有方向, 边一般用弧形括号表示()
+\end_layout
+
+\begin_layout Itemize
+有向图: 图的边有方向, 边一般用尖括号表示<> 
+\end_layout
+
+\begin_layout Itemize
+加权图(连接带有权值）
+\end_layout
+
+\begin_layout Itemize
+加权有向图(连接既有方向性又带有权值）
+\end_layout
+
+\begin_layout Itemize
+完全图: 图的每两个顶点之间有边链接
+\end_layout
+
+\begin_layout Itemize
+连通图: 图的每两个顶点之间有路径链接
+\end_layout
+
+\begin_layout Standard
+图中的一系列顶点构成
+\series bold
+路径
+\series default
+, 路径中所有的顶点都由边连接.
+ 路径的长度用路径中第一个顶点到最后一个顶点之间边的数量表示.
+ 简单路径是一条没有重复顶点的路径.
+\end_layout
+
+\begin_layout Standard
+由指向自身的顶点组成的路径称为
+\series bold
+环
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图-环.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+环
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+圈
+\series default
+是至少有一条边的路径, 且路径的第一个顶点和最后一个顶点相同.
+ 无论是有向图还是无向图, 只要是没有重复边或重复顶点的圈, 就是一个
+\series bold
+简单圈
+\series default
+.
+ 除了第一个和最后一个顶点以外, 路径的其他顶点有重复的圈称为
+\series bold
+平凡圈
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+如果从任意一个顶点都存在一条路径到达另一个任意顶点, 我们称这幅图是连通图.
+ 一幅非连通的图由若干连通的部分组成, 它们都是其极大连通子图.
+\end_layout
+
+\begin_layout Standard
+如果两个顶点之间有路径, 那么这两个顶点就是
+\series bold
+强
+\series default
+连通的, 反之亦然.
+ 如果有向图的所有的顶点都是强连通的, 那么这个有向图也是强连通的.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+无环图
+\series default
+是一种不包含环的图.
+\end_layout
+
+\begin_layout Standard
+树是一幅无环连通图.
+ 互不相连的树组成的集合称为森林.
+ 连通图的生成树是它的一幅子图, 它含有图中的所有顶点且是一棵树.
+ 图的生成树森林是它的所有连通子图的生成树的集合.
+\end_layout
+
+\begin_layout Standard
+图的
+\series bold
+密度
+\series default
+是指
+\series bold
+已经连接
+\series default
+的顶点对占
+\series bold
+所有可能被连接
+\series default
+的顶点对的比例.
+\end_layout
+
+\begin_layout Itemize
+在
+\series bold
+稀疏图
+\series default
+中, 被连接的顶点对很少;
+\end_layout
+
+\begin_layout Itemize
+而在
+\series bold
+稠密图
+\series default
+中, 只有少部分顶点对之间没有边连接.
+\end_layout
+
+\begin_layout Paragraph
+二分图
+\end_layout
+
+\begin_layout Standard
+二分图是一种能够将所有结点分为两部分的图, 其中图的每条边所连接的两个顶点都分别属于不同的部分.
+ 
+\end_layout
+
+\begin_layout Standard
+树与图:
+\end_layout
+
+\begin_layout Standard
+当且仅当一幅含有
+\begin_inset Formula $v$
+\end_inset
+
+个结点的图
+\begin_inset Formula $G$
+\end_inset
+
+满足下列 5 个条件之一时, 它就是一棵树:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G$
+\end_inset
+
+有 
+\begin_inset Formula $V-1$
+\end_inset
+
+条边且不含有环;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G$
+\end_inset
+
+有 
+\begin_inset Formula $V-1$
+\end_inset
+
+条边且是连通的;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G$
+\end_inset
+
+是连通的, 但删除任意一条边都会使它不再连通;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G$
+\end_inset
+
+是无环图, 但添加任意一条边都会产生一条环;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $G$
+\end_inset
+
+中的任意一对顶点之间仅存在一条简单路径.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+树
+\series default
+是一幅
+\series bold
+无环连通图
+\series default
+(树就是无环连通图).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/无环连通图-树.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+无环连通图-树
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+互不相连的树组成的集合称为
+\series bold
+森林
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/无环连通图-树-森林.svg
+	lyxscale 60
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+这副图是由两棵树组成的森林
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+连通图的生成树是它的一幅子图, 它含有图中的所有顶点且是一棵树.
+ 图的生成树森林是它的所有连通子图的生成树的集合.
+\end_layout
+
+\begin_layout Section
+图类
+\end_layout
+
+\begin_layout Subsection
+图的表示方法
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+邻接矩阵
+\series default
+ 我们可以使用一个 乘 的布尔矩阵.
+ 当顶点 
+\begin_inset Formula $v$
+\end_inset
+
+ 和顶点 
+\begin_inset Formula $w$
+\end_inset
+
+ 之间有相连接的边时, 定义 
+\begin_inset Formula $v$
+\end_inset
+
+ 行 
+\begin_inset Formula $w$
+\end_inset
+
+ 列的元素值为 true, 否则为 false.
+ 这种表示方法不符合第一个条件——含有上百万个顶点的图是很常见的,  
+\begin_inset Formula $v^{2}$
+\end_inset
+
+个布尔值所需的空间是不能满足的.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $0=\text{false},1=\text{true}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图的表示方法-邻接矩阵.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+邻接矩阵
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+边的数组
+\series default
+ 可以使用一个 Edge 类, 它含有两个 int 实例变量.这种表示方法很简洁要计算和 v 相邻的所有顶点, 需要检查图中的所有边.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{1}v_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{1}v_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{2}v_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{2}v_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图的表示方法-边的数组.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+边的数组
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+邻接表数组 
+\series default
+使用一个以顶点为索引的列表数组, 其中的每个元素都是和该顶点相邻的顶点列表(平行边不能使用)
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图的表示方法-邻接表数组.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\series bold
+邻接表数组
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+表示顶点
+\end_layout
+
+\begin_layout Standard
+创建图类的第一步就是要创建一个
+\begin_inset Formula $Vertex$
+\end_inset
+
+类来保存顶点和边.
+ 这个类的作用与链表和二叉搜索树的
+\begin_inset Formula $Node$
+\end_inset
+
+类一样.
+ 
+\begin_inset Formula $Vertex$
+\end_inset
+
+类有两个数据成员: 一个用于标识顶点, 另一个是表明这个顶点是否被访问过的布尔值.
+ 它们分别被命名为
+\begin_inset Formula $label$
+\end_inset
+
+和
+\begin_inset Formula $wasVisited$
+\end_inset
+
+.
+ 这个类只需要一个函数, 那就是为顶点的数据成员设定值的构造函数.
+ 
+\begin_inset Formula $Vertex$
+\end_inset
+
+类的代码如下所示:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+function Vertex(label) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  this.label = label;
+\end_layout
+
+\begin_layout Plain Layout
+
+  this.wasVisited = wasVisited
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+存储顶点
+\end_layout
+
+\begin_layout Standard
+我们将所有顶点保存到数组中, 在图类里, 可以通过它们在 
+\series bold
+数组中的位置
+\series default
+ 引用它们.
+ 如图所示:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $point[]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图-存储顶点.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+存储顶点
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+表示边
+\end_layout
+
+\begin_layout Standard
+我们将表示图的边的方法称为邻接表或者邻接表数组.
+ 这种方法将边存储为由顶点的相邻顶点列表构成的数组,并以此顶点作为索引.
+ 使用这种方案,当我们在程序中引用一个顶点时,可以高效地访问与这个顶点相连的所有顶点的列表.
+ 比如,如果顶点C与顶点A、B、D相连,并且它存储在数组中索引为2的位置,那么,访问这个元素,我们可以访问到索引为2的位置处由顶点A、B、D组成的数组.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $line[]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图-存储边.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+邻接表
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+构建图
+\end_layout
+
+\begin_layout Standard
+当调用这个函数并传入顶点A和B时,函数会先查找顶点A的邻接表,将顶点B添加到列表中,然后再查找顶点B的邻接表,将顶点A加入列表.
+ 最后,这个函数会将边数加1.
+\end_layout
+
+\begin_layout Subsection
+搜索图
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Tremaux 搜索
+\end_layout
+
+\begin_layout Itemize
+选择一条没有标记过的通道, 在你走过的路上铺一条绳子； 
+\end_layout
+
+\begin_layout Itemize
+标记所有你第一次路过的路口和通道； 
+\end_layout
+
+\begin_layout Itemize
+当来到一个
+\series bold
+标记
+\series default
+过的路口时(用绳子）回退到上个路口； 
+\end_layout
+
+\begin_layout Itemize
+当回退到的路口已没有可走的通道时继续回退.
+  
+\end_layout
+
+\begin_layout Standard
+在图上可以执行两种基础搜索:深度优先搜索和广度优先搜索.
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+深度优先搜索(DFS)
+\end_layout
+
+\begin_layout Standard
+深度优先搜索包括从一条路径的起始顶点开始追溯,直到到达最后一个顶点,然后回溯,继续追溯下一条路径,直到到达最后的顶点,如此往复,直到没有路径为止.
+ 这不是在搜索特定的路径,而是通过搜索来查看在图中有哪些路径可以选择.
+\end_layout
+
+\begin_layout Standard
+深度优先搜索算法比较简单:访问一个没有访问过的顶点,将它标记为已访问,再递归地去访问在初始顶点的邻接表中其他没有访问过的顶点.
+ 
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+广度优先搜索(BFS)
+\end_layout
+
+\begin_layout Section
+无向图
+\end_layout
+
+\begin_layout Standard
+自环, 即一条连接一个顶点和其自身的边
+\end_layout
+
+\begin_layout Standard
+连接同一对顶点的两条边称为平行边
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/无向图-特殊图.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+特殊的图
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+数学家常常将含有平行边的图称为
+\series bold
+多重图,
+\end_layout
+
+\begin_layout Plain Layout
+没有平行边或自环的图称为
+\series bold
+简单图
+\series default
+.
+\end_layout
+
+\begin_layout Plain Layout
+一般来说, 实现允许出现自环和平行边(因为它们会在实际应用中出现）, 但我们不会将它们作为示例.
+ 因此, 我们用两个顶点就可以指代一条边了(算法).
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当两个顶点通过一条边相连时, 我们称这两个顶点是
+\series bold
+相邻的
+\series default
+, 并称这条边
+\series bold
+依附于
+\series default
+这两个顶点.
+ 某个顶点的
+\series bold
+度数
+\series default
+即为依附于它的边的总数.
+ 
+\series bold
+子图
+\series default
+是由一幅图的所有边的一个子集 (以及它们所依附的所有顶点) 组成的图.
+ 许多计算问题都需要识别各种类型的子图, 特别是由能够
+\series bold
+顺序
+\series default
+连接一系列顶点的边所组成的子图.
+\end_layout
+
+\begin_layout Section
+有向图
+\end_layout
+
+\begin_layout Subsection
+
+\series bold
+强连通
+\end_layout
+
+\begin_layout Definition*
+如果两个顶点 v 和 w 是互相可达的, 则称它们为
+\series bold
+强连通
+\series default
+的.
+ 如果一幅有向图中的任意两个顶点都是强连通的, 则称这幅有向图也是强连通的.
+ 两个顶点是强连通的当且仅当它们都在一个普通的有向环中
+\end_layout
+
+\begin_layout Itemize
+自反性：任意顶点 v 和自己都是强连通的.
+ 
+\end_layout
+
+\begin_layout Itemize
+对称性：如果 v 和 w 是强连通的, 那么 w 和 v 也是强连通的.
+  
+\end_layout
+
+\begin_layout Itemize
+传递性：如果 v 和 w 是强连通的且 w 和 x 也是强连通的, 那么 v 和 x 也是强连通的.
+ 
+\end_layout
+
+\begin_layout Standard
+作为一种等价关系, 强连通性将所有顶点分为了一些等价类, 每个等价类都是由相互均为强连通的顶点的最大子集组成的.
+ 我们将这些子集称为强连通分量.
+\end_layout
+
+\begin_layout Section
+加权图
+\end_layout
+
+\begin_layout Standard
+加权图是一种为每条边关联一个权值或是成本的图模型.
+ 
+\end_layout
+
+\begin_layout Section
+加权无向图
+\end_layout
+
+\begin_layout Subsection
+平行边
+\end_layout
+
+\begin_layout Standard
+允许存在平行边, 只保留平行的边中的权重最小者.
+\end_layout
+
+\begin_layout Subsection
+自环
+\end_layout
+
+\begin_layout Standard
+允许存在自环
+\end_layout
+
+\begin_layout Section
+最小生成树
+\end_layout
+
+\begin_layout Definition
+图的
+\series bold
+生成树
+\series default
+是它的一棵含有其所有顶点的
+\series bold
+无环连通子图
+\series default
+。一幅加权图的最小生成树（MST）是它的一棵
+\series bold
+权值
+\series default
+(树中所有边的权值之和)最小的生成树。
+\end_layout
+
+\begin_layout Definition
+只考虑连通图
+\end_layout
+
+\begin_layout Definition
+边的权重不一定表示距离
+\end_layout
+
+\begin_layout Definition
+边的权重可能是 0 或者负数
+\end_layout
+
+\begin_layout Definition
+所有边的权重都各不相同(如果不同边的权重可以相同，最小生成树就不一定唯一了)
+\end_layout
+
+\begin_layout Subsection
+切分定理
+\end_layout
+
+\begin_layout Definition
+图的一种切分是将图的所有顶点分为两个非空且不重叠的两个集合。横切边是一条连接两个属于不同集合的顶点的边。
+\end_layout
+
+\begin_layout Theorem
+切分定理, 在一幅加权图中, 给定任意的切分, 它的横切边中的权重最小者必然属于图的最小生成树.
+\end_layout
+
+\begin_layout Theorem
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图-切分定理.svg
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+图的切分
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Proposition
+最小生成树的贪心算法(最小生成树的边标记为黑色): 初始状态下所有边均为灰色，找到一种切分，它产生的横切边均不为黑色。将它权重最小的横切边标记为黑色。反复，直到
+标记了
+\begin_inset Formula $V1$
+\end_inset
+
+条黑色边为止。
+\end_layout
+
+\begin_layout Subsection
+Prim 算法
+\end_layout
+
+\begin_layout Standard
+基本思想: 从一点
+\begin_inset Formula $A$
+\end_inset
+
+发散到其它点, 找到权重最小的点
+\begin_inset Formula $B$
+\end_inset
+
+.
+ 再以这两点继续发散找到权重最小的点
+\begin_inset Formula $C$
+\end_inset
+
+.
+ 以此发散(把失效路线移除), 直到找完所有点.
+\end_layout
+
+\begin_layout Itemize
+延时实现:保存全部未失效边
+\end_layout
+
+\begin_layout Itemize
+即时实现: 只保存权重最小的边
+\end_layout
+
+\begin_layout Subsection
+Kruskal 算法
+\end_layout
+
+\begin_layout Standard
+个人理解把所有权重列出来,并排序.
+\end_layout
+
+\begin_layout Section
+最短路径
+\end_layout
+
+\begin_layout Definition
+在一幅加权有向图中，从顶点 s 到顶点 t 的最短路径是所有从 s 到 t 的路径中的权重最小者。
+\end_layout
+
+\begin_layout Definition
+路径是有向的
+\end_layout
+
+\begin_layout Definition
+权重不一定等价于距离
+\end_layout
+
+\begin_layout Definition
+并不是所有顶点都是可达的
+\end_layout
+
+\begin_layout Definition
+负权重会使问题更复杂
+\end_layout
+
+\begin_layout Definition
+最短路径一般都是简单的
+\end_layout
+
+\begin_layout Definition
+最短路径不一定是唯一的
+\end_layout
+
+\begin_layout Definition
+可能存在平行边和自环
+\end_layout
+
+\begin_layout Subsection
+边的松弛
+\end_layout
+
+\begin_layout Standard
+遇到重复点时需要放松
+\end_layout
+
+\begin_layout Standard
+放松边 
+\begin_inset Formula $v→w$
+\end_inset
+
+ 意味着检查从 
+\begin_inset Formula $s$
+\end_inset
+
+ 到 
+\begin_inset Formula $w$
+\end_inset
+
+ 的最短路径是否是先从 
+\begin_inset Formula $s$
+\end_inset
+
+ 到 
+\begin_inset Formula $v$
+\end_inset
+
+，然后再由 
+\begin_inset Formula $v$
+\end_inset
+
+ 到 
+\begin_inset Formula $w$
+\end_inset
+
+。如果是，则根据这个情况更新数据结构的内容.
+\end_layout
+
+\begin_layout Standard
+松弛这个术语来自于用一根橡皮筋沿着连接两个顶点的路径紧紧展开的比喻：放松一条边就类似于将橡皮筋转移到一条更短的路径上，从而缓解了橡皮筋的压力。
+\end_layout
+
+\begin_layout Standard
+如果 relax() 改变了和边 e 相关的顶点的 distTo[e.to()] 和 edgeTo[e.to()] 的值，就称 e 的
+\series bold
+放松是成功的
+\series default
+。
+\end_layout
+
+\begin_layout Standard
+放松 G 中的任意边，直到不存在有效边为止
+\end_layout
+
+\begin_layout Subsection
+Dijkstra 算法
+\end_layout
+
+\begin_layout Standard
+类似Prim 算法.
+ 
+\end_layout
+
+\begin_layout Standard
+边的权重必须为正
+\end_layout
+
+\begin_layout Subsection
+无环加权有向图中的最短路径算法
+\end_layout
+
+\begin_layout Subsection
+负权重
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+负权重环
+\series default
+:加权有向图中的负权重环是一个总权重（环上的所有边的权重之和）为负的有向环。
+\end_layout
+
+\begin_layout Standard
+一般情况下不存在负权重环, 限制条件和最后期限都是从现实世界中的实际限制得来的，因此负权重环大多可能来自于
+\series bold
+问题陈述中的错误
+\series default
+。
+\end_layout
+
+\begin_layout Subsection
+Bellman-Ford 算法
+\end_layout
+
+\begin_layout Standard
+一条用来保存即将被放松的顶点的队列 queue； 
+\end_layout
+
+\begin_layout Standard
+一个由顶点索引的 boolean 数组 onQ[]，用来指示顶点是否已经存在于队列中，以防止将顶点重复插入队列
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+队列中不出现重复的顶点；
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+在某一轮中，改变了 edgeTo[] 和 distTo[] 的值的所有顶点都会在下一轮中处理。
+\end_layout
+
+\begin_layout Standard
+不能存在负权重环
+\end_layout
+
+\begin_layout Subsection
+套汇
+\end_layout
+
+\begin_layout Standard
+套汇问题等价于加权有向图中的负权重环的检测问题。
+\end_layout
+
+\begin_layout Standard
+一个负权重环就表示了一次套汇的机会
+\end_layout
+
+\begin_layout Section
+网络流算法
+\end_layout
+
+\begin_layout Definition
+一个流量网络是一张边的权重（这里称为容量）为正的加权有向图.
+ 一个 流量网络有两个已知的顶点, 即起点 
+\begin_inset Formula $s$
+\end_inset
+
+ 和终点 
+\begin_inset Formula $t$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+流向一个顶点的总流量(所有指向该顶点的边中的流量之和)称为该顶点的
+\series bold
+流入量
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+流出一个顶点的总流量(该顶点指出的所有边中的流量之和)称为该顶点的
+\series bold
+流出量
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+流入量减去流出量则为称为该顶点的
+\series bold
+净流量
+\series default
+.
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $st-$
+\end_inset
+
+ 流量网络中的
+\begin_inset Formula $st-$
+\end_inset
+
+ 
+\series bold
+流量配置
+\series default
+是由一组和每条边相关联的值组成的集合，这个值被称为
+\series bold
+边的流量
+\series default
+。如果所有边的流量均小于边的容量且满足每个顶点的局部平衡（即
+\series bold
+净流量
+\series default
+均为
+\series bold
+零
+\series default
+，s 和 t 除外），那么就称这种流量配置方案是
+\series bold
+可行的
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+最大 
+\begin_inset Formula $st-$
+\end_inset
+
+ 流量 : 给定一个 
+\begin_inset Formula $st-$
+\end_inset
+
+ 流量网络，找到一种 
+\begin_inset Formula $st-$
+\end_inset
+
+ 流量配置, 使得从 
+\begin_inset Formula $s$
+\end_inset
+
+ 到 
+\begin_inset Formula $t$
+\end_inset
+
+ 的流量最大化。
+\end_layout
+
+\begin_layout Subsection
+增广路径算法(Ford-Fulkerson 算法)
+\end_layout
+
+\begin_layout Standard
+Ford-Fulkerson 算法: 网络中的初始流量为零，沿着任意从起点到终点（且不含有饱和的正向边或是空逆向边）的增广路径增大流量，直到网络中不存在这样的路
+径为止。
+\end_layout
+
+\begin_layout Standard
+无向图中从起点到终点的路径。在这样的路径中，当沿着路径从起点向终点前进时，经过某条边时的方向可能和流量的方向相同，那这条边即为
+\series bold
+正向边
+\series default
+；也可能和流量的方向相反，那这条边即为
+\series bold
+逆向边
+\series default
+。
+\end_layout
+
+\begin_layout Definition
+\begin_inset Formula $st-$
+\end_inset
+
+切分是一个将顶点
+\begin_inset Formula $s$
+\end_inset
+
+和顶点
+\begin_inset Formula $t$
+\end_inset
+
+分配于不同集合中的切分.
+\end_layout
+
+\begin_layout Definition
+在一个 
+\begin_inset Formula $st-$
+\end_inset
+
+ 切分中, 每条横切边要么是一条由含有
+\begin_inset Formula $s$
+\end_inset
+
+的集合指向含有
+\begin_inset Formula $t$
+\end_inset
+
+的集合的
+\begin_inset Formula $st-$
+\end_inset
+
+边, 要么是一条反方向的
+\begin_inset Formula $ts-$
+\end_inset
+
+边.
+\end_layout
+
+\begin_layout Definition
+有时我们将
+\begin_inset Formula $st-$
+\end_inset
+
+边的集合称为一个切分集.
+\end_layout
+
+\begin_layout Definition
+在流量网络中, 一个
+\begin_inset Formula $st-$
+\end_inset
+
+切分的
+\series bold
+容量
+\series default
+为该切分的
+\begin_inset Formula $st-$
+\end_inset
+
+边的
+\series bold
+容量之和
+\series default
+, 
+\begin_inset Formula $st-$
+\end_inset
+
+切分的跨切分流量（flow across）是切分的所有
+\begin_inset Formula $st-$
+\end_inset
+
+边的流量之和与所有
+\begin_inset Formula $ts-$
+\end_inset
+
+边的流量之和的差。
+\end_layout
+
+\begin_layout Definition
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/图-切分定理 -网络流.svg
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+
+\series bold
+最小 
+\begin_inset Formula $st-$
+\end_inset
+
+ 切分
+\series default
+: 给定一个 网络，找到容量最小的
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+ 
+\series default
+切分。简单起见，我们将这样的切分称为
+\series bold
+最小切分
+\series default
+，而将在网络中找到它的问题称为
+\series bold
+最小切分问题
+\series default
+.
+\end_layout
+
+\begin_layout Proposition
+对于任意
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+ 流量网络，每种
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+ 切分中的跨切分流量都和总流量的值相等
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+的流出量等于 的流入量（即 流量网络的值）
+\begin_inset Formula 
+\[
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Corollary
+流量网络的值不可能超过任意 切分的容量。
+\end_layout
+
+\begin_layout Proposition
+最大流 - 最小切分定理 , 令 
+\begin_inset Formula $f$
+\end_inset
+
+为一个 流量网络，以下三种条件是等价的：
+\end_layout
+
+\begin_layout Enumerate
+存在某个
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+ 切分, 其容量和
+\begin_inset Formula $f$
+\end_inset
+
+ 的流量相等.
+\end_layout
+
+\begin_layout Enumerate
+  
+\begin_inset Formula $f$
+\end_inset
+
+达到了最大流量.
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Formula $f$
+\end_inset
+
+中已经不存在任何增广路径.
+\end_layout
+
+\begin_layout Subsection
+剩余网络
+\end_layout
+
+\begin_layout Standard
+给定某个
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+流量网络和其
+\series bold
+ 
+\begin_inset Formula $st-$
+\end_inset
+
+
+\series default
+ 流量配置, 这种配置下的
+\series bold
+剩余网络
+\series default
+中的顶点和原网络相同.
+ 原网络中的每条边都对应着剩余网络中的 
+\begin_inset Formula $1\sim2$
+\end_inset
+
+ 条边。
+\end_layout
+
+\begin_layout Standard
+它的定义如下：对于原网络中的每条从顶点
+\begin_inset Formula $v$
+\end_inset
+
+到 
+\begin_inset Formula $w$
+\end_inset
+
+ 的边 e，令
+\begin_inset Formula $f_{e}$
+\end_inset
+
+ 表示它的流量、 
+\begin_inset Formula $c_{e}$
+\end_inset
+
+表示它的容量。如果 
+\begin_inset Formula $f_{e}$
+\end_inset
+
+ 为正，将边 w → v 加入剩余网络且容量为
+\begin_inset Formula $f_{e}$
+\end_inset
+
+ ；如果
+\begin_inset Formula $f_{e}$
+\end_inset
+
+ 小于
+\begin_inset Formula $c_{e}$
+\end_inset
+
+，将边 v → w 加入
+\series bold
+剩余网络
+\series default
+且容量为
+\begin_inset Formula $c_{e}-f_{e}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Subsection
+最短增广路径算法
+\end_layout
+
+\begin_layout Chapter
+字符串
+\end_layout
+
+\begin_layout Section
+字符串排序
+\end_layout
+
+\begin_layout Subsection
+键索引计数法
+\end_layout
+
+\begin_layout Standard
+给定一组单词,并且给单词进行编号作为索引(小整数键), 如下
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+字符串
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+编号(索引,小整数键)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+before 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+long 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+the 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+other 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+animals 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+began 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+to 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+arrive 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+and 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+make 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+要求将单词按编号排序.
+\end_layout
+
+\begin_layout Standard
+构建一个数组
+\begin_inset Formula $count[4+2]$
+\end_inset
+
+,计算每个键出现的频率.
+ 访问count[] 中的相应位置
+\begin_inset Formula $+1$
+\end_inset
+
+并将结果加 1.
+ 例如, 对于before 编号为2, 则将
+\begin_inset Formula $count[2+1]$
+\end_inset
+
+ 加1,以此类推.
+\end_layout
+
+\begin_layout Standard
+最后结果为:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+得出第一组有
+\begin_inset Formula $3$
+\end_inset
+
+个单词, 第二组
+\begin_inset Formula $1$
+\end_inset
+
+个单词, 
+\series bold
+所以第三组的单词在排序结果数组中的起始位置为
+\begin_inset Formula $4$
+\end_inset
+
+
+\series default
+, 这样可以直接插入到辅助数组中.
+ 一般来说, 任意给定的键的起始索引均为所有较小的键所对应的出现频率之和.
+\end_layout
+
+\begin_layout Standard
+按序复制到辅助数组中接着在写回即可.
+\end_layout
+
+\begin_layout Subsection
+低位优先(Least-Significant-Digit First, LSD）
+\end_layout
+
+\begin_layout Standard
+基本思路先排序最后一个字符, 然后再排序倒数第二个字符.
+ 关键在于使用
+\begin_inset Quotes erd
+\end_inset
+
+键索引计数法
+\begin_inset Quotes erd
+\end_inset
+
+ 排序字符.(感觉类似: 基数排序)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+字符串
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+long
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+good
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lead
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+先排序最后一个字母:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+字符串
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+good
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lead
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+long
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在排序倒数第二个字母:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+字符串
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lead
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+bean
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+long
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+good
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+高位优先(MSD)
+\end_layout
+
+\begin_layout Standard
+先排第一个字符, 可以将数组字符串按(首)字母分成多个子数组排序.基本和低位优先类似.
+\end_layout
+
+\begin_layout Standard
+等值键: 对于含有大量等值键的子数组的排序会较慢
+\end_layout
+
+\begin_layout Standard
+额外空间: 一个用来将数据分类的临时数组(aux[]）和一个用来保存将会被转化为切分索引的统计频率的数组(count[]）
+\end_layout
+
+\begin_layout Subsection
+三向字符串快速排序(大量重复键)
+\end_layout
+
+\begin_layout Standard
+根据键的首字母进行三向切分(实际是高位优先排序, 只分成三组), 仅在中间子数组中的下一个字符(因为键的首字母都与切分字符相等）继续递归排序.
+\end_layout
+
+\begin_layout Section
+单词查找树
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/单词查找树.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+键
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+值
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ash
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sea
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+her
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+she
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+shell
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+缩短单向分子的长度可以减小空间大小, 比如
+\series bold
+ e l l 
+\series default
+可以作为一个结点, 
+\series bold
+a s h
+\series default
+ 也可以作为一个结点
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/单词查找树-2.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+单词查找树
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+查找操作
+\end_layout
+
+\begin_layout Standard
+命中的查找:键的尾字符所对应的结点中的值非空,这是一次命中的查找——键所对应的值就是键的尾字符所对应的结点中保存的值。
+\end_layout
+
+\begin_layout Standard
+未命中的查找:键的尾字符所对应的结点中的值为空或查找结束于一条空链接(比如查找shells)。这是一次未命中的查找——符号表中不存在被查找的键。
+\end_layout
+
+\begin_layout Subsection
+插入操作
+\end_layout
+
+\begin_layout Standard
+插入之前要进行一次查找.
+\end_layout
+
+\begin_layout Standard
+遇到空链接。为键中还未被检查的每个字符创建一个对应的结点并将键的值保存到最后一个字符的结点中。
+\end_layout
+
+\begin_layout Standard
+在遇到空链接之前就到达了键的尾字符。将该结点的值设为键所对应的值.
+\end_layout
+
+\begin_layout Subsection
+结点的空链接
+\end_layout
+
+\begin_layout Standard
+性质：
+\end_layout
+
+\begin_layout Itemize
+每个结点都含有
+\begin_inset Formula $R$
+\end_inset
+
+个链接, 对应着每个可能出现的字符, (如
+\begin_inset Formula $26$
+\end_inset
+
+个字母对应26个链接)；
+\end_layout
+
+\begin_layout Itemize
+字符和键均隐式地保存在数据结构中。
+\end_layout
+
+\begin_layout Itemize
+显式的表示键
+\end_layout
+
+\begin_layout Standard
+因为参数 的作用的重要性, 所以将基于含有 个字符的字母表的单词查找树称为
+\series bold
+
+\begin_inset Formula $R$
+\end_inset
+
+向单词查找树
+\series default
+。
+\end_layout
+
+\begin_layout Subsection
+通配符匹配
+\end_layout
+
+\begin_layout Standard
+只要非空链接即可
+\end_layout
+
+\begin_layout Subsection
+最长前缀
+\end_layout
+
+\begin_layout Standard
+查找链最长的
+\end_layout
+
+\begin_layout Subsection
+三向单词查找树
+\end_layout
+
+\begin_layout Standard
+每个结点有
+\end_layout
+
+\begin_layout Itemize
+一个字符
+\end_layout
+
+\begin_layout Itemize
+三条链接
+\end_layout
+
+\begin_layout Itemize
+三条链接分别对应着当前字母小于、等于和大于结点字母的所有键
+\end_layout
+
+\begin_layout Itemize
+一个值
+\end_layout
+
+\begin_layout Itemize
+字符显式地保存在结点中
+\end_layout
+
+\begin_layout Subsubsection
+混合三向单词查找树
+\end_layout
+
+\begin_layout Section
+子字符串查找
+\end_layout
+
+\begin_layout Itemize
+字符串
+\begin_inset Formula $S$
+\end_inset
+
+: 给定一段长度为
+\begin_inset Formula $N$
+\end_inset
+
+的文本, 
+\end_layout
+
+\begin_layout Itemize
+模式串
+\begin_inset Formula $P$
+\end_inset
+
+: 一个长度为
+\begin_inset Formula $M$
+\end_inset
+
+ 的模式(pattern)字符串, 
+\end_layout
+
+\begin_layout Standard
+在文本中找到一个和该模式相符的子字符串
+\end_layout
+
+\begin_layout Subsection
+暴力解法(BF, Brute Force)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class BF {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        String par = "BAAAAA";
+\end_layout
+
+\begin_layout Plain Layout
+
+        String[] texts = new String[]{"BAAAAA", "", "ABAAAAVAAABAAAAAAAAAA",
+ "ABAAAAVAAACAAAAAAAAAA"};
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (String text : texts) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (isContain(text, par)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                System.out.println(text + " contain " + par);
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param txt 文本字符串
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param par 模式(pattern)字符串
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return 是否包含
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static boolean isContain(String txt, String par) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		// i 控制 模式(pattern)字符串 移动
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (int i = 0; i < txt.length(); i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (compare(i, txt, par)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                return true;
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param i   text 比较位置
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param txt 文本字符串
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param par 模式(pattern)字符串
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return 是否匹配
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    private static boolean compare(int i, String txt, String par) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (int j = 0; j < par.length() && i + j < txt.length(); ++j) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (txt.charAt(i + j) != par.charAt(j)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                return false;
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        return true;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Knuth-Morris-Pratt 子字符串查找算法(KMP)
+\end_layout
+
+\begin_layout Standard
+直接跳过已经比较过的文本, 需要记录之前比较过的文本.
+\end_layout
+
+\begin_layout Subsubsection
+暴力匹配缺点
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/BF缺点.svg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+暴力匹配缺点
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+所以, 需要检查应该从那个位置开始检查, 而
+\series bold
+这个位置根据模式串
+\begin_inset Formula $P$
+\end_inset
+
+可以得知
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+基本运行方式
+\end_layout
+
+\begin_layout Standard
+KMP 子字符串查找算法, 不会回退文本指针 i , 而是使用一个数组 
+\begin_inset Formula $dfa[][]$
+\end_inset
+
+ 来记录匹配失败时模式指针 j 应该回退多远(或
+\series bold
+跳到哪个位置
+\series default
+).
+ 
+\end_layout
+
+\begin_layout Standard
+dfa[][] 的
+\series bold
+行数
+\series default
+是
+\series bold
+S
+\series default
+字符种类的个数(), 而
+\series bold
+列数
+\series default
+是P字符串的
+\series bold
+长度+1.
+\end_layout
+
+\begin_layout Standard
+例如上图(图6.3.1), 对于P , 其dfa为[225][4+1](假设A是第一行,B是第二行).
+ 对于其第二步, 当 P的最后一个A 失败时, 此时在 dfa 的第4+1列, 对应S的B字符, 即第二行, 如果 dfa[2][4]存储了下一个
+\series bold
+ i 
+\series default
+应该
+\series bold
+跳到哪个位置
+\series default
+(即位置
+\begin_inset Formula $4$
+\end_inset
+
++ i ), 就可以减少尝试次数.
+\end_layout
+
+\begin_layout Paragraph
+对于上边的特殊例子:
+\end_layout
+
+\begin_layout Standard
+B是开始, 如果B不匹配, 肯定是需要向后移动一位, 对于所有dfa[][] 都是这样的, 如果匹配继续比较下一个, 值为1即可(后边解释).
+\end_layout
+
+\begin_layout Standard
+在第二步, 第
+\begin_inset Formula $4$
+\end_inset
+
+个 A 和 B 对比失败, 此时 应该跳到 P 的首位置应该跳到 i 位置(i=4), 也就是 DFA 的第
+\begin_inset Formula $4$
+\end_inset
+
+个 A 的列第
+\begin_inset Formula $4$
+\end_inset
+
+列 和 B 所在的行第二行,即在文本 i 处 P模式指针 j 回退 
+\begin_inset Formula $4$
+\end_inset
+
+ 位, 再次对比.
+\end_layout
+
+\begin_layout Paragraph
+一个更复杂的例子:
+\end_layout
+
+\begin_layout Standard
+对于 S=
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="9">
+<features rotate="90" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color teal
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 和 P=
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="6">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ , 第一次对比 D 与 C 不匹配.此时S 向后移动3位 , 即 j= 2, i=5, 以此类推.
+ 第二次对比 D 与 C 不匹配, 继续移动.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/KMP.svg
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+构造DFA
+\end_layout
+
+\begin_layout Standard
+对于字符
+\series bold
+ c
+\series default
+ (c=s.charAt(i)) , 在比较了
+\series bold
+ c 
+\series default
+和
+\series bold
+ p.charAt(j) 
+\series default
+之后, 
+\series bold
+dfa[c][j]
+\series default
+ 表示的是 应该和
+\series bold
+下个文本字符比较的模式字符的位置
+\series default
+。
+\end_layout
+
+\begin_layout Standard
+在查找中, dfa[c][j] 是在比较了 txt.charAt(i) 和 pat.charAt(j) 之后应该和 txt.charAt(i+1)与
+ pat.charAt(j+1) 比较的模式字符位置。在匹配时会继续比较下一个字符, 因此 dfa[pat.charAt(j)][j] 总是 j+1。
+\end_layout
+
+\begin_layout Standard
+在不匹配时, 不仅可以知道 txt.charAt(i) 的字符, 也可以知道正文中的前 j-1 个字符, 
+\series bold
+它们就是模式中从索引 1 开始的前 j-1 个字符
+\series default
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+public class KMP {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public final String pat;
+\end_layout
+
+\begin_layout Plain Layout
+
+    public final int[][] dfa;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public static void main(String[] args) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        String txt = "ABAABAABAA";
+\end_layout
+
+\begin_layout Plain Layout
+
+        String pat = "BAAAA";
+\end_layout
+
+\begin_layout Plain Layout
+
+        KMP kmp = new KMP(pat);
+\end_layout
+
+\begin_layout Plain Layout
+
+        StdOut.println("text:    " + txt);
+\end_layout
+
+\begin_layout Plain Layout
+
+        int offset = kmp.search(txt);
+\end_layout
+
+\begin_layout Plain Layout
+
+        StdOut.print("pattern: ");
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (int i = 0; i < offset; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            // 打印偏移
+\end_layout
+
+\begin_layout Plain Layout
+
+            StdOut.print(" ");
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        StdOut.println(pat);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    public KMP(String pat) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        this.pat = pat;
+\end_layout
+
+\begin_layout Plain Layout
+
+        int M = pat.length();
+\end_layout
+
+\begin_layout Plain Layout
+
+        int R = 256;// pat 有多少个字母, 就有多少行
+\end_layout
+
+\begin_layout Plain Layout
+
+//        初始化数组  R 行,  每行 M 列
+\end_layout
+
+\begin_layout Plain Layout
+
+        dfa = new int[R][M];
+\end_layout
+
+\begin_layout Plain Layout
+
+        /*
+\end_layout
+
+\begin_layout Plain Layout
+
+         * 第65行 值为 1, 0, 0, 0, 0
+\end_layout
+
+\begin_layout Plain Layout
+
+         * char A=65;
+\end_layout
+
+\begin_layout Plain Layout
+
+         * 初始dfa 对应 P 的第一个值
+\end_layout
+
+\begin_layout Plain Layout
+
+         */
+\end_layout
+
+\begin_layout Plain Layout
+
+        dfa[pat.charAt(0)][0] = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+        /*
+\end_layout
+
+\begin_layout Plain Layout
+
+         * 初始化 dfa
+\end_layout
+
+\begin_layout Plain Layout
+
+         * 循环 M-1 次 , 即模式串的长度
+\end_layout
+
+\begin_layout Plain Layout
+
+         * j++ 就是对应的每列, 这里的每次循环都是处理的列
+\end_layout
+
+\begin_layout Plain Layout
+
+         */
+\end_layout
+
+\begin_layout Plain Layout
+
+        int X = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (int j = 1; j < M; j++) {  // 计算dfa[][j]
+\end_layout
+
+\begin_layout Plain Layout
+
+            /*
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 循环 256 次
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 使所有行的 j 列  等于 该 行的 X 列
+\end_layout
+
+\begin_layout Plain Layout
+
+             * X=0,j=1, 即让值向后复制一位.
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 这里的每次循环处理的是行
+\end_layout
+
+\begin_layout Plain Layout
+
+             */
+\end_layout
+
+\begin_layout Plain Layout
+
+            for (int c = 0; c < R; c++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                // 使  j 列  c 行等于  X 列 c 行
+\end_layout
+
+\begin_layout Plain Layout
+
+                /*
+\end_layout
+
+\begin_layout Plain Layout
+
+                 * 当第一次, 第一列都是 0
+\end_layout
+
+\begin_layout Plain Layout
+
+                 * 第二次
+\end_layout
+
+\begin_layout Plain Layout
+
+                 */
+\end_layout
+
+\begin_layout Plain Layout
+
+                dfa[c][j] = dfa[c][X];  // 复制匹配失败情况下的值
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+            /*
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 设置匹配成功情况下的值
+\end_layout
+
+\begin_layout Plain Layout
+
+             * pat.charAt(j) 行, j 列, 为 j+1
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 第一次 j = 1, pat.charAt(j)=65, 字母B, dfa[65][1]=2
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 匹配成功进行下一个位置.
+ 第三个位置, 从0开始计数, 就是第二个位置
+\end_layout
+
+\begin_layout Plain Layout
+
+             */
+\end_layout
+
+\begin_layout Plain Layout
+
+            dfa[pat.charAt(j)][j] = j + 1;       //
+\end_layout
+
+\begin_layout Plain Layout
+
+            /* X = pat.charAt(j) 行 X 列
+\end_layout
+
+\begin_layout Plain Layout
+
+             * 第一次 j = 1, pat.charAt(j)=66
+\end_layout
+
+\begin_layout Plain Layout
+
+             * X = dfa[66][0]=0
+\end_layout
+
+\begin_layout Plain Layout
+
+             */
+\end_layout
+
+\begin_layout Plain Layout
+
+            X = dfa[pat.charAt(j)][X];           // 更新重启状态
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * 在txt上模拟DFA的运行
+\end_layout
+
+\begin_layout Plain Layout
+
+     *
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param txt 文本串
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return 匹配位置, 如果没有匹配则是txt的末尾
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    public int search(String txt) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        int i, j;
+\end_layout
+
+\begin_layout Plain Layout
+
+        int N = txt.length(), M = pat.length();
+\end_layout
+
+\begin_layout Plain Layout
+
+        /*
+\end_layout
+
+\begin_layout Plain Layout
+
+         * i < N 保证 , 保证不超过 txt 长度
+\end_layout
+
+\begin_layout Plain Layout
+
+         * j < M 保证 , 保证不超过 模式串的 长度, 如果超过, 说明匹配成功, 没超过匹配失败
+\end_layout
+
+\begin_layout Plain Layout
+
+         */
+\end_layout
+
+\begin_layout Plain Layout
+
+        for (i = 0, j = 0; i < N && j < M; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            // i 文本串对应字母的行, j 列 (对应搜索串)
+\end_layout
+
+\begin_layout Plain Layout
+
+            j = dfa[txt.charAt(i)][j];
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (j == M) {// 匹配成功
+\end_layout
+
+\begin_layout Plain Layout
+
+            //  返回对应偏移量
+\end_layout
+
+\begin_layout Plain Layout
+
+            //  i 是匹配 txt 的位置, M 是模式串长度
+\end_layout
+
+\begin_layout Plain Layout
+
+            return i - M;
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            // 如果没有匹配则是txt的末尾
+\end_layout
+
+\begin_layout Plain Layout
+
+            return N;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Boyer-Moore 字符串查找算法
+\end_layout
+
+\begin_layout Standard
+从右向左扫描
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/BM.svg
+	lyxscale 60
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Rabin-Karp 指纹字符串查找算法
+\end_layout
+
+\begin_layout Standard
+求原字符串的所有子串, 且这些子串的长度和要匹配的子串相等.
+ 求 Hahs 值 ( 可能需要model 大素数, 如果太大需要取余 ) , 如果相等说明包含.线性级别的字符串查找算法.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $原字符串$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a b c c d d a b c c d a c
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+模板串
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+c d a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+子串: a b c , b c c , d d a , c c d , ...
+ , d a c
+\end_layout
+
+\begin_layout Standard
+计算: 
+\begin_inset Formula $a+b+c$
+\end_inset
+
+ ,
+\begin_inset Formula $b+c+c$
+\end_inset
+
+, 每次计算只需要上一个hash值减去第一个字母code + 加上第新的字母code
+\end_layout
+
+\begin_layout Section
+最长重复子字符串
+\end_layout
+
+\begin_layout Standard
+在给定的字符串中, 至少出现了两次的最长子字符串.
+\end_layout
+
+\begin_layout Standard
+例如, 在字符串 "Hello world is not Hello word" 中, 最长重复子字符串就是 "Hello wor".
+\end_layout
+
+\begin_layout Subsection
+暴力解法(BF(Brute Force))
+\begin_inset Formula $O(n*m)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+从字符串中提取子字符串, 然后匹配.
+ 例如: 提取 
+\begin_inset Quotes eld
+\end_inset
+
+H
+\begin_inset Quotes erd
+\end_inset
+
+ 判断, 然后提取 
+\begin_inset Quotes eld
+\end_inset
+
+He
+\begin_inset Quotes erd
+\end_inset
+
+ ...
+ 
+\begin_inset Quotes eld
+\end_inset
+
+ello
+\begin_inset Quotes erd
+\end_inset
+
+ 等.
+\end_layout
+
+\begin_layout Subsection
+后缀数组法
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+原理:
+\series default
+ 原字符串的每个
+\series bold
+子字符串
+\series default
+ 都是某个
+\series bold
+后缀子字符串
+\series default
+的
+\series bold
+前缀
+\series default
+.
+ 任意提取一个子字符串, 一定有一个后缀子字符串包含它, 并且一定有一个后缀子字符串是一它开始的.
+ 比如 ABCDEFG, 提取子串 
+\series bold
+CDE
+\series default
+ , 它是 后缀子字符串 
+\series bold
+CDEFG 
+\series default
+的前缀
+\series bold
+.
+\end_layout
+
+\begin_layout Standard
+将原字符串掐头提取出
+\series bold
+子字符串 (后缀子字符串)
+\series default
+ , 对子字符串按首字母排序, 最长重复子字符串会出现在子字符串数组中的
+\series bold
+相邻位置
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+提前处理好后缀数组可以用于网络搜索, 比如处理好ABCDEFG, 当下一次搜索一个字符串时可以用二分法搜索.
+\end_layout
+
+\begin_layout Standard
+后缀数组: 
+\end_layout
+
+\begin_layout Standard
+后缀树: 由所有后缀字符串组成的字典查找树
+\end_layout
+
+\begin_layout Section
+判断是否包含某些(数个)字符串以及出现次数
+\end_layout
+
+\begin_layout Subsection
+AC 自动机
+\end_layout
+
+\begin_layout Standard
+将要匹配的字符串(模式字符串)(的字母)分开构建成一棵Trie树, 同时构造失败指针.
+\end_layout
+
+\begin_layout Standard
+例:
+\end_layout
+
+\begin_layout Standard
+给定字符串: ashbcd
+\end_layout
+
+\begin_layout Standard
+单词(模式字符串): ash, ashd, she , her.
+\end_layout
+
+\begin_layout Standard
+构建树:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/AC自动机.svg
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+AC 自动机(绿色表示fail节点)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+最长回文子串
+\end_layout
+
+\begin_layout Standard
+给定一个字符串找出最长的回文
+\series bold
+子串.
+\end_layout
+
+\begin_layout Subsection
+Manacher's Algorithm(马拉车算法)
+\end_layout
+
+\begin_layout Standard
+时间复杂度:O(N).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/最长回文子串.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在原字符串的每个字符两边都加上特殊字符(不存在于原字符串中), 即可让所有字符串变成一个奇回文(字符串长度
+\begin_inset Formula $2n+1$
+\end_inset
+
+),不打破原回文特性.
+\end_layout
+
+\begin_layout Standard
+如:
+\begin_inset Formula $@c@a@e@a@h@a@e@a@e@$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+上边已经获取到最长回文子串了.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+文长度
+\series default
+: 新字符串回文长度的半径减1 就是原字符串回文的长度(或者新回文的直径
+\begin_inset Formula $\frac{x-1}{2}$
+\end_inset
+
+, 这个地方我觉得网上的资料有问题)
+\series bold
+.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+起始索引位置: e的位置减去半径再减1, 减1
+\series default
+ 的时候
+\series bold
+奇回文
+\series default
+会出现数组溢出问题,需要在新的字符串再加两个新的字符(不存在于新字符串中)如: 
+\begin_inset Formula $\#@c@a@e@a@h@a@e@a@e@*$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Section
+正则表达式
+\end_layout
+
+\begin_layout Standard
+Kleene 定理是理论计算机科学中的一个重要结论, 它证明了对于任意正则表达式都存在一个与之对应的非确定有限状态自动机(反之亦然).
+\end_layout
+
+\begin_layout Section
+数据压缩
+\end_layout
+
+\begin_layout Standard
+找到
+\series bold
+合适的子串
+\series default
+(找特征), 作为字典.
+ 进行压缩.
+ 例如 ABABABCDCD 可以压缩为 3AB2CD 或 ###@@(# 表示AB , @ 表示 CD ).
+\end_layout
+
+\begin_layout Subsection
+游程编码(Run-Length Encoding)
+\end_layout
+
+\begin_layout Standard
+比特流中最简单的冗余形式就是一长串重复的比特(二进制).
+\end_layout
+
+\begin_layout Standard
+例如: 
+\begin_inset Formula $1111\text{ }000\text{ }1\text{ }000000$
+\end_inset
+
+在这个14位长二进制串中 有 4 个 1, 3个0, 1个1, 6个0.
+\end_layout
+
+\begin_layout Standard
+如果用 3 位表示长度(游程)并以连续的 0 作为开头，那么就可以得到一个 12 位长的二进制串(
+\begin_inset Formula $4=100$
+\end_inset
+
+, 
+\begin_inset Formula $3=011$
+\end_inset
+
+ ,
+\begin_inset Formula $1=001$
+\end_inset
+
+,
+\begin_inset Formula $6=110$
+\end_inset
+
+ ): 
+\begin_inset Formula $100\text{ }011\text{ }001\text{ }110$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+表示位数字
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+原长度
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1111$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $00000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+统计位数
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+转换为位
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $011$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $001$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $110$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+一般情况下:
+\end_layout
+
+\begin_layout Standard
+游程长度应该在 0 到 255 之间，使用 8 位编码； 
+\end_layout
+
+\begin_layout Standard
+在需要的情况下使用长度为 0 的游程来保证所有游程的长度均小于 256；
+\end_layout
+
+\begin_layout Standard
+我们也会将较短的游程编码(比如上上例中的
+\begin_inset Formula $1$
+\end_inset
+
+个
+\begin_inset Formula $1$
+\end_inset
+
+)，虽然这样做有可能使输出变得更长。
+\end_layout
+
+\begin_layout Subsubsection
+位图
+\end_layout
+
+\begin_layout Subsection
+霍夫曼压缩
+\end_layout
+
+\begin_layout Standard
+用较少的比特表示出现频率高的字符，用较多的比特表示出现频率低的字符.
+ 为输入中的定长模式产生一张变长的
+\series bold
+编码编译表.
+\end_layout
+
+\begin_layout Subsubsection
+前缀码
+\end_layout
+
+\begin_layout Standard
+如果所有字符编码都不会成为其他字符编码的前缀，那么就不需要分隔符了.
+ 
+\end_layout
+
+\begin_layout Standard
+前缀码就是任何一个字符的编码的结束位都不是下一个字符的开始编码.
+\end_layout
+
+\begin_layout Standard
+如, 对于AB, 把 A 编码为100, B的编码就不可以以0开头.
+ 只能以以1开头, 可以为110.
+\end_layout
+
+\begin_layout Standard
+所有的前缀码的解码方式都是唯一的(不需要任何分隔符)
+\end_layout
+
+\begin_layout Subsubsection
+前缀码的单词查找树
+\end_layout
+
+\begin_layout Standard
+将前缀码变成一棵树
+\end_layout
+
+\begin_layout Standard
+前缀码进行数据压缩需要经过 5 个主要步
+\end_layout
+
+\begin_layout Standard
+构造一棵编码单词查找树； 
+\end_layout
+
+\begin_layout Standard
+将该树以字节流的形式写入输出以供展开时使用；
+\end_layout
+
+\begin_layout Standard
+使用该树将字节流编码为比特流。
+\end_layout
+
+\begin_layout Subsection
+LZW 压缩算法
+\end_layout
+
+\begin_layout Standard
+维护一张
+\series bold
+字符串键
+\series default
+和（定长）编码的
+\series bold
+编译表
+\end_layout
+
+\begin_layout Subsubsection
+前瞻（lookahead）字符
+\end_layout
+
+\begin_layout Standard
+假设一个操作, 
+\end_layout
+
+\begin_layout Standard
+每次从字符串取一个前缀字符串 s, 设为一个编码值;
+\end_layout
+
+\begin_layout Standard
+再扫描 s 之后的一个字符 c;
+\end_layout
+
+\begin_layout Standard
+然后再将s+c, 设为下一个编码值.
+\end_layout
+
+\begin_layout Standard
+这个字符 c 称为前瞻（lookahead）字符, 因为每次都要先扫描c 才能进行下一步编码.
+\end_layout
+
+\begin_layout Subsubsection
+LZW 的单词查找树
+\end_layout
+
+\begin_layout Enumerate
+找到输入和符号表的所有键的最长前缀匹配; 
+\end_layout
+
+\begin_layout Enumerate
+将匹配的键和前瞻字符相连得到一个新键, 将新键和下一个编码关联并添加到符号表中.
+\end_layout
+
+\begin_layout Chapter
+动态规划
+\end_layout
+
+\begin_layout Standard
+从结果推过程.
+\end_layout
+
+\begin_layout Section
+爬楼梯问题
+\end_layout
+
+\begin_layout Standard
+一个楼梯有 10 级台阶, 从下往上走, 每一步只能向上迈 1 级或者 2 级台阶, 请问一共有多少种走法？
+\end_layout
+
+\begin_layout Standard
+这种问题的核心思想就是倒着推, 要想走到第 10 级台阶, 有两种方法:
+\end_layout
+
+\begin_layout Enumerate
+先走到第
+\begin_inset Formula $9$
+\end_inset
+
+级, 然后再迈一级台阶上去.
+\end_layout
+
+\begin_layout Enumerate
+先走到第
+\begin_inset Formula $8$
+\end_inset
+
+级, 然后一次迈两级台阶上去.(第 8 级迈一级再迈一级和方法
+\begin_inset Formula $1$
+\end_inset
+
+一样).
+\end_layout
+
+\begin_layout Standard
+所以, 走到 10 级台阶的走法数, 是走到 9 级台阶的走法数, 加上走到 8 级台阶的走法数.
+\end_layout
+
+\begin_layout Standard
+如果定义第
+\begin_inset Formula $x$
+\end_inset
+
+级台阶的走法数
+\begin_inset Formula $F(x)$
+\end_inset
+
+, 那么:
+\end_layout
+
+\begin_layout Standard
+通过
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(10)=F(9)+F(8)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(9)=F(8)+F(7)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(8)=F(7)+F(6)
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\vdots
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+推广得:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(x)=F(x-1)+F(x-2)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+这个方程叫 
+\series bold
+状态转移方程
+\series default
+.
+ 
+\begin_inset Formula $F(x-1)$
+\end_inset
+
+和
+\begin_inset Formula $F(x-2)$
+\end_inset
+
+叫作
+\begin_inset Formula $F(x)$
+\end_inset
+
+的
+\series bold
+最优子结构
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+在这个问题中, 如果想要知道
+\begin_inset Formula $F(2)$
+\end_inset
+
+, 只需要知道 
+\begin_inset Formula $F(1)$
+\end_inset
+
+ 和
+\begin_inset Formula $F(0)$
+\end_inset
+
+, 但
+\begin_inset Formula $F(0)$
+\end_inset
+
+不存在, 所以推导是不可能的, 只能直接直观地得出
+\begin_inset Formula $F(2)=2$
+\end_inset
+
+, 
+\begin_inset Formula $F(1)=1$
+\end_inset
+
+; 
+\begin_inset Formula $F(1)=1$
+\end_inset
+
+, 
+\begin_inset Formula $F(2)=2$
+\end_inset
+
+ 也叫做
+\series bold
+边界
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(10)$
+\end_inset
+
+ 最终方程实际上是一个类似斐波那契数列的数列.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F(3)=F(2)+F(1)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+背包问题
+\end_layout
+
+\begin_layout Standard
+有一个背包, 可以装载重量为
+\begin_inset Formula $5kg$
+\end_inset
+
+的物品。有
+\begin_inset Formula $4$
+\end_inset
+
+个物品, 他们的重量和价值分别为:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+重量
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+价值
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{1}=1$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{3}=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{2}=2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{4}=4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{3}=3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{5}=5$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $O_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $w_{4}=4$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $v_{6}=6$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在不超过背包的承重的情况下, 将哪些物品放入背包, 可以使得总价值最大？
+\end_layout
+
+\begin_layout Standard
+设
+\begin_inset Formula $F(w,i)$
+\end_inset
+
+表示为承重为 W 的背包, 装前
+\begin_inset Formula $i$
+\end_inset
+
+件物品的最大价值.
+ 所以:
+\end_layout
+
+\begin_layout Standard
+用载重为
+\begin_inset Formula $5kg$
+\end_inset
+
+的背包, 装前 4 件物品的最大价值:
+\begin_inset Formula $F(5,4)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+1.
+ 直接装最重的一块4kg, 剩余1kg,为F(1,3)
+\end_layout
+
+\begin_layout Standard
+2.
+ 不装最重的一块, 为F(5,3)
+\end_layout
+
+\begin_layout Standard
+3.
+ ....
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $F(5,4)=MAX(F(1,3)+6,F(5,3))F(5,3)=MAX(F(5,2),F(4,2),F(3,2))$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+所以只需要知道 F(1,3) 和 F(5,3)
+\end_layout
+
+\begin_layout Standard
+重量为1,所以实际为F(1,1), 即只有 物品1.
+\end_layout
+
+\begin_layout Standard
+推广: F(W,N) = max { F(W-wn, N-1) + vn, F(W, N-1) }
+\end_layout
+
+\begin_layout Standard
+边界为: F(0,...) 和 F(...,1) 
+\end_layout
+
+\begin_layout Section
+回溯法
+\end_layout
+
+\begin_layout Standard
+在尝试了所有可能的分步方法后宣告该问题没有答案
+\end_layout
+
+\begin_layout Standard
+回溯法是暴力搜索法的一种.
+\end_layout
+
+\begin_layout Subsection
+八皇后问题
+\end_layout
+
+\begin_layout Standard
+在8×8格的国际象棋上摆放8个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。
+\end_layout
+
+\begin_layout Chapter
+其它
+\end_layout
+
+\begin_layout Section
+事件驱动模拟
+\end_layout
+
+\begin_layout Subsection
+时间驱动模拟
+\end_layout
+
+\begin_layout Standard
+隔一段时间检查一次.
+\end_layout
+
+\begin_layout Subsection
+事件驱动模拟
+\end_layout
+
+\begin_layout Standard
+计算未来某一时间可能发生的碰撞(通过筛选, 删去优先级最低的元素), 然后检查
+\end_layout
+
+\begin_layout Subsection
+碰撞预测
+\end_layout
+
+\begin_layout Standard
+计算速度,进行预测
+\end_layout
+
+\begin_layout Subsection
+排除无效事件
+\end_layout
+
+\begin_layout Section
+倒排索引(Inverted index) 
+\end_layout
+
+\begin_layout Standard
+一般索引是根据已知去计算结果, 倒排索引根据计算结果查询已知.
+\end_layout
+
+\begin_layout Section
+通用向上取整算法
+\end_layout
+
+\begin_layout Problem
+有两个整数
+\begin_inset Formula $A$
+\end_inset
+
+和
+\begin_inset Formula $B$
+\end_inset
+
+, 
+\begin_inset Formula $A>1$
+\end_inset
+
+,
+\begin_inset Formula $B>1$
+\end_inset
+
+, 
+\begin_inset Formula $UP(\frac{A}{B})$
+\end_inset
+
+表示向上取整,
+\begin_inset Formula $int$
+\end_inset
+
+表示取整数部分.
+ 求证 
+\begin_inset Formula $UP(A/B)=int((A+B-1)/B)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Solution
+当
+\begin_inset Formula $\frac{A}{B}$
+\end_inset
+
+整除, 往上取整返回值为
+\begin_inset Formula $\frac{A}{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由于
+\begin_inset Formula $A>1$
+\end_inset
+
+、
+\begin_inset Formula $B>1$
+\end_inset
+
+, 且
+\begin_inset Formula $A$
+\end_inset
+
+、
+\begin_inset Formula $B$
+\end_inset
+
+都是整数, 所以可以设
+\begin_inset Formula $A=NB+M$
+\end_inset
+
+其中
+\begin_inset Formula $N$
+\end_inset
+
+为非负整数,
+\begin_inset Formula $M$
+\end_inset
+
+为
+\begin_inset Formula $0$
+\end_inset
+
+到
+\begin_inset Formula $B-1$
+\end_inset
+
+的数(余数定理), 则
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A}{B}=N+\frac{M}{B}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A}{B}+1-\frac{1}{B}=N+1+\frac{M}{B}-\frac{1}{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A+B-1}{B}=N+1+\frac{M-1}{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $M$
+\end_inset
+
+为
+\begin_inset Formula $0$
+\end_inset
+
+时, 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A+B-1}{B}=N+1+\frac{0-1}{B}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A}{B}=N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+当
+\begin_inset Formula $M$
+\end_inset
+
+为
+\begin_inset Formula $1$
+\end_inset
+
+到
+\begin_inset Formula $B-1$
+\end_inset
+
+的数时,
+\begin_inset Formula $0\leqslant M-1\leqslant B-1-1$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由
+\begin_inset Formula $\frac{A}{B}=N+\frac{M}{B}$
+\end_inset
+
+ 得
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $UP(A/B)=N+1$
+\end_inset
+
+(小数部分(
+\begin_inset Formula $\frac{M}{B}$
+\end_inset
+
+)向上取整变成1)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\frac{A+B-1}{B}=N+1+\text{int}(\frac{M-1}{B})=N+1$
+\end_inset
+
+(因为只有
+\begin_inset Formula $\text{int}(\frac{M-1}{B})$
+\end_inset
+
+有小数部分, 所以对它取整)
+\end_layout
+
+\begin_layout Standard
+所以对A>1、B>1的整数A、B都有:
+\begin_inset Formula $\text{UP}(A/B)=\text{int}(A+B-1)/B$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+这个算法的一个应用: 如果你有一个动态增长的缓冲区, 增长的步长是B.
+\end_layout
+
+\begin_layout Standard
+某一次缓冲区申请的大小是A, 这个时候, 就可以用这个算法, 计算出缓冲区的一个合适大小了, 正好可以容纳A, 并且不会过于得多, 多余部分不会比B多.
+\end_layout
+
+\begin_layout Section
+问题归约
+\end_layout
+
+\begin_layout Standard
+如果能够用解决问题 B 的算法得到一个解决问题 A 的算法，则说问题 A 能够被归约为问题 B。
+\end_layout
+
+\begin_layout Standard
+问题解决模型
+\end_layout
+
+\begin_layout Standard
+Maslow 的锤子: 如果你有一把锤子，那么什么东西都看起来都像颗钉子.
+ 
+\end_layout
+
+\begin_layout Proposition
+以下问题可以被归约为排序问题：
+\end_layout
+
+\begin_layout Itemize
+寻找中位数； 
+\end_layout
+
+\begin_layout Itemize
+统计不同的值； 
+\end_layout
+
+\begin_layout Itemize
+最小平均完成时间的调度问题。
+\end_layout
+
+\begin_layout Proposition
+以下问题能够归约为加权图中的最短路径问题：
+\end_layout
+
+\begin_layout Itemize
+非负权重的无向图中的单点最短路径问题；
+\end_layout
+
+\begin_layout Itemize
+优先级限制下的并行调度问题； 
+\end_layout
+
+\begin_layout Itemize
+套汇问题； (在给定的汇率表中找出一个套汇的机会)
+\end_layout
+
+\begin_layout Proposition
+以下问题可以归约为最大流量问题：
+\end_layout
+
+\begin_layout Itemize
+就业安置； 
+\end_layout
+
+\begin_layout Itemize
+产品配送； 
+\end_layout
+
+\begin_layout Itemize
+网络可靠性； 
+\end_layout
+
+\begin_layout Subsection
+线性规划（Linear Programming，LP）
+\end_layout
+
+\begin_layout Standard
+给定一个由
+\begin_inset Formula $M$
+\end_inset
+
+个
+\series bold
+线性不等式
+\series default
+组成的集合和含有
+\begin_inset Formula $N$
+\end_inset
+
+个决策变量的线性等式，以及一个由该 个决策变量组成的线性目标函数，找出能够使目标函数的值最大化的一组变量值，或者证明不存在这样的赋值方案。
+\end_layout
+
+\begin_layout Standard
+例如根据一些不等式, 求某值的最大(最小)值.单纯形法,椭球法（ellipsoid algorithm）,内点法（interior point methods）
+\end_layout
+
+\begin_layout Proposition
+以下问题均可归约为线性规划问题：
+\end_layout
+
+\begin_layout Standard
+最大流量问题； 
+\end_layout
+
+\begin_layout Standard
+最短路径问题；
+\end_layout
+
+\begin_layout Standard
+特点: 
+\end_layout
+
+\begin_layout Standard
+添加约束条件和扩展线性规划模型非常简单
+\end_layout
+
+\begin_layout Standard
+问题的归约是有传递性的
+\end_layout
+
+\begin_layout Standard
+各种最优化问题都能够直接构造为线性规划问题
+\end_layout
+
+\begin_layout Section
+不可解性
+\end_layout
+
+\begin_layout Standard
+如果一个问题有解且验证它的解的正确性所需的时间不会超过输入规模的多项式，则称这种问题为
+\series bold
+搜索问题
+\series default
+。当一个算法给出了一个解或是已证明解(结果)不存在时，就称它解决了一个
+\series bold
+搜索问题
+\series default
+。
+\end_layout
+
+\begin_layout Definition
+NP 是所有搜索问题的集合。
+\end_layout
+
+\begin_layout Definition
+P 是能够在多项式时间内解决的所有搜索问题的集合。
+\end_layout
+
+\begin_layout Definition
+N 表示的是非确定性（nondeterminism）
+\end_layout
+
+\begin_layout Subsection
+NP- 完全性
+\end_layout
+
+\begin_layout Standard
+许多问题都属于 NP 但可能并不属于 P。也就是说，我们可以轻易地验证任意给定的解是否有效，但即使投入了许多努力，也未能开发出一个有效的算法来寻找问题的解。
+\end_layout
+
+\begin_layout Definition
+若 NP 中的所有问题都能在多项式时间内归约为搜索问题 A，那么则称问题 A 是 NP- 完全的.
+\end_layout
+
+\begin_layout Definition
+多数实际的搜索问题都已知是 P 或 NP- 完全问题。
+\end_layout
+
+\begin_layout Section
+蒙特卡洛算法
+\end_layout
+
+\begin_layout Standard
+在文本 txt 中找到散列值与模式字符串相匹配的一个 个字符的子字符串之后, 你可能会逐个比较它们的字符以确保得到了一个匹配而非相同的散列值。我们不会这么做,
+ 因为这需要回退文本指针。作为替代, 这里将散列表的“规模”设为任意大的一个值, 因为我们并不会真构造一张散列表而只是希望用模式字符串验证是否会产生冲突。我们会
+取一个大于 的 long 型值, 使得一个随机键的散列值与模式字符串冲突的概率小于 。这是一个极小的值。如果它还不够小, 你可以将这种方法运行两遍,
+ 这样失败的几率将会小于 。这是蒙特卡洛算法一种著名早期应用, 它既能够保证运行时间, 失败的概率又非常小。
+\end_layout
+
+\begin_layout Standard
+检查匹配的其他方法可能很慢(性能有很小的概率相当于暴力算法）但能够确保正确性。这种算法被称为
+\series bold
+拉斯维加斯
+\series default
+算法。
+\end_layout
+
+\end_body
+\end_document

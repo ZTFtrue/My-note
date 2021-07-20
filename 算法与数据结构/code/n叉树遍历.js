@@ -1,8 +1,5 @@
-#
-
-```js
- let jsonTree = { name: '', children: [] };
- let jsonNode = this.jsonTree;
+let jsonTree = { name: '', children: [] };
+let jsonNode = this.jsonTree;
     const stack = [];
     stack.push(jsonNode);
     while (stack.length !== 0) {
@@ -17,5 +14,4 @@
       } else {
         console.log(jsonNode.name);
       }
-    }
-```
+}
