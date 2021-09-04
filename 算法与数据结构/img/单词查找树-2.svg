@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="13cm" height="12cm" viewBox="155 121 249 230" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="295.636" cy="155.636" rx="15.6357" ry="15.6357"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="295.636" cy="155.636" rx="15.6357" ry="15.6357"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="295.636" y="161.274">
+      <tspan x="295.636" y="161.274">R</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="309.512" cy="296.71" rx="20.0282" ry="20.0282"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="309.512" cy="296.71" rx="20.0282" ry="20.0282"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="309.512" y="302.348">
+      <tspan x="309.512" y="302.348">ash</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="244.858" cy="334.854" rx="15.3474" ry="15.3474"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="244.858" cy="334.854" rx="15.3474" ry="15.3474"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="244.858" y="340.492">
+      <tspan x="244.858" y="340.492">ll</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="249.009" cy="199.662" rx="15" ry="15"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="249.009" cy="199.662" rx="15" ry="15"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="249.009" y="205.3">
+      <tspan x="249.009" y="205.3">s</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="200.428" cy="254.187" rx="15.3742" ry="15.3742"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="200.428" cy="254.187" rx="15.3742" ry="15.3742"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="200.428" y="259.825">
+      <tspan x="200.428" y="259.825">h</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="187.565" cy="306.122" rx="15.2415" ry="15.2415"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="187.565" cy="306.122" rx="15.2415" ry="15.2415"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="187.565" y="311.76">
+      <tspan x="187.565" y="311.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="383.95" cy="285.581" rx="19.4835" ry="19.4835"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="383.95" cy="285.581" rx="19.4835" ry="19.4835"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="383.95" y="291.219">
+      <tspan x="383.95" y="291.219">her</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="295.636" y1="171.271" x2="307.228" y2="276.069"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="201.902" y1="313.312" x2="230.479" y2="327.643"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="283.695" y1="166.911" x2="260.495" y2="188.816"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="238.495" y1="211.463" x2="211.174" y2="242.126"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="196.539" y1="269.891" x2="191.423" y2="290.545"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="304.875" y1="169.23" x2="372.555" y2="268.815"/>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="280.182" y="132.068">
+    <tspan x="280.182" y="132.068">根节点</tspan>
+  </text>
+  <g>
+    <ellipse style="fill: #ffffff" cx="267.907" cy="250.142" rx="17.4339" ry="17.4339"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.6; stroke: #ffffff" cx="267.907" cy="250.142" rx="17.4339" ry="17.4339"/>
+    <text font-size="15.0594" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="267.907" y="255.78">
+      <tspan x="267.907" y="255.78">ea</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x1="254.287" y1="214.499" x2="261.236" y2="234.035"/>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="155.52" y="306.962">
+    <tspan x="155.52" y="306.962">0</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="230.473" y="253.929">
+    <tspan x="230.473" y="253.929">1</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="265.121" y="299.184">
+    <tspan x="265.121" y="299.184">2</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="349.974" y="291.406">
+    <tspan x="349.974" y="291.406">3</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="205.724" y="347.267">
+    <tspan x="205.724" y="347.267">4</tspan>
+  </text>
+</svg>

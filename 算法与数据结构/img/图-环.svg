@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="6cm" height="7cm" viewBox="308 124 106 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="326.501" cy="166.5" rx="17.1228" ry="17.1228"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.2; stroke: #000000" cx="326.501" cy="166.5" rx="17.1228" ry="17.1228"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="326.501" y="171.3">
+      <tspan x="326.501" y="171.3">v1</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="326.501" cy="234.501" rx="17.1228" ry="17.1228"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.2; stroke: #000000" cx="326.501" cy="234.501" rx="17.1228" ry="17.1228"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="326.501" y="239.301">
+      <tspan x="326.501" y="239.301">v3</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="396.501" cy="166.5" rx="17.1228" ry="17.1228"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.2; stroke: #000000" cx="396.501" cy="166.5" rx="17.1228" ry="17.1228"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="396.501" y="171.3">
+      <tspan x="396.501" y="171.3">v2</tspan>
+    </text>
+  </g>
+  <g>
+    <ellipse style="fill: #ffffff" cx="396.501" cy="234.501" rx="17.1228" ry="17.1228"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 1.2; stroke: #000000" cx="396.501" cy="234.501" rx="17.1228" ry="17.1228"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="396.501" y="239.301">
+      <tspan x="396.501" y="239.301">v4</tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="326.501" y1="184.198" x2="326.501" y2="216.803"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="396.501" y1="216.803" x2="396.501" y2="184.198"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="339.147" y1="222.216" x2="383.854" y2="178.785"/>
+  <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="378.779" y1="166.5" x2="344.223" y2="166.5"/>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="320.442" y="137.209">
+    <tspan x="320.442" y="137.209">长度为3的环</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="361.267" y1="140.061" x2="361.425" y2="157.883"/>
+    <polygon style="fill: #000000" points="361.491,165.382 356.403,155.427 361.425,157.883 366.402,155.338 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="361.491,165.382 356.403,155.427 361.425,157.883 366.402,155.338 "/>
+  </g>
+</svg>

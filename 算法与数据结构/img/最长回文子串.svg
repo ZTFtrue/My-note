@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="37cm" height="28cm" viewBox="29 250 731 554" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="150" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="150" y="250" width="50" height="50"/>
+    <text font-size="20.1391" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175" y="282.563">
+      <tspan x="175" y="282.563">c</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="220" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="245" y="282.76">
+      <tspan x="245" y="282.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="290" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="315" y="282.76">
+      <tspan x="315" y="282.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="360" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="385" y="282.76">
+      <tspan x="385" y="282.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="430" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="430" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="455" y="282.76">
+      <tspan x="455" y="282.76">h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="500" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="525" y="282.76">
+      <tspan x="525" y="282.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="570" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="595" y="282.76">
+      <tspan x="595" y="282.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="640" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="640" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="665" y="282.76">
+      <tspan x="665" y="282.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="710" y="250" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="710" y="250" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="735" y="282.76">
+      <tspan x="735" y="282.76">e</tspan>
+    </text>
+  </g>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="350">
+    <tspan x="30" y="350">第一次查找</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="150" y="320" width="50" height="50"/>
+    <text font-size="20.1391" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175" y="352.563">
+      <tspan x="175" y="352.563">c</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="220" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="245" y="352.76">
+      <tspan x="245" y="352.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="290" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="315" y="352.76">
+      <tspan x="315" y="352.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="360" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="385" y="352.76">
+      <tspan x="385" y="352.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="430" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="430" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="455" y="352.76">
+      <tspan x="455" y="352.76">h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="500" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="525" y="352.76">
+      <tspan x="525" y="352.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="570" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="595" y="352.76">
+      <tspan x="595" y="352.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="640" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="640" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="665" y="352.76">
+      <tspan x="665" y="352.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="710" y="320" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="710" y="320" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="735" y="352.76">
+      <tspan x="735" y="352.76">e</tspan>
+    </text>
+  </g>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="410">
+    <tspan x="30" y="410">第三次查找</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="150" y="380" width="50" height="50"/>
+    <text font-size="20.1391" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175" y="412.563">
+      <tspan x="175" y="412.563">c</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="220" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="245" y="412.76">
+      <tspan x="245" y="412.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #00ff00" x="290" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="315" y="412.76">
+      <tspan x="315" y="412.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="360" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="385" y="412.76">
+      <tspan x="385" y="412.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="430" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="430" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="455" y="412.76">
+      <tspan x="455" y="412.76">h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="500" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="525" y="412.76">
+      <tspan x="525" y="412.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="570" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="595" y="412.76">
+      <tspan x="595" y="412.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="640" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="640" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="665" y="412.76">
+      <tspan x="665" y="412.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="710" y="380" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="710" y="380" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="735" y="412.76">
+      <tspan x="735" y="412.76">e</tspan>
+    </text>
+  </g>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="510">
+    <tspan x="30" y="510">第五次查找</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="150" y="480" width="50" height="50"/>
+    <text font-size="20.1391" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175" y="512.563">
+      <tspan x="175" y="512.563">c</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="220" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="245" y="512.76">
+      <tspan x="245" y="512.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="290" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="315" y="512.76">
+      <tspan x="315" y="512.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="360" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="385" y="512.76">
+      <tspan x="385" y="512.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="430" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #00ff00" x="430" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="455" y="512.76">
+      <tspan x="455" y="512.76">h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="500" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="525" y="512.76">
+      <tspan x="525" y="512.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="570" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="595" y="512.76">
+      <tspan x="595" y="512.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="640" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="640" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="665" y="512.76">
+      <tspan x="665" y="512.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="710" y="480" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="710" y="480" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="735" y="512.76">
+      <tspan x="735" y="512.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="450" y1="550" x2="250.854" y2="550"/>
+    <polygon style="fill: #ff0000" points="243.354,550 253.354,545 250.854,550 253.354,555 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="243.354,550 253.354,545 250.854,550 253.354,555 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="460" y1="550" x2="669.146" y2="550"/>
+    <polygon style="fill: #ff0000" points="676.646,550 666.646,555 669.146,550 666.646,545 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="676.646,550 666.646,555 669.146,550 666.646,545 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="312" y1="448" x2="250.854" y2="448"/>
+    <polygon style="fill: #ff0000" points="243.354,448 253.354,443 250.854,448 253.354,453 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="243.354,448 253.354,443 250.854,448 253.354,453 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="322" y1="448" x2="381.146" y2="448"/>
+    <polygon style="fill: #ff0000" points="388.646,448 378.646,453 381.146,448 378.646,443 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="388.646,448 378.646,453 381.146,448 378.646,443 "/>
+  </g>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="260" y="680">
+    <tspan x="260" y="680">根据第五次查找可以确定2,3,4 和 6,7,8对称.</tspan>
+    <tspan x="260" y="703.058">所以第六位回文长度只有一,无需查找</tspan>
+    <tspan x="260" y="726.115">第 7 位回文长度需要查看第 9 位, </tspan>
+    <tspan x="260" y="749.173">此时的第9位对于算法就是未知信息</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="610">
+    <tspan x="30" y="610">第六次查找</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="150" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="150" y="580" width="50" height="50"/>
+    <text font-size="20.1391" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="175" y="612.563">
+      <tspan x="175" y="612.563">c</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="220" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="245" y="612.76">
+      <tspan x="245" y="612.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="290" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="290" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="315" y="612.76">
+      <tspan x="315" y="612.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="360" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="360" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="385" y="612.76">
+      <tspan x="385" y="612.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="430" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #00ff00" x="430" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="455" y="612.76">
+      <tspan x="455" y="612.76">h</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="500" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="500" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="525" y="612.76">
+      <tspan x="525" y="612.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="570" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="570" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="595" y="612.76">
+      <tspan x="595" y="612.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="640" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="640" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="665" y="612.76">
+      <tspan x="665" y="612.76">a</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="710" y="580" width="50" height="50"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="710" y="580" width="50" height="50"/>
+    <text font-size="20.7035" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="735" y="612.76">
+      <tspan x="735" y="612.76">e</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="450" y1="650" x2="250.854" y2="650"/>
+    <polygon style="fill: #ff0000" points="243.354,650 253.354,645 250.854,650 253.354,655 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="243.354,650 253.354,645 250.854,650 253.354,655 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" x1="460" y1="650" x2="669.146" y2="650"/>
+    <polygon style="fill: #ff0000" points="676.646,650 666.646,655 669.146,650 666.646,645 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 3; stroke: #ff0000" points="676.646,650 666.646,655 669.146,650 666.646,645 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="680" y1="740" x2="680" y2="669.736"/>
+    <polygon style="fill: #000000" points="680,662.236 685,672.236 680,669.736 675,672.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="680,662.236 685,672.236 680,669.736 675,672.236 "/>
+  </g>
+  <text font-size="17.3169" style="fill: #7f7f7f;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="664" y="756">
+    <tspan x="664" y="756">右边界</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="120" y="800">
+    <tspan x="120" y="800">对于偶回文(长度位偶数), 直接查找就比较复杂了. 所以需要预处理字符.</tspan>
+  </text>
+</svg>

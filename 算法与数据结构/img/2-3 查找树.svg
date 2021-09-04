@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="38cm" height="18cm" viewBox="-23 215 757 347" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="400" y="260" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="400" y="260" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="432" y="276.8">
+      <tspan x="432" y="276.8">Value: "g"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="284" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="400" y="284" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="432" y="300.8">
+      <tspan x="432" y="300.8">Key:103</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="348" y="260" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="348" y="260" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="373.85" y="280.8">
+      <tspan x="373.85" y="280.8">Left</tspan>
+      <tspan x="373.85" y="296.8">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="464" y="260" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="464" y="260" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="489.85" y="280.8">
+      <tspan x="489.85" y="280.8">Right</tspan>
+      <tspan x="489.85" y="296.8">比Key大</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="265.386" y="228.72">
+    <tspan x="265.386" y="228.72">key 可以使用HASH(Value) 获取, 此处Key 使用的是字母的ASCII码</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="295.46" y="249.54">
+    <tspan x="295.46" y="249.54">节点还可以加一个值用来记录总共子节点的个数</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="232" y="400" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="232" y="400" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="264" y="416.8">
+      <tspan x="264" y="416.8">Value: "g"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="232" y="424" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="232" y="424" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="264" y="440.8">
+      <tspan x="264" y="440.8">Key:103</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="64" y="400" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="64" y="400" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="89.85" y="420.8">
+      <tspan x="89.85" y="420.8">Left</tspan>
+      <tspan x="89.85" y="436.8">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="296" y="400" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="296" y="400" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="321.85" y="420.8">
+      <tspan x="321.85" y="420.8">Right</tspan>
+      <tspan x="321.85" y="436.8">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="580" y="400" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="580" y="400" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="612" y="416.8">
+      <tspan x="612" y="416.8">Value: "g"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="580" y="424" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="580" y="424" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="612" y="440.8">
+      <tspan x="612" y="440.8">Key:103</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="528" y="400" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="528" y="400" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="553.85" y="420.8">
+      <tspan x="553.85" y="420.8">Left</tspan>
+      <tspan x="553.85" y="436.8">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="644" y="400" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="644" y="400" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="669.85" y="420.8">
+      <tspan x="669.85" y="420.8">Right</tspan>
+      <tspan x="669.85" y="436.8">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="180" y="400" width="51.7" height="48"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="180" y="400" width="51.7" height="48"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="205.85" y="428.8">
+      <tspan x="205.85" y="428.8">Center</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="116" y="400" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="116" y="400" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="148" y="416.8">
+      <tspan x="148" y="416.8">Value: "g"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="116" y="424" width="64" height="24"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="116" y="424" width="64" height="24"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="148" y="440.8">
+      <tspan x="148" y="440.8">Key:103</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="360.925" y1="308" x2="239.925" y2="394.345"/>
+    <polygon style="fill: #000000" points="233.82,398.701 239.056,388.822 239.925,394.345 244.864,396.962 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="233.82,398.701 239.056,388.822 239.925,394.345 244.864,396.962 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="140" y="380">
+    <tspan x="140" y="380">Center 位于两键之间</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="89.85" y1="448" x2="65.0152" y2="490.896"/>
+    <polygon style="fill: #000000" points="61.2575,497.387 61.9407,486.228 65.0152,490.896 70.595,491.238 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="61.2575,497.387 61.9407,486.228 65.0152,490.896 70.595,491.238 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="205.85" y1="448" x2="205.972" y2="490.264"/>
+    <polygon style="fill: #000000" points="205.994,497.764 200.965,487.778 205.972,490.264 210.965,487.75 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="205.994,497.764 200.965,487.778 205.972,490.264 210.965,487.75 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="321.85" y1="448" x2="353.498" y2="492.091"/>
+    <polygon style="fill: #000000" points="357.871,498.183 347.978,492.975 353.498,492.091 356.102,487.144 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="357.871,498.183 347.978,492.975 353.498,492.091 356.102,487.144 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="502.775" y1="308" x2="591.609" y2="392.585"/>
+    <polygon style="fill: #000000" points="597.041,397.756 586.351,394.482 591.609,392.585 593.246,387.24 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="597.041,397.756 586.351,394.482 591.609,392.585 593.246,387.24 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="52" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="52" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="71.175" y="515.5">
+      <tspan x="71.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-10" y="500" width="11.75" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="-10" y="500" width="11.75" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-4.125" y="515.5">
+      <tspan x="-4.125" y="515.5">L</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="90" y="500" width="13.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="90" y="500" width="13.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="96.675" y="515.5">
+      <tspan x="96.675" y="515.5">R</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="40" y="500" width="13.1" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="40" y="500" width="13.1" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="46.55" y="515.5">
+      <tspan x="46.55" y="515.5">C</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-4.125" y1="521.4" x2="-16.2968" y2="550.996"/>
+    <polygon style="fill: #000000" points="-19.1495,557.932 -19.9701,546.782 -16.2968,550.996 -10.7217,550.585 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-19.1495,557.932 -19.9701,546.782 -16.2968,550.996 -10.7217,550.585 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="46.55" y1="521.4" x2="46.1463" y2="548.265"/>
+    <polygon style="fill: #000000" points="46.0336,555.764 41.1844,545.69 46.1463,548.265 51.1833,545.84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="46.0336,555.764 41.1844,545.69 46.1463,548.265 51.1833,545.84 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="96.675" y1="521.4" x2="110.013" y2="551.118"/>
+    <polygon style="fill: #000000" points="113.084,557.96 104.428,550.884 110.013,551.118 113.551,546.789 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="113.084,557.96 104.428,550.884 110.013,551.118 113.551,546.789 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="2" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="2" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="21.175" y="515.5">
+      <tspan x="21.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="174" y="500" width="11.75" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="174" y="500" width="11.75" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="179.875" y="515.5">
+      <tspan x="179.875" y="515.5">L</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="223.875" y="500" width="13.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="223.875" y="500" width="13.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="230.55" y="515.5">
+      <tspan x="230.55" y="515.5">R</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="179.875" y1="521.4" x2="179.965" y2="546.264"/>
+    <polygon style="fill: #000000" points="179.992,553.764 174.956,543.782 179.965,546.264 184.956,543.746 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="179.992,553.764 174.956,543.782 179.965,546.264 184.956,543.746 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="230.55" y1="521.4" x2="230.155" y2="546.265"/>
+    <polygon style="fill: #000000" points="230.036,553.764 225.195,543.686 230.155,546.265 235.194,543.845 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="230.036,553.764 225.195,543.686 230.155,546.265 235.194,543.845 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="186" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="186" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="205.175" y="515.5">
+      <tspan x="205.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="328" y="500" width="11.75" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="328" y="500" width="11.75" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="333.875" y="515.5">
+      <tspan x="333.875" y="515.5">L</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="377.875" y="500" width="13.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="377.875" y="500" width="13.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="384.55" y="515.5">
+      <tspan x="384.55" y="515.5">R</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="333.875" y1="521.4" x2="333.965" y2="546.264"/>
+    <polygon style="fill: #000000" points="333.992,553.764 328.956,543.782 333.965,546.264 338.956,543.746 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="333.992,553.764 328.956,543.782 333.965,546.264 338.956,543.746 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="384.55" y1="521.4" x2="384.873" y2="546.265"/>
+    <polygon style="fill: #000000" points="384.971,553.764 379.841,543.83 384.873,546.265 389.84,543.7 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="384.971,553.764 379.841,543.83 384.873,546.265 389.84,543.7 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="340" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="340" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="359.175" y="515.5">
+      <tspan x="359.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="508" y="500" width="11.75" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="508" y="500" width="11.75" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="513.875" y="515.5">
+      <tspan x="513.875" y="515.5">L</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="557.875" y="500" width="13.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="557.875" y="500" width="13.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="564.55" y="515.5">
+      <tspan x="564.55" y="515.5">R</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="513.875" y1="521.4" x2="513.965" y2="546.264"/>
+    <polygon style="fill: #000000" points="513.992,553.764 508.956,543.782 513.965,546.264 518.956,543.746 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="513.992,553.764 508.956,543.782 513.965,546.264 518.956,543.746 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="564.55" y1="521.4" x2="564.873" y2="546.265"/>
+    <polygon style="fill: #000000" points="564.971,553.764 559.841,543.83 564.873,546.265 569.84,543.7 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="564.971,553.764 559.841,543.83 564.873,546.265 569.84,543.7 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="520" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="520" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="539.175" y="515.5">
+      <tspan x="539.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="669.85" y1="448" x2="662.859" y2="490.394"/>
+    <polygon style="fill: #000000" points="661.639,497.794 658.333,487.113 662.859,490.394 668.199,488.741 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="661.639,497.794 658.333,487.113 662.859,490.394 668.199,488.741 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="670" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="670" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="689.175" y="515.5">
+      <tspan x="689.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="608" y="500" width="11.75" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="608" y="500" width="11.75" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="613.875" y="515.5">
+      <tspan x="613.875" y="515.5">L</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="708" y="500" width="13.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="708" y="500" width="13.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="714.675" y="515.5">
+      <tspan x="714.675" y="515.5">R</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="658" y="500" width="13.1" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="658" y="500" width="13.1" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="664.55" y="515.5">
+      <tspan x="664.55" y="515.5">C</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="613.875" y1="521.4" x2="601.703" y2="550.996"/>
+    <polygon style="fill: #000000" points="598.851,557.932 598.03,546.782 601.703,550.996 607.278,550.585 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="598.851,557.932 598.03,546.782 601.703,550.996 607.278,550.585 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="664.55" y1="521.4" x2="664.146" y2="548.265"/>
+    <polygon style="fill: #000000" points="664.034,555.764 659.184,545.69 664.146,548.265 669.183,545.84 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="664.034,555.764 659.184,545.69 664.146,548.265 669.183,545.84 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="714.675" y1="521.4" x2="728.013" y2="551.118"/>
+    <polygon style="fill: #000000" points="731.084,557.96 722.428,550.884 728.013,551.118 731.551,546.789 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="731.084,557.96 722.428,550.884 728.013,551.118 731.551,546.789 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="620" y="500" width="38.35" height="21.4"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 1.4; stroke: #000000" x="620" y="500" width="38.35" height="21.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="639.175" y="515.5">
+      <tspan x="639.175" y="515.5">Key:A</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="553.85" y1="448" x2="541.819" y2="490.63"/>
+    <polygon style="fill: #000000" points="539.782,497.848 537.686,486.866 541.819,490.63 547.31,489.582 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="539.782,497.848 537.686,486.866 541.819,490.63 547.31,489.582 "/>
+  </g>
+</svg>
