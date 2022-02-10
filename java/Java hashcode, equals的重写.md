@@ -116,4 +116,84 @@ Java String 重写hashCode和equals 的代码
 *  System.out.println(s1.hashCode());
 *  System.out.println(s2.hashCode());
 */
+    public static int hashCode(byte[] value) {
+        int h = 0;
+        for (byte v : value) {
+            h = 31 * h + (v & 0xff);
+        }
+        return h;
+    }
+
 ```
+
+## 31作为乘数
+
+[Why does Java's hashCode() in String use 31 as a multiplier?](https://stackoverflow.com/questions/299304/why-does-javas-hashcode-in-string-use-31-as-a-multiplier)
+
+According to Joshua Bloch's Effective Java (a book that can't be recommended enough, and which I bought thanks to continual mentions on stackoverflow)
+
+The value 31 was chosen because it is an `odd(奇怪,寄) prime 主要的,质数`.
+
+If it were even(偶数) and the multiplication(乘法) overflowed(溢出), information would be lost, as multiplication by 2 is equivalent(等价的) to shifting(移位).
+
+The advantage of using a prime is less(不) clear(清楚), but it is traditional.
+
+A nice property of 31 is that the multiplication can be replaced by a shift and a subtraction(减法) for better performance: 31 * i == (i << 5) - i.
+
+Modern VMs do this sort of optimization automatically.
+
+(from Chapter 3, Item 9: Always override hashcode when you override equals, page 48)
+
+<https://stackoverflow.com/a/300111>
+
+Goodrich and Tamassia computed from over 50,000 English words (formed as the union of the word lists provided in two variants of Unix) that using the constants 31, 33, 37, 39, and 41 will produce fewer than 7 collisions in each case. This may be the reason that so many Java implementations choose such constants.
+
+## 扰动函数
+
+(h = key.hashCode()) ^ (h >>> 16)
+
+把哈希值右移16位，也就正好是自己长度的一半，之后与原哈希值做异或运算，这样就混合了原哈希值中的高位和低位，增大了`随机性`
+
+## 加载因子
+
+加载因子决定了数据量多少了以后进行扩容
+
+加载因子 = 填入表中的元素个数 / 散列表的长度
+
+默认情况下是16x0.75=12时，就会触发扩容操作
+
+使用随机哈希码，在扩容阈值（加载因子）为0.75的情况下，节点出现在频率在Hash桶（表）中遵循参数平均为0.5的泊松分布. 确保落点均匀.
+
+根据具体使用可以调整.
+
+## 初始化容量
+
+### 阀值
+
+如果初始化容量传入奇数, 实际初始化值是比传入初始值大的
+
+```java
+static final int tableSizeFor(int cap) {
+    int n = cap - 1;
+    n |= n >>> 1;
+    n |= n >>> 2;
+    n |= n >>> 4;
+    n |= n >>> 8;
+    n |= n >>> 16;
+    return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+}
+```
+
+阈值为8,桶容量大于64，进行红黑树转换操作.否则只是扩容.
+
+## 数据迁移
+
+原哈希值与扩容新增出来的长度16，进行&运算，如果值等于0，则下标位置不变。如果不为0，那么新的位置则是原来位置上加16。
+
+## HashMap 扩容倍数是2
+
+## a % b == a & (b - 1)
+
+a % b == a & (b - 1)
+
+验证无法通过 比如 `10` 和 `6`

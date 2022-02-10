@@ -356,3 +356,9 @@ du -a | sort -n -r | head -n 1
 |name|explain|useage|
 |---|---|---|
 | traceroute|  追踪router| |
+
+## where the applictaion for command
+
+```sh
+strace
+```

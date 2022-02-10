@@ -1,4 +1,4 @@
-# 手把手教你如何用 Angualr material 自定义主题
+# 手把手教你如何用 Angualr material 自定义主题(不适用12,13)
 
 ## 做准备
 

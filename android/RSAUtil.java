@@ -1,4 +1,4 @@
-package com.ztftrue.example;
+package com.ztftrue.android;
 
 import android.util.Base64;
 import java.io.ByteArrayOutputStream;

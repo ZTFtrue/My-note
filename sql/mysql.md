@@ -54,6 +54,9 @@ mysql 定时清理日志文件
 
 ## 登录和创建数据库
 
+<!-- https://stackoverflow.com/questions/9083408/fatal-error-cant-open-and-lock-privilege-tables-table-mysql-host-doesnt-ex -->
+<!-- // sudo mysql_install_db --user=mysql --ldata=/var/lib/mysql -->
+对于不同的发行平台这里是不一样的, 安装时一般会有提示
 [在linux 下可能需要 ```mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql``` 以初始化数据目录](https://serverfault.com/questions/812719/mysql-mariadb-not-starting)
 
 ```sql
@@ -78,6 +81,8 @@ create database 数据库名 [其他选项];
 create database samp_db character set gbk;  
 create database test2 default character set utf8   collateutf8_general_ci;//指定utf编码  
 ```
+
+create database test2 default character set utf8mb4;
 
 ### 查看数据库的定义
 
@@ -365,6 +370,25 @@ INSERT INGORE 会忽略导致错误的数据，并将其余数据插入表中.
 where 全部查出, 琢行消减(逐行操作)
 Join 直接查到目标
 
+```sql
+SELECT g.id, g.name,u.date FROM goods  g LEFT JOIN  user u ON g.user_id=u.id WHERE g.id=?"
+```
+
+INNER JOIN 与 JOIN 是相同的。取两张表的交集
+LEFT JOIN 只要左表有就算有一条数据,右表没有显示null, 如上边语句结果可以为
+
+```bash
++-----+-------+------------+
+|  id |  name | date       |
++-----+-------+------------+
+|   1 | "good"| 2016-05-10 |
+|   2 | "bad" | NULL       |
++-----+-------+------------+
+```
+
+RIGHT JOIN 只要右表有就算有一条数据,左表没有显示null
+FULL OUTER JOIN 只要一张表表有就算有一条数据 并集.
+
 ## 添加注释
 
 表注释
@@ -412,4 +436,167 @@ The binary log is not used for statements such as SELECT or SHOW that do not mod
 
 [AS table & table ? https://stackoverflow.com/questions/4164653/whats-the-purpose-of-sql-keyword-as](https://stackoverflow.com/questions/4164653/whats-the-purpose-of-sql-keyword-as)
 
+## 性能
+
+inet_aton 转 IP4
+inte_ntoa.
+
+TEXT,BLOB 分离到单独的表中.
+
+[实际开发中尽量不要使用" __*__ "](https://stackoverflow.com/questions/321299/what-is-the-reason-not-to-use-select)
+
+避免使用ENUM类型
+
+尽量设置NOT NULL
+
+和钱相关的: decimal 类型
+
+索引不要多,要有主键
+
+覆盖索引.
+
+大批量,分批操作.
+
 ## DBeaver 简易教程
+
+## [UTF-8 转UTF-8 mb4](https://docs.nextcloud.com/server/15/admin_manual/configuration_database/mysql_4byte_support.html)
+
+1.Make sure your database is set to use the Barracuda InnoDB file format:
+
+    ```bash
+    mysql> show variables like 'innodb_file_format';
+    +--------------------+-----------+
+    | Variable_name      | Value     |
+    +--------------------+-----------+
+    | innodb_file_format | Barracuda |
+    +--------------------+-----------+
+    1 row in set (0.00 sec)
+    ```
+
+    If your innodb_file_format is set as ‘Antelope’ you must upgrade your file format using:
+
+    ```bash
+    mysql> SET GLOBAL innodb_file_format=Barracuda;
+    ```
+
+2. Make sure the following InnoDB settings are set on your MySQL server:
+
+MySQL 8.0 or later:
+
+```config
+[mysqld]
+innodb_file_per_table=1
+```
+
+```bash
+mysql> show variables like 'innodb_file_per_table';
++-----------------------+-------+
+| Variable_name         | Value |
++-----------------------+-------+
+| innodb_file_per_table | ON    |
++-----------------------+-------+
+1 row in set (0.00 sec)
+```
+
+MySQL older than 8.0:
+
+```config
+[mysqld]
+innodb_large_prefix=true
+innodb_file_format=barracuda
+innodb_file_per_table=1
+```
+
+3. Restart the MySQL server in case you changed the configuration in step 1.
+
+4. Change your databases character set and collation:
+
+```sql
+ALTER DATABASE nextcloud CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+```
+
+### MariaDB support
+
+1. Make sure the following InnoDB settings are set on your MariaDB server:
+
+```config
+[mysqld]
+innodb_file_per_table=1
+```
+
+Continue at step 2 of the MySQL instructions.
+
+#### MariaDB 10.2 or earlier
+
+Make sure the following InnoDB settings are set on your MySQL server:
+
+```config
+[mysqld]
+innodb_large_prefix=true
+innodb_file_format=barracuda
+innodb_file_per_table=1
+```
+
+2. Restart the MariaDB server in case you changed the configuration in step 1.
+
+3. Figure out whether the file format was changed to Barracuda:  
+判断文件格式是否改为Barracuda：
+
+```bash
+MariaDB> SELECT NAME, SPACE, FILE_FORMAT FROM INFORMATION_SCHEMA.INNODB_SYS_TABLES WHERE NAME like "nextcloud%";
+```
+
+If the file format is “Barracuda” for every single table, nothing special is left to do. Continue with the MySQL instructions at step 3. While testing, all tables’ file format was “Antelope”.(如果每个表的文件格式都是“Barracuda”，则继续MySQL的第 3 步说明。在测试时，所有表的文件格式都是“Antelope”)
+
+4. The tables needs to be migrated(迁移的) to “Barracuda” manually, one by one. SQL commands can be created easily, however:
+
+```bash
+MariaDB> USE INFORMATION_SCHEMA;
+MariaDB> SELECT CONCAT("ALTER TABLE `", TABLE_SCHEMA,"`.`", TABLE_NAME, "` ROW_FORMAT=DYNAMIC;") AS MySQLCMD FROM TABLES WHERE TABLE_SCHEMA = "nextcloud";
+```
+
+This will return an SQL command for each table in the nextcloud database. The rows can be quickly copied into a text editor, the “|”s replaced and the SQL commands copied back to the MariaDB shell. If no error appeared (in doubt check step 2) all is done and nothing is left to do here. It can be proceded with the MySQL instructions from step 3 onwards.
+
+5. It is possible, however, that some tables cannot be altered. The operations fails with: “ERROR 1478 (HY000): Table storage engine ‘InnoDB’ does not support the create option ‘ROW_FORMAT’”. In that case the failing tables have a SPACE value of 0 in step 2. It basically means that the table does not have an index file of its own, which is required for the Barracuda format. This can be solved with a slightly(轻微地) different SQL command:
+
+```bash
+MariaDB> ALTER TABLE `nextcloud`.`oc_tablename` ROW_FORMAT=DYNAMIC, ALGORITHM=COPY;
+```
+
+Replace oc_tablename with the failing table. If there are too many (did not happen here), SQL commands can be generated in a batch (task for the reader).
+
+6. Now everything should be fine and the MySQL instructions can be followed from step 3 onwards.
+
+## 联合索引(复合索引)
+
+Mysql从左到右的使用索引中的字段
+一个查询可以只使用索引中的一部份，但只能是 __最左侧__ 部分.
+
+<https://dev.mysql.com/doc/refman/8.0/en/multiple-column-inde1xes.html>
+
+```sql
+key index (a,b,c)
+select * from t where a=1 and b > 2 and c<3
+select * from t where a=1 and b > 2 -- 就不会使用 c 了
+-- 创建复合索引时，应该仔细考虑列的顺序
+-- 可以加快查询速度
+```
+
+A multiple-column index can be considered a sorted array, the rows of which contain values that are created by concatenating the values of the indexed columns.
+
+### 索引覆盖
+
+查询的数据都可以通过联合索引查到，不用回表. 这时即使不包含最左前缀也可能会走索引
+
+```sql
+key index (a,b,c)
+select a,b,c from t where c=1 and b > 2 --索引覆盖
+```
+
+## N+1 selects problem
+
+频繁读取数据库
+
+<https://stackoverflow.com/a/39696775/6631835>
+
+一次取出全部数据, 然后遍历需要的数据

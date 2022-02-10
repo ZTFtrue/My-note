@@ -77,3 +77,5 @@ archlinux-java status
 # archlinux-java set java-8-openjdk/jre
 # archlinux-java set java-14-openjdk
 ```
+
+### [用户目录 as Desktop folder](https://unix.stackexchange.com/questions/167740/how-to-make-gnome-use-my-home-folder-as-desktop-folder)

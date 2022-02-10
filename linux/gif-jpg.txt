@@ -1,0 +1,2 @@
+convert -delay 10 -dispose none tumblr_e573d6d767dd3d65d21de47fa7d16d13_4d26286c_400.webp -loop 0 animation.gif
+

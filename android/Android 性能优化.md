@@ -38,3 +38,51 @@
 
 1. 首屏问题: 除去某些设计不给跳过广告,跳过按钮是假的,或者跳过就是点击之外, 有一种应该就不是设计的问题了. 启动首屏广告页之后, APP回到后台,用户进入桌面,过几秒APP会自动回到前台. 这个问题原因很简单,我就不说了
 2. 微信在信号不好情况下, 会弹出切换网络(节点)的建议对话框,如果此时微信在后台,微信就会悄悄的崩溃. 这个问题不是什么后台保存状态的问题, 仅仅是Activity onpuse 时就不要在再操作和他相关的内容了, 比如更改UI,弹出对话框, 如果想做就把操作记下来, onresume 时再去做.
+
+## 内存泄漏
+
+1. 非静态内部类和匿名內部类Handler、Thread、Runnable 持有外部类Activity的引用, 导致当关闭activity时，线程未完成造成内存泄漏. 一般 AndroidStudio 会有警告.  Timer 计时器.
+
+2. 资源未及时关闭造成的内存泄漏
+
+    广播BraodcastReceiver, 需要注销`unregisterReceiver()`; 记得如果不做会报一个不会导致崩溃的异常.
+
+    文件流File `close()` 还有一种可以自己关闭忘了, 叫什么了`try(InputStrem input=)`
+
+    数据库游标Cursor ,关闭游标`cursor.close()`;
+
+    Bitmap, 不再被使用时，应调用recycle()回收此对象的像素所占用的内存. 无需设为null.
+
+    无限循环动画: 如果在Activity中播放这类动画并且在onDestroy中没有去停止动画，那么这个动画将会一直播放下去，这时候Activity会被View所持有，从而导致Activity无法被释放。在Activity中onDestroy去调用`cancel()`来停止动画。
+
+## UI
+
+选择Layout顺序：优先FrameLayout>LinearLayout(baselineAligned 默认开启文本基线对齐, 可以关闭) >ConstraintLayout
+
+### ViewStub  不可见，零尺寸
+
+当ViewStub被设置为visible或者调用inflate方法时，指定的layout会被加载填充， 被加载的layout将代替ViewStub添加到ViewStub的父布局中.
+
+对于部分一开始不使用的layout，可以采用此种方式加载，提高初次inflate和渲染主界面的速度。
+
+它的绘制方法是空的. 一般View 中 执行 visible 也会调用自己的draw
+
+### include,merge
+
+### 减少过度绘制(Overdraw)
+
+一般移除多余的背景.
+
+不显示的布局不绘制或刷新.
+
+### Canvas.clipRect/quickReject
+
+Canvas.clipRect()可以定义绘制的边界，边界以外的部分不会进行绘制。
+
+Canvas.quickReject() 可以用来测试指定区域是否在裁剪范围之外，如果要绘制的元素位于裁剪范围之外，就可以直接跳过绘制步骤。
+
+### 自定义控件防止重新布局
+
+requestLayout , onSizeChanged
+
+### SparseArray

@@ -352,7 +352,7 @@ promise、generator、async/await
 let [a, b, c] = [1, 2, 3] //a=1, b=2, c=3
 
 let [d, [e], f] = [1, [2], 3]   //嵌套数组解构 d=1, e=2, f=3
-let [g, ...h] = [1, 2, 3]  //数组拆分 g=1, h=[2, 3]
+let [g, ...h] = [1, 2, 3]  //数组拆分 g=1, h=[2, 3], 可替代slice
 let [i,,j] = [1, 2, 3]  //不连续解构 i=1, j=3
 let [k,l] = [1, 2, 3]  //不完全解构 k=1, l=2
 ```
@@ -426,6 +426,12 @@ for in循环出的是key，for of循环出的是value
 - valueOf()  返回数组对象的原始值  
 - flat(number?) 展平数组, number 表示到第几级.
 - reduce() each element of the array, resulting in single output value.
+- filter
+- map
+- every
+- some
+- forEach
+- reduce
 
 #### 遍历数组
 
@@ -919,4 +925,40 @@ array.forEach(async (item)=>{await gogo(item);})
 
 ```js
 Atomics
+```
+
+## 柯里化
+
+arity（参数个数）是函数所需的形参的数量。 函数柯里化（Currying）意思是把接受多个 arity 的函数变换成接受单一 arity 的函数, 并且返回接受余下的参数而且**返回结果**的**新函数**的技术
+
+函数柯里化(链式调用,闭包)和局部调用.
+
+```js
+var foo = function(a) {
+  return function(b) {
+    return a * a + b * b;
+  }
+}
+```
+
+## getter setter
+
+```js
+class Book {
+  constructor(author) {
+    this._author = author;
+  }
+  // getter
+  get writer() {
+    return this._author;
+  }
+  // setter
+  set writer(updatedAuthor) {
+    this._author = updatedAuthor;
+  }
+}
+const novel = new Book('anonymous');
+console.log(novel.writer);
+novel.writer = 'newAuthor';
+console.log(novel.writer);
 ```

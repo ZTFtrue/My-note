@@ -36,6 +36,21 @@ A 函数来源: 回调函数, 例如点鼠标，网络请求完成.
 7. 执行微队列(microtask)，执行完毕
 8. 回到6. -->
 
+```js
+// 一外企面试题
+function promiseLog(){
+    return  new Promise((resolve, reject)=>{
+console.log(1);
+resolve(2);
+console.log(3)
+    })
+}
+promiseLog().then(console.log)
+console.log(4)
+/*----------------*/
+输出 1->3->4->2
+```
+
 ## Example
 
 ```js

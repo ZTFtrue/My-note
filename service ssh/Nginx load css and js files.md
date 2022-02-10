@@ -1,6 +1,6 @@
 # Nginx load css and js files
 
-```
+```con
 server {
     listen  80;
     server_name sibdomain.domain.com;
@@ -25,4 +25,10 @@ server {
 location ~ \.mp4$ {
     max_ranges 0;
 }
+```
+
+## nginx ssi html插入html
+
+```html
+<!-- #include file="hmlt/public/public.html" -->
 ```

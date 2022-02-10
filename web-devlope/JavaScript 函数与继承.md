@@ -57,13 +57,32 @@ Object.values() 返回给定对象自身可枚举值的数组.
 
 Object.prototype.constructor 特定的函数，用于创建一个对象的原型.
 
-Object.prototype.hasOwnProperty() 返回一个布尔值 ，表示某个对象是否含有指定的属性，而且此属性非原型链继承的.
+Object.prototype.hasOwnProperty() 返回一个布尔值 ，表示某个对象是否含有指定的属性，而且此属性 __非原型链继承__ 的.
 
 Object.prototype.valueOf() 返回指定对象的原始值.
 
 Object.prototype.propertyIsEnumerable() 判断指定属性是否可枚举
 
-Object.prototype.isPrototypeOf() 返回一个布尔值，表示指定的对象是否在本对象的原型链中.
+Object.prototype.isPrototypeOf() 返回一个布尔值，表示指定的 __对象__ 是否在 __本对象__ 的原型链中.
+
+设置一个新对象的原型会清除constructor.
+
+比如:
+
+```js
+function 恶意举报(name) {
+  this.name = name;
+}
+
+// 只修改这一行下面的代码
+恶意举报.prototype = {
+  numLegs: 4,
+  constructor:恶意举报,// 如果不设置, 就没有 constructor
+  BadGuy: function() {
+    console.log("I am good man");
+  }
+};
+```
 
 ### 使用 Object 生成布尔对象
 
@@ -92,6 +111,8 @@ Function 构造函数可以创建一个新的 Function 对象. 比如:
 // functionBody 一个含有包括函数定义的 JavaScript 语句的字符串
 const sum = new Function('a', 'b', 'return a + b');
 console.log(sum(2, 6));
+
+let result = new Function('return arguments[0][arguments[1]](arguments[2][0], arguments[2][1])')(student, 'doSth', ['Rowboat', 18]);
 ```
 
 这会遇到和 ```eval``` 类似的的安全问题和(相对较小的)性能问题. 然而，与 `eval` 不同的是，`Function` 创建的函数只能在全局作用域中运行.
@@ -612,7 +633,7 @@ console.log(obj);
 
 [why does a method using the shorthand method syntax not contain a prototype obje](https://stackoverflow.com/questions/48891399/why-does-a-method-using-the-shorthand-method-syntax-not-contain-a-prototype-obje)
 
-![image](../static-resource/image/Obj.png)
+![image](./img/Obj.png)
 
 ## [闭包](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures)
 
