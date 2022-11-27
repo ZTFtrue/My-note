@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="9cm" height="7cm" viewBox="216 73 161 124" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="218" y="75" width="158" height="121"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="218" y="75" width="158" height="121"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="297" y="140.3">
+      <tspan x="297" y="140.3"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="241" y="90" width="101" height="41"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="241" y="90" width="101" height="41"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="291.5" y="113.5">
+      <tspan x="291.5" y="113.5">路由组件</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="243" y="139" width="98" height="39"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="243" y="139" width="98" height="39"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="292" y="161.5">
+      <tspan x="292" y="161.5">普通组件</tspan>
+    </text>
+  </g>
+</svg>

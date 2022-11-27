@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="101cm" height="42cm" viewBox="-322 104 2005 832" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="100" y="220" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100" y="220" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150.2" y="243">
+      <tspan x="150.2" y="243">应用层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="100" y="300" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100" y="300" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150.2" y="323">
+      <tspan x="150.2" y="323">传输层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="100" y="380" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100" y="380" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150.2" y="403">
+      <tspan x="150.2" y="403">网络层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="460" width="500" height="140"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-50" y="534.8">
+      <tspan x="-50" y="534.8">                                                                                                  数据链路层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="100" y="620" width="98.8" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="100" y="620" width="98.8" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="149.4" y="642">
+      <tspan x="149.4" y="642">物理层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-300" y="220" width="380" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="220" width="380" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-110" y="244.8">
+      <tspan x="-110" y="244.8">HTTP , FTP, DNS , SMTP , SSH , POP3</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-300" y="272" width="380" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="272" width="380" height="70"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-110" y="295.8">
+      <tspan x="-110" y="295.8">TCP , UDP , SCTP</tspan>
+      <tspan x="-110" y="311.8">做数据包, 最终的目的地址是在传输层建立的</tspan>
+      <tspan x="-110" y="327.8">传输协议使用端口地址(端口号长16位)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-300" y="380" width="374.15" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="380" width="374.15" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-112.925" y="404.8">
+      <tspan x="-112.925" y="404.8">IP(这一层唯一的标准协议) , ICMP , DHCP, ARP(实现在网络层)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="120" y="540" width="60" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150" y="564.8">
+      <tspan x="150" y="564.8">MAC</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-300" y="620" width="380" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-300" y="620" width="380" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-110" y="643">
+      <tspan x="-110" y="643">通信是由纯位流构成的</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="220" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="220" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="243">
+      <tspan x="360" y="243">报文</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="300" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="300" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="324.8">
+      <tspan x="360" y="324.8">TCP (报文)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="380" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="380" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="404.8">
+      <tspan x="360" y="404.8">IP(TCP(报文))</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="520" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="520" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="543">
+      <tspan x="360" y="543">数据链路层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="620" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="620" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="643">
+      <tspan x="360" y="643">物理层</tspan>
+    </text>
+  </g>
+  <text font-size="17.3172" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="160" y="120">
+    <tspan x="160" y="120">在报文中新增了元数据，</tspan>
+    <tspan x="160" y="141.646">它通常是将上层数据封装</tspan>
+    <tspan x="160" y="163.293">起来再加上该层的头信息</tspan>
+    <tspan x="160" y="184.939">(有些协议还需要一个尾)</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="197.682" y="284.176">
+    <tspan x="197.682" y="284.176">传输层的头</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="267.528" y1="281.622" x2="330.07" y2="306.761"/>
+    <polygon style="fill: #000000" points="337.029,309.558 325.886,310.468 330.07,306.761 329.615,301.189 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="337.029,309.558 325.886,310.468 330.07,306.761 329.615,301.189 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="213.71" y="365.712">
+    <tspan x="213.71" y="365.712">IP头</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="245.032" y1="366.172" x2="307.574" y2="391.309"/>
+    <polygon style="fill: #000000" points="314.533,394.106 303.39,395.016 307.574,391.309 307.119,385.738 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="314.533,394.106 303.39,395.016 307.574,391.309 307.119,385.738 "/>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-320" y="200" width="820" height="480"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="90" y="444.8">
+      <tspan x="90" y="444.8"></tspan>
+    </text>
+  </g>
+  <text font-size="18.446" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="20" y="180">
+    <tspan x="20" y="180">设备一</tspan>
+  </text>
+  <text font-size="18.446" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1260" y="160">
+    <tspan x="1260" y="160">设备二</tspan>
+  </text>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="90,680 90,824.798 1272,824.798 1272,681.742 "/>
+    <polygon style="fill: #000000" points="1272,674.242 1277,684.242 1272,681.742 1267,684.242 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1272,674.242 1277,684.242 1272,681.742 1267,684.242 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1477,671 1477,934.778 -115,934.778 -115,689.736 "/>
+    <polygon style="fill: #000000" points="-115,682.236 -110,692.236 -115,689.736 -120,692.236 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-115,682.236 -110,692.236 -115,689.736 -120,692.236 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="560.425" y="566.194" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="560.425" y="566.194" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="600.425" y="589.194">
+      <tspan x="600.425" y="589.194">以太网</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="560.425" y1="586.194" x2="488.443" y2="544.849"/>
+    <polygon style="fill: #000000" points="481.939,541.114 493.101,541.759 488.443,544.849 488.12,550.43 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="481.939,541.114 493.101,541.759 488.443,544.849 488.12,550.43 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="560.425" y1="586.194" x2="488.092" y2="634.586"/>
+    <polygon style="fill: #000000" points="481.859,638.757 487.39,629.04 488.092,634.586 492.95,637.352 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="481.859,638.757 487.39,629.04 488.092,634.586 492.95,637.352 "/>
+  </g>
+  <text font-size="19.0105" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="18.2231" y="719.686">
+    <tspan x="18.2231" y="719.686">传送位流到介质(电缆,无线)</tspan>
+  </text>
+  <text font-size="19.0105" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1141.91" y="719.642">
+    <tspan x="1141.91" y="719.642">接受位流从介质(电缆,无线)</tspan>
+  </text>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="120" y="480" width="60" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150" y="504.8">
+      <tspan x="150" y="504.8">LLC</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-280" y="480" width="340" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-280" y="480" width="340" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-110" y="503.8">
+      <tspan x="-110" y="503.8">若需要, 就改变帧大小(可选: 引入差错校验,帧编号)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-280" y="540" width="341" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-280" y="540" width="341" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-109.5" y="563.8">
+      <tspan x="-109.5" y="563.8">加上帧头, 按格式编码帧字节,介质的信号类型适合物理层</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="200" y1="160" x2="274.599" y2="271.899"/>
+    <polygon style="fill: #000000" points="278.76,278.139 269.052,272.592 274.599,271.899 277.373,267.045 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="278.76,278.139 269.052,272.592 274.599,271.899 277.373,267.045 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="180" y1="160" x2="256.384" y2="350.96"/>
+    <polygon style="fill: #000000" points="259.17,357.924 250.813,350.496 256.384,350.96 260.098,346.782 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="259.17,357.924 250.813,350.496 256.384,350.96 260.098,346.782 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="-100" y1="420" x2="-100" y2="450.264"/>
+    <polygon style="fill: #000000" points="-100,457.764 -105,447.764 -100,450.264 -95,447.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-100,457.764 -105,447.764 -100,450.264 -95,447.764 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-100" y="440">
+    <tspan x="-100" y="440">从网络层接受包</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="1280" y="200" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1280" y="200" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1330.2" y="223">
+      <tspan x="1330.2" y="223">应用层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1280" y="280" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1280" y="280" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1330.2" y="303">
+      <tspan x="1330.2" y="303">传输层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1280" y="360" width="100.4" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1280" y="360" width="100.4" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1330.2" y="383">
+      <tspan x="1330.2" y="383">网络层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="440" width="500" height="140"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1130" y="514.8">
+      <tspan x="1130" y="514.8">                                                                                                  数据链路层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1280" y="600" width="98.8" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1280" y="600" width="98.8" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1329.4" y="622">
+      <tspan x="1329.4" y="622">物理层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="880" y="200" width="380" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="200" width="380" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1070" y="224.8">
+      <tspan x="1070" y="224.8">HTTP , FTP, DNS , SMTP , SSH , POP3</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="880" y="252" width="380" height="70"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="252" width="380" height="70"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1070" y="275.8">
+      <tspan x="1070" y="275.8">TCP , UDP , SCTP</tspan>
+      <tspan x="1070" y="291.8">做数据包, 最终的目的地址是在传输层建立的</tspan>
+      <tspan x="1070" y="307.8">传输协议使用端口地址(端口号长16位)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="880" y="360" width="374.15" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="360" width="374.15" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1067.08" y="384.8">
+      <tspan x="1067.08" y="384.8">IP(这一层唯一的标准协议) , ICMP , DHCP, ARP(实现在网络层)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1300" y="520" width="60" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1330" y="544.8">
+      <tspan x="1330" y="544.8">MAC</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="880" y="600" width="380" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="880" y="600" width="380" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1070" y="623">
+      <tspan x="1070" y="623">通信是由纯位流构成的</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1420" y="200" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1420" y="200" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1540" y="223">
+      <tspan x="1540" y="223">报文</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1420" y="280" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1420" y="280" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1540" y="304.8">
+      <tspan x="1540" y="304.8">TCP (报文)</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1420" y="360" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1420" y="360" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1540" y="384.8">
+      <tspan x="1540" y="384.8">IP(TCP(报文))</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1420" y="480" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1420" y="480" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1540" y="503">
+      <tspan x="1540" y="503">数据链路层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1420" y="600" width="240" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1420" y="600" width="240" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1540" y="623">
+      <tspan x="1540" y="623">物理层</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1300" y="460" width="60" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1330" y="484.8">
+      <tspan x="1330" y="484.8">LLC</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="900" y="460" width="340" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900" y="460" width="340" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1070" y="483.8">
+      <tspan x="1070" y="483.8">差错校验,若需要, 再排序, 重组帧</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="900" y="520" width="341" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="900" y="520" width="341" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1070.5" y="543.8">
+      <tspan x="1070.5" y="543.8">将位流码转为帧字节,去除帧头</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="1066.75" y1="438.616" x2="1066.91" y2="410.715"/>
+    <polygon style="fill: #000000" points="1066.95,403.215 1071.89,413.243 1066.91,410.715 1061.89,413.188 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="1066.95,403.215 1071.89,413.243 1066.91,410.715 1061.89,413.188 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="1064.86" y="430.798">
+    <tspan x="1064.86" y="430.798">发送包到网络层</tspan>
+  </text>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="862" y="171" width="820" height="500"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="1272" y="425.8">
+      <tspan x="1272" y="425.8"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="658.196" y="362.337" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="658.196" y="362.337" width="160" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="738.196" y="385.337">
+      <tspan x="738.196" y="385.337">网关</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="521.337" y="362.958" width="160" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="521.337" y="362.958" width="160" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="601.337" y="387.758">
+      <tspan x="601.337" y="387.758">猫, 路由器</tspan>
+    </text>
+  </g>
+</svg>

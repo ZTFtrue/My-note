@@ -1,0 +1,38 @@
+!淘宝
+!! CC-BY 4.0, By Siyang
+! 一堆猜你喜欢之类的
+www.taobao.com##.layer
+! 滚动广告旁边的广告
+www.taobao.com##.sub-column
+! 热搜关键词
+www.taobao.com##.search-ft
+! 手机淘宝二维码
+www.taobao.com##.tbh-qr-wrapper
+! 阿里 App
+www.taobao.com##.apps
+! 淘宝头条
+www.taobao.com##.tbh-headline
+! 滚动广告
+www.taobao.com##.core
+! 页脚
+www.taobao.com###J_SiteFooter
+
+!jb51
+jb51.net###txtlink
+jb51.net##.topimg
+jb51.net##.header
+jb51.net##.subnav.clearfix
+jb51.net##.article-right
+jb51.net##.wrap.clear_fix
+jb51.net###jb-share
+jb51.net##.right-share.jb-share
+jb51.net##.rshare-top
+
+cnblogs.com###about
+cnblogs.com###side-recent-posts
+cnblogs.com###sidebar
+cnblogs.com###topMnu
+
+
+juejin.im##.link
+juejin.im##.box
