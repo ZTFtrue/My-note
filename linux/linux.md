@@ -60,6 +60,12 @@ Example:
     chown [可选项] user[:group] file...
 ```
 
+参考位运算的解析
+
+## 查看文件类型
+
+file
+
 ## 关机
 
 ```sh
@@ -149,12 +155,7 @@ less
 # shift + f (即 F) 查看滚动
 ```
 
-- 使用grep 搜索
 
-```sh
-grep 'keyword' log.txt -A 10 列出包括匹配行之后的10行
-grep 'keyword' log.txt -B 10 列出包括匹配行之前的10行
-grep 'keyword' log.txt -C 10 列出包括匹配行前后的10行
 ```
 
 - tail 和 less 结合
@@ -365,6 +366,128 @@ strace
 
 ## 锁 `PID` 文件
 
-`flock` 命令锁`pid`
+`flock` 命令锁`pid` ,
 
 <https://linux.die.net/man/1/flock>
+
+GTG: 锁文件, 文件上锁, 防止修改
+
+## fork 炸弹
+
+通过不断的生成进程,占用资源.
+
+Jaromil所作的在类`UNIX`系统的`shell`环境下触发`for`k炸弹的脚本代码
+
+```shell
+:(){ :|:& };:
+```
+
+解析:
+
+```sh
+:()      # 定义函数,函数名为":",即每当输入":"时就会自动调用{}内代码
+  {      
+    :    # 用递归方式调用":"函数本身
+    |    # 並用管線(pipe)將其輸出引至...（因为有一个管線操作字元，因此會生成一個新的進程）
+    :    # 另一次递归调用的":"函数
+         # 综上,":|:"表示的即是每次調用函数":"的時候就會產生兩份拷貝
+    &    # 在后台开启新进程运行
+  };
+:        # 调用":"函数,"引爆"fork炸弹
+```
+
+另一种形式:
+
+```sh
+bomb()
+  {
+    bomb|bomb&
+  };
+bomb
+```
+
+### 预防
+
+由于fork炸弹透过不断的开新进程来瘫痪系统，一个防止其严重影响系统的方法就是限定一个用户能够创建的进程数的上限.
+
+在Linux系统上，可以透过`ulimit`这个指令达到相应的效果，
+
+`ulimit -Hu 30`
+
+这个指令可以限制每一个用户最多只能创建`30`个进程.
+
+还可以通过修改配置文件`/etc/security/limits.conf`来限制可生成的最大进程数来避开这枚炸弹。
+
+## Diplayport
+
+```bash
+yay -Syu lightdm
+```
+
+https://askubuntu.com/a/1134981
+
+注：当时记得是这么做的，但是记录的时候发现并没有 安装 `lightdm`
+
+## Wayland
+
+其它按照文档处理。
+
+一定要屏蔽 `nvidiafb`，加在grub 启动项里 `module_blacklist=nvidiafb`
+
+### 缓慢
+
+但是也没太大效果
+
+```sh
+yay -Rsc xdg-desktop-portal-gnome
+```
+
+## 休眠
+
+<https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate>
+grub 添加 `resume=UUID=swap_device_uuid`
+
+按照文档配置`/etc/mkinitcpio.conf.` `resume` 必须添加
+
+```conf
+MODULES=(nvidia nvidia_modeset nvidia_uvm nvidia_drm)
+
+HOOKS=(base udev resume autodetect modconf  keyboard keymap consolefont block filesystems fsck)
+```
+
+AMD 特别注意 [PC will not wake from sleep on A520I and B550I motherboards](https://wiki.archlinux.org/title/Power_management#PC_will_not_wake_from_sleep_on_A520I_and_B550I_motherboards) ，而且这篇文档和上一篇地址不一样。
+
+## Grep 替换文本内容
+
+不要用， 用`sed`
+
+- 使用grep 搜索
+
+```sh
+grep 'keyword' log.txt -A 10 列出包括匹配行之后的10行
+grep 'keyword' log.txt -B 10 列出包括匹配行之前的10行
+grep 'keyword' log.txt -C 10 列出包括匹配行前后的10行
+```
+
+##  | 与 |&
+
+|-|-|
+|---|---|
+|\|| 只接收标准输出，不接收错误|
+|\|&| 接收所有输出|
+
+## 重映射目录,沙箱环境
+
+tag: 安全, QQ防护
+
+```bash
+yay -Syu bubblewrap
+```
+
+```bash
+bwrap --unshare-all --ro-bind /
+```
+
+## chroot
+
+chroot namespace 

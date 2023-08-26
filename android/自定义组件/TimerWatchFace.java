@@ -1,4 +1,4 @@
-package com.ztftrue;
+package com.ztftrue.app;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -22,6 +22,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
+ * 打卡时钟界面
  * path: src/main/res/values/attrs.xml
  * <declare-styleable name="TimerWatchFace">
  * <attr name="donut_finished_color" format="color" />

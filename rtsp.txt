@@ -1,1 +1,0 @@
-大华:rtsp://NAME:PASSWORD@IP:554/cam/realmonitor?channel=1&subtype=1

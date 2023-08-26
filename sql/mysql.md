@@ -291,9 +291,14 @@ delete from 表名称 where 删除条件;
 
 ## 用户管理
 
-设置管理员密码: ```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('your password');```
+查看用户 `SELECT user,host FROM mysql.user;`
 
-创建用户 ```CREATE USER 'ztftrue'@'localhost' IDENTIFIED BY 'password';```\
+修改
+`ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`
+
+~~设置管理员密码: ```SET PASSWORD FOR 'root'@'localhost' = PASSWORD('your password');```~~ 最近测试了一下不能这么做了<https://www.ibm.com/docs/en/spectrum-lsf-rtm/10.2.0?topic=ssl-configuring-default-root-password-mysqlmariadb> 但是，默认的也没看到，能不用密码直接登录。
+
+创建用户 ```CREATE USER 'ztftrue'@'localhost' IDENTIFIED BY 'password';```
 
 授权: ```GRANT privileges ON databasename.tablename TO 'username'@'host'```;
 

@@ -14,3 +14,5 @@ done
 
 # convert  $(ls -v ./img/*.png ) output.pdf&&rm ./img/*
 # rm ./img/*
+# pdf convert image
+# mkdir -p images && pdftoppm -jpeg -r 300 ztftrue-web-mark.pdf images/pg

@@ -79,3 +79,38 @@ archlinux-java status
 ```
 
 ### [用户目录 as Desktop folder](https://unix.stackexchange.com/questions/167740/how-to-make-gnome-use-my-home-folder-as-desktop-folder)
+
+## 安装缺少的包
+
+ `mkinitcpio-firmware`
+
+ <https://wiki.archlinux.org/title/Mkinitcpio#Possibly_missing_firmware_for_module_XXXX>
+
+## Host 文件配置
+
+`/etc/hosts`
+
+```text
+#
+# hosts         This file describes a number of hostname-to-address
+#               mappings for the TCP/IP subsystem.  It is mostly
+#               used at boot time, when no name servers are running.
+#               On small systems, this file can be used instead of a
+#               "named" name server.
+# Syntax:
+#    
+# IP-Address  Full-Qualified-Hostname  Short-Hostname
+#
+
+127.0.0.1	localhost
+
+# special IPv6 addresses
+::1             localhost ipv6-localhost ipv6-loopback
+
+fe00::0         ipv6-localnet
+
+ff00::0         ipv6-mcastprefix
+ff02::1         ipv6-allnodes
+ff02::2         ipv6-allrouters
+ff02::3         ipv6-allhosts
+```

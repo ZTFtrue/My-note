@@ -311,8 +311,6 @@ const myPromise =
    // https://javascript.info/async
 ```
 
-
-
 `Promise.prototype.catch(onRejected)`  
 添加一个拒绝(rejection) 回调到当前 promise, 返回一个新的promise. 当这个回调函数被调用，新 promise 将以它的返回值来resolve，否则如果当前promise 进入fulfilled状态，则以当前promise的完成结果作为新promise的完成结果.
 
@@ -978,3 +976,109 @@ console.log(novel.writer);
 novel.writer = 'newAuthor';
 console.log(novel.writer);
 ```
+
+## URL.createObjectURL()  Blob  url
+
+将 File, Blob, or MediaSource object to create an object URL
+
+```js
+let file;// 从input 获取
+let url = URL.createObjectURL(file)
+// <img src="url">
+```
+
+```html
+src="blob:https://video_url"
+```
+
+<https://stackoverflow.com/questions/30864573/what-is-a-blob-url-and-why-it-is-used>
+
+```js
+URL.revokeObjectURL() // 释放 URL.createObjectURL() 创建的url
+```
+
+下载 Blob 文件
+
+```js
+function downloadFileByBlob(blobUrl, filename) {
+  const eleLink = document.createElement('a')
+  eleLink.download = filename
+  eleLink.style.display = 'none'
+  eleLink.href = blobUrl
+  // 触发点击
+  document.body.appendChild(eleLink)
+  eleLink.click()
+  // 然后移除
+  document.body.removeChild(eleLink)
+}
+```
+
+### [Bolb 播放视频 MediaSource 分段加载视频](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaSource#Browser_compatibility)
+
+视频文件需要 Fragmented MP4 ， 且服务器需要支持 byte-range 。
+
+<https://stackoverflow.com/questions/8616855/how-to-output-fragmented-mp4-with-ffmpeg>
+
+```bash
+ffmpeg -re -i infile.ext -g 52 \
+-c:a aac -b:a 64k -c:v libx264 -b:v 448k \
+-f mp4 -movflags frag_keyframe+empty_moov+default_base_moof \
+output.mp4
+```
+
+```js
+const video = document.querySelector('video');
+
+const assetURL = 'frag_bunny.mp4';
+// Need to be specific for Blink regarding codecs
+// ./mp4info frag_bunny.mp4 | grep Codec
+const mimeCodec = 'video/mp4; codecs="avc1.42E01E, mp4a.40.2"';
+
+if ('MediaSource' in window && MediaSource.isTypeSupported(mimeCodec)) {// 检查是否可用
+  const mediaSource = new MediaSource();
+  //console.log(mediaSource.readyState); // closed
+  video.src = URL.createObjectURL(mediaSource);
+  // 添加监听
+  mediaSource.addEventListener('sourceopen', sourceOpen);
+} else {
+  console.error('Unsupported MIME type or codec: ', mimeCodec);
+}
+
+function sourceOpen (_) {
+  //console.log(this.readyState); // open
+  const mediaSource = this;
+  /**
+   * 方法会根据给定的 MIME 类型创建一个新的 SourceBuffer 对象，然后会将它追加到 MediaSource 的 SourceBuffers 列表中。*/
+  const sourceBuffer = mediaSource.addSourceBuffer(mimeCodec);
+  fetchAB(assetURL, function (buf) {
+    sourceBuffer.addEventListener('updateend', function (_) {
+      video.play();
+      // 在这里进行下一个视频的加载
+      // sourceBuffer.appendBuffer(buf);
+      // 视频结束时调用
+      mediaSource.endOfStream();
+        // URL.revokeObjectURL(video.src); 
+      //console.log(mediaSource.readyState); // ended
+    });
+    sourceBuffer.appendBuffer(buf);
+  
+  });
+};
+
+function fetchAB (url, cb) {
+  console.log(url);
+  const xhr = new XMLHttpRequest;
+  xhr.open('get', url);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function () {
+    cb(xhr.response);
+  };
+  xhr.send();
+};
+
+
+```
+
+## Video.js
+
+播放视频 m3u8 视频流

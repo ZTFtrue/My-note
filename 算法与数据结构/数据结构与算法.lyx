@@ -7461,6 +7461,60 @@ status open
 表示。
 \end_layout
 
+\begin_layout Section
+拓扑排序
+\end_layout
+
+\begin_layout Standard
+有向无环图的拓扑排序或拓扑测序是对其顶点的一种线性排序。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/拓扑排序.jpg
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+实战：
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://leetcode.cn/problems/ur2n8P/submissions/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 字符串
 \end_layout
@@ -11864,6 +11918,81 @@ lete问题)。
 
 \begin_layout Standard
 snowflake hash 
+\end_layout
+
+\begin_layout Standard
+Snowflake hash is a type of hash function that is designed for generating
+ unique identifiers or keys.
+ It is commonly used in distributed systems to ensure uniqueness of IDs
+ across multiple nodes or instances.
+\end_layout
+
+\begin_layout Standard
+Snowflake hash is a type of hash function that is designed for generating
+ unique identifiers or keys.
+ It is commonly used in distributed systems to ensure uniqueness of IDs
+ across multiple nodes or instances.
+\end_layout
+
+\begin_layout Standard
+Here are the key features and concepts related to Snowflake hash:
+\end_layout
+
+\begin_layout Enumerate
+Unique Identifiers: Snowflake hash generates unique 64-bit integer identifiers
+ that are composed of different parts.
+\end_layout
+
+\begin_layout Enumerate
+Timestamp: The timestamp component of the Snowflake hash is used to ensure
+ uniqueness over time.
+ It represents the number of milliseconds since a custom epoch.
+ By using a timestamp, Snowflake hash guarantees that IDs generated at different
+ times will always be unique.
+\end_layout
+
+\begin_layout Enumerate
+Node ID: The node ID is a unique identifier assigned to each node or instance
+ in a distributed system.
+ It helps in generating globally unique IDs even when multiple nodes are
+ generating IDs concurrently.
+\end_layout
+
+\begin_layout Enumerate
+Sequence Number: The sequence number is a counter that increments for each
+ ID generated within the same millisecond and node.
+ It ensures that IDs generated within the same timestamp and node combination
+ are ordered.
+\end_layout
+
+\begin_layout Standard
+By combining the timestamp, node ID, and sequence number, Snowflake hash
+ creates a unique identifier that can be used for various purposes, such
+ as primary keys in databases, distributed system coordination, or ID generation
+ in microservices architectures.
+\end_layout
+
+\begin_layout Standard
+It is important to note that Snowflake hash is not meant to be cryptographically
+ secure.
+ Its primary purpose is to generate unique IDs efficiently and quickly.
+ If cryptographic security is required, alternative hashing algorithms should
+ be used.
+\end_layout
+
+\begin_layout Standard
+Snowflake hash is widely used in various platforms and frameworks, and it
+ has become a popular choice for generating unique IDs in distributed systems
+ due to its simplicity and efficiency.
+\end_layout
+
+\begin_layout Standard
+Please note that Snowflake hash is a specific implementation of a hash function,
+ and there can be variations and customizations depending on different systems
+ and frameworks.
+ It is always recommended to consult the documentation and resources specific
+ to your use case for more detailed information on how to use and configure
+ Snowflake hash.
 \end_layout
 
 \begin_layout Section

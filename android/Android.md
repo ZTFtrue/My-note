@@ -29,28 +29,29 @@ startActivity 携带的数据会经过 BInder 内核再传递到目标 Activity 
 ### looper
 
 ```java
-Looper.prepare(); 
+Looper.prepare(); ->    sThreadLocal.set(new Looper(quitAllowed));
 new Handler(Looper.getMainLooper());
+// if(getMyLopper !=null) {Looper.prepare();}
 ```
 
 Looper 利用的是 Linux 的 pipe/epoll 机制. 在主线程的 MessageQueue 没有消息时，便阻塞在 loop 的 queue.next()中的 nativePollOnce()方法里，此时主线程会释放 CPU 资源进入休眠状态，直到下个消息到达或者有事务发生，通过往 pipe 管道写端写入数据来唤醒主线程工作.
 
-HandlerThread线程，该线程默认提供了getLooper()
+HandlerThread 线程，该线程默认提供了 getLooper()
 
-Looper的loop方法内的 `Message msg = queue.next();` queue(MessageQueue) 会阻塞操作
+Looper 的 loop 方法内的 `Message msg = queue.next();` queue(MessageQueue) 会阻塞操作
 
-handler.dispatchMessage 分发message。
+handler.dispatchMessage 分发 message。
 
-调用Looper的quit或者quitSafely方法，MessageQueue的next方法会返回null消息，在Looper的loop方法内，当检测到msg==null时，Looper的loop方法会退出，线程也会结束。
+调用 Looper 的 quit 或者 quitSafely 方法，MessageQueue 的 next 方法会返回 null 消息，在 Looper 的 loop 方法内，当检测到 msg==null 时，Looper 的 loop 方法会退出，线程也会结束。
 
-### 复用Message
+### 复用 Message
 
 ```java
 Message msg = Message.obtain(mHandler);
 Message msg = mHandler.obtainMessage();
 ```
 
-内部使用栈 存储 Message。Message 里边有个`recycle` 方法， 发送并处理后就会msg.recycle();
+内部使用栈 存储 Message。Message 里边有个`recycle` 方法， 发送并处理后就会 msg.recycle();
 
 ### ThreadLocal
 
@@ -64,11 +65,11 @@ threadLocal.set("122");
 threadLocal.remove();
 ```
 
-只能存储一个 `T` 类型变量, 这个 T 可以是线程，也可以是Looper
+只能存储一个 `T` 类型变量, 这个 T 可以是线程，也可以是 Looper
 
 ### MessageQueue
 
-Android消息的管理队列
+Android 消息的管理队列
 
 插入消息 `enqueueMessage`
 读取消息 `next`
@@ -80,8 +81,8 @@ Android消息的管理队列
 设置同步屏障`postSyncBarrier`
 移除同步屏障`removeSyncBarrier`
 
-异步消息和同步消息的区别是`isAsynchronous`方法返回true或false。
-异步消息需要手动将标记Message为异步，通过方法setAsynchronous(true)将消息标记为异步(一定要清理)。
+异步消息和同步消息的区别是`isAsynchronous`方法返回 true 或 false。
+异步消息需要手动将标记 Message 为异步，通过方法 setAsynchronous(true)将消息标记为异步(一定要清理)。
 
 ### HandlerThread
 
@@ -123,6 +124,41 @@ protected void onDestroy(){
     //释放资源
     handlerThread.quit();
 }
+```
+
+Looper 示例 2
+
+```java
+    static class LooperThread extends Thread {
+        public Handler mHandler;
+        private Looper mLooper;
+        public void run() {
+            Looper.prepare();
+            mLooper = Looper.myLooper();
+            mHandler = new Handler(new Handler.Callback() {
+                @Override
+                public boolean handleMessage(@NonNull Message msg) {
+                    SystemClock.sleep(1000);
+                    executeTask("122");// 循环执行
+                   //  runOnUiThread(new Runnable() {});
+                    return true;
+                }
+            });
+            Looper.loop();
+        }
+        public void executeTask(String text) {
+            if (mLooper == null || mHandler == null) {
+               throw new RuntimeException("No init mLooper and mHandler");
+            }
+            Message msg = Message.obtain();
+            msg.obj = text;
+            mHandler.sendMessage(msg);
+        }
+        public void onDestroy(){
+            mHandler.removeCallbacks(null);
+            mLooper.quitSafely();
+        }
+    }
 ```
 
 ## 自定义 View
@@ -169,85 +205,6 @@ public boolean dispatchTouchEvent(MotionEvent ev) {
 
 ### 安卓是如何发出 Vsync 信号，并且有哪几个接收者
 
-## APK 打包流程
-
-gradle 打包
-
-`gradlew assembleRelease` 命令打包
-
-### 多 apk 打包
-
-```gradle
- productFlavors {
-      aaa {
-            applicationId 'com.aaa'
-            minSdkVersion 21
-            targetSdkVersion 30
-            versionCode 1
-            versionName "1.0.0"
-        }
-        bbb {
-            applicationId 'com.bbb'
-            minSdkVersion 21
-            targetSdkVersion 30
-            versionCode 1
-            versionName "1.0.0"
-        }
- }
-```
-
-通过下面的步骤创建源集目录:
-
-1. 打开 Project 窗格并从窗格顶端的下拉菜单中选择 Project 视图.
-2. 导航至 MyProject/app/src/.
-3. 右键点击 src 目录并选择 New > Folder > Java Folder.
-4. 从 Target Source Set 旁边的下拉菜单中，选择需要创建源集的 build flavor 名称.
-5. 点击 Finish.
-
-Android Studio 将会为我们选择的构建类型创建源集目录，然后在该目录内部创建 java 目录. 或者，也可以让 Android Studio 创建相关目录.
-
-例如:
-
-1. 在该 Project 窗格中，右键点击 src 目录并选择 New > XML > Values XML File; 输入名称
-2. 从 **Target Source Set** 旁边的下拉菜单中，选择 aaa.
-3. 点击 Finish.
-
-### 多渠道打包
-
-```xml
-<meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
-<meta-data android:name="UMENG_CHANNEL" android:value="${UMENG_CHANNEL_VALUE}" />
-```
-
-````gradle
-android {
-    productFlavors {
-        huawei {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
-        }
-        xiaomi {
-            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
-        }
-    }
-}
-
-```gradle
-//可以批量修改打包渠道配置
-android {
-    flavorDimensions "version"
-    productFlavors {
-        huawei {}
-        xiaomi {}
-        qh360 {}
-        baidu {}
-        wandoujia {}
-    }
-    productFlavors.all {
-        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
-    }
-}
-````
-
 ## Dalivk 虚拟机和 java 虚拟机差别
 
 就是 Dalvik 基于寄存器，而 JVM 基于栈
@@ -278,7 +235,37 @@ Activity.runOnUiThread(Runnable)
 View.post(Runnable),View.postDelay(Runnable,long)
 Handler
 
-## javascript java 交互
+## WebView
+
+<https://github.com/mgks/Android-SmartWebView>
+
+```java
+    WebSettings webSettings = binding.webView.getSettings();
+    webSettings.setJavaScriptEnabled(true);
+// 允许跨域访问
+    webSettings.setAllowContentAccess(true);
+    webSettings.setAllowFileAccess(true);
+    webSettings.setAllowFileAccessFromFileURLs(true);
+    webSettings.setAllowUniversalAccessFromFileURLs(true);
+    // https://stackoverflow.com/questions/32155634/android-webview-not-loading-mixed-content
+    webSettings.setMixedContentMode(android.webkit.WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+// 开启访问
+    webSettings.setUseWideViewPort(true);
+    webSettings.setSupportZoom(true);
+    webSettings.setDisplayZoomControls(true);
+    webSettings.setBuiltInZoomControls(true);
+    binding.webView.setInitialScale(200);
+```
+
+## gradle 本地 aar 依赖
+
+```gradle
+implementation files('libs/something_local.jar')
+implementation fileTree(dir: 'libs', include: ['*.aar'])
+compileOnly files('libs/ffmpeg-android-java.aar')
+```
+
+### javascript java 交互
 
 ```java
 webView.evaluateJavascript("javascript:saveImage()", new ValueCallback<String>() {
@@ -297,11 +284,11 @@ RelativeLayout 分别对所有子 View 进行两次 measure，横向纵向分别
 
 一般是 APP 启动时就奔溃了, 用 loader 加载 activity, activity 崩溃时就会有信息.
 
-新的Logcat 应该不用这么麻烦
+新的 Logcat 应该不用这么麻烦
 
 ## Bitmap
 
-Android 8.0 之后Bitmap像素内存放在native堆
+Android 8.0 之后 Bitmap 像素内存放在 native 堆
 
 ## Glide
 
@@ -324,12 +311,6 @@ TargetTracker
 ```xml
 android:hardwareAccelerated="true"
 ```
-
-## Rtsp 视频播放
-
-NodeMedia:NodeMediaClient
-
-opencv (需要二次开发)
 
 ## 打包 arr , 包含依赖的 aar
 
@@ -455,9 +436,149 @@ public static SSLSocketFactory getSSLCertifcation(Context context) {
 
 ## ANR 在事件分发的那一层处理的。系统层如何进行监听的
 
-## 安卓 art 虚拟机，每个版本的 odex 优化有什么不同
+对于 input 来说即使某次事件执行事件超过 timeout 时长，只要用户后续没有再生成输入事件，则不会触发 ANR
 
 ## android 单元测试
+
+构建有效的单元测试:
+<https://developer.android.google.cn/training/testing/unit-testing?hl=zh-cn>
+
+测试代码存储目录
+
+```gradle
+    app/src
+    ├── androidTest/java (仪器化单元测试、UI测试)
+    ├── main/java (业务代码)
+    └── test/java  (本地单元测试)
+```
+
+### 构建本地单元测试
+
+<https://developer.android.google.cn/training/testing/unit-testing/local-unit-tests?hl=zh-cn>
+
+1. 设置依赖
+
+   ```gradle
+       dependencies {
+           // Required -- JUnit 4 framework
+           testImplementation 'junit:junit:4.12'
+           // Optional -- Robolectric environment
+           testImplementation 'androidx.test:core:1.0.0'
+           // Optional -- Mockito framework
+           testImplementation 'org.mockito:mockito-core:1.10.19'
+       }
+   ```
+
+2. 使用`AndroidStudio`创建测试类
+   1. 代码页面右击
+   2. 选择`Generate...`
+   3. 选择`Test...`
+   4. 选择 `JUnit4`
+      勾选`setUp/@Before`会生成一个带`@Before`注解的`setUp()`空方法，
+      勾选`tearDown/@After`会生成一个带`@After`的`tearDown()`空方法
+   5. 在对应目录就可以看到测试类
+   6. 在我的项目里边, `AndroidStudio`自动生成的类在`androidTest`目录
+3. 示例
+
+   ```java
+   import com.google.common.truth.Truth.assertThat;
+   import org.junit.Test;
+   public class EmailValidatorTest {
+       @Test
+       public void emailValidator_CorrectEmailSimple_ReturnsTrue() {
+           assertNotNull(Service.getInstance());
+           assertThat(EmailValidator.isValidEmail("name@email.com")).isTrue();
+       }
+   }
+   ```
+
+4. 在类上有运行箭头, 或者, 选择包,然后 run.
+
+5. 有些方法 JVM 就可以提供运行环境, 有些需要 Android 框架提供的方法, 如: Android context. 可以使用`mockito`, 官方文档另外说的`Robolectric`我这里必须在真机运行(...)
+
+   ```java
+   @RunWith(MockitoJUnitRunner.class)
+   public class ServiceTest {
+       @Mock
+       Context mMockContext;
+       public void Test{
+           Mockito.when(mMockContext.getString(R.string.app_name)).thenReturn("");
+           assertEquals(mMockContext.getString(R.string.app_name), "");
+           Mockito.when(mMockContext.getPackageName()).thenReturn("");
+       }
+   }
+   ```
+
+### 构建插桩单元测试
+
+<https://developer.android.google.cn/training/testing/unit-testing/instrumented-unit-tests?hl=zh-cn>
+
+添加依赖
+
+```gradle
+    dependencies {
+        androidTestImplementation 'androidx.test:runner:1.1.0'
+        androidTestImplementation 'androidx.test:rules:1.1.0'
+        // Optional -- Hamcrest library
+        androidTestImplementation 'org.hamcrest:hamcrest-library:1.3'
+        // Optional -- UI testing with Espresso
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+        // Optional -- UI testing with UI Automator
+        androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    }
+```
+
+```gradle
+    android {
+        defaultConfig {
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        }
+    }
+```
+
+```gradle
+  android {
+        // ...
+        testOptions {
+            unitTests.includeAndroidResources = true
+        }
+    }
+```
+
+使用`AndroidStudio`创建测试类
+
+```java
+@RunWith(AndroidJUnit4.class)
+@SmallTest
+public class ServiceTest {
+    private Context context = ApplicationProvider.getApplicationContext();
+
+    @Before
+    public void setUp() throws Exception {
+
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void getInstance() {
+        assertNotNull(Service.getInstance());
+    }
+}
+
+```
+
+如果您要创建在 Robolectric 环境中或真实设备上运行的本地单元测试，则可以使用 AndroidX Test 为几个常见框架类提供的构建程序。这些构建程序可让您创建以下类的实例，而无需使用模拟或反射：
+
+```java
+    ApplicationInfo
+    PackageInfo
+    MotionEvent
+    MotionEvent.PointerCoords
+    MotionEvent.PointerProperties
+```
 
 ## 使用 Android user-feature 限定设备
 
@@ -584,9 +705,90 @@ file_paths.xml 放置 xml 目录, google 文档有解释
 
 ```
 
-## Gradle 打包
+## Gradle 配置 和 打包
+
+## APK 打包流程
+
+gradle 打包
+
+`gradlew assembleRelease` 命令打包
+
+### 多 apk 打包
+
+```gradle
+ productFlavors {
+      aaa {
+            applicationId 'com.aaa'
+            minSdkVersion 21
+            targetSdkVersion 30
+            versionCode 1
+            versionName "1.0.0"
+        }
+        bbb {
+            applicationId 'com.bbb'
+            minSdkVersion 21
+            targetSdkVersion 30
+            versionCode 1
+            versionName "1.0.0"
+        }
+ }
+```
+
+通过下面的步骤创建源集目录:
+
+1. 打开 Project 窗格并从窗格顶端的下拉菜单中选择 Project 视图.
+2. 导航至 MyProject/app/src/.
+3. 右键点击 src 目录并选择 New > Folder > Java Folder.
+4. 从 Target Source Set 旁边的下拉菜单中，选择需要创建源集的 build flavor 名称.
+5. 点击 Finish.
+
+Android Studio 将会为我们选择的构建类型创建源集目录，然后在该目录内部创建 java 目录. 或者，也可以让 Android Studio 创建相关目录.
+
+例如:
+
+1. 在该 Project 窗格中，右键点击 src 目录并选择 New > XML > Values XML File; 输入名称
+2. 从 **Target Source Set** 旁边的下拉菜单中，选择 aaa.
+3. 点击 Finish.
+
+### 多渠道打包
+
+```xml
+<meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+<meta-data android:name="UMENG_CHANNEL" android:value="${UMENG_CHANNEL_VALUE}" />
+```
+
+````gradle
+android {
+    productFlavors {
+        huawei {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "huawei"]
+        }
+        xiaomi {
+            manifestPlaceholders = [UMENG_CHANNEL_VALUE: "xiaomi"]
+        }
+    }
+}
+
+```gradle
+//可以批量修改打包渠道配置
+android {
+    flavorDimensions "version"
+    productFlavors {
+        huawei {}
+        xiaomi {}
+        qh360 {}
+        baidu {}
+        wandoujia {}
+    }
+    productFlavors.all {
+        flavor -> flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+    }
+}
+````
 
 ### 包名字重命名
+
+打包设置 apk 名字
 
 ```gradle
     android.applicationVariants.all {
@@ -595,6 +797,14 @@ file_paths.xml 放置 xml 目录, google 文档有解释
                 outputFileName = "${variant.name}-${variant.versionName}.apk"
             }
     }
+```
+
+或者
+
+```gradle
+     defaultConfig {
+          setProperty("archivesBaseName", "${android.defaultConfig.versionCode}-${android.defaultConfig.applicationId}-v${android.defaultConfig.versionName}")
+      }
 ```
 
 ### add Flavors
@@ -874,7 +1084,7 @@ tsSearchEditText.setOnItemSelectedListener(new AdapterView.OnItemSelectedListene
 });
 ```
 
-下拉按钮设置 来自stackoverflow
+下拉按钮设置 来自 stackoverflow
 
 styles.xml
 
@@ -912,39 +1122,37 @@ bg_spinner.xml
 
 ### AMS
 
-在Android系统中只有一个AMS的实例，负责管理管理、调度系统中所有的Activity的生命周期。
+在 Android 系统中只有一个 AMS 的实例，负责管理管理、调度系统中所有的 Activity 的生命周期。
 
-1. ActivityManagerServices 简称 AMS, 负责管理Activity的生命周期，使用ActivityStack存放所有的Activity。
+1. ActivityManagerServices 简称 AMS, 负责管理 Activity 的生命周期，使用 ActivityStack 存放所有的 Activity。
 2. ActivityThread 当开启 App 之后，调用 main()开始运行，开启消息循环队列，也就是 UI 线程`public final class ActivityThread extends ClientTransactionHandler        implements ActivityThreadInternal`
-3. ApplicationThread 用来实现 `ActivityManagerServie` 与 `ActivityThread` 之间的交互。 AMS通过`ApplicationThreadProxy`与 `ActivityThread` 进行通信的
+3. ApplicationThread 用来实现 `ActivityManagerServie` 与 `ActivityThread` 之间的交互。 AMS 通过`ApplicationThreadProxy`与 `ActivityThread` 进行通信的
 4. Instrumentation 每一个应用程序只有一个 Instrumetation 对象，每个 Activity 内都持有一个对该对象的引用；ActivityThread 需要通过 Instrumentation 来进行具体的操作，如：创建暂停。
 5. ActivityStack，
-6. ActivityRecord 在启动activity时候创建，存储关于Activity组件的相关信息
-7. TaskRecord 记录ActivityRecord，每一个`TaskRecord`对应一个app，每一个App是可以有多个TaskRecord， 可以通过启动模式设置。
-    - AndroidManifest: standard(A->B->A->A)，singleTop(A->B->A,onNewIntent())，singleTask(B->A, onNewIntent()), singleInstance(A or B)
-    - Flag:
-        - FLAG_ACTIVITY_NEW_TASK == singleTask
-        - FLAG_ACTIVITY_SINGLE_TOP == singleTop
-        - FLAG_ACTIVITY_REORDER_TO_FRONT == singleTask
-        - ~~FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET~~
-        - FLAG_ACTIVITY_CLEAR_TOP , 原：`A->B->C->D` ， 再次启动B添加该Flag, 先 销毁B/C/D, 然后重新创建 B, 变成 `A->B`. 如果同时添加 `FLAG_ACTIVITY_SINGLE_TOP`，则不销毁B,只销毁C/D,并出发 B 的`onNewIntent`
-        - <https://developer.android.com/reference/android/content/Intent>
-    - android:allowTaskReparenting <https://developer.android.com/guide/topics/manifest/activity-element>
-    - android:clearTaskOnLaunch 启动时清除其它任务
-    - android:alwaysRetainTaskState Task切换到后台后太久时，系统会对Task进行清理，设为ture 会阻止清理
-    - android:autoRemoveFromRecents
-    - ndroid:noHistory
+6. ActivityRecord 在启动 activity 时候创建，存储关于 Activity 组件的相关信息
+7. TaskRecord 记录 ActivityRecord，每一个`TaskRecord`对应一个 app，每一个 App 是可以有多个 TaskRecord， 可以通过启动模式设置。
+   - AndroidManifest: standard(A->B->A->A)，singleTop(A->B->A,onNewIntent())，singleTask(B->A, onNewIntent(),只会启动一个, 每次都会清除其它 activity), singleInstance(A or B,每个 activity 只有一个栈)
+   - Flag:
+     - FLAG_ACTIVITY_NEW_TASK == singleTask
+     - FLAG_ACTIVITY_SINGLE_TOP == singleTop
+     - FLAG_ACTIVITY_REORDER_TO_FRONT
+     - ~~FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET~~
+     - FLAG_ACTIVITY_CLEAR_TOP , 原：`A->B->C->D` ， 再次启动 B 添加该 Flag, 先 销毁 B/C/D, 然后重新创建 B, 变成 `A->B`. 如果同时添加 `FLAG_ACTIVITY_SINGLE_TOP`，则不销毁 B,只销毁 C/D,并出发 B 的`onNewIntent`
+     - <https://developer.android.com/reference/android/content/Intent>
+   - android:allowTaskReparenting <https://developer.android.com/guide/topics/manifest/activity-element>
+   - android:clearTaskOnLaunch 启动时清除其它任务
+   - android:alwaysRetainTaskState Task 切换到后台后太久时，系统会对 Task 进行清理，设为 ture 会阻止清理
+   - android:autoRemoveFromRecents
+   - android:noHistory
 8. `AcitivtyStack`包含`TaskRecord`，包含`ActivityRecord`
 
 位置`/com/android/server/am/ActivityManagerService.java`
 
-
-
 ### WMS
 
-WindowManagerService 负责管理系统中所有的窗口，包括Activity的窗口、壁纸窗口、输入法窗口、弹窗窗口等，即管理屏幕上展示上的一切窗口。
+WindowManagerService 负责管理系统中所有的窗口，包括 Activity 的窗口、壁纸窗口、输入法窗口、弹窗窗口等，即管理屏幕上展示上的一切窗口。
 
-在Android系统系统的过程中，在SystemServer进程中也把WMS服务启动起来，注册到ServiceManager中。
+在 Android 系统系统的过程中，在 SystemServer 进程中也把 WMS 服务启动起来，注册到 ServiceManager 中。
 
 ### PMS
 
@@ -952,15 +1160,15 @@ WindowManagerService 负责管理系统中所有的窗口，包括Activity的窗
 
 #### 安装 APK 步骤
 
-1. 解析 Apk, DefaultContainerService.getMinimalPackageInfo. 得到APK的少量信息, 确认安装位置
-2. 复制APK 到 /data/app/pkg/
+1. 解析 Apk, DefaultContainerService.getMinimalPackageInfo. 得到 APK 的少量信息, 确认安装位置
+2. 复制 APK 到 /data/app/pkg/
 3. dexopt
-4. 注册4大组件（PackageManagerService）
+4. 注册 4 大组件（PackageManagerService）
 5. 安装完毕发送广播
 
 ### 总结
 
-在Android系统系统的过程中，在SystemServer进程中把AMS服务启动起来，注册到ServiceManager中。
+在 Android 系统系统的过程中，在 SystemServer 进程中把 AMS 服务启动起来，注册到 ServiceManager 中。
 
 #### `SystemServer.java`
 
@@ -1021,9 +1229,9 @@ public final class SystemServer implements Dumpable {
             // Prepare the thread pool for init tasks that can be parallelized
             SystemServerInitThreadPool tp = SystemServerInitThreadPool.start();
             mDumper.addDumpable(tp);
-            
-            
-            
+
+
+
             startBootstrapServices(t);
             startCoreServices(t);
             startOtherServices(t);
@@ -1122,12 +1330,12 @@ private void startBootstrapServices(@NonNull TimingsTraceAndSlog t) {
   }
 ```
 
-`ActivityManagerService.java` 代码， 3个组件是这里初始化
+`ActivityManagerService.java` 代码， 3 个组件是这里初始化
 
 ```java
 
 public ActivityManagerService(Context systemContext, ActivityTaskManagerService atm) {
-       
+
         LockGuard.installLock(this, LockGuard.INDEX_ACTIVITY);
         mInjector = new Injector(systemContext);
         // 系统Context 和 ActivityThread （将systemserver进程作为应用进程管理）
@@ -1165,4 +1373,845 @@ public ActivityManagerService(Context systemContext, ActivityTaskManagerService 
         Watchdog.getInstance().addThread(mHandler);
 ```
 
-![ams wms](./image/andoid-ams.svg)
+![ams wms](./image/andoid-ams.svg
+
+## Android Manifests Android 清单文件配置
+
+<https://developer.android.com/guide/topics/manifest/instrumentation-element>
+
+<https://developer.android.com/guide/components/intents-filters>
+
+```xml
+<intent-filter>
+    <category android:name="android.intent.category.DEFAULT" />
+    <category android:name="android.intent.category.BROWSABLE" />
+    ...
+</intent-filter>
+```
+
+```java
+startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(
+    "market://details?id=com.ztftrue.app")));
+```
+
+这些配置还可以告诉系统或者别的应用, 自己的应用有哪些功能, 比如浏览器.
+
+关键词: intent, filter , intent-filter ,category, 浏览器, 默认应用, action,mimeType, scheme,host
+
+常见: action
+
+```java
+android.intent.action.MAIN
+android.intent.action.CALL
+action.intent.action.DIAL
+andriod.intent.action.ALL_APPS
+android.intent.action.ANSWER
+android.action.ATTCH_DATA
+android.intent.action.BUG_REPORT
+android.intent.action.VIEW
+Uri uri = Uri.parse("http://www.google.com");  // 浏览器
+Intent it =  new Intent(Intent.ACTION_VIEW,uri);
+startActivity(it);
+```
+
+## 访问应用专属文件
+
+文档中的内部存储文件是指放置`/data/data/package/*` 目录下的文件
+
+<https://developer.android.google.cn/training/data-storage/app-specific?hl=zh-cn>
+
+```java
+File file = new File(context.getFilesDir(), filename);
+// 使用信息流存储文件
+String filename = "myfile";
+String fileContents = "Hello world!";
+try (FileOutputStream fos = context.openFileOutput(filename, Context.MODE_PRIVATE)) {
+    fos.write(fileContents.toByteArray());
+}
+// 使用信息流访问文件
+FileInputStream fis = context.openFileInput(filename);
+InputStreamReader inputStreamReader =
+        new InputStreamReader(fis, StandardCharsets.UTF_8);
+StringBuilder stringBuilder = new StringBuilder();
+try (BufferedReader reader = new BufferedReader(inputStreamReader)) {
+    String line = reader.readLine();
+    while (line != null) {
+        stringBuilder.append(line).append('\n');
+        line = reader.readLine();
+    }
+} catch (IOException e) {
+    // Error occurred when opening raw file for reading.
+} finally {
+    String contents = stringBuilder.toString();
+}
+// 查看文件列表
+Array<String> files = context.fileList();
+// 创建嵌套目录
+File directory = context.getFilesDir();
+File file = new File(directory, filename);
+// 创建缓存文件
+/**
+此缓存目录旨在存储应用的少量敏感数据。如需确定应用当前可用的缓存空间大小，请调用 getCacheQuotaBytes()。
+ */
+File.createTempFile(filename, null, context.getCacheDir());
+// 访问缓存文件
+File cacheFile = new File(context.getCacheDir(), filename);
+// 移除缓存文件
+cacheFile.delete();
+// or
+context.deleteFile(cacheFileName);
+```
+
+外部存储空间访问
+
+```java
+// 确定存储空间的可用性
+private boolean isExternalStorageWritable() {
+    return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+}
+// Checks if a volume containing external storage is available to at least read.
+private boolean isExternalStorageReadable() {
+     return Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED) ||
+            Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED_READ_ONLY);
+}
+// 选择物理存储位置
+// 分配内部存储分区作为外部存储空间的设备也会提供 SD 卡插槽
+File[] externalStorageVolumes =
+        ContextCompat.getExternalFilesDirs(getApplicationContext(), null);
+File primaryExternalStorage = externalStorageVolumes[0];
+// 访问持久性文件
+File appSpecificExternalDir = new File(context.getExternalFilesDir(null), filename);
+// 创建缓存文件
+File externalCacheFile = new File(context.getExternalCacheDir(), filename);
+// 媒体内容
+@Nullable
+File getAppSpecificAlbumStorageDir(Context context, String albumName) {
+    // Get the pictures directory that's inside the app-specific directory on
+    // external storage.
+    File file = new File(context.getExternalFilesDir(
+            Environment.DIRECTORY_PICTURES), albumName);
+    if (file == null || !file.mkdirs()) {
+        Log.e(LOG_TAG, "Directory not created");
+    }
+    return file;
+}
+// 查询可用空间
+// App needs 10 MB within internal storage.
+private static final long NUM_BYTES_NEEDED_FOR_MY_APP = 1024 * 1024 * 10L;
+
+StorageManager storageManager =
+        getApplicationContext().getSystemService(StorageManager.class);
+UUID appSpecificInternalDirUuid = storageManager.getUuidForPath(getFilesDir());
+long availableBytes =
+        storageManager.getAllocatableBytes(appSpecificInternalDirUuid);
+if (availableBytes >= NUM_BYTES_NEEDED_FOR_MY_APP) {
+    storageManager.allocateBytes(
+            appSpecificInternalDirUuid, NUM_BYTES_NEEDED_FOR_MY_APP);
+} else {
+    // To request that the user remove all app cache files instead, set
+    // "action" to ACTION_CLEAR_APP_CACHE.
+    Intent storageIntent = new Intent();
+    storageIntent.setAction(ACTION_MANAGE_STORAGE);
+}
+
+```
+
+## AndridStudio 导出 jar
+
+到这个目录下找 app/build/intermediates/aar_main_jar
+
+或者 <https://stackoverflow.com/questions/16763090/how-to-export-library-to-jar-in-android-studio>
+
+## Android 进程通信
+
+### Interprocess Communication 进程间通信
+
+binder，使用文件共享，使用 Messenger，通过 ALDL，ConetentProvider 方式，Socket 方式，广播方式，匿名共享内存
+
+### binder 的原理
+
+Binder 通信机制采用 C/S 架构
+
+- Binder 框架中主要涉及到 4 个角色 Client、Server、Service Manager 及 Binder 驱动，其中 Client、Server、Service Manager 运行在用户空间，Binder 驱动运行在内核空间
+- Client 代表客户端进程，Server 代表客户端进程提供各种服务，如音视频等
+- Service Manager 用来管理各种系统服务
+- Binder 驱动提供进程间通信的能力
+- 用户空间的 Client、Server、ServiceManager 通过 open、mmap 和 ioctl 等标准文件操作(详见 Unix 环境编程)来访问/dev/binder，进而实现进程间通信
+
+首先 Binder 驱动在内核空间创建一个数据接收缓存区；
+接着在内核空间开辟一块内核缓存区，建立内核缓存区和内核中数据接收缓存区之间的映射关系，以及内核中数据接收缓存区和接收进程用户空间地址的映射关系；
+发送方进程通过系统调用 copyfromuser() 将数据 copy 到内核中的内核缓存区，由于内核缓存区和接收进程的用户空间存在内存映射，因此也就相当于 **把数据发送到了接收进程的用户空间** ，这样便完成了一次进程间的通信.
+
+有大小限制 1M(全局限制)
+
+### AIDL Service Binder
+
+<https://developer.android.com/guide/components/aidl>
+
+AndroidStudio `New` -> `AIDL`
+
+```java
+class MyService extends Service{
+    IMyAidlInterface.Stub binder = new IMyAidlInterface.Stub() {
+       @Override
+       public void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat, double aDouble, String aString) throws RemoteException {
+       }
+    };
+    @Override
+    public IBinder onBind(Intent intent) {
+          return binder;
+          // return localBinder;
+    }
+    public class LocalBinder extends Binder {
+        public MainService getService() {
+            return MainService.this;
+        }
+    }
+    LocalBinder localBinder = new LocalBinder();
+}
+```
+
+```java
+    if(binder==null){
+            Intent intent1 = new Intent(context, MyService.class);
+            context.bindService(intent1, mConnection, Context.BIND_AUTO_CREATE);
+    }else{
+        try {
+            binder.handleMessage(customMessage.message);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+    MyService.LocalBinder mService;
+    IMyAidlInterface binder;
+    private final ServiceConnection mConnection = new ServiceConnection() {
+        public void onServiceConnected(ComponentName className,
+                                       IBinder service) {
+            binder=IMyAidlInterface.Stub.asInterface(service);
+            mService=(MyService)service;
+            try {
+               binder.basicTypes();
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+
+        public void onServiceDisconnected(ComponentName className) {
+            mService = null;
+        }
+    };
+```
+
+## 打开高德 百度 地图
+
+```java
+public class UtilsMap {
+
+    //百度
+    public static void goToBaidu(Context context, double lat, double lon) {
+        if (!checkApkExist(context, "com.baidu.BaiduMap")) {
+            Toast.makeText(context, "请先安装百度地图", Toast.LENGTH_LONG).show();
+        }
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //将功能Scheme以URI的方式传入data
+        Uri uri = Uri.parse("baidumap://map/direction?destination=name:|latlng:" + lat + "," + lon + "&coord_type=wgs84&src=andr.ztftrue");
+        intent.setData(uri);
+        try {
+            context.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //高德
+    public static void goToGaode(Context context, double lat, double lon) {
+        if (!checkApkExist(context, "com.autonavi.minimap")) {
+            Toast.makeText(context, "请先安装高德地图", Toast.LENGTH_LONG).show();
+        }
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addCategory(Intent.CATEGORY_DEFAULT);
+        //将功能Scheme以URI的方式传入data
+        Uri uri = Uri.parse("androidamap://viewMap?sourceApplication=z&lat=" + lat + "&lon=" + lon + "&dev=1");
+        intent.setData(uri);
+        try {
+            context.startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static boolean checkApkExist(Context context, String packageName) {
+        if (packageName == null || "".equals(packageName))
+            return false;
+        try {
+            ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
+                    PackageManager.GET_UNINSTALLED_PACKAGES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+}
+```
+
+Mainfest
+
+```xml
+<manifest>
+    <queries>
+        <package android:name="com.baidu.BaiduMap" />
+        <package android:name="com.autonavi.minimap" />
+    </queries>
+</manifest>
+```
+
+### 检查 app 是否安装
+
+```java
+    private boolean checkApkExist(Context context, String packageName) {
+        if (packageName == null || "".equals(packageName))
+            return false;
+        try {
+            ApplicationInfo info = context.getPackageManager().getApplicationInfo(packageName,
+                    PackageManager.GET_UNINSTALLED_PACKAGES);
+            return true;
+        } catch (PackageManager.NameNotFoundException e) {
+            return false;
+        }
+    }
+```
+
+## 减小 APP 体积
+
+<https://developer.android.com/studio/build/shrink-code>
+
+android.buildTypes.release.ndk.debugSymbolLevel = { SYMBOL_TABLE | FULL }
+
+## JetPack
+
+<https://developer.android.google.cn/jetpack/androidx/explorer?hl=zh-cn>
+
+[演示 https://github.com/android/sunflower](https://github.com/android/sunflower)
+
+## Activity
+
+访问基于 Activity 构建的可组合 API。
+
+onCreate()->onStart()->onResume()->onPause()->onStop()->onRestart()->->onStart()
+onDestroy()
+
+## 自定义权限控制其他人访问这个 activity
+
+```xml
+//应用A
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.test.myapp" >
+
+    <permission
+      android:name="com.test.myapp.permission.DEADLY_ACTIVITY"
+      android:permissionGroup="android.permission-group.COST_MONEY"
+      android:protectionLevel="dangerous" />
+
+     <activity
+            android:name="MainActivity"
+            android:exported="true"
+            android:permission="com.test.myapp.permission.DEADLY_ACTIVITY">
+       </activity>
+</manifest>
+
+//应用B
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.test.otherapp" >
+
+    <uses-permission android:name="com.test.myapp.permission.DEADLY_ACTIVITY" />
+</manifest>
+```
+
+## 视图绑定
+
+```java
+viewBinding {
+          enabled = true
+      }
+tools:viewBindingIgnore="true"
+binding = ResultProfileBinding.inflate(getLayoutInflater());
+binding = ResultProfileBinding.inflate(inflater, container, false);
+```
+
+## 数据绑定
+
+```xml
+  buildFeatures {
+        dataBinding = true
+    }
+android:text="@={viewmodel.text}"
+android:onClick="@{(view)->viewmodel.viewClick(view)}"
+<import type="android.view.View" />
+<import type="android.text.TextUtils" />
+```
+
+## appcompat
+
+允许在平台旧版 API 上访问新 API
+
+`AppCompatActivity` 带标题栏的 Activity
+
+ShareActionProvider 在菜单栏集成分享功能。
+通过 setShareIntent(Intent intent)方法可以在 Menu 里设置要分享的内容
+
+## camera
+
+构建移动相机应用。
+
+## databinding 和 MutableLiveData, ViewModel
+
+使用声明性格式将布局中的界面组件绑定到应用中的数据源。
+
+`MutableLiveData` 可以直接应用. 不再需要`ObserveFiled`
+
+避免在 ViewModel 中引用 View 或 Activity 上下文。如果 ViewModel 存在的时间比 Activity 更长（在配置更改的情况下），Activity 将泄漏并且不会获得垃圾回收器的妥善处置。
+
+## compose
+
+<https://developer.android.google.cn/jetpack/compose/tutorial?hl=zh-cn>
+
+compose.animation 在 Jetpack Compose 应用中构建动画，丰富用户的体验
+
+compose.compiler 借助 Kotlin 编译器插件，转换 @Composable functions（可组合函数）并启用优化功能。
+
+compose.foundation 使用现成可用的构建块编写 Jetpack Compose 应用，还可扩展 Foundation 以构建您自己的设计系统元素。
+
+compose.material 使用现成可用的 Material Design 组件构建 Jetpack Compose UI。这是更高层级的 Compose 入口点，旨在提供与 <www.material.io> 上描述的组件一致的组件。
+
+compose.runtime Compose 的编程模型和状态管理的基本构建块，以及 Compose 编译器插件针对的核心运行时。
+
+compose.ui 与设备互动所需的 Compose UI 的基本组件，包括布局、绘图和输入。
+
+```kotlin
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            Greeting("Android")
+        }
+    }
+}
+
+@Composable
+fun Greeting(name: String) {
+    Text (text = "Hello $name!")
+}
+```
+
+## Fragment
+
+## hilt
+
+Hilt 通过为项目中的每个 Android 类提供容器并自动管理其生命周期，提供了一种在应用中使用 DI（依赖项注入）的标准方法
+
+<https://developer.android.google.cn/training/dependency-injection/hilt-android?hl=zh-cn>
+
+## lifecycle
+
+```java
+public class MyObserver implements LifecycleObserver {
+    @OnLifecycleEvent(Lifecycle.Event.ON_RESUME)
+    public void connectListener() {
+        ...
+    }
+
+    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    public void disconnectListener() {
+        ...
+    }
+}
+
+myLifecycleOwner.getLifecycle().addObserver(new MyObserver());
+```
+
+```kotlin
+   override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        myLocationListener = MyLocationListener(this) { location ->
+            // update UI
+        }
+       lifecycle.addObserver(myLocationListener)
+    }
+
+
+
+    internal class MyLocationListener (
+            private val context: Context,
+            private val callback: (Location) -> Unit
+    ): LifecycleObserver {
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_START)
+        fun start() {
+
+        }
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+        fun stop() {
+            // disconnect if connected
+        }
+    }
+```
+
+避免在 ViewModel 中引用 View 或 Activity 上下文。如果 ViewModel 存在的时间比 Activity 更长（在配置更改的情况下），Activity 将泄漏并且不会获得垃圾回收器的妥善处置。
+
+## room
+
+创建、存储和管理由 SQLite 数据库支持的持久性数据(JPA)
+<https://developer.android.google.cn/training/data-storage/room?hl=zh-cn>
+
+## test
+
+在 Android 中进行测试
+
+## car
+
+为支持 Android 技术的汽车开发驾驶友好型应用。
+
+<https://developer.android.google.cn/training/cars?hl=zh-cn>
+
+## media-compat , media2
+
+媒体应用架构
+
+media2
+
+## Autofill 自动填写密码, 自动填写短信验证码
+
+通过扩展提示提高输入框自动填充的准确性。
+
+```java
+setAutofillHints(HintConstants.AUTOFILL_HINT_SMS_OTP)// 自动填写短信验证码
+```
+
+```groovy
+dependencies {
+    implementation "androidx.autofill:autofill:1.1.0"
+}
+```
+
+## security
+
+安全地管理密钥并对文件和 sharedpreferences 进行加密 , 对文件进行加密
+
+## TV
+
+tvprovider 提供 Android TV 频道。
+
+recommendation 将内容推送到 Android TV 启动器的主屏幕。
+
+leanback 使用适合 dpad 的微件和模板 Fragment 为 Android TV 设备编写应用。
+
+## Navigation
+
+Navigation 会销毁 fragment
+
+## WorkManager
+
+后台定时运行任务, 我试了几次不能成功, 可能是不是原生的问题.
+
+## DownloadManager
+
+## [Preference](https://developer.android.google.cn/guide/topics/ui/settings?hl=zh-cn)
+
+无需与设备存储空间交互，也不需要管理界面，便能构建交互式设置画面.
+
+设置界面
+
+## DataStore
+
+如果您当前在使用 SharedPreferences 存储数据，请考虑迁移到 DataStore。
+
+```java
+RxDataStore<Preferences> dataStore =
+  new RxPreferenceDataStoreBuilder(context, /*name=*/ "settings").build();
+  Flowable<Integer> exampleCounterFlow =
+  dataStore.data().map(prefs -> prefs.get(EXAMPLE_COUNTER));
+  // write
+  Single<Preferences> updateResult =  dataStore.updateDataAsync(prefsIn -> {
+  MutablePreferences mutablePreferences = prefsIn.toMutablePreferences();
+  Integer currentInt = prefsIn.get(INTEGER_KEY);
+  mutablePreferences.set(INTEGER_KEY, currentInt != null ? currentInt + 1 : 1);
+  return Single.just(mutablePreferences);
+});
+```
+
+## 共享
+
+```xml
+    val sendIntent: Intent = Intent().apply {
+        action = Intent.ACTION_SEND
+        putExtra(Intent.EXTRA_TEXT, "This is text to send.")
+        type = "text/plain"
+    }
+
+    val shareIntent = Intent.createChooser(sendIntent, null)
+    startActivity(shareIntent)
+
+
+    <activity android:name=".ui.MyActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.SEND" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <data android:mimeType="text/plain" />
+        </intent-filter>
+    </activity>
+
+
+    public static void share(String path, String minType, Activity activity) {
+        Uri uri;
+        File outputImage = new File(path);
+        //第一步：使用FileProvider将file的绝对路径包装为URI格式的路径，URI格式路径会隐藏其中的子路径，起到安全作用
+        uri = FileProvider.getUriForFile(activity, activity.getPackageName() + ".activity.fileprovider", outputImage);
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        shareIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+        shareIntent.setDataAndType(uri, "*/*");
+        shareIntent.putExtra(Intent.EXTRA_STREAM, uri);
+        activity.startActivity(Intent.createChooser(shareIntent, "分享"));
+    }
+```
+
+## Slice
+
+在应用外显示模板化界面元素。
+
+Slice 是一种界面模板，可以在 Google 搜索应用中以及 Google 助理中等其他位置显示您应用中的丰富而动态的互动内容。Slice 支持全屏应用体验之外的互动，可以帮助用户更快地执行任务。您可以将 Slice 构建成为与应用有关的 Action 的增强功能。
+
+在 Google 助理中可以显示你的应用提供的内容
+
+## Emoji
+
+<https://developer.android.google.cn/guide/topics/ui/look-and-feel/emoji-compat?hl=zh-cn>
+
+EmojiCompat 支持库旨在让 Android 设备及时兼容最新的表情符号。它可防止您的应用以`☐`的形式显示缺少的表情符号字符，该符号表示您的设备没有用于显示文字的相应字体。通过使用 EmojiCompat 支持库，您的应用用户无需等到 Android OS 更新即可获取最新的表情符号。
+
+## Palette
+
+获取 图片中的暗色，亮色，鲜艳颜色，柔和色，文字颜色，主色调
+
+## ConstraintLayout 关系布局 CoordinatorLayout , CollapsingToolbarLayout
+
+Framlayout->linearLayout->ConstraintLayout
+
+在 `ConstraintLayout` 中，您可以使用 `ConstraintSet` 和 `TransitionManager` 为尺寸和位置元素的变化添加动画效果。]
+
+ConstraintSet 仅对子元素的大小和位置设置动画。它们不会为其他属性（如颜色）设置动画。
+
+需要指定初始布局和结束布局
+
+## MotionLayout 动画布局
+
+<https://developer.android.google.cn/training/constraint-layout/motionlayout/examples?hl=zh-cn>
+
+## 动画
+
+帧动画 ，补间动画
+
+属性动画
+AnimationDrawable 加载一系列可绘制资源以创建动画
+
+AnimatedVectorDrawable,VectorDrawable 支持 SVG
+
+### 基于物理特性的动画
+
+[运用弹簧物理学原理为图形运动添加动画](https://developer.android.google.cn/guide/topics/graphics/spring-animation?hl=zh-cn)
+
+## ADB
+
+ADB 获取 log
+
+```bash
+adb bugreport
+```
+
+adb 直接获取 ANR log
+
+```bash
+adb pull /data/anr/traces.txt # 试了,不行
+```
+
+## Android 事件通知 使用 ObservableField
+
+```java
+  public static final ObservableField<Integer> event = new ObservableField<>(0);
+```
+
+## 解压 zip 文件
+
+不用担心空文件夹
+
+```java
+    public static void UnZipFolder(String source, String outPath, Charset charset) throws IOException {
+        java.util.zip.ZipFile zipFile = new ZipFile(source);
+        Enumeration<? extends ZipEntry> entries = zipFile.entries();
+        while (entries.hasMoreElements()) {
+            ZipEntry entry = entries.nextElement();
+            File entryDestination = new File(outPath, entry.getName());
+            if (entry.isDirectory()) {
+                entryDestination.mkdirs();
+            } else {
+                entryDestination.getParentFile().mkdirs();
+                try (InputStream in = zipFile.getInputStream(entry);
+                     OutputStream out = new FileOutputStream(entryDestination)) {
+                     IOUtils.copy(in, out);
+                }
+            }
+        }
+    }
+```
+
+## 证书获取
+
+遍历所有证书
+
+```kt
+    fun PrintInstalledCertificates() {
+        val l = Security.getProviders()
+        l.forEach { Log.d("TAG", it.name) }
+        val ks = KeyStore.getInstance("AndroidCAStore");
+        ks.load(null, null);
+        val aliases = ks.aliases();
+        while (aliases.hasMoreElements()) {
+            val alias = aliases.nextElement()
+            val cert = ks.getCertificate(alias) as X509Certificate
+            if (cert.getIssuerDN().getName().contains("system")) {
+                System.out.println(cert.getIssuerDN().getName());
+            }
+            if (cert.getIssuerDN().getName().contains("user")) {
+                System.out.println(cert.getIssuerDN().getName());
+            }
+            System.out.println(cert.getIssuerDN().getName());
+        }
+    }
+```
+
+用自己的证书, 加解密
+
+```kt
+   /*
+         * Load the Android KeyStore instance using the
+         * AndroidKeyStore provider to list the currently stored entries.
+         * https://stackoverflow.com/questions/27320610/how-can-i-use-the-android-keystore-to-securely-store-arbitrary-strings
+         * 官网这个是摘要算法
+         * https://developer.android.com/training/articles/keystore#kotlin
+         */
+        val aliasName = "oneKey"
+        val ks: KeyStore = KeyStore.getInstance("AndroidKeyStore").apply {
+            load(null)
+        }
+        if (!ks.containsAlias(aliasName)) {
+            val notBefore: Calendar = Calendar.getInstance()
+            val notAfter: Calendar = Calendar.getInstance()
+            notAfter.add(Calendar.YEAR, 1)
+            // 生成密钥
+            val kpg: KeyPairGenerator = KeyPairGenerator.getInstance(
+                KeyProperties.KEY_ALGORITHM_RSA,
+                "AndroidKeyStore"
+            )
+            val parameterSpec: KeyGenParameterSpec = KeyGenParameterSpec.Builder(
+                aliasName, KeyProperties.PURPOSE_DECRYPT or KeyProperties.PURPOSE_ENCRYPT
+            )
+                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1) //  RSA/ECB/PKCS1Padding
+                .setKeySize(2048) // *** Replaced: setStartDate
+                .setKeyValidityStart(notBefore.time) // *** Replaced: setEndDate
+                .setKeyValidityEnd(notAfter.time) // *** Replaced: setSubject
+                .setCertificateSubject(X500Principal("CN=test")) // *** Replaced: setSerialNumber
+                .setCertificateSerialNumber(BigInteger.ONE)
+                .build()
+            kpg.initialize(parameterSpec)
+            val kp = kpg.generateKeyPair()
+            Log.i("TAG", kp.toString())
+        }
+        val privateKeyEntry = ks.getEntry(aliasName, null) as KeyStore.PrivateKeyEntry
+        val privateKey = privateKeyEntry.privateKey
+        val publicKey = privateKeyEntry.certificate.publicKey
+        // *** Changed the padding type here and changed to AndroidKeyStoreBCWorkaround
+        // *** Changed the padding type here and changed to AndroidKeyStoreBCWorkaround
+        val inCipher = Cipher.getInstance("RSA/ECB/PKCS1Padding", "AndroidKeyStoreBCWorkaround")
+        inCipher.init(Cipher.ENCRYPT_MODE, publicKey)
+
+        // *** Changed the padding type here and changed to AndroidKeyStoreBCWorkaround
+
+        // *** Changed the padding type here and changed to AndroidKeyStoreBCWorkaround
+        val outCipher = Cipher.getInstance("RSA/ECB/PKCS1Padding", "AndroidKeyStoreBCWorkaround")
+        outCipher.init(Cipher.DECRYPT_MODE, privateKey)
+
+        // Encrypt the text
+        val plainText = "This text is supposed to be a secret!"
+        val dataDirectory = applicationInfo.dataDir
+        val filesDirectory = filesDir.absolutePath
+        val encryptedDataFilePath = filesDirectory + File.separator + "keep_yer_secrets_here"
+
+        val cipherOutputStream = CipherOutputStream(
+            FileOutputStream(encryptedDataFilePath), inCipher
+        )
+        cipherOutputStream.write(plainText.toByteArray(Charsets.UTF_8))
+        cipherOutputStream.close()
+
+        val cipherInputStream = CipherInputStream(
+            FileInputStream(encryptedDataFilePath),
+            outCipher
+        )
+        val roundTrippedBytes = ByteArray(1000) // TODO: dynamically resize as we get more data
+
+
+        var index = 0
+        var nextByte: Int
+        while (cipherInputStream.read().also { nextByte = it } != -1) {
+            roundTrippedBytes[index] = nextByte.toByte()
+            index++
+        }
+        val roundTrippedString = String(roundTrippedBytes, 0, index, Charsets.UTF_8)
+        Log.v("解密结果", "round tripped string = " + roundTrippedString)
+
+
+        /**
+         * 遍历别名
+         */
+        val aliases: Enumeration<String> = ks.aliases()
+        aliases.iterator().forEach { alias ->
+            Log.d("TAG", alias)
+            val entry: KeyStore.Entry = ks.getEntry(alias, null)
+            if (entry !is KeyStore.PrivateKeyEntry) {
+                Log.w("", "Not an instance of a PrivateKeyEntry")
+            }
+        }
+```
+
+## SD卡读取权限
+
+Android 11 开始`MANAGE_EXTERNAL_STORAGE`
+
+在清单中声明 MANAGE_EXTERNAL_STORAGE 权限
+
+使用 ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION intent 操作将用户引导至一个系统设置页面，在该页面上，用户可以为您的应用启用以下选项：授予所有文件的管理权限。
+
+```java
+if(sdk>=30){
+    if(!Environment.isExternalStorageManager()){
+Intent intent=new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+startActivity(intent);
+    }
+}
+```
+
+<https://developer.android.com/training/data-storage/manage-all-files?hl=zh-cn>
+
+## 共享存储空间
+
+<https://developer.android.com/training/data-storage/shared/media?hl=zh-cn>
