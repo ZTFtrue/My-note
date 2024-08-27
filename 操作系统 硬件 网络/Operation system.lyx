@@ -1,0 +1,6931 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options true
+\begin_modules
+theorems-ams
+eqs-within-sections
+figs-within-sections
+\end_modules
+\maintain_unincluded_children false
+\language chinese-simplified
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Part
+Operation system
+\end_layout
+
+\begin_layout Standard
+系统调用
+\end_layout
+
+\begin_layout Chapter
+多处理机(multiprocessor)
+\end_layout
+
+\begin_layout Standard
+两个或更多的CPU全部共享访问一个公用的RAM进程可以向存储器写消息，然后被其他进程读取。可以使用互斥信号量、信号量、管程（monitor）和其他适合的技术实现
+同步。
+\end_layout
+
+\begin_layout Section
+多处理机硬件
+\end_layout
+
+\begin_layout Subsection
+UMA（Uniform Memory Access，统一存储器访问）多处理机
+\end_layout
+
+\begin_layout Subsubsection
+基于总线的UMA多处理机体系结构
+\end_layout
+
+\begin_layout Itemize
+完全受到总线带宽的限制
+\end_layout
+
+\begin_layout Itemize
+有高速缓存
+\end_layout
+
+\begin_layout Itemize
+私有存储器
+\end_layout
+
+\begin_layout Subsubsection
+使用交叉开关的UMA多处理机
+\end_layout
+
+\begin_layout Standard
+当两个CPU同时试图访问同一个模块的时候，对内存的争夺还是可能的
+\end_layout
+
+\begin_layout Subsubsection
+使用多级交换的UMA多处理机
+\end_layout
+
+\begin_layout Standard
+全混洗（perfect shuffle）
+\end_layout
+
+\begin_layout Subsection
+NUMA（Nonuniform Memory Access，非一致存储器访问）
+\end_layout
+
+\begin_layout Itemize
+具有对所有CPU都可见的单个地址空间。
+\end_layout
+
+\begin_layout Itemize
+通过LOAD和STORE指令访问远程存储器。
+\end_layout
+
+\begin_layout Itemize
+访问远程存储器慢于访问本地存储器。
+\end_layout
+
+\begin_layout Itemize
+NC-NUMA（No Cache NUMA，无高速缓存NUMA）
+\end_layout
+
+\begin_layout Itemize
+CC-NUMA（Cache-Coherent NUMA，高速缓存一致NUMA）
+\end_layout
+
+\begin_layout Subsection
+多核芯片(片级多处理机（Chip-level MultiProcessors，CMP）)
+\end_layout
+
+\begin_layout Section
+多处理机操作系统类型
+\end_layout
+
+\begin_layout Subsection
+每个CPU有自己的操作系统
+\end_layout
+
+\begin_layout Subsection
+主从多处理机
+\end_layout
+
+\begin_layout Subsubsection
+主CPU处理来自所有CPU的系统调用
+\end_layout
+
+\begin_layout Subsection
+对称多处理机
+\end_layout
+
+\begin_layout Section
+多处理机同步
+\end_layout
+
+\begin_layout Itemize
+TSL（Test and Set Lock）
+\end_layout
+
+\begin_layout Itemize
+指数补偿算法（binary exponential backoff algorithm）
+\end_layout
+
+\begin_layout Itemize
+让每个打算获得互斥信号量的CPU都拥有各自用于测试的私有锁变量
+\end_layout
+
+\begin_layout Subsection
+自旋与切换
+\end_layout
+
+\begin_layout Standard
+一个未能获得互斥信号量的线程自旋一段时间。如果时间超过某个阈值，则进行切换。在某些情形下，该阈值是一个定值，典型值是切换至另一个线程再切换回来的开销。在另一些情
+形下，该阈值是动态变化的，它取决于所观察到的等待互斥信号量的历史信息。
+\end_layout
+
+\begin_layout Section
+多处理机调度
+\end_layout
+
+\begin_layout Subsection
+分时
+\end_layout
+
+\begin_layout Subsubsection
+智能调度（smart scheduling）
+\end_layout
+
+\begin_layout Subsubsection
+亲和调度（affinity scheduling）
+\end_layout
+
+\begin_layout Standard
+两级调度算法（two-level scheduling algorithm
+\end_layout
+
+\begin_layout Subsection
+空间共享
+\end_layout
+
+\begin_layout Subsubsection
+群调度（Gang Scheduling）协同调度（co-scheduling）的发展产物
+\end_layout
+
+\begin_layout Standard
+把一组相关线程作为一个单位，即一个群（gang），一起调度一个群中的所有成员在不同的分时CPU上同时运行。群中的所有成员共同开始和结束其时间片。让一个进程的所有
+线程一起运行，这样，如果其中一个线程向另一个线程发送请求，接受方几乎会立即得到消息，并且几乎能够立即应答
+\end_layout
+
+\begin_layout Section
+多计算机multicomputers （cluster computers）,工作站机群（Clusters of Workstations，COWS）
+\end_layout
+
+\begin_layout Standard
+多计算机是紧耦合CPU，不共享存储器
+\end_layout
+
+\begin_layout Subsection
+多计算机硬件
+\end_layout
+
+\begin_layout Standard
+互连技术a)单交换机；b)环；c)网格；d)双凸面；e)立方体；f)四维超立方体
+\end_layout
+
+\begin_layout Subsubsection
+网络连接
+\end_layout
+
+\begin_layout Subsubsection
+超立方体（hypercube）
+\end_layout
+
+\begin_layout Subsubsection
+电路交换
+\end_layout
+
+\begin_layout Standard
+虫孔路由（wormhole routing）
+\end_layout
+
+\begin_layout Section
+虚拟化
+\end_layout
+
+\begin_layout Subsection
+I型管理程序
+\end_layout
+
+\begin_layout Subsubsection
+敏感指令（sensitive instruction）
+\end_layout
+
+\begin_layout Subsubsection
+特权指令（privileged instruction）
+\end_layout
+
+\begin_layout Subsection
+II型管理程序
+\end_layout
+
+\begin_layout Standard
+二进制翻译（binary translation）
+\end_layout
+
+\begin_layout Subsection
+准虚拟化(paravirtualized)
+\end_layout
+
+\begin_layout Standard
+VMI（虚拟机接口）
+\end_layout
+
+\begin_layout Section
+分布式系统
+\end_layout
+
+\begin_layout Subsection
+网络硬件
+\end_layout
+
+\begin_layout Subsection
+网络服务和协议
+\end_layout
+
+\begin_layout Subsection
+基于文档的中间件
+\end_layout
+
+\begin_layout Standard
+URL（统一资源定位符，Uniform Resource Locator）统一资源标识符（Uniform Resource Identifier，URI)
+\end_layout
+
+\begin_layout Subsection
+基于对象的中间件
+\end_layout
+
+\begin_layout Standard
+IDL（接口定义语言，Interface Definition Language）
+\end_layout
+
+\begin_layout Subsection
+基于协作的中间件（coordination-based middleware）
+\end_layout
+
+\begin_layout Standard
+发布/订阅（Pubilsh/Subscribe）
+\end_layout
+
+\begin_layout Subsection
+Jini
+\end_layout
+
+\begin_layout Subsection
+网格（grid）
+\end_layout
+
+\begin_layout Chapter
+进程(process)
+\end_layout
+
+\begin_layout Section
+进程模型
+\end_layout
+
+\begin_layout Standard
+计算机上所有可运行的软件，通常也包括操作系统，被组织成若干顺序进程（sequential process），简称进程（process）。
+\end_layout
+
+\begin_layout Standard
+一个进程就是一个正在执行程序的实例，包括程序计数器、寄存器和变量的当前值。
+\end_layout
+
+\begin_layout Standard
+从概念上说，每个进程拥有它自己的虚拟CPU。当然，实际上真正的CPU在各进程之间来回切换(多道程序设计).。
+\end_layout
+
+\begin_layout Standard
+操作系统周期性地挂起一个进程然后启动运行另一个进程
+\end_layout
+
+\begin_layout Section
+进程表
+\end_layout
+
+\begin_layout Standard
+在许多操作系统中，与一个进程有关的所有信息，除了该进程自身地址空间的内容以外，均存放在操作系统的一张表中，称为进程表（process table），进程表是数组
+（或链表）结构，当前存在的每个进程都要占用其中一项
+\end_layout
+
+\begin_layout Section
+一个（挂起的）进程
+\end_layout
+
+\begin_layout Standard
+进程的地址空间，以及对应的进程表项，其中包括寄存器以及稍后重启动该进程所需要的许多其他信息。
+\end_layout
+
+\begin_layout Section
+进程树
+\end_layout
+
+\begin_layout Standard
+若一个进程能够创建一个或多个进程（称为子进程），而且这些进程又可以创建子进程
+\end_layout
+
+\begin_layout Standard
+系统管理器授权每个进程使用一个给定的UID标识（User IDentification）。每个被启动的进程都有一个启动该进程的用户UID。子进程拥有与父进程一样
+的UID。用户可以是某个组的成员，每个组也有一个GID标识（Group IDentification）。
+\end_layout
+
+\begin_layout Standard
+在UNIX中，有一个UID称为超级用户（superuser），具有特殊的权利，可以违背一些保护规则。
+\end_layout
+
+\begin_layout Standard
+只有父进程能控制和访问子进程
+\end_layout
+
+\begin_layout Standard
+某些系统中，当进程创建了另一个进程后，父进程和子进程就以某种形式继续保持关联。子进程自身可以创建更多的进程，组成一个进程的层次结构
+\end_layout
+
+\begin_layout Subsection
+进程的层次结构
+\end_layout
+
+\begin_layout Subsubsection
+在UNIX中，进程和它的所有子女以及后裔共同组成一个进程组
+\end_layout
+
+\begin_layout Standard
+一个称为init的特殊进程出现在启动映像中。当它开始运行时，读入一个说明终端数量的文件。接着，为每个终端创建一个新进程。这些进程等待用户登录。如果有一个用户登录
+成功，该登录进程就执行一个shell准备接收命令。所接收的这些命令会启动更多的进程，以此类推。这样，在整个系统中，所有的进程都属于以init为根的一棵树。
+\end_layout
+
+\begin_layout Standard
+当用户从键盘发出一个信号时，该信号被送给当前与键盘相关的进程组中的所有成员（它们通常是在当前窗口创建的所有活动进程）。每个进程可以分别捕获该信号、忽略该信号或采
+取默认的动作，即被该信号杀死。
+\end_layout
+
+\begin_layout Standard
+Windows中没有进程层次的概念，所有的进程都是地位相同的。惟一类似于进程层次的暗示是在创建进程的时侯，父进程得到一个特别的令牌（称为句柄），该句柄可以用来控
+制子进程。但是，它有权把这个令牌传送给某个其他进程，这样就不存在进程层次了.
+\end_layout
+
+\begin_layout Standard
+其他可用的进程系统调用包括：申请更多的内存（或释放不再需要的内存）、等待一个子进程结束、用另一个程序覆盖该程序等。
+\end_layout
+
+\begin_layout Standard
+每个进程有一个地址空间和一个控制线程。
+\end_layout
+
+\begin_layout Subsection
+进程的状态
+\end_layout
+
+\begin_layout Itemize
+运行态
+\end_layout
+
+\begin_layout Itemize
+就绪态可运行，但因为其他进程正在运行而暂时停止
+\end_layout
+
+\begin_layout Itemize
+阻塞态除非某种外部事件发生，否则进程不能运行处于该状态的进程不能运行，即使CPU空闲也不行
+\end_layout
+
+\begin_layout Section
+线程
+\end_layout
+
+\begin_layout Subsection
+优点
+\end_layout
+
+\begin_layout Itemize
+共享地址空间除外并行实体共享同一个地址空间和所有可用数据的能力
+\end_layout
+
+\begin_layout Itemize
+线程比进程更轻量级
+\end_layout
+
+\begin_layout Itemize
+若多个线程都是CPU密集型的，那么并不能获得性能上的增强，但是如果存在着大量的计算和大量的I/O处理，拥有多个线程允许这些活动彼此重叠进行，从而会加快应用程序执
+行的速度。
+\end_layout
+
+\begin_layout Standard
+模型只有当系统调用只阻塞调用线程, 而不是阻塞整个进程时，才能正常工作。
+\end_layout
+
+\begin_layout Standard
+进程用于把资源集中到一起，而线程则是在CPU上被调度执行的实体。
+\end_layout
+
+\begin_layout Standard
+在线程中有一个程序计数器，用来记录接着要执行哪一条指令。线程拥有寄存器，用来保存线程当前的工作变量。线程还拥有一个堆栈，用来记录执行历史，其中每一帧保存了一个已
+调用的但是还没有从中返回的过程。
+\end_layout
+
+\begin_layout Standard
+由于各个线程都可以访问进程地址空间中的每一个内存地址，所以一个线程可以读、写或甚至清除另一个线程的堆栈。线程之间是没有保护的
+\end_layout
+
+\begin_layout Standard
+每个线程有其自己的堆栈
+\end_layout
+
+\begin_layout Standard
+进程拥有一个执行的线程，通常简写为线程（thread）
+\end_layout
+
+\begin_layout Standard
+线程给进程模型增加了一项内容，即在同一个进程环境中，允许彼此之间有较大独立性的多个线程执行。在同一个进程中并行运行多个线程，是对在同一台计算机上并行运行多个进程
+的模拟。在前一种情形下，多个线程共享同一个地址空间和其他资源。而在后一种情形中，多个进程共享物理内存、磁盘、打印机和其他资源。由于线程具有进程的某些性质，所以有
+时被称为
+\series bold
+轻量级进程（lightweight process）
+\series default
+。
+\end_layout
+
+\begin_layout Standard
+与每个进程相关的是进程的地址空间（address space），这是从某个最小值的存储位置（通常是零）到某个最大值存储位置的列表。在这个地址空间中，进程可以进行
+读写。该地址空间中存放有可执行程序、程序的数据以及程序的堆栈。
+\end_layout
+
+\begin_layout Subsection
+实现线程包
+\end_layout
+
+\begin_layout Subsubsection
+用户空间
+\end_layout
+
+\begin_layout Paragraph
+把整个线程包放在用户空间中，内核对线程包一无所知
+\end_layout
+
+\begin_layout Standard
+允许每个进程有自己定制的调度算法
+\end_layout
+
+\begin_layout Standard
+有更好的性能
+\end_layout
+
+\begin_layout Standard
+减少了内核-用户转换的开销
+\end_layout
+
+\begin_layout Subsubsection
+在用户空间管理线程时，每个进程需要有其专用的线程表（thread table），用来跟踪该进程中的线程。
+\end_layout
+
+\begin_layout Subsubsection
+内核
+\end_layout
+
+\begin_layout Standard
+内核的线程表保存了每个线程的寄存器、状态和其他信息。这些信息和在用户空间中（在运行时系统中）
+\series bold
+的线程是一样的
+\series default
+，但是现在保存在内核中。这些信息是传统内核所维护的每个单线程进程信息（即进程状态）的子集。另外，内核还维护了传统的进程表，以便跟踪进程的状态。
+\end_layout
+
+\begin_layout Subsubsection
+混合实现
+\end_layout
+
+\begin_layout Subsubsection
+调度程序激活机制
+\end_layout
+
+\begin_layout Standard
+上行调用（upcall）
+\end_layout
+
+\begin_layout Subsection
+弹出式线程
+\end_layout
+
+\begin_layout Standard
+一个消息的到达导致系统创建一个处理该消息的线程，这种线程称为弹出式线程
+\end_layout
+
+\begin_layout Subsection
+线程调度
+\end_layout
+
+\begin_layout Standard
+应用定制的线程调度程序能够比内核更好地满足应用的需要
+\end_layout
+
+\begin_layout Standard
+用户级线程的线程切换需要少量的机器指令，而内核级线程需要完整的上下文切换，修改内存映像，使高速缓存失效
+\end_layout
+
+\begin_layout Section
+资源集
+\end_layout
+
+\begin_layout Standard
+寄存器（含有程序计数器和堆栈指针）
+\end_layout
+
+\begin_layout Standard
+打开文件的清单
+\end_layout
+
+\begin_layout Standard
+突出的报警
+\end_layout
+
+\begin_layout Standard
+有关进程清单
+\end_layout
+
+\begin_layout Standard
+以及运行该程序所需要的所有其他信息
+\end_layout
+
+\begin_layout Standard
+进程基本上是容纳运行一个程序所需要所有信息的容器
+\end_layout
+
+\begin_layout Section
+进程间通信（interprocess communication）
+\end_layout
+
+\begin_layout Standard
+竞争条件
+\end_layout
+
+\begin_layout Subsection
+临界区critical region
+\end_layout
+
+\begin_layout Standard
+对共享内存进行访问的程序片段称作临界区或临界区（critical section）使得两个进程不可能同时处于临界区中
+\end_layout
+
+\begin_layout Subsubsection
+条件
+\end_layout
+
+\begin_layout Standard
+任何两个进程不能同时处于其临界区
+\end_layout
+
+\begin_layout Standard
+不应对CPU的速度和数量做任何假设。
+\end_layout
+
+\begin_layout Standard
+临界区外运行的进程不得阻塞其他进程
+\end_layout
+
+\begin_layout Standard
+不得使进程无限期等待进入临界区
+\end_layout
+
+\begin_layout Subsection
+忙等待的互斥
+\end_layout
+
+\begin_layout Subsubsection
+屏蔽中断
+\end_layout
+
+\begin_layout Standard
+在单处理器系统中，最简单的方法是使每个进程在刚刚进入临界区后立即屏蔽所有中断，并在就要离开之前再打开中断。屏蔽中断后，时钟中断也被屏蔽。CPU只有发生时钟中断或
+其他中断时才会进行进程切换，这样，在屏蔽中断之后CPU将不会被切换到其他进程。于是，一旦某个进程屏蔽中断之后，它就可以检查和修改共享内存，而不必担心其他进程介入
+。
+\end_layout
+
+\begin_layout Standard
+屏蔽中断对于操作系统本身而言是一项很有用的技术
+\end_layout
+
+\begin_layout Standard
+但对于用户进程则不是一种合适的通用互斥机制。
+\end_layout
+
+\begin_layout Subsubsection
+锁变量
+\end_layout
+
+\begin_layout Subsubsection
+严格轮换法
+\end_layout
+
+\begin_layout Subsubsection
+Peterson解法
+\end_layout
+
+\begin_layout Subsubsection
+TSL指令
+\end_layout
+
+\begin_layout Itemize
+需要硬件支持
+\end_layout
+
+\begin_layout Itemize
+该指令结束之前其他处理器均不允许访问该内存字
+\end_layout
+
+\begin_layout Itemize
+执行TSL指令的CPU将锁住内存总线，以禁止其他CPU在本指令结束之前访问内存
+\end_layout
+
+\begin_layout Subsubsection
+忙等待
+\end_layout
+
+\begin_layout Standard
+忙等待的锁，称为自旋锁（spin lock）在一个等待循环中不停地测
+\end_layout
+
+\begin_layout Subsubsection
+睡眠与唤醒
+\end_layout
+
+\begin_layout Standard
+生产者-消费者问题(producer-consumer)(bounded-buffer)
+\end_layout
+
+\begin_layout Standard
+信号量
+\end_layout
+
+\begin_layout Paragraph
+互斥量
+\end_layout
+
+\begin_layout Standard
+有些共享数据结构，如信号量，可以存放在内核中，并且只能通过系统调用来访问
+\end_layout
+
+\begin_layout Standard
+让进程与其他进程共享其部分地址空间
+\end_layout
+
+\begin_layout Paragraph
+管程(个人理解为队列)
+\end_layout
+
+\begin_layout Paragraph
+消息传递
+\end_layout
+
+\begin_layout Paragraph
+屏障
+\end_layout
+
+\begin_layout Standard
+进程组
+\end_layout
+
+\begin_layout Standard
+当一个进程到达屏障时，它就被屏障阻拦，直到所有进程都到达该屏障为止当最后一个进程到达屏障时，所有的进程就一起被释放
+\end_layout
+
+\begin_layout Section
+调度
+\end_layout
+
+\begin_layout Standard
+调度机（scheduling mechanism）制位于内核
+\end_layout
+
+\begin_layout Standard
+调度策略(scheduling policy)则由用户进程决定
+\end_layout
+
+\begin_layout Standard
+几乎所有进程的（磁盘）I/O请求或计算都是交替突发的
+\end_layout
+
+\begin_layout Subsection
+调度环境
+\end_layout
+
+\begin_layout Subsubsection
+批处理系统中的调度非抢占式算法
+\end_layout
+
+\begin_layout Standard
+先来先服务
+\end_layout
+
+\begin_layout Standard
+最短作业优先
+\end_layout
+
+\begin_layout Standard
+最短剩余时间优先, 当一个新的作业到达时，其整个时间同当前进程的剩余时间做比较
+\end_layout
+
+\begin_layout Subsubsection
+交互式系统中的调度
+\end_layout
+
+\begin_layout Paragraph
+轮转调度round robin
+\end_layout
+
+\begin_layout Standard
+时间片(quantum)轮转调度
+\end_layout
+
+\begin_layout Paragraph
+优先级调度
+\end_layout
+
+\begin_layout Standard
+为了防止高优先级进程无休止地运行下去，调度程序可以在每个时钟滴答（即每个时钟中断）降低当前进程的优先级
+\end_layout
+
+\begin_layout Standard
+每个进程可以被赋予一个允许运行的最大时间片，当这个时间片用完时，下一个次高优先级的进程获得机会运行
+\end_layout
+
+\begin_layout Paragraph
+多级队列
+\end_layout
+
+\begin_layout Paragraph
+保证调度
+\end_layout
+
+\begin_layout Paragraph
+彩票调度
+\end_layout
+
+\begin_layout Paragraph
+公平分享调度
+\end_layout
+
+\begin_layout Paragraph
+最短进程优先
+\end_layout
+
+\begin_layout Subsubsection
+实时系统中的调度
+\end_layout
+
+\begin_layout Standard
+实时系统是一种时间起着主导作用的系统典型地，外部的一种或多种物理设备给了计算机一个刺激，而计算机必须在一个确定的时间范围内恰当地做出反应.时性能都是通过把程序划分
+为一组进程而实现的，其中每个进程的行为是可预测和提前掌握的。这些进程一般寿命较短，并且极快地就运行完成。
+\end_layout
+
+\begin_layout Standard
+硬实时（hard real time）, 必须满足绝对的截止时间
+\end_layout
+
+\begin_layout Standard
+软实时（soft real time）, 虽然不希望偶尔错失截止时间，但是可以容忍
+\end_layout
+
+\begin_layout Paragraph
+场景
+\end_layout
+
+\begin_layout Standard
+飞机中的自动驾驶系统
+\end_layout
+
+\begin_layout Standard
+医院特别护理部门的病人监护装置
+\end_layout
+
+\begin_layout Standard
+自动化工厂中的机器人控制
+\end_layout
+
+\begin_layout Paragraph
+事件
+\end_layout
+
+\begin_layout Standard
+周期性（以规则的时间间隔发生）事件
+\end_layout
+
+\begin_layout Standard
+非周期性（发生时间不可预知）事件
+\end_layout
+
+\begin_layout Paragraph
+可调度
+\end_layout
+
+\begin_layout Standard
+如果有m个周期事件，事件i以周期Pi 发生，并需要Ci 秒CPU时间处理一个事件，那么可以处理负载的条件是每个C/每个P 的和小于等于1
+\end_layout
+
+\begin_layout Subsection
+IPC问题
+\end_layout
+
+\begin_layout Standard
+哲学家就餐问题
+\end_layout
+
+\begin_layout Standard
+死锁
+\end_layout
+
+\begin_layout Standard
+饥饿（starvation）
+\end_layout
+
+\begin_layout Subsubsection
+读者-写者问题
+\end_layout
+
+\begin_layout Subsection
+将调度机制（scheduling mechanism）与调度策略（scheduling policy）分离
+\end_layout
+
+\begin_layout Standard
+将调度算法以某种形式参数化，而参数可以由用户进程填写
+\end_layout
+
+\begin_layout Standard
+任何单CPU计算机一次只能执行一条指令。如果一个进程正在用户态中运行一个用户程序，并且需要一个系统服务，比如从一个文件读数据，那么它就必须执行一个陷阱或系统调用
+指令，将控制转移到操作系统。操作系统接着通过参数检查，找出所需要的调用进程。然后，它执行系统调用，并把控制返回给在系统调用后面跟随着的指令。在某种意义上，进行系
+统用就像进行一个特殊的过程调用，但是只有系统调用可以进入内核，而过程调用则不能。
+\end_layout
+
+\begin_layout Standard
+UNIX read
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+第5步: 把系统调用的编号放在操作系统所期望的地方，如寄存器中
+\end_layout
+
+\begin_layout Standard
+第6步: 执行一个TRAP指令，将用户态切换到内核态，并在内核中的一个固定地址开始执行
+\end_layout
+
+\begin_layout Standard
+第7步: 跟随在TRAP指令后的内核代码开始检查系统调用编号，然后发出正确的系统调用处理命令，这通常是通过一张由系统调用编号所引用的、指向系统调用处理器的指针表
+来完成
+\end_layout
+
+\begin_layout Standard
+第8步
+\end_layout
+
+\begin_layout Standard
+系统调用句柄运行
+\end_layout
+
+\begin_layout Standard
+第9步: 一旦系统调用句柄完成其工作，控制可能会在跟随TRAP指令后面的指令中返回给用户空间库过程
+\end_layout
+
+\begin_layout Standard
+系统调用可能堵塞调用者，避免它继续执行
+\end_layout
+
+\begin_layout Standard
+例如，如果试图读键盘，但是并没有任何键入，那么调用者就必须被阻塞。在这种情形下，操作系统会查看是否有其他可以运行的进程。稍后，当需要的输入出现时，进程会提醒系统
+注意，然后步骤9～步骤11会接着进行。
+\end_layout
+
+\begin_layout Standard
+第10步: 这个过程接着以通常的过程调用返回的方式，返回到用户程序
+\end_layout
+
+\begin_layout Standard
+为了完成整个工作，用户程序还必须清除堆栈，如同它在进行任何过程调用之后一样（第11步）
+\end_layout
+
+\begin_layout Standard
+TRAP指令与过程指令
+\end_layout
+
+\begin_layout Standard
+TRAP作用是，切换到内核态。而过程调用指令并不改变模式
+\end_layout
+
+\begin_layout Standard
+TRAP指令不能跳转到任意地址上
+\end_layout
+
+\begin_layout Standard
+根据机器的体系结构，或者跳转到一个单固定地址上，或者指令中有一8位长的字段，它给定了内存中一张表格的索引，这张表格中含有跳转地址。
+\end_layout
+
+\begin_layout Standard
+用于进程管理的系统调用
+\end_layout
+
+\begin_layout Standard
+UNIX进程有三段：正文段、数据段和堆栈段
+\end_layout
+
+\begin_layout Standard
+在UNIX系统中，只有一个系统调用可以用来创建新进程：fork
+\end_layout
+
+\begin_layout Standard
+用于文件管理的系统调用
+\end_layout
+
+\begin_layout Standard
+用于目录管理的系统调用
+\end_layout
+
+\begin_layout Standard
+其它系统调用
+\end_layout
+
+\begin_layout Standard
+chdir调用改变当前的工作目录
+\end_layout
+
+\begin_layout Standard
+chmod系统调用可以改变文件的模式
+\end_layout
+
+\begin_layout Standard
+kill系统调用供用户或用户进程发送信号用。
+\end_layout
+
+\begin_layout Standard
+存储管理
+\end_layout
+
+\begin_layout Standard
+无存储器抽象
+\end_layout
+
+\begin_layout Standard
+简单嵌入式系统
+\end_layout
+
+\begin_layout Standard
+智能卡系统
+\end_layout
+
+\begin_layout Standard
+存储器抽象
+\end_layout
+
+\begin_layout Standard
+保护和重定位
+\end_layout
+
+\begin_layout Standard
+地址空间
+\end_layout
+
+\begin_layout Standard
+为程序创造了一种抽象的内存地址空间是一个进程可用于寻址内存的一套地址集合。每个进程都有一个自己的地址空间，并且这个地址空间独立于其他进程的地址空间（除了在一些特
+殊情况下进程需要共享它们的地址空间外）
+\end_layout
+
+\begin_layout Standard
+基址寄存器与界限寄存器
+\end_layout
+
+\begin_layout Standard
+简单地把每个进程的地址空间映射到物理内存的不同部分
+\end_layout
+
+\begin_layout Standard
+每个CPU配置两个特殊硬件寄存器
+\end_layout
+
+\begin_layout Standard
+基址寄存器
+\end_layout
+
+\begin_layout Standard
+装载程序的起始物理地址
+\end_layout
+
+\begin_layout Standard
+界限寄存器
+\end_layout
+
+\begin_layout Standard
+装载程序的长度
+\end_layout
+
+\begin_layout Standard
+每次一个进程访问内存，取一条指令，读或写一个数据字，CPU硬件会在把地址发送到内存总线前，自动把基址值加到进程发出的地址值上。同时，它检查程序提供的地址是否等于
+或大于界限寄存器里的值。如果访问的地址超过了界限，会产生错误并中止访问。
+\end_layout
+
+\begin_layout Standard
+多数系统会对基址寄存器和界限寄存器会以一定的方式加以保护，使得只有操作系统可以修改它们
+\end_layout
+
+\begin_layout Standard
+空闲内存管理
+\end_layout
+
+\begin_layout Standard
+使用位图的存储管理
+\end_layout
+
+\begin_layout Standard
+会有浪费
+\end_layout
+
+\begin_layout Standard
+插入数据需要搜索位图
+\end_layout
+
+\begin_layout Standard
+使用链表的存储管理
+\end_layout
+
+\begin_layout Standard
+进程和空闲区使用不同的链表
+\end_layout
+
+\begin_layout Standard
+每个空闲区的第一个字可以是空闲区大小，第二个字指向下一个空闲区(从而无需使用单独的链表)
+\end_layout
+
+\begin_layout Standard
+首次适配（first fit）算法
+\end_layout
+
+\begin_layout Standard
+存储管理器沿着段链表进行搜索，直到找到一个足够大的空闲区，除非空闲区大小和要分配的空间大小正好一样，否则将该空闲区分为两部分，一部分供进程使用，另一部分形成新的
+空闲区。
+\end_layout
+
+\begin_layout Standard
+快速适配（quick fit）算法
+\end_layout
+
+\begin_layout Standard
+每次找到合适的空闲区时都记录当时的位置
+\end_layout
+
+\begin_layout Standard
+最佳适配（best fit）算法
+\end_layout
+
+\begin_layout Standard
+搜索整个链表（从开始到结束），找出能够容纳进程的最小的空闲区。最佳适配算法试图找出最接近实际需要的空闲区，以最好地区配请求和可用空闲区，而不是先拆分一个以后可能
+会用到的大的空闲区
+\end_layout
+
+\begin_layout Standard
+可以按照大小对空闲区链表排序，以便提高最佳适配算法的速度
+\end_layout
+
+\begin_layout Standard
+最差适配（worst fit）算法
+\end_layout
+
+\begin_layout Standard
+总是分配最大的可用空闲区，使新的空闲区比较大从而可以继续使用
+\end_layout
+
+\begin_layout Standard
+下次适配算法
+\end_layout
+
+\begin_layout Standard
+交换技术(swapping)
+\end_layout
+
+\begin_layout Standard
+空闲进程主要存储在磁盘上，所以当它们不运行时就不会占用内存（尽管它们的一些进程会周期性地被唤醒以完成相关工作，然后就又进入睡眠状态）
+\end_layout
+
+\begin_layout Standard
+内存紧缩（memory compaction）
+\end_layout
+
+\begin_layout Standard
+交换在内存中产生了多个空闲区（hole，也称为空洞），通过把所有的进程尽可能向下移动，尽可能将这些小的空闲区合成一大块。
+\end_layout
+
+\begin_layout Standard
+虚拟内存（virtual memory）
+\end_layout
+
+\begin_layout Standard
+分页(paging)
+\end_layout
+
+\begin_layout Standard
+虚拟地址（virtual address）
+\end_layout
+
+\begin_layout Standard
+虚拟地址空间（virtual address space）
+\end_layout
+
+\begin_layout Standard
+在没有虚拟内存的计算机上，系统直接将虚拟地址送到内存总线上，读写操作使用具有同样地址的物理内存字；而在使用虚拟内存的情况下，虚拟地址不是被直接送到内存总线上，而
+是被送到内存管理单元（Memory Management Unit，MMU），MMU把虚拟地址映射为物理内存地址，
+\end_layout
+
+\begin_layout Standard
+MMU可以是单独的芯片, 也可以集成到CPU中
+\end_layout
+
+\begin_layout Standard
+在磁盘上必须有一个程序核心映像的完整副本，以保证程序片段在需要时能被调入内存。
+\end_layout
+
+\begin_layout Standard
+页表给出虚拟地址与物理内存地址之间的映射关系
+\end_layout
+
+\begin_layout Standard
+虚拟地址空间按照固定大小划分成称为页面（page）的若干单元页面有一个页表项
+\end_layout
+
+\begin_layout Standard
+在物理内存中对应的单元称为页框（page frame）。页面和页框的大小通常是一样的
+\end_layout
+
+\begin_layout Standard
+映射关系
+\end_layout
+
+\begin_layout Standard
+在实际的硬件中，用一个“在/不在”位（present/absent bit）记录页面在内存中的实际存在(有没有被映射)情况。
+\end_layout
+
+\begin_layout Standard
+缺页中断（page fault）
+\end_layout
+
+\begin_layout Standard
+当程序访问了一个未映射的页面, MMU注意到该页面没有被映射,于是使CPU陷入到操作系统，这个陷阱称为缺页中断（page fault）
+\end_layout
+
+\begin_layout Standard
+操作系统找到一个很少使用的页框且把它的内容写入磁盘（如果它不在磁盘上）,随后把需要访问的页面读到刚才回收的页框中，修改映射关系，然后重新启动引起陷阱的指令
+\end_layout
+
+\begin_layout Standard
+页表
+\end_layout
+
+\begin_layout Standard
+虚拟地址被分成虚拟页号（高位部分）和偏移量（低位部分）两部分
+\end_layout
+
+\begin_layout Standard
+虚拟页号可用做页表的索引，以找到该虚拟页面对应的页表项。由页表项可以找到页框号
+\end_layout
+
+\begin_layout Standard
+然后把页框号拼接到偏移量的高位端，以替换掉虚拟页号，形成送往内存的物理地址。
+\end_layout
+
+\begin_layout Standard
+页表项的结构
+\end_layout
+
+\begin_layout Standard
+页框号
+\end_layout
+
+\begin_layout Standard
+“在/不在”位（present/absent bit）
+\end_layout
+
+\begin_layout Standard
+这一位是1时表示该表项是有效的，可以使用；如果是0，则表示该表项对应的虚拟页面现在不在内存中，访问该页面会引起一个缺页中断。
+\end_layout
+
+\begin_layout Standard
+“保护”（protection）
+\end_layout
+
+\begin_layout Standard
+指出一个页允许什么类型的访问
+\end_layout
+
+\begin_layout Standard
+0表示读/写，1表示只读
+\end_layout
+
+\begin_layout Standard
+使用三位，各位分别对应是否启用读、写、执行该页面
+\end_layout
+
+\begin_layout Standard
+“修改”（modified）位
+\end_layout
+
+\begin_layout Standard
+写入一页时由硬件自动设置修改位
+\end_layout
+
+\begin_layout Standard
+如果一个页面已经被修改过（即它是“脏”的），则必须把它写回磁盘。如果一个页面没有被修改过（即它是“干净”的），则只简单地把它丢弃就可以了，因为它在磁盘上的副本仍
+然是有效的。这一位有时也被称为脏位（dirty bit），因为它反映了该页面的状态。
+\end_layout
+
+\begin_layout Standard
+"访问”（referenced）位
+\end_layout
+
+\begin_layout Standard
+不论是读还是写，系统都会在该页面被访问时设置访问位
+\end_layout
+
+\begin_layout Standard
+它的值被用来帮助操作系统在发生缺页中断时选择要被淘汰的页面。不再使用的页面要比正在使用的页面更适合淘汰。
+\end_layout
+
+\begin_layout Standard
+禁止该页面被高速缓存
+\end_layout
+
+\begin_layout Standard
+对那些映射到设备寄存器而不是常规内存的页面而
+\end_layout
+
+\begin_layout Standard
+具有独立的I/O空间而不使用内存映射I/O的机器不需要这一位
+\end_layout
+
+\begin_layout Standard
+加速分页过程
+\end_layout
+
+\begin_layout Standard
+问题
+\end_layout
+
+\begin_layout Standard
+虚拟地址到物理地址的映射必须非常快。
+\end_layout
+
+\begin_layout Standard
+如果虚拟地址空间很大，页表也会很大。
+\end_layout
+
+\begin_layout Standard
+转换检测缓冲区(Translation Lookaside Buffer，TLB)
+\end_layout
+
+\begin_layout Standard
+这是一个小型的硬件设备，将虚拟地址直接映射到物理地址, 而不必再访问页表。有时又称为相联存储器（associate memory）
+\end_layout
+
+\begin_layout Standard
+它通常在MMU中
+\end_layout
+
+\begin_layout Standard
+包含少量的表项每个表项记录了一个页面的相关信息
+\end_layout
+
+\begin_layout Standard
+虚拟页号(不是必须放入的)
+\end_layout
+
+\begin_layout Standard
+页面的修改位
+\end_layout
+
+\begin_layout Standard
+保护码（读/写/执行权限）
+\end_layout
+
+\begin_layout Standard
+该页所对应的物理页框
+\end_layout
+
+\begin_layout Standard
+表项是否有(是否在使用)效位
+\end_layout
+
+\begin_layout Standard
+工作原理
+\end_layout
+
+\begin_layout Standard
+硬件首先通过将该虚拟页号与TLB中所有表项同时（即并行）进行匹配，判断虚拟页面是否在其中
+\end_layout
+
+\begin_layout Standard
+如果发现了一个有效的匹配并且要进行的访问操作并不违反保护位，则将页框号直接从TLB中取出而不必再访问页表。
+\end_layout
+
+\begin_layout Standard
+如果虚拟页面号确实是在TLB中，但指令试图在一个只读页面上进行写操作，则会产生一个保护错误，就像对页表进行非法访问一样
+\end_layout
+
+\begin_layout Standard
+如果MMU检测到没有有效的匹配项时，就会进行正常的页表查询。接着从TLB中淘汰一个表项，然后用新找到的页表项代替它。
+\end_layout
+
+\begin_layout Standard
+软件TLB管理
+\end_layout
+
+\begin_layout Standard
+失效的区别
+\end_layout
+
+\begin_layout Standard
+软失效（soft miss）
+\end_layout
+
+\begin_layout Standard
+当一个页面访问在内存中而不在TLB中时，将产生软失效（soft miss）。那么此时所要做的就是更新一下TLB，不需要产生磁盘I/O。典型的处理需要10～20个
+机器指令并花费几个纳秒完成操作。
+\end_layout
+
+\begin_layout Standard
+硬失效
+\end_layout
+
+\begin_layout Standard
+相反，当页面本身不在内存中（当然也不在TLB中）时，将产生硬失效。此刻需要一次磁盘存取以装入该页面，这个过程大概需要几毫秒。
+\end_layout
+
+\begin_layout Standard
+预装载TLB表项
+\end_layout
+
+\begin_layout Standard
+可以通过在内存中的固定位置维护一个大的（如4KB）TLB表项的软件高速缓存（该高速缓存的页面总是被保存在TLB中）来减少TLB失效。通过首先检查软件高速缓存，操
+作系统能够实质性地减少TLB失效 (TODO)
+\end_layout
+
+\begin_layout Standard
+倒排页表(inverted page table)
+\end_layout
+
+\begin_layout Standard
+在实际内存中每一个页框有一个表项，而不是每一个虚拟页面有一个表项
+\end_layout
+
+\begin_layout Standard
+表项记录哪一个（进程，虚拟页面）对定位于该页框
+\end_layout
+
+\begin_layout Standard
+多级页表
+\end_layout
+
+\begin_layout Standard
+顶级页表
+\end_layout
+
+\begin_layout Standard
+索引顶级页表得到的表项中含有二级页表的地址或页框号
+\end_layout
+
+\begin_layout Standard
+顶级页表的表项0指向程序正文的页表，表项1指向数据的页表，表项1023指向堆栈的页表，其他的表项（用阴影表示的）未用
+\end_layout
+
+\begin_layout Standard
+二级页表
+\end_layout
+
+\begin_layout Standard
+虚拟内存本质上是用来创造一个新的抽象概念——地址空间，这个概念是对物理内存的抽象，类似于进程是对物理机器（CPU）的抽象。虚拟内存的实现，是将虚拟地址空间分解成
+页，并将每一页映射到物理内存的某个页框或者（暂时）解除映射
+\end_layout
+
+\begin_layout Standard
+页面置换算法
+\end_layout
+
+\begin_layout Standard
+最优页面置换算法(无法实现)
+\end_layout
+
+\begin_layout Standard
+在缺页中断发生时，有些页面在内存中，其中有一个页面（包含紧接着的下一条指令的那个页面）将很快被访问，其他页面则可能要到10、100或1000条指令后才会被访问，
+每个页面都可以用在该页面首次被访问前所要执行的指令数作为标记。置换标记最大的页面
+\end_layout
+
+\begin_layout Standard
+最近未使用(NRU, Not Recently Used) 页面置换算法
+\end_layout
+
+\begin_layout Standard
+在大部分具有虚拟内存的计算机中，系统为每一页面设置了两个状态位。当页面被访问（读或写）时设置R位；当页面（即修改页面）被写入时设置M位。这些位包含在页表项中
+\end_layout
+
+\begin_layout Standard
+当启动一个进程时，它的所有页面的两个位都由操作系统设置成0，R位被定期地（比如在每次时钟中断时）清零，以区别最近没有被访问的页面和被访问的页面。
+\end_layout
+
+\begin_layout Standard
+当发生缺页中断时，操作系统检查所有的页面并根据它们当前的R位和M位的值，把它们分为4类：
+\end_layout
+
+\begin_layout Standard
+第0类：没有被访问，没有被修改。
+\end_layout
+
+\begin_layout Standard
+第1类：没有被访问，已被修改。(置换它)
+\end_layout
+
+\begin_layout Standard
+在最近一个时钟滴答中（典型的时间是大约20ms）淘汰一个没有被访问的已修改页面要比淘汰一个被频繁使用的“干净”页面好。
+\end_layout
+
+\begin_layout Standard
+第2类：已被访问，没有被修改。
+\end_layout
+
+\begin_layout Standard
+第3类：已被访问，已被修改。
+\end_layout
+
+\begin_layout Standard
+先进先出页面置换算法(FIFO（First-In First-Out)
+\end_layout
+
+\begin_layout Standard
+当发生缺页中断时，淘汰表头的页面并把新调入的页面加到表尾
+\end_layout
+
+\begin_layout Standard
+FIFO算法可能会把经常使用的页面置换出去
+\end_layout
+
+\begin_layout Standard
+第二次机会(second chance)页面置换算法
+\end_layout
+
+\begin_layout Standard
+检查最老页面的R位。如果R位是0，那么这个页面既老又没有被使用，可以立刻置换掉；如果是1，就将R位清0，并把该页面放到链表的尾端，修改它的装入时间使它就像刚装入
+的一样，然后继续搜索
+\end_layout
+
+\begin_layout Standard
+经常要在链表中移动页面，既降低了效率又不是很有必要
+\end_layout
+
+\begin_layout Standard
+时钟(clock)页面置换算法
+\end_layout
+
+\begin_layout Standard
+把所有的页面都保存在一个类似钟面的环形链表中，一个表针指向最老的页面
+\end_layout
+
+\begin_layout Standard
+当发生缺页中断时，算法首先检查表针指向的页面，如果它的R位是0就淘汰该页面，并把新的页面插入这个位置，然后把表针前移一个位置；如果R位是1就清除R位并把表针前移
+一个位置，重复这个过程直到找到了一个R位为0的页面为止。
+\end_layout
+
+\begin_layout Standard
+最近最少使用(LRU,Least Recently Used）页面置换算法
+\end_layout
+
+\begin_layout Standard
+在软件内存管理中一般不会使用, 但是有一些使用特殊硬件实现LRU的方法
+\end_layout
+
+\begin_layout Standard
+硬件方法(一般计算机没有)
+\end_layout
+
+\begin_layout Standard
+硬件有一个64位计数器C
+\end_layout
+
+\begin_layout Standard
+它在每条指令执行完后自动加1
+\end_layout
+
+\begin_layout Standard
+每个页表项必须有一个足够容纳这个计数器值的域
+\end_layout
+
+\begin_layout Standard
+在每次访问内存后，将当前的C值保存到被访问页面的页表项中
+\end_layout
+
+\begin_layout Standard
+一旦发生缺页中断，操作系统就检查所有页表项中计数器的值，找到值最小的一个页面，这个页面就是最近最少使用的页面
+\end_layout
+
+\begin_layout Standard
+在一个有n个页框的机器中，LRU硬件可以维持一个初值为0的n×n位的矩阵。当访问到页框k时，硬件首先把k行的位都设置成1，再把k列的位都设置成0。在任何时刻，二
+进制数值最小的行就是最近最少使用的，第二小的行是下一个最近最少使用的，
+\end_layout
+
+\begin_layout Standard
+NFU（Not Frequently Used，最不常用）算法
+\end_layout
+
+\begin_layout Standard
+该算法将每个页面与一个软件计数器相关联，计数器的初值为0。每次时钟中断时，由操作系统扫描内存中所有的页面，将每个页面的R位（它的值是0或1）加到它的计数器上。这
+个计数器大体上跟踪了各个页面被访问的频繁程度。发生缺页中断时，则置换计数器值最小的页面。如果记录访问次数相等, 则比较R位
+\end_layout
+
+\begin_layout Standard
+老化（aging）算法.
+\end_layout
+
+\begin_layout Standard
+每次时钟中断时:首先，在R位被加进之前先将计数器右移一位;其次，将R位加到计数器最左端的位而不是最右端.这样, 如果左位(即前边的位) 是 0 那么他就没有被访问
+过, 如果连续0 越多, 则访问次数越小
+\end_layout
+
+\begin_layout Standard
+只有有限位数, 限制了其对以往页面的记录
+\end_layout
+
+\begin_layout Standard
+如果记录访问次数相等, 只能选择一个替换了
+\end_layout
+
+\begin_layout Standard
+工作集页面置换算法
+\end_layout
+
+\begin_layout Standard
+请求调页（demand paging）
+\end_layout
+
+\begin_layout Standard
+在单纯的分页系统里，刚启动进程时，在内存中并没有页面
+\end_layout
+
+\begin_layout Standard
+在CPU试图取第一条指令时就会产生一次缺页中断，使操作系统装入含有第一条指令的页面
+\end_layout
+
+\begin_layout Standard
+其他由访问全局数据和堆栈引起的缺页中断通常会紧接着发生。
+\end_layout
+
+\begin_layout Standard
+一段时间以后，进程需要的大部分页面都已经在内存了，进程开始在较少缺页中断的情况下运行。
+\end_layout
+
+\begin_layout Standard
+因为页面是在需要时被调入的，而不是预先装入。
+\end_layout
+
+\begin_layout Standard
+一个进程当前正在使用的页面的集合称为它的工作集（working set).如果整个工作集都被装入到了内存中，那么进程在运行到下一运行阶段（例如，编译器的下一遍扫描
+）之前，不会产生很多缺页中断
+\end_layout
+
+\begin_layout Standard
+颠簸（thrashing）
+\end_layout
+
+\begin_layout Standard
+若内存太小而无法容纳下整个工作集，那么进程的运行过程中会产生大量的缺页中断，导致运行速度也会变得很缓慢，因为通常只需要几个纳秒就能执行完一条指令，而通常需要十毫
+秒才能从磁盘上读入一个页面。如果一个程序每10ms只能执行一到两条指令，那么它将会需要很长时间才能运行完。若每执行几条指令程序就发生一次缺页中断，那么就称这个程
+序发生了颠簸（thrashing）
+\end_layout
+
+\begin_layout Standard
+工作集模型（working set model）(预先调页（prepaging）)
+\end_layout
+
+\begin_layout Standard
+分页系统都会设法跟踪进程的工作集，以确保在让进程运行以前，它的工作集就已在内存中了.其目的在于大大减少缺页中断率。
+\end_layout
+
+\begin_layout Standard
+工作集
+\end_layout
+
+\begin_layout Standard
+最近k次内存访问所访问过的页面的集合
+\end_layout
+
+\begin_layout Standard
+设一定义
+\end_layout
+
+\begin_layout Standard
+工作集即是过去10ms中的内存访问所用到的页面的集合.这样的模型很合适且更容易实现
+\end_layout
+
+\begin_layout Standard
+进程的工作集可以被称为在过去的τ秒实际运行时间中它所访问过的页面的集合
+\end_layout
+
+\begin_layout Standard
+工作集时钟页面置换算法
+\end_layout
+
+\begin_layout Standard
+WSClock（工作集时钟）算法
+\end_layout
+
+\begin_layout Standard
+与时钟算法一样，每次缺页中断时，首先检查指针指向的页面。如果R位被置为1，该页面在当前时钟滴答中就被使用过，那么该页面就不适合被淘汰。然后把该页面的R位置为0，
+指针指向下一个页面，并重复该算法。
+\end_layout
+
+\begin_layout Standard
+指针经过一圈返回它的起始点
+\end_layout
+
+\begin_layout Standard
+至少调度了一次写操作
+\end_layout
+
+\begin_layout Standard
+对于第一种情况，指针仅仅是不停地移动，寻找一个干净页面。既然已经调度了一个或者多个写操作，最终会有某个写操作完成，它的页面会被标记为干净。置换遇到的第一个干净页
+面，这个页面不一定是第一个被调度写操作的页面，因为硬盘驱动程序为了优化性能可能已经把写操作重排序了
+\end_layout
+
+\begin_layout Standard
+没有调度过写操作
+\end_layout
+
+\begin_layout Standard
+一个简单的方法就是随便置换一个干净的页面来使用，扫描中需要记录干净页面的位置。如果不存在干净页面，就选定当前页面并把它写回磁盘
+\end_layout
+
+\begin_layout Standard
+分页系统中的设计问题
+\end_layout
+
+\begin_layout Standard
+局部（local）页面置换算法
+\end_layout
+
+\begin_layout Standard
+使有大量的空闲页框存在，工作集的增长也会导致颠簸。如果工作集缩小了，局部算法又会浪费内存。
+\end_layout
+
+\begin_layout Standard
+全局（global）页面置换算法
+\end_layout
+
+\begin_layout Standard
+系统必须不停地确定应该给每个进程分配多少页框
+\end_layout
+
+\begin_layout Standard
+一种方法是监测工作集的大小，工作集大小由“老化”位指出，但这个方法并不能防止颠簸。因为工作集的大小可能在几微秒内就会发生改变，而老化位却要经历一定的时钟滴答数才
+会发生变化。
+\end_layout
+
+\begin_layout Standard
+PFF（Page Fault Frequency，缺页中断率）算法
+\end_layout
+
+\begin_layout Standard
+指出了何时增加或减少分配给一个进程的页面，但却完全没有说明在发生缺页中断时应该替换掉哪一个页面，它仅仅控制分配集的大小
+\end_layout
+
+\begin_layout Standard
+负载控制
+\end_layout
+
+\begin_layout Standard
+减少竞争内存的进程数的一个好方法是将一部分进程交换到磁盘，并释放他们所占有的所有页面
+\end_layout
+
+\begin_layout Standard
+多道程序设计的道数。当内存中的进程数过低的时候，CPU可能在很长的时间内处于空闲状态
+\end_layout
+
+\begin_layout Standard
+页面大小
+\end_layout
+
+\begin_layout Standard
+页面大小是操作系统可以选择的一个参数
+\end_layout
+
+\begin_layout Standard
+内部碎片（internal fragmentation）
+\end_layout
+
+\begin_layout Standard
+随便选择一个正文段、数据段或堆栈段很可能不会恰好装满整数个页面，平均的情况下，最后一个页面中有一半是空的。多余的空间就被浪费掉了
+\end_layout
+
+\begin_layout Standard
+数学分析
+\end_layout
+
+\begin_layout Standard
+假设进程平均大小是s个字节，页面大小是p个字节，每个页表项需要e个字节。那么每个进程需要的页数大约是s/p，占用了se/p个字节的页表空间。内部碎片在最后一页浪
+费的内存是p/2。因此，由页表和内部碎片损失造成的全部开销是以下两项之和：开销=se/p+p/2-se/p2 +1/2=0p=√(2se)
+\end_layout
+
+\begin_layout Standard
+分离的指令空间和数据空间
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+共享页面
+\end_layout
+
+\begin_layout Standard
+多个不同的用户同时运行同一个程序
+\end_layout
+
+\begin_layout Standard
+只读的页面（诸如程序文本）可以共享，但是数据页面则不能共享
+\end_layout
+
+\begin_layout Standard
+在UNIX中，在进行fork系统调用后，父进程和子进程要共享程序文本和数据。在分页系统中，通常是让这些进程分别拥有它们自己的页表，但都指向同一个页面集合。这样在
+执行fork调用时就不需要进行页面复制。然而，所有映射到两个进程的数据页面都是只读的。
+\end_layout
+
+\begin_layout Standard
+写时复制
+\end_layout
+
+\begin_layout Standard
+只要有一个进程更新了一点数据，就会触发只读保护，并引发操作系统陷阱。然后会生成一个该页的副本，这样每个进程都有自己的专用副本。两个复制都是可以读写的，随后对任何
+一个副本的写操作都不会再引发陷阱。这种策略意味着那些从来不会执行写操作的页面（包括所有程序页面）是不需要复制的，只有实际修改的数据页面需要复制。
+\end_layout
+
+\begin_layout Standard
+内存映射文件(memory-mapped file)
+\end_layout
+
+\begin_layout Standard
+进程可以通过发起一个系统调用，将一个文件映射到其虚拟地址空间的一部分。在多数实现中，在映射共享的页面时不会实际读入页面的内容，而是在访问页面时才会被每次一页地读
+入，磁盘文件则被当作后备存储。当进程退出或显式地解除文件映射时，所有被改动的页面会被写回到文件中。
+\end_layout
+
+\begin_layout Standard
+共享库(memory-mapped file 的一个特例)
+\end_layout
+
+\begin_layout Standard
+当一个共享库被装载和使用时，整个库并不是被一次性地读入内存。而是根据需要，以页面为单位装载的，因此没有被调用到的函数是不会被装载到内存中的。
+\end_layout
+
+\begin_layout Standard
+如果共享库中的一个函数因为修正一个bug被更新了，那么并不需要重新编译调用了这个函数的程序。
+\end_layout
+
+\begin_layout Standard
+位置无关代码（position-independent code）
+\end_layout
+
+\begin_layout Standard
+在编译共享库时，用一个特殊的编译选项告知编译器，不要产生使用绝对地址的指令。相反，只能产生使用相对地址的指令。例如，几乎总是使用向前（或向后）跳转n个字节（与给
+出具体跳转地址的指令不同）的指令。不论共享库被放置在虚拟地址空间的什么位置，这种指令都可以正确工作。通过避免使用绝对地址，这个问题就可以被解决。
+\end_layout
+
+\begin_layout Standard
+清除策略
+\end_layout
+
+\begin_layout Standard
+很多分页系统有一个称为分页守护进程（paging daemon）的后台进程，它在大多数时候睡眠，但定期被唤醒以检查内存的状态
+\end_layout
+
+\begin_layout Standard
+如果空闲页框过少，分页守护进程通过预定的页面置换算法选择页面换出内存。如果这些页面装入内存后被修改过，则将它们写回磁盘。
+\end_layout
+
+\begin_layout Standard
+一个双指针时钟。前指针由分页守护进程控制。当它指向一个脏页面时，就把该页面写回磁盘，前指针向前移动。当它指向一个干净页面时，仅仅指针向前移动。后指针用于页面置换
+，就像在标准时钟算法中一样。现在，由于分页守护进程的工作，后指针命中干净页面的概率会增加。
+\end_layout
+
+\begin_layout Standard
+虚拟内存接口
+\end_layout
+
+\begin_layout Standard
+如果程序员可以对内存区域进行命名，那么就有可能实现共享内存。通过让一个进程把一片内存区域的名称通知另一个进程，而使得第二个进程可以把这片区域映射到它的虚拟地址空
+间中去。通过两个进程（或者更多）共享同一部分页面，高带宽的共享就成为可能——一个进程往共享内存中写内容而另一个从中读出内容。页面共享也可以用来实现高性能的消息传
+递系统。一般地，传递消息的时候，数据被从一个地址空间复制到另一个地址空间，开销很大。如果进程可以控制它们的页面映射，就可以这样来发送一条消息：发送进程清除那些包
+含消息的页面的映射，而接收进程把它们映射进来。这里只需要复制页面的名字，而不需要复制所有数据。
+\end_layout
+
+\begin_layout Standard
+分布式共享内存
+\end_layout
+
+\begin_layout Standard
+有关实现的问题
+\end_layout
+
+\begin_layout Standard
+与分页有关的工作
+\end_layout
+
+\begin_layout Standard
+进程创建时
+\end_layout
+
+\begin_layout Standard
+当在分页系统中创建一个新进程时，操作系统要确定程序和数据在初始时有多大，并为它们创建一个页表。操作系统还要在内存中为页表分配空间并对其进行初始化。
+\end_layout
+
+\begin_layout Standard
+进程执行时
+\end_layout
+
+\begin_layout Standard
+当调度一个进程执行时，必须为新进程重置MMU，刷新TLB，以清除以前的进程遗留的痕迹。新进程的页表必须成为当前页表，通常可以通过复制该页表或者把一个指向它的指针
+放进某个硬件寄存器来完成。
+\end_layout
+
+\begin_layout Standard
+缺页中断时
+\end_layout
+
+\begin_layout Standard
+当缺页中断发生时，操作系统必须通过读硬件寄存器来确定是哪个虚拟地址造成了缺页中断。通过该信息，它要计算需要哪个页面，并在磁盘上对该页面进行定位。它必须找到合适的
+页框来存放新页面，必要时还要置换老的页面，然后把所需的页面读入页框。最后，还要备份程序计数器，使程序计数器指向引起缺页中断的指令，并重新执行该指令。
+\end_layout
+
+\begin_layout Standard
+处理细节
+\end_layout
+
+\begin_layout Standard
+1)硬件陷入内核，在堆栈中保存程序计数器。大多数机器将当前指令的各种状态信息保存在特殊的CPU寄存器中。2)启动一个汇编代码例程保存通用寄存器和其他易失的信息，
+以免被操作系统破坏。这个例程将操作系统作为一个函数来调用。3)当操作系统发现一个缺页中断时，尝试发现需要哪个虚拟页面。通常一个硬件寄存器包含了这一信息，如果没有
+的话，操作系统必须检索程序计数器，取出这条指令，用软件分析这条指令，看看它在缺页中断时正在做什么。4)一旦知道了发生缺页中断的虚拟地址，操作系统检查这个地址是否
+有效，并检查存取与保护是否一致。如果不一致，向进程发出一个信号或杀掉该进程。如果地址有效且没有保护错误发生，系统则检查是否有空闲页框。如果没有空闲页框，执行页面
+置换算法寻找一个页面来淘汰。5)如果选择的页框“脏”了，安排该页写回磁盘，并发生一次上下文切换，挂起产生缺页中断的进程，让其他进程运行直至磁盘传输结束。无论如何
+，该页框被标记为忙，以免因为其他原因而被其他进程占用。6)一旦页框“干净”后（无论是立刻还是在写回磁盘后），操作系统查找所需页面在磁盘上的地址，通过磁盘操作将其
+装入。该页面被装入后，产生缺页中断的进程仍然被挂起，并且如果有其他可运行的用户进程，则选择另一个用户进程运行。7)当磁盘中断发生时，表明该页已经被装入，页表已经
+更新可以反映它的位置，页框也被标记为正常状态。8)恢复发生缺页中断指令以前的状态，程序计数器重新指向这条指令。9)调度引发缺页中断的进程，操作系统返回调用它的汇
+编语言例程。10)该例程恢复寄存器和其他状态信息，返回到用户空间继续执行，就好像缺页中断没有发生过一样。
+\end_layout
+
+\begin_layout Standard
+指令备份
+\end_layout
+
+\begin_layout Standard
+CPU的设计者们提供了一种解决方法，就是通过使用一个隐藏的内部寄存器。在每条指令执行之前，把程序计数器的内容复制到该寄存器。这些机器可能会有第二个寄存器，用来提
+供哪些寄存器已经自动增加或者自动减少以及增减的数量等信息。通过这些信息，操作系统可以消除引起缺页中断的指令所造成的所有影响，并使指令可以重新开始执行。
+\end_layout
+
+\begin_layout Standard
+锁定内存中的页面
+\end_layout
+
+\begin_layout Standard
+如果一个I/O设备正处在对该页面进行DMA传输的过程之中，将这个页面移出将会导致部分数据写入它们所属的缓冲区中，而部分数据被写入到最新装入的页面中。
+\end_layout
+
+\begin_layout Standard
+锁住一个页面通常称为在内存中钉住（pinning）页面
+\end_layout
+
+\begin_layout Standard
+在内核缓冲区中完成所有的I/O操作，然后再将数据复制到用户页面
+\end_layout
+
+\begin_layout Standard
+后备存储
+\end_layout
+
+\begin_layout Standard
+磁盘管理
+\end_layout
+
+\begin_layout Standard
+策略和机制的分离
+\end_layout
+
+\begin_layout Standard
+进程终止时
+\end_layout
+
+\begin_layout Standard
+当进程退出的时候，操作系统必须释放进程的页表、页面和页面在硬盘上所占用的空间。如果某些页面是与其他进程共享的，当最后一个使用它们的进程终止的时候，才可以释放内存
+和磁盘上的页面。
+\end_layout
+
+\begin_layout Standard
+分段
+\end_layout
+
+\begin_layout Standard
+段号
+\end_layout
+
+\begin_layout Standard
+段内地址
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+分段与分页区别
+\end_layout
+
+\begin_layout Standard
+纯分段的实现
+\end_layout
+
+\begin_layout Standard
+外部碎片（external fragmentation）(棋盘形碎片)
+\end_layout
+
+\begin_layout Standard
+在系统运行一段时间后内存被划分为许多块，一些块包含着段，一些则成了空闲区(段淘汰)
+\end_layout
+
+\begin_layout Standard
+内存紧缩消除棋盘形碎片
+\end_layout
+
+\begin_layout Standard
+分段和分页结合
+\end_layout
+
+\begin_layout Standard
+MULTICS
+\end_layout
+
+\begin_layout Standard
+每个段都看作是一个虚拟内存并对它进行分页
+\end_layout
+
+\begin_layout Standard
+统一的页面大小
+\end_layout
+
+\begin_layout Standard
+只使用段的一部分时不用把它全部调入内存
+\end_layout
+
+\begin_layout Standard
+易于编程
+\end_layout
+
+\begin_layout Standard
+模块化
+\end_layout
+
+\begin_layout Standard
+保护
+\end_layout
+
+\begin_layout Standard
+共享
+\end_layout
+
+\begin_layout Standard
+一个地址由两部分构成
+\end_layout
+
+\begin_layout Standard
+段
+\end_layout
+
+\begin_layout Standard
+段内地址
+\end_layout
+
+\begin_layout Standard
+页号
+\end_layout
+
+\begin_layout Standard
+页内的字
+\end_layout
+
+\begin_layout Standard
+Intel Pentium
+\end_layout
+
+\begin_layout Standard
+LDT（Local Descriptor Table，局部描述符表）
+\end_layout
+
+\begin_layout Standard
+LDT描述局部于每个程序的段，包括其代码、数据、堆栈等
+\end_layout
+
+\begin_layout Standard
+GDT（Global Descriptor Table，全局描述符表）
+\end_layout
+
+\begin_layout Standard
+GDT描述系统段，包括操作系统本身。
+\end_layout
+
+\begin_layout Standard
+文件系统
+\end_layout
+
+\begin_layout Standard
+权限
+\end_layout
+
+\begin_layout Standard
+文件和目录中通常存在一种机制，使文件所有者之外的其他用户也可以访问该文件
+\end_layout
+
+\begin_layout Standard
+在读写文件之前，首先要打开文件，检查其访问权限。若权限许可，系统将返回一个小整数，称作文件描述符（file descriptor），供后续操作使用。若禁止访问，
+系统则返回一个错误码
+\end_layout
+
+\begin_layout Standard
+文件
+\end_layout
+
+\begin_layout Standard
+文件命名
+\end_layout
+
+\begin_layout Standard
+文件扩展名（file extension）
+\end_layout
+
+\begin_layout Standard
+文件结构
+\end_layout
+
+\begin_layout Standard
+字节序列
+\end_layout
+
+\begin_layout Standard
+操作系统所见到的就是字节，其任何含义只在用户程序中解释
+\end_layout
+
+\begin_layout Standard
+记录序列
+\end_layout
+
+\begin_layout Standard
+文件是具有固定长度记录的序列每个记录都有其内部结构读操作返回一个记录，而写操作重写或追加一个记录
+\end_layout
+
+\begin_layout Standard
+树
+\end_layout
+
+\begin_layout Standard
+按“键”字段进行排序，从而可以对特定“键”进行快速查找。
+\end_layout
+
+\begin_layout Standard
+文件类型
+\end_layout
+
+\begin_layout Standard
+普通文件（regular file）
+\end_layout
+
+\begin_layout Standard
+ASCII文件
+\end_layout
+
+\begin_layout Standard
+可以显示和打印
+\end_layout
+
+\begin_layout Standard
+可以用任何文本编辑器进行编辑
+\end_layout
+
+\begin_layout Standard
+可以方便程序共享数据
+\end_layout
+
+\begin_layout Standard
+二进制文件二进制文件有一定的内部结构，使用该文件的程序才了解这种结构
+\end_layout
+
+\begin_layout Standard
+可执行二进制文件(UNIX)
+\end_layout
+
+\begin_layout Standard
+文件头、正文、数据、重定位位及符号表.文件头以所谓的魔数（magic number）开始，表明该文件是一个可执行的文件 (防止非这种格式的文件偶然运行）。魔数后面
+是文件中各段的长度、执行的起始地址和一些标志位。程序本身的正文和数据在文件头后面。这些被装入内存，并使用重定位位重新定位。符号表则用于调试。
+\end_layout
+
+\begin_layout Standard
+UNIX的存档文件
+\end_layout
+
+\begin_layout Standard
+由已编译但没有连接的库过程（模块）集合而成
+\end_layout
+
+\begin_layout Standard
+每个文件以模块头开始，其中记录了名称、创建日期、所有者、保护码和文件大小
+\end_layout
+
+\begin_layout Standard
+字符特殊文件（character special file) UNIX
+\end_layout
+
+\begin_layout Standard
+块特殊文件（block special file）UNIX
+\end_layout
+
+\begin_layout Standard
+系统文件
+\end_layout
+
+\begin_layout Standard
+目录（directory）管理文件系统结构
+\end_layout
+
+\begin_layout Standard
+一级目录系统只有一个目录
+\end_layout
+
+\begin_layout Standard
+层次目录系统(目录树)
+\end_layout
+
+\begin_layout Standard
+绝对路径名（absolute path name）从根目录到文件的路径组成
+\end_layout
+
+\begin_layout Standard
+相对路径名（relative path name）和工作目录（working directory）（也称作当前目录（current directory））一起使
+用“.”“dot”, “..”“dotdot”
+\end_layout
+
+\begin_layout Standard
+目录操作
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+文件存取
+\end_layout
+
+\begin_layout Standard
+顺序存取（sequential access）
+\end_layout
+
+\begin_layout Standard
+随机存取文件(random access file)seek操作设置当前位置(win 和 UNIX)read操作都给出开始读文件的位置
+\end_layout
+
+\begin_layout Standard
+文件属性
+\end_layout
+
+\begin_layout Standard
+文件操作
+\end_layout
+
+\begin_layout Standard
+create,delete, write, append, seek, etc.
+\end_layout
+
+\begin_layout Standard
+文件系统的实现
+\end_layout
+
+\begin_layout Standard
+文件系统布局(（Master Boot Record，MBR）/GPT)
+\end_layout
+
+\begin_layout Standard
+每个分区中有一个独立的文件系
+\end_layout
+
+\begin_layout Standard
+磁盘的0号扇区称为主引导记录（Master Boot Record，MBR），用来引导计算机.在MBR的结尾是分区表。该表给出了每个分区的起始和结束地址。表中的一
+个分区被标记为活动分区。在计算机被引导时，BIOS读入并执行MBR。MBR做的第一件事是确定活动分区，读入它的第一个块，称为引导块（boot block），并执
+行之。引导块中的程序将装载该分区中的操作系统。为统一起见，每个分区都从一个启动块开始，即使它不含有一个可启动的操作系统。
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+超级块超级块包含文件系统的所有关键参数超级块中的典型信息包括：确定文件系统类型用的魔数、文件系统中数据块的数量以及其他重要的管理信息。
+\end_layout
+
+\begin_layout Standard
+文件的实现磁盘会被"分为"块
+\end_layout
+
+\begin_layout Standard
+连续分配
+\end_layout
+
+\begin_layout Standard
+链表分配
+\end_layout
+
+\begin_layout Standard
+每个块的第一个字作,为指向下一块的指针，块的其他部分存放数据
+\end_layout
+
+\begin_layout Standard
+随机存取却相当缓慢
+\end_layout
+
+\begin_layout Standard
+磁盘块存储数据的字节数不再是2的整数次幂
+\end_layout
+
+\begin_layout Standard
+在内存中采用表的链表分配取出每个磁盘块的指针字，把它放在内存的一个表中.内存中的这样一个表格称为文件分配表（File Allocation Table，FAT）
+\end_layout
+
+\begin_layout Standard
+i节点
+\end_layout
+
+\begin_layout Standard
+每个文件赋予一个称为i节点（index-node）的数据结构，其中列出了文件属性和一个包含磁盘块地址的块的地址
+\end_layout
+
+\begin_layout Standard
+目录的实现
+\end_layout
+
+\begin_layout Standard
+简单目录包含固定大小的目录项，在目录项中有磁盘地址和属性
+\end_layout
+
+\begin_layout Standard
+散列表
+\end_layout
+
+\begin_layout Standard
+共享文件有向无环图（Directed Acyclic Graph，DAG）
+\end_layout
+
+\begin_layout Standard
+日志结构文件系统(Log-structured File System，LFS)
+\end_layout
+
+\begin_layout Standard
+其基本思想是将整个磁盘结构化为一个日志。每隔一段时间，或是有特殊需要时，被缓冲在内存中的所有未决的写操作都被放到一个单独的段中，作为在日志末尾的一个邻接段写入磁
+盘一个单独的段可能会包括i节点、目录块、数据块或者都有。每一个段的开始都是该段的摘要，说明该段中都包含哪些内容。如果所有的段平均在1MB左右，那么就几乎可以利用
+磁盘的完整带宽。i节点分散在整个日志中，而不是放在磁盘的某一个固定位置LFS有一个清理线程，该清理线程周期地扫描日志进行磁盘压缩。(清理i 记录的块)
+\end_layout
+
+\begin_layout Standard
+日志文件系统保存一个用于记录系统下一步将要做什么的日志。这样当系统在完成它们即将完成的任务前崩溃时，重新启动后，可以通过查看日志，获取崩溃前计划完成的任务，并完
+成它们。
+\end_layout
+
+\begin_layout Standard
+日志文件系统则先写一个日志项，列出三个将要完成的动作。然后日志项被写入磁盘（并且为了良好地实施，可能从磁盘读回来验证它的完整性）。只有当日志项已经被写入，不同的
+操作才可以进行。当所有的操作成功完成后，擦除日志项。如果系统这时崩溃，系统恢复后，文件系统可以通过检查日志来查看是不是有未完成的操作。
+\end_layout
+
+\begin_layout Standard
+原子事务（atomic transaction）
+\end_layout
+
+\begin_layout Standard
+幂等
+\end_layout
+
+\begin_layout Standard
+虚拟文件系统(封装其它文件系统)
+\end_layout
+
+\begin_layout Standard
+文件系统管理和优化
+\end_layout
+
+\begin_layout Standard
+磁盘空间管理
+\end_layout
+
+\begin_layout Standard
+块大小
+\end_layout
+
+\begin_layout Standard
+记录空闲块
+\end_layout
+
+\begin_layout Standard
+链表
+\end_layout
+
+\begin_layout Standard
+位图空闲块用1表示，已分配块用0表示（或者反之）
+\end_layout
+
+\begin_layout Standard
+磁盘配额记录件所有者所用数据块的总数软限制, 硬限制
+\end_layout
+
+\begin_layout Standard
+文件系统备份
+\end_layout
+
+\begin_layout Standard
+物理转储
+\end_layout
+
+\begin_layout Standard
+逻辑转储从一个或几个指定的目录开始，递归地转储其自给定基准日期.后有所更改的全部文件和目录。
+\end_layout
+
+\begin_layout Standard
+逻辑转储算法要维持一个以i节点号为索引的位图，每个i节点包含了几位。随着算法的执行，位图中的这些位会被设置或清除。算法的执行分为四个阶段。第一阶段从起始目录（本
+例中为根目录）开始检查其中的所有目录项。对每一个修改过的文件，该算法将在位图中标记其i节点。算法还标记并递归检查每一个目录（不管是否修改过）。
+\end_layout
+
+\begin_layout Standard
+每个被转储的目录都用目录的属性（所有者、时间等）作为前缀
+\end_layout
+
+\begin_layout Standard
+特殊文件、命名管道以及类似的文件, /dev ,都不应该转储
+\end_layout
+
+\begin_layout Standard
+RAID
+\end_layout
+
+\begin_layout Standard
+文件系统的一致性文件出现错误先修改保证系统一致性,然后报告，由用户检查文件受损情况
+\end_layout
+
+\begin_layout Standard
+块的一致性检查文件的一致性检查
+\end_layout
+
+\begin_layout Standard
+程序构造两张表，每张表中为每个块设立一个计数器，都初始化为0。第一个表中的计数器跟踪该块在文件中的出现次数，第二个表中的计数器跟踪该块在空闲表中的出现次数。
+\end_layout
+
+\begin_layout Standard
+目录系统
+\end_layout
+
+\begin_layout Standard
+构造一张计数器表， 一个文件（而不是一个块）对应于一个计数器。说明每个文件被多少个目录包含
+\end_layout
+
+\begin_layout Standard
+文件系统性能
+\end_layout
+
+\begin_layout Standard
+高速缓存
+\end_layout
+
+\begin_layout Standard
+块提前读
+\end_layout
+
+\begin_layout Standard
+减少磁盘臂运动
+\end_layout
+
+\begin_layout Standard
+将磁盘分成多个柱面组，每个柱面组有自己的i节点、数据块和空闲表
+\end_layout
+
+\begin_layout Standard
+磁盘碎片整理
+\end_layout
+
+\begin_layout Standard
+文件系统实例
+\end_layout
+
+\begin_layout Standard
+CD-ROM文件系统沿一个连续的螺旋线来顺序存储信息
+\end_layout
+
+\begin_layout Standard
+MOS-DOS
+\end_layout
+
+\begin_layout Standard
+UNIX V7
+\end_layout
+
+\begin_layout Standard
+使用
+\end_layout
+
+\begin_layout Standard
+基于文本 shell
+\end_layout
+
+\begin_layout Standard
+操作系统是进行系统调用的代码
+\end_layout
+
+\begin_layout Standard
+如果用户在命令后加上一个“＆”符号，则shell将不等待其结束，
+\end_layout
+
+\begin_layout Standard
+基于图标 图形用户界面 (Graphical User Inerface ,GUI)
+\end_layout
+
+\begin_layout Standard
+输入/输出(I/O)
+\end_layout
+
+\begin_layout Standard
+I/O硬件原理
+\end_layout
+
+\begin_layout Standard
+I/O 设备
+\end_layout
+
+\begin_layout Standard
+设备控制器I/O设备一般由机械部件和电子部件两部分组成。通常可以将这两部分分开处理，以提供更加模块化和更加通用的设计。电子部件称作设备控制器（device
+ controller）或适配器（adapter）。
+\end_layout
+
+\begin_layout Standard
+控制器是插在电路板上的一块芯片或一组芯片这块电路板物理地控制设备。它从操作系统接收命令
+\end_layout
+
+\begin_layout Standard
+控制器的任务是为操作系统提供一个简单的接口控制器中经常安装一个小的嵌入式计算机，该嵌入式计算机运行为执行这些工作而专门编好的程序
+\end_layout
+
+\begin_layout Standard
+每个设备控制器都有少量的用于通信的寄存器。
+\end_layout
+
+\begin_layout Standard
+例如，一个最小的磁盘控制器也会有用于指定磁盘地址、内存地址、扇区计数和方向（读或写）的寄存器。要激活控制器，设备驱动程序从操作系统获得一条命令，然后翻译成对应的
+值，并写进设备寄存器中。所有设备寄存器的集合构成了I/O端口空间
+\end_layout
+
+\begin_layout Standard
+设备本身
+\end_layout
+
+\begin_layout Standard
+设备本身有个相对简单的接口
+\end_layout
+
+\begin_layout Standard
+操作系统看到的是对控制器的接口，这个接口可能和设备接口有很大的差别
+\end_layout
+
+\begin_layout Standard
+输入输出方式
+\end_layout
+
+\begin_layout Standard
+内存映射I/O
+\end_layout
+
+\begin_layout Standard
+寻址控制器
+\end_layout
+
+\begin_layout Standard
+直接存储器访问（Direct Memory Access，DMA）芯片
+\end_layout
+
+\begin_layout Standard
+CPU对DMA芯片进行设置，说明需要传送的字节数、有关的设备和内存地址以及操作方向，接着启动DMA。当DMA芯片完成时，它引发一个中断，
+\end_layout
+
+\begin_layout Standard
+许多总线能够以两种模式操作：每次一字模式和块模式。某些DMA控制器也能够以这两种模式操作。
+\end_layout
+
+\begin_layout Standard
+周期窃取（cycle stealing）
+\end_layout
+
+\begin_layout Standard
+DMA控制器请求传送一个字并且得到这个字。如果CPU也想使用总线，它必须等待。因为设备控制器偶尔偷偷溜入并且从CPU偷走一个临时的总线周期，从而轻微地延迟CPU
+。
+\end_layout
+
+\begin_layout Standard
+突发模式（burst mode）
+\end_layout
+
+\begin_layout Standard
+DMA控制器通知设备获得总线，发起一连串的传送，然后释放总线。
+\end_layout
+
+\begin_layout Standard
+磁盘内部缓冲区
+\end_layout
+
+\begin_layout Standard
+磁盘控制器可以在开始传送之前检验校验和
+\end_layout
+
+\begin_layout Standard
+缓和总线的使用
+\end_layout
+
+\begin_layout Standard
+分类时钟既不是块可寻址的，也不产生或接收字符流。它所做的工作就是按照预先规定好的时间间隔产生中断。内存映射的显示器也不适用于此模型。
+\end_layout
+
+\begin_layout Standard
+块设备（block device）
+\end_layout
+
+\begin_layout Standard
+块设备把信息存储在固定大小的块中，每个块有自己的地址硬盘、CD-ROM和USB盘是最常见的块设备。
+\end_layout
+
+\begin_layout Standard
+字符设备（character device）
+\end_layout
+
+\begin_layout Standard
+字符设备以字符为单位发送或接收一个字符流，而不考虑任何块结构.
+ 字符设备是不可寻址的，也没有任何寻道操作。打印机、网络接口、鼠标（用作指点设备）
+\end_layout
+
+\begin_layout Standard
+中断设备驱动程序启动设备并且让该设备在操作完成时发出一个中断中断经常会在非常不合适的时刻发生，CPU有办法关闭中断并在稍后再开启中断。在中断关闭时，任何已经发出
+中断的设备，可以继续保持其中断信号，但是CPU不会被中断，直至中断再次启用为止。如果在中断关闭时，已有多个设备发出了中断，中断控制器将决定先处理哪个中断，通常这
+取决于事先赋予每个设备的静态优先级。最高优先级的设备赢得竞争。
+\end_layout
+
+\begin_layout Standard
+中断控制器
+\end_layout
+
+\begin_layout Standard
+在第1步，设备驱动程序通过写设备寄存器通知设备控制器做什么。然后，设备控制器启动该设备
+\end_layout
+
+\begin_layout Standard
+第2步: 当设备控制器传送完毕被告知的要进行读写的字节数量后，它就使用特定的总线发信号给中断控制器芯片。
+\end_layout
+
+\begin_layout Standard
+第3步: 中断控制器已经准备接收中断 ，它会在CPU芯片的一个管脚上声明，中断控制器在地址线上放置一个数字表明哪个设备需要关注，并且置起一个中断CPU的信号。
+\end_layout
+
+\begin_layout Standard
+第4步: 中断控制器把该设备的编号放到总线上，这样CPU可以读总线，并且知道哪个设备刚刚完成了操作
+\end_layout
+
+\begin_layout Standard
+中断服务过程开始运行后，它立刻通过将一个确定的值写到中断控制器的某个I/O端口来对中断做出应答。这一应答告诉中断控制器可以自由地发出另一个中断。通过让CPU延迟
+这一应答直到它准备好处理下一个中断，就可以避免与多个几乎同时发生的中断相牵涉的竞争状态。
+\end_layout
+
+\begin_layout Standard
+中断向量（interrupt vector）地址线上的数字被用做指向一个称为中断向量（interrupt vector）的表格的索引，以便读取一个新的程序计数器
+。一旦CPU决定取中断，通常程序计数器和PSW就被压入当前堆栈中，并且CPU被切换到用户态。设备编号可以成为部分内存的一个引用，用于寻找该设备中断处理程序的地址
+。当中断处理程序（中断设备的设备驱动程序的一部分）开始后，它取走已入栈的程序计数器和PSW，并保存之，然后查询设备的状态。在中断处理程序全部完成之后，它返回到先
+前运行的用户程序中尚未执行的头一条指令。中断向量的位置可以硬布线到机器中，也可以在内存中的任何地方通过一个CPU寄存器（由操作系统装载）指向其起点。
+\end_layout
+
+\begin_layout Standard
+精确中断和不精确中断
+\end_layout
+
+\begin_layout Standard
+将机器留在一个明确状态的中断称为精确中断（precise interrupt）
+\end_layout
+
+\begin_layout Standard
+PC（程序计数器）保存在一个已知的地方。PC所指向的指令之前的所有指令已经完全执行。PC所指向的指令之后的所有指令都没有执行。
+\end_layout
+
+\begin_layout Standard
+为精确中断付出的代价是CPU内部极其复杂的中断逻辑，以便确保当中断控制器发出信号想要导致一个中断时，允许直到某一点之前的所有指令完成而不允许这一点之后的指令对机
+器状态产生任何重要的影响
+\end_layout
+
+\begin_layout Standard
+不满足这些要求的中断称为不精确中断（imprecise interrupt）
+\end_layout
+
+\begin_layout Standard
+缓慢的中断使得非常快速的超标量CPU(没有精确中断功能的CPU)有时并不适合实时工作不精确中断使得操作系统更为复杂而且运行得更加缓慢
+\end_layout
+
+\begin_layout Standard
+I/O软件原理
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+问题
+\end_layout
+
+\begin_layout Standard
+错误处理（error handling）
+\end_layout
+
+\begin_layout Standard
+设备独立性与统一命名（uniform naming）
+\end_layout
+
+\begin_layout Standard
+同步（synchronous）（即阻塞）和异步（asynchronous）（即中断驱动）传输
+\end_layout
+
+\begin_layout Standard
+大多数物理I/O是异步的CPU启动传输后便转去做其他工作，直到中断发生
+\end_layout
+
+\begin_layout Standard
+缓冲（buffering）
+\end_layout
+
+\begin_layout Standard
+共享设备和独占设备
+\end_layout
+
+\begin_layout Standard
+程序控制I/O（programmed I/O）CPU做全部工作
+\end_layout
+
+\begin_layout Standard
+轮询（polling）或忙等待（busy waiting）
+\end_layout
+
+\begin_layout Standard
+CPU一直轮询设备直到对应的I/O操作完成
+\end_layout
+
+\begin_layout Standard
+中断驱动I/O
+\end_layout
+
+\begin_layout Standard
+是不是可以理解为事件驱动?
+\end_layout
+
+\begin_layout Standard
+使用DMA的I/O
+\end_layout
+
+\begin_layout Standard
+DMA控制器而不是主CPU做全部工作
+\end_layout
+
+\begin_layout Standard
+I/O软件层次
+\end_layout
+
+\begin_layout Standard
+中断处理程序
+\end_layout
+
+\begin_layout Standard
+设备驱动(device dirve)
+\end_layout
+
+\begin_layout Standard
+每个控制器厂家必须为所支持的操作系统提供相应的设备驱动程序
+\end_layout
+
+\begin_layout Standard
+为了能够使用设备驱动程序，必须把设备驱动程序装入到操作系统中，
+\end_layout
+
+\begin_layout Standard
+这样它可在核心态中运行。
+\end_layout
+
+\begin_layout Standard
+理论上，设备驱动程序可以在内核外运行，
+\end_layout
+
+\begin_layout Standard
+但是几乎没有系统支持这种可能的方式，
+\end_layout
+
+\begin_layout Standard
+因为它要求允许在用户空间的设备驱动程序能够以控制的方式访问设备，
+\end_layout
+
+\begin_layout Standard
+这是一种极少得到支持的功能。
+\end_layout
+
+\begin_layout Standard
+装入方式
+\end_layout
+
+\begin_layout Standard
+将内核与设备驱动程序重新链接,然后重新启动系统
+\end_layout
+
+\begin_layout Standard
+在一个操作系统文件中设置一个入口, 并通知该文件需要一个设备驱动程序.然后重新启动系统, 在系统启动时, 操作系统去寻找所需的设备驱动程序并装载
+\end_layout
+
+\begin_layout Standard
+操作系统能够在运行时接受新的设备驱动程序并且立即将其安装好,无需重新启动系统
+\end_layout
+
+\begin_layout Standard
+设备无关的I/O软件
+\end_layout
+
+\begin_layout Standard
+设备驱动程序的统一接口
+\end_layout
+
+\begin_layout Standard
+缓冲
+\end_layout
+
+\begin_layout Standard
+用户进程在用户空间中提供了一个包含n个字符的缓冲区，并且执行读入n个字符的读操作。中断服务过程负责将到来的字符放入该缓冲区中直到缓冲区填满，然后唤醒用户进程。将
+缓冲区锁定在内存中
+\end_layout
+
+\begin_layout Standard
+另一种方法是在内核空间中创建一个缓冲区并且让中断处理程序将字符放到这个缓冲区中。当该缓冲区被填满的时候，将包含用户缓冲区的页面调入内存（如果需要的话），并且在一
+次操作中将内核缓冲区的内容复制到用户缓冲区中。
+\end_layout
+
+\begin_layout Standard
+内核空间和用户空间的区别
+\end_layout
+
+\begin_layout Standard
+当进程/线程运行在内核空间时就处于内核态，而进程/线程运行在用户空间时则处于用户态。在内核态下，进程运行在内核地址空间中，此时 CPU 可以执行任何指令。运行的
+代码也不受任何的限制，可以自由地访问任何有效地址，也可以直接进行端口的访问。
+\end_layout
+
+\begin_layout Standard
+在用户态下，进程运行在用户地址空间中，被执行的代码要受到 CPU 的很多检查，比如：进程只能访问映射其地址空间的页表项中规定的在用户态下可访问页面的虚拟地址。
+\end_layout
+
+\begin_layout Standard
+双缓冲（double buffering）
+\end_layout
+
+\begin_layout Standard
+循环缓冲区（circular buffer）
+\end_layout
+
+\begin_layout Standard
+错误报告
+\end_layout
+
+\begin_layout Standard
+编程错误
+\end_layout
+
+\begin_layout Standard
+实际的I/O错误硬件坏了
+\end_layout
+
+\begin_layout Standard
+分配与释放专用设备
+\end_layout
+
+\begin_layout Standard
+与设备无关的块大小
+\end_layout
+
+\begin_layout Standard
+用户空间的I/O软件
+\end_layout
+
+\begin_layout Standard
+假脱机
+\end_layout
+
+\begin_layout Standard
+通过保护特殊文件来防止用户直接使用，可以解决某些进程不必要地长期空占打印机的问题
+\end_layout
+
+\begin_layout Standard
+安全性(security)
+\end_layout
+
+\begin_layout Standard
+环境安全
+\end_layout
+
+\begin_layout Standard
+威胁
+\end_layout
+
+\begin_layout Standard
+数据保密（data confidentiality）
+\end_layout
+
+\begin_layout Standard
+目标数据完整性（data integrity）
+\end_layout
+
+\begin_layout Standard
+目标系统可用性（system availability）
+\end_layout
+
+\begin_layout Standard
+隐私（privacy）
+\end_layout
+
+\begin_layout Standard
+入侵者
+\end_layout
+
+\begin_layout Standard
+非专业用户的随意浏览
+\end_layout
+
+\begin_layout Standard
+内部人员的窥视
+\end_layout
+
+\begin_layout Standard
+为获取利益而尝试
+\end_layout
+
+\begin_layout Standard
+商业或军事间谍
+\end_layout
+
+\begin_layout Standard
+病毒
+\end_layout
+
+\begin_layout Standard
+数据意外遗失
+\end_layout
+
+\begin_layout Standard
+天灾
+\end_layout
+
+\begin_layout Standard
+软硬件错误
+\end_layout
+
+\begin_layout Standard
+人为过失
+\end_layout
+
+\begin_layout Chapter
+密码学
+\end_layout
+
+\begin_layout Standard
+参考密码学
+\end_layout
+
+\begin_layout Standard
+保护机制
+\end_layout
+
+\begin_layout Standard
+保护域
+\end_layout
+
+\begin_layout Standard
+域（domain）是一对（对象，权限）组合。每一对组合指定一个对象和一些可在其上运行的操作子集。这里权限（right）是指对某个操作的执行许可。
+\end_layout
+
+\begin_layout Standard
+最基本的原则就是最低权限原则（Principle of Least Authority，POLA）
+\end_layout
+
+\begin_layout Standard
+访问控制列表(Access Control List，ACL) 结合用户组(域)可以方便管理
+\end_layout
+
+\begin_layout Standard
+权能字列表（capability list或C-list）
+\end_layout
+
+\begin_layout Standard
+防篡改
+\end_layout
+
+\begin_layout Standard
+建立带标记的体系结构（tagged architecture）
+\end_layout
+
+\begin_layout Standard
+操作系统里保存权能字列表
+\end_layout
+
+\begin_layout Standard
+权能字列表放在用户空间里，并用加密方法进行管理
+\end_layout
+
+\begin_layout Standard
+可信系统
+\end_layout
+
+\begin_layout Standard
+可信计算基
+\end_layout
+
+\begin_layout Standard
+多级安全
+\end_layout
+
+\begin_layout Standard
+Bell-La Padula模型
+\end_layout
+
+\begin_layout Standard
+Biba模型
+\end_layout
+
+\begin_layout Standard
+隐蔽信道
+\end_layout
+
+\begin_layout Standard
+隐写术
+\end_layout
+
+\begin_layout Standard
+隐藏的水印
+\end_layout
+
+\begin_layout Standard
+隐藏的信息
+\end_layout
+
+\begin_layout Standard
+认证
+\end_layout
+
+\begin_layout Standard
+使用口令认证
+\end_layout
+
+\begin_layout Standard
+系统只要看到非法的登录名就禁止登录。这样做是一个错误，因为系统让骇客有机会尝试，直到找到合法的登录名
+\end_layout
+
+\begin_layout Standard
+通常被用户采用的口令包括：性别词汇、辱骂语、人名、度假地和办公室常见的物体
+\end_layout
+
+\begin_layout Standard
+大多数用户都趋向于选择简单且强度很弱的密码，并且在多个网站中重复使用他们
+\end_layout
+
+\begin_layout Standard
+单向散列链（one-way hash chain）
+\end_layout
+
+\begin_layout Standard
+使用实际物体的认证方式
+\end_layout
+
+\begin_layout Standard
+储值卡
+\end_layout
+
+\begin_layout Standard
+智能卡
+\end_layout
+
+\begin_layout Standard
+使用生物识别的验证方式
+\end_layout
+
+\begin_layout Standard
+任何两个人都具有不同的视网膜组织血管（patterns），即使是同卵双胞胎
+\end_layout
+
+\begin_layout Standard
+声音测定
+\end_layout
+
+\begin_layout Standard
+指纹
+\end_layout
+
+\begin_layout Standard
+内部攻击
+\end_layout
+
+\begin_layout Standard
+逻辑炸弹
+\end_layout
+
+\begin_layout Standard
+后门陷阱
+\end_layout
+
+\begin_layout Standard
+登录欺骗
+\end_layout
+
+\begin_layout Standard
+利用代码漏洞
+\end_layout
+
+\begin_layout Standard
+扫描
+\end_layout
+
+\begin_layout Standard
+1)运行自动端口扫描，以查找接受远程连接的计算机。2)尝试通过猜测用户名和密码进行登录。3)一旦登录成功，则启动特定的具有漏洞的程序，并产生输入使得程序中的漏洞
+被触发。4)如果该程序运行SETUID到root，则创建一个SETUID root shell。5)启动一个僵尸程序，监听IP端口的指令。6)对目标机器进行配置
+，确保该僵尸程序在系统每次重新启动后都会自动运行。
+\end_layout
+
+\begin_layout Standard
+缓冲区溢出攻击
+\end_layout
+
+\begin_layout Standard
+主程序在运行时局部变量是放在栈里的。在某些情况下，系统会调用过程A，标准的调用步骤是把返回地址（指向调用语句之后的指令）压入栈，然后将程序的控制权交给A，由A不
+断减少栈指针地址来分配本地变量的存储空间。C语言函数库的gets函数可以把（未知大小的）串变量读入定长的缓冲区里，但并不校验是否溢出，这样就很容易遭受攻击。有些
+编译器甚至通过检查gets的使用来发出警告。
+\end_layout
+
+\begin_layout Standard
+这类漏洞很难被修复，因为已有的大量C代码都没有对缓冲区溢出进行检查。
+\end_layout
+
+\begin_layout Standard
+格式化字符串攻击(format string attack)
+\end_layout
+
+\begin_layout Standard
+C语言printf“%n”它不打印出任何信息，而是计算直到“%n”出现之前，总共打印了多少字符，并且将这个数字保存到printf下一个将要使用的参数中去。
+\end_layout
+
+\begin_layout Standard
+返回libc攻击(return to libc attack)
+\end_layout
+
+\begin_layout Standard
+整数溢出攻击
+\end_layout
+
+\begin_layout Standard
+代码注入攻击
+\end_layout
+
+\begin_layout Standard
+权限提升攻击（privilege escalation attack）
+\end_layout
+
+\begin_layout Standard
+恶意软件
+\end_layout
+
+\begin_layout Standard
+特洛伊木马
+\end_layout
+
+\begin_layout Standard
+病毒
+\end_layout
+
+\begin_layout Standard
+分类
+\end_layout
+
+\begin_layout Standard
+共事者病毒(companion virus)
+\end_layout
+
+\begin_layout Standard
+并不真正感染程序，但当程序执行的时候它也执行
+\end_layout
+
+\begin_layout Standard
+覆盖病毒（overwriting virus）
+\end_layout
+
+\begin_layout Standard
+寄生病毒（parasitic virus）
+\end_layout
+
+\begin_layout Standard
+内存驻留病毒（memory-resident virus）
+\end_layout
+
+\begin_layout Standard
+引导扇区病毒
+\end_layout
+
+\begin_layout Standard
+伪装成坏扇区
+\end_layout
+
+\begin_layout Standard
+设备驱动病毒（device driver virus）
+\end_layout
+
+\begin_layout Standard
+宏病毒
+\end_layout
+
+\begin_layout Standard
+源代码病毒
+\end_layout
+
+\begin_layout Standard
+多形态病毒（polymorphic virus）
+\end_layout
+
+\begin_layout Standard
+每次复制时都发生变异的病毒
+\end_layout
+
+\begin_layout Standard
+传播
+\end_layout
+
+\begin_layout Standard
+蠕虫
+\end_layout
+
+\begin_layout Standard
+间谍软件(spyware)
+\end_layout
+
+\begin_layout Standard
+rootkit
+\end_layout
+
+\begin_layout Standard
+固件rootkit
+\end_layout
+
+\begin_layout Standard
+管理程序rootkit
+\end_layout
+
+\begin_layout Standard
+内核rootkit
+\end_layout
+
+\begin_layout Standard
+库rootkit
+\end_layout
+
+\begin_layout Standard
+应用程序rootkit
+\end_layout
+
+\begin_layout Standard
+防御(defense)
+\end_layout
+
+\begin_layout Standard
+防火墙（firewall）
+\end_layout
+
+\begin_layout Standard
+无状态防护墙（stateless firewall）
+\end_layout
+
+\begin_layout Standard
+入侵检测系统（Intrusion Detection System，IDS）
+\end_layout
+
+\begin_layout Standard
+反恶意软件的程序（antimalware program）(antivirus program)
+\end_layout
+
+\begin_layout Standard
+病毒扫描器
+\end_layout
+
+\begin_layout Standard
+完整性检查程序(integrity checking）
+\end_layout
+
+\begin_layout Standard
+行为检查（behavioral checking）
+\end_layout
+
+\begin_layout Standard
+代码签名
+\end_layout
+
+\begin_layout Standard
+囚禁（jailing）
+\end_layout
+
+\begin_layout Standard
+沙盒法（sandboxing）
+\end_layout
+
+\begin_layout Standard
+解释运行并阻止它们获得对硬件的控制
+\end_layout
+
+\begin_layout Standard
+多媒体
+\end_layout
+
+\begin_layout Standard
+多媒体简介
+\end_layout
+
+\begin_layout Standard
+video on demand
+\end_layout
+
+\begin_layout Standard
+视频服务器（video server）
+\end_layout
+
+\begin_layout Standard
+进入控制算法（admission control algorithm）
+\end_layout
+
+\begin_layout Standard
+多媒体服务器需要有资源预留方案
+\end_layout
+
+\begin_layout Standard
+机顶盒（set-top box）
+\end_layout
+
+\begin_layout Standard
+NTSC制式每秒包含30帧
+\end_layout
+
+\begin_layout Standard
+PAL和SECAM制式每秒包含25帧（对纯粹主义者而言是25.00帧）
+\end_layout
+
+\begin_layout Standard
+隔行扫描（interlacing）
+\end_layout
+
+\begin_layout Standard
+首先显示所有的奇数扫描线，接着再显示所有的偶数扫描线此处的半帧称为一个场（field）
+\end_layout
+
+\begin_layout Standard
+逐行扫描（progressive）
+\end_layout
+
+\begin_layout Standard
+模拟信号
+\end_layout
+
+\begin_layout Standard
+电视信号
+\end_layout
+
+\begin_layout Standard
+一个信道上进行传输，三个彩色信号必须组合成一个复合（composite）信号
+\end_layout
+
+\begin_layout Standard
+亮度
+\end_layout
+
+\begin_layout Standard
+人的眼睛对亮度信号比对色度信号敏感得多
+\end_layout
+
+\begin_layout Standard
+亮度信号应该用与旧的黑白信号相同的频率进行广播，从而使其可以被黑白电视机接收
+\end_layout
+
+\begin_layout Standard
+色度
+\end_layout
+
+\begin_layout Standard
+某些电视机有标着亮度、色调和饱和度（或者是亮度、色彩和颜色）字样的旋钮或调节装置，可以分别控制这三个信号。
+\end_layout
+
+\begin_layout Standard
+数字信号
+\end_layout
+
+\begin_layout Standard
+每一帧由呈矩形栅格的图像要素即像素（pixel）组成
+\end_layout
+
+\begin_layout Standard
+多媒体文件
+\end_layout
+
+\begin_layout Standard
+视频编码
+\end_layout
+
+\begin_layout Standard
+视频压缩
+\end_layout
+
+\begin_layout Standard
+编码（encoding）算法
+\end_layout
+
+\begin_layout Standard
+解码（decoding）算法
+\end_layout
+
+\begin_layout Standard
+这些算法具有某些不对称性
+\end_layout
+
+\begin_layout Standard
+编码/解码过程不必是100%可逆的
+\end_layout
+
+\begin_layout Standard
+当解码输出不与原始输入严格相等时，系统被称为是有损的（lossy）。所有用于多媒体的压缩系统都是有损的，因为这样可以获得更好的压缩效果。
+\end_layout
+
+\begin_layout Standard
+JPEG标准(大体对称)用于压缩连续色调静止图像（例如照片）的JPEG（Joint Photographic Experts Group，联合摄影专家组）标准
+\end_layout
+
+\begin_layout Standard
+RGB值中计算出一个亮度信号和两个色度信号PAL 制式 是 YUV, NTSC 是 YIQ
+\end_layout
+
+\begin_layout Standard
+块预制
+\end_layout
+
+\begin_layout Standard
+DCT（离散余弦变换）
+\end_layout
+
+\begin_layout Standard
+量化（quantization）
+\end_layout
+
+\begin_layout Standard
+MPEG（Motion Picture Experts Group，运动图像专家组）标准
+\end_layout
+
+\begin_layout Standard
+空间冗余
+\end_layout
+
+\begin_layout Standard
+分别对每一帧进行JPEG编码
+\end_layout
+
+\begin_layout Standard
+时间冗余
+\end_layout
+
+\begin_layout Standard
+互相连续的帧常常几乎是完全相同的
+\end_layout
+
+\begin_layout Standard
+MPEG-2
+\end_layout
+
+\begin_layout Standard
+I帧：自包含的JPEG编码静止图像(周期性地出现)
+\end_layout
+
+\begin_layout Standard
+P帧：与上一帧逐块的差。
+\end_layout
+
+\begin_layout Standard
+B帧：与上一帧和下一帧的差。
+\end_layout
+
+\begin_layout Standard
+B帧允许一个帧基于未来的帧。
+\end_layout
+
+\begin_layout Standard
+B帧编码，编码器需要在内存中同时保存三个解码的帧：过去的一帧、当前的一帧和未来的一帧。
+\end_layout
+
+\begin_layout Standard
+图像
+\end_layout
+
+\begin_layout Standard
+位图图像
+\end_layout
+
+\begin_layout Standard
+对象图像
+\end_layout
+
+\begin_layout Standard
+将字符表示为图像
+\end_layout
+
+\begin_layout Standard
+视频图像
+\end_layout
+
+\begin_layout Standard
+音频编码
+\end_layout
+
+\begin_layout Standard
+音频波可以通过模数转换器（Analog Digital Converter，ADC）转换成数字形式
+\end_layout
+
+\begin_layout Standard
+频段屏蔽(“心理声学有损压缩”方法)在一个频段里响亮的声音掩盖住另一频段中较柔和声音的能力,这种较柔和声音只有在没有响亮声音时才可以听到
+\end_layout
+
+\begin_layout Standard
+暂时屏蔽事实上即使响亮声音停止, 还是需要一段时间之后才能听到柔和声音
+\end_layout
+
+\begin_layout Standard
+多媒体进程调度
+\end_layout
+
+\begin_layout Standard
+调度同质进程
+\end_layout
+
+\begin_layout Standard
+一般实时调度
+\end_layout
+
+\begin_layout Standard
+速率单调调度（Rate Monotonic Scheduling，RMS）
+\end_layout
+
+\begin_layout Standard
+最早最终时限优先（Earliest Deadline First，EDF）算法
+\end_layout
+
+\begin_layout Standard
+多媒体文件系统范型
+\end_layout
+
+\begin_layout Standard
+VCR控制功能
+\end_layout
+
+\begin_layout Standard
+近似视频点播
+\end_layout
+
+\begin_layout Standard
+具有VCR功能的近似视频点播
+\end_layout
+
+\begin_layout Standard
+建立缓冲区
+\end_layout
+
+\begin_layout Standard
+文件存放
+\end_layout
+
+\begin_layout Standard
+在单个磁盘上存放文件
+\end_layout
+
+\begin_layout Standard
+使视频、音频和文本交叉存放，但是整个文件还是连续的.无法随机访问
+\end_layout
+
+\begin_layout Standard
+两个替代的文件组织策略
+\end_layout
+
+\begin_layout Standard
+帧索引：电影在播放时使用大量的RAM；磁盘浪费小。
+\end_layout
+
+\begin_layout Standard
+块索引（禁止分裂帧跨越磁盘块）：RAM用量低；磁盘浪费较大。
+\end_layout
+
+\begin_layout Standard
+块索引（允许分裂帧跨越磁盘块）：RAM用量低；无磁盘浪费；需要额外寻道。
+\end_layout
+
+\begin_layout Standard
+近似视频点播的文件存放
+\end_layout
+
+\begin_layout Standard
+在单个磁盘上存放多个文件
+\end_layout
+
+\begin_layout Standard
+Zipf定律
+\end_layout
+
+\begin_layout Standard
+特大城市居住的人口，相对流行性的一个合理的近似遵循着一种令人惊奇的可预测模式
+\end_layout
+
+\begin_layout Standard
+管风琴算法（organ-pipe algorithm）
+\end_layout
+
+\begin_layout Standard
+该算法所做的是试图将磁头保持在磁盘的中央。
+\end_layout
+
+\begin_layout Standard
+（disk farm）
+\end_layout
+
+\begin_layout Standard
+条带模式
+\end_layout
+
+\begin_layout Standard
+按帧分条带
+\end_layout
+
+\begin_layout Standard
+按块分条带
+\end_layout
+
+\begin_layout Standard
+单盘单电影
+\end_layout
+
+\begin_layout Standard
+负载可能没有很好地平衡(可以手工操作)
+\end_layout
+
+\begin_layout Standard
+高速缓存
+\end_layout
+
+\begin_layout Standard
+块高速缓存
+\end_layout
+
+\begin_layout Standard
+文件高速缓存
+\end_layout
+
+\begin_layout Standard
+多媒体磁盘调度
+\end_layout
+
+\begin_layout Standard
+静态磁盘调度
+\end_layout
+
+\begin_layout Standard
+可预测的负载
+\end_layout
+
+\begin_layout Standard
+动态磁盘调度
+\end_layout
+
+\begin_layout Standard
+scan-EDF算法（scan-EDF algorithm）
+\end_layout
+
+\begin_layout Standard
+将最终时限比较接近的请求收集在一起分成若干批并且以柱面的顺序对其进行处理。
+\end_layout
+
+\begin_layout Standard
+系统设计
+\end_layout
+
+\begin_layout Standard
+接口设计
+\end_layout
+
+\begin_layout Standard
+简单
+\end_layout
+
+\begin_layout Standard
+完备
+\end_layout
+
+\begin_layout Standard
+效率
+\end_layout
+
+\begin_layout Standard
+正交性（orthogonality）独立地组合单独的概念的能力
+\end_layout
+
+\begin_layout Standard
+项目管理
+\end_layout
+
+\begin_layout Standard
+人月神话无论分配多少妇女从事这一工作，生一个孩子都需要9个月。
+\end_layout
+
+\begin_layout Standard
+团队结构首席程序员团队（chief programmer team）
+\end_layout
+
+\begin_layout Standard
+坏消息二极管（bad-news diode）坏消息不能很好地沿着树向上传播
+\end_layout
+
+\begin_layout Standard
+经验的作用
+\end_layout
+
+\begin_layout Standard
+第二系统效应（second system effect）
+\end_layout
+
+\begin_layout Standard
+没有银弹(No Silver Bullet)
+\end_layout
+
+\begin_layout Standard
+实例研究
+\end_layout
+
+\begin_layout Standard
+LinuxLinux是UNIX的一个衍生版本,
+\end_layout
+
+\begin_layout Standard
+Linux系统中的层次结构
+\end_layout
+
+\begin_layout Standard
+shell
+\end_layout
+
+\begin_layout Standard
+通配符
+\end_layout
+
+\begin_layout Standard
+Linux应用程序
+\end_layout
+
+\begin_layout Standard
+文件和目录操作命令
+\end_layout
+
+\begin_layout Standard
+过滤器
+\end_layout
+
+\begin_layout Standard
+程序设计工具，如编辑器和编译器
+\end_layout
+
+\begin_layout Standard
+文档处理
+\end_layout
+
+\begin_layout Standard
+系统管理
+\end_layout
+
+\begin_layout Standard
+其他
+\end_layout
+
+\begin_layout Standard
+Linux内核结构
+\end_layout
+
+\begin_layout Standard
+Linux中的进程
+\end_layout
+
+\begin_layout Standard
+父进程和子进程可以共享已经打开的文件。
+\end_layout
+
+\begin_layout Standard
+软件中断
+\end_layout
+
+\begin_layout Standard
+一个进程可以给另一个进程发送信号进程可以告诉操作系统当信号到来时它们希望发生什么事件
+\end_layout
+
+\begin_layout Standard
+进程描述符
+\end_layout
+
+\begin_layout Standard
+调度参数
+\end_layout
+
+\begin_layout Standard
+内存映射
+\end_layout
+
+\begin_layout Standard
+信号
+\end_layout
+
+\begin_layout Standard
+机器寄存器
+\end_layout
+
+\begin_layout Standard
+系统调用状态
+\end_layout
+
+\begin_layout Standard
+文件描述符表
+\end_layout
+
+\begin_layout Standard
+统计
+\end_layout
+
+\begin_layout Standard
+内核堆栈
+\end_layout
+
+\begin_layout Standard
+当前进程状态(如果有的话)
+\end_layout
+
+\begin_layout Standard
+写时复制
+\end_layout
+
+\begin_layout Standard
+进程是资源容器，而线程是执行单元
+\end_layout
+
+\begin_layout Standard
+线程
+\end_layout
+
+\begin_layout Standard
+调度队列
+\end_layout
+
+\begin_layout Standard
+Linux系统的线程是内核线程
+\end_layout
+
+\begin_layout Standard
+实时先入先出
+\end_layout
+
+\begin_layout Standard
+实时轮转
+\end_layout
+
+\begin_layout Standard
+分时
+\end_layout
+
+\begin_layout Standard
+地址空间
+\end_layout
+
+\begin_layout Standard
+代码
+\end_layout
+
+\begin_layout Standard
+数据
+\end_layout
+
+\begin_layout Standard
+堆栈段
+\end_layout
+
+\begin_layout Standard
+启动
+\end_layout
+
+\begin_layout Standard
+启动磁盘的第一个扇区，即主引导记录（MBR），被读入到一个固定的内存区域并且执行。这个分区中含有一个很小的程序（只有512字节），这个程序从启动设备中，通常是I
+DE或SCSI磁盘，调入一个名为boot的独立程序。boot程序将自身复制到高地址的内存当中从而为操作系统释放低地址的内存。复制完成后，boot程序读取启动设备
+的根目录。为了达到这个目的，boot程序必须能够理解文件系统和目录格式，这个工作通常由引导程序，如GRUB（多系统启动管理器），来完成。然后，boot程序读入操
+作系统内核，并把控制交给内核。从这里开始，boot程序完成了它的任务，系统内核开始运行。内核的开始代码是用汇编语言写成的，具有较高的机器依赖性。主要的工作包括创
+建内核堆栈、识别CPU类型、计算可用内存、禁用中断、启用内存管理单元，最后调用C语言写成的main函数开始执行操作系统的主要部分。C语言代码也有相当多的初始化工
+作要做，但是这些工作更逻辑化（而不是物理化）。C语言代码开始的时候会分配一个消息缓冲区来帮助调试启动出现的问题。随着初始化工作的进行，信息被写入消息缓冲区，这些
+信息与当前正在发生的事件相关，所以，如果出现启动失败的情况，这些信息可以通过一个特殊的诊断程序调出来。我们可以把它当作是操作系统的“飞行信息记录器”（即空难发生
+后，侦查员寻找的黑盒子）。
+\end_layout
+
+\begin_layout Standard
+内存管理
+\end_layout
+
+\begin_layout Standard
+数据
+\end_layout
+
+\begin_layout Standard
+压缩
+\end_layout
+
+\begin_layout Standard
+无损压缩
+\end_layout
+
+\begin_layout Standard
+文本文件、程序文件和数值数据文件
+\end_layout
+
+\begin_layout Standard
+有损压缩
+\end_layout
+
+\begin_layout Standard
+常用于多媒体应用中
+\end_layout
+
+\begin_layout Standard
+页面描述语言
+\end_layout
+
+\begin_layout Standard
+数值数据
+\end_layout
+
+\begin_layout Standard
+无符号整型数
+\end_layout
+
+\begin_layout Standard
+有符号整型数符号-幅值
+\end_layout
+
+\begin_layout Standard
+左边最高位0表示正号1表示负号
+\end_layout
+
+\begin_layout Standard
+补码
+\end_layout
+
+\begin_layout Standard
+溢出条件和进位条件
+\end_layout
+
+\begin_layout Standard
+ASCII
+\end_layout
+
+\begin_layout Standard
+打印字符
+\end_layout
+
+\begin_layout Standard
+控制字符
+\end_layout
+
+\begin_layout Standard
+在表示表中编码的顺序叫作排序序列。
+\end_layout
+
+\begin_layout Standard
+Unicode
+\end_layout
+
+\begin_layout Standard
+每个标准的UTF-16字母字符都按两个字节来存储
+\end_layout
+
+\begin_layout Standard
+数值数值通常是以字符的形式输入的，在用于计算之前必须转换为数值形式不用于计算的数值，直接按照字符来操作即可。
+\end_layout
+
+\begin_layout Standard
+数值中每一个数字位相对于其左右邻居都有一个权重或重要性。数值中某个数字位的权重就是乘法因子，它用来决定这个数字位的整体值。在任意的n进制中一个数字位的权重，对于
+B进制中的任意一个数值，每个数字位的位置代表的权重为B的若干次方.其中，幂数从最右边的数字位开始（即B^0），当然，对于任意进制来说，B^0的权重都是1（称为“个
+位”）。
+\end_layout
+
+\begin_layout Chapter
+进制转换与计算
+\end_layout
+
+\begin_layout Standard
+其它进制转换10进制: 对于任意进制的一个数值来说，确定其对应的十进制数值的一种简单方法就是，在给定进制下，每一个数字位乘以该位置的权重。个位数字*B^0=个位
+数_{10}
+\end_layout
+
+\begin_layout Standard
+10进制转其它进制进行一次除法, 实际上是为了确定原始数值中包含多少组"要转换的进制", 如8.余数是剩下的单一单元数，换句话说，就是被转换数值的单元位置。
+\end_layout
+
+\begin_layout Standard
+特殊进制转换
+\end_layout
+
+\begin_layout Standard
+当一个基数是另一基数的整数幂时，存在着一种特殊的转换情况。一个十六进制数精确地表示4个二进制位一个八进制数字位对应于3个二进制数字位转换处理就是简单地将二进制数
+划分为3位或4位为一组，从最低有效位（个位）开始，独立地转换每个组。数字的左边有可能需要添加一些0来转换最高有效位。
+\end_layout
+
+\begin_layout Standard
+小数的转换
+\end_layout
+
+\begin_layout Standard
+一种进制下能精确表示的小数，在另一进制里或许不能精确地表示
+\end_layout
+
+\begin_layout Standard
+将小数点左移一位，就等于这个值除以基数权重:第一位数字*B^-1=第一位数_{10}
+\end_layout
+
+\begin_layout Standard
+十进制转其它
+\end_layout
+
+\begin_layout Standard
+我们每除以基数一次就将小数点左移一位，并注意落在小数点外的是什么，这就是余数。初始时，假定小数点位于数值的右边。当正转换的值处于小数点的右边时，这个过程完全相反
+。我们将小数重复地乘以基数()，记录然后丢弃移动到小数点左边的值。
+\end_layout
+
+\begin_layout Standard
+其中一个基数是另一基数的整数次幂，此时，小数的转换跟以前一样，将数字位按较小的基数分组。对于小数，必须从左向右进行分组，否则方法就是一样的。
+\end_layout
+
+\begin_layout Standard
+混合数值转换
+\end_layout
+
+\begin_layout Standard
+小数点必须对齐
+\end_layout
+
+\begin_layout Standard
+小数部分有整数部分必须分开转换
+\end_layout
+
+\begin_layout Standard
+bool 与(AND)
+\end_layout
+
+\begin_layout Standard
+同时为true,才是true
+\end_layout
+
+\begin_layout Standard
+bool 或(OR)
+\end_layout
+
+\begin_layout Standard
+有一为true,就是true
+\end_layout
+
+\begin_layout Standard
+bool 非(NOT)
+\end_layout
+
+\begin_layout Standard
+对一个二进制数取反
+\end_layout
+
+\begin_layout Standard
+“异或”运算（XOR）
+\end_layout
+
+\begin_layout Standard
+两个操作数的位中，相同则结果为0，不同则结果为1
+\end_layout
+
+\begin_layout Standard
+无符号整型数
+\end_layout
+
+\begin_layout Section
+二进制编码的十进制（BCD）
+\end_layout
+
+\begin_layout Standard
+我现在搞不清楚我是按补码还是反码理解.
+\end_layout
+
+\begin_layout Standard
+负数的反码是在其原码的基础上,符号位不变, 其余各个位取反.
+ 不同的计算方式，
+\end_layout
+
+\begin_layout Standard
+两种都在用 
+\end_layout
+
+\begin_layout Standard
+你说的反码其实就是 1's complement，补码其实就是 2's complement 没记错的话，后者更常用，因为可以区分 +0 和 -0
+ 
+\end_layout
+
+\begin_layout Standard
+https://ryanstutorials.net/binary-tutorial/binary-floating-point.php
+\end_layout
+
+\begin_layout Standard
+二进制是一个位置数字系统。它也是一个基数系统。当我们向左移动一个位置（或数字）时，我们将基数（二进制为 2）乘以的幂增加 1。当我们向右移动时，我们减少
+ 1（变成负数）。
+\end_layout
+
+\begin_layout Standard
+所以在十进制数字
+\begin_inset Formula $55.555$
+\end_inset
+
+实际上转换为:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5*10^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5*10^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5*10^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5*10^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5*10^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+所以在二进制中，数字 101.101 转换为：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1*2^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0*2^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1*2^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1*2^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0*2^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1*2^{-3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.125
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+每个十进制数字位分别转换为4位二进制数数值逐数字位存储
+\end_layout
+
+\begin_layout Standard
+有符号整型数
+\end_layout
+
+\begin_layout Standard
+符号(正负号)-幅值表示法
+\end_layout
+
+\begin_layout Standard
+基数补码从某个标准基值中减去一个值称为该数的补码一个数值的补码有点像是将基值看作一面镜子补码=基值-值基值-（基值-值）=值 2's complement
+\end_layout
+
+\begin_layout Standard
+以9为基的十进制表示
+\end_layout
+
+\begin_layout Standard
+二进制
+\end_layout
+
+\begin_layout Standard
+首尾循环进位（end-around carry）
+\end_layout
+
+\begin_layout Standard
+反码（diminished radix complementary）负数的反码是在其原码的基础上, 符号位不变, 其余各个位取反.1's complement
+\end_layout
+
+\begin_layout Standard
+补码反射点（complementary reflection point）
+\end_layout
+
+\begin_layout Standard
+浮点数
+\end_layout
+
+\begin_layout Standard
+计算机维护一个有限且位数固定的精度带有一个指数，这个指数可以根据需要调整数值内的小数点左移或右移，从而使其变大或变小
+\end_layout
+
+\begin_layout Subsection
+科学记数法
+\end_layout
+
+\begin_layout Standard
+Single precision
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+精度
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sign(标志位)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Exponent(指数)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mantissa(尾数)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Single precision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Double precision
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+指数
+\end_layout
+
+\begin_layout Standard
+指数变得有点有趣。请记住，指数可以为正（代表大数）或负（代表小数，即分数）。您的第一印象可能是这里的补码是理想的，但标准的方法略有不同。这样做是因为它允许更容易
+地处理和操纵浮点数。
+\end_layout
+
+\begin_layout Standard
+使用 8 位和无符号二进制，我们可以表示数字 0 到 255。为了允许浮点数为负数，我们取指数并加上 127。我们可以表示的指数范围变为 128
+ 到 -127。然而，128 是不允许的，它作为一种特殊情况保留，以表示下面进一步列出的某些特殊数字。
+\end_layout
+
+\begin_layout Standard
+例如。让我们说：
+\end_layout
+
+\begin_layout Standard
+我们希望我们的指数是 5。5 + 127 是 132 所以我们的指数变成 - 10000100
+\end_layout
+
+\begin_layout Standard
+我们希望指数为 -7。-7 + 127 是 120 所以我们的指数变成 - 01111000 
+\end_layout
+
+\begin_layout Standard
+这种方法的一个很好的附带好处是，如果最左边的位是 1，那么我们知道它是一个正指数，并且它是一个大数，如果它是 0，那么我们知道指数是负数，它是一个分数（或小数）
+。
+\end_layout
+
+\begin_layout Subsubsection
+尾数
+\end_layout
+
+\begin_layout Standard
+左侧只有一个（非零）数字,
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $6.5*10^{10}\rightarrow0.65*10^{11}$
+\end_inset
+
+表示为
+\end_layout
+
+\begin_layout Subsection
+特殊情况
+\end_layout
+
+\begin_layout Standard
+零: 通过使符号位为1或0而所有其他位为0 来表示零
+\end_layout
+
+\begin_layout Standard
+无限: 正无穷大和负无穷大,切换符号位.
+ 指数全为1,位数全为0.
+\begin_inset Formula $1\text{ }1111111\text{ }0000000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+零
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 00000000 00000000000000000000000 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+无穷大
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0 11111111 00000000000000000000000
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+可视数据
+\end_layout
+
+\begin_layout Standard
+位图图像
+\end_layout
+
+\begin_layout Standard
+矩形图像划分为行和列.
+ 每行和每列的交叉处是一个点 （实际上，是一个很小的区域），称为像素（pixel），它是pi[x]cture element的字头缩写。像素数据通常是自顶向底存
+储的，一次一行，从像素 (0,0) 开始到像素 (nrow-1，ncol-1) ,即从图像左上角的像素到右下角的像素（比较奇怪，这个图像被称为ncol×nrow
+图像，而不是nrow×ncol）。由于这种表示和电视图像的产生方式类似，因此这种布局叫作光栅。像素的输入或输出是按顺序进行的，一次一个像素，这种展现方式叫作光栅
+扫描
+\end_layout
+
+\begin_layout Standard
+对象图像
+\end_layout
+
+\begin_layout Standard
+对象图像由简单的元素组成，如直线、曲线（称为贝塞尔曲线）、圆、圆弧、椭圆等。其中每个元素可以用少量的数学参数来定义。所以对象图像不能直接显示或打印，除非是在绘图
+仪上。相反，为了显示和打印，对象图像必须转换为位图图像。
+\end_layout
+
+\begin_layout Standard
+象形字（glyphs）基于图像的字符
+\end_layout
+
+\begin_layout Standard
+视频
+\end_layout
+
+\begin_layout Standard
+编解码器（codec）
+\end_layout
+
+\begin_layout Standard
+音频数据
+\end_layout
+
+\begin_layout Standard
+模-数转换器
+\end_layout
+
+\begin_layout Standard
+mp3
+\end_layout
+
+\begin_layout Standard
+频段屏蔽(“心理声学有损压缩”方法)
+\end_layout
+
+\begin_layout Standard
+音频采样率
+\end_layout
+
+\begin_layout Standard
+固定或可变的位率
+\end_layout
+
+\begin_layout Standard
+表示不同压缩级的宽范围位率
+\end_layout
+
+\begin_layout Standard
+数据压缩
+\end_layout
+
+\begin_layout Standard
+无损压缩
+\end_layout
+
+\begin_layout Standard
+字典压缩
+\end_layout
+
+\begin_layout Standard
+有损压缩
+\end_layout
+
+\begin_layout Chapter
+"小伙计"计算机
+\end_layout
+
+\begin_layout Standard
+网络(I/O)
+\end_layout
+
+\begin_layout Standard
+报文
+\end_layout
+
+\begin_layout Standard
+包(帧)将长报文拆分成较小的单元
+\end_layout
+
+\begin_layout Standard
+前缀或包头里包含所指派的接收端和源端地址、封装数据的相关信息，后面是数据。数据的大小依赖于报文的类型和长度、包的结构以及信道的需求。
+\end_layout
+
+\begin_layout Standard
+对最大长度做了限定,少数要求数据大小固定
+\end_layout
+
+\begin_layout Standard
+数据包路由
+\end_layout
+
+\begin_layout Standard
+数据从节点到节点,可能几种路径选择
+\end_layout
+
+\begin_layout Standard
+电路交换
+\end_layout
+
+\begin_layout Standard
+虚电路
+\end_layout
+
+\begin_layout Standard
+永久虚电路
+\end_layout
+
+\begin_layout Standard
+交换虚电路
+\end_layout
+
+\begin_layout Standard
+标准的以太网帧
+\end_layout
+
+\begin_layout Standard
+通信信道
+\end_layout
+
+\begin_layout Standard
+链路
+\end_layout
+
+\begin_layout Standard
+位率(带宽)
+\end_layout
+
+\begin_layout Standard
+介质
+\end_layout
+
+\begin_layout Standard
+承载数据的正弦波叫载波（carrier）
+\end_layout
+
+\begin_layout Standard
+调制和解调
+\end_layout
+
+\begin_layout Standard
+调制解调器
+\end_layout
+
+\begin_layout Standard
+数据传送的方向性
+\end_layout
+
+\begin_layout Standard
+单工信道（simplex channel）
+\end_layout
+
+\begin_layout Standard
+只能单向传送报文
+\end_layout
+
+\begin_layout Standard
+半双工（half-duplex）信道
+\end_layout
+
+\begin_layout Standard
+信道可以双向传送报文，但一次只能一个方向
+\end_layout
+
+\begin_layout Standard
+全双工（full-duplex channels）信道
+\end_layout
+
+\begin_layout Standard
+同时双向传送信号
+\end_layout
+
+\begin_layout Standard
+两个-单双工
+\end_layout
+
+\begin_layout Standard
+一个方向一条
+\end_layout
+
+\begin_layout Standard
+连接数
+\end_layout
+
+\begin_layout Standard
+协议
+\end_layout
+
+\begin_layout Standard
+网络结构
+\end_layout
+
+\begin_layout Standard
+网状网络（mesh network）连接数=节点数×（节点数-1）/2
+\end_layout
+
+\begin_layout Standard
+总线拓扑
+\end_layout
+
+\begin_layout Standard
+星形拓扑中央节点
+\end_layout
+
+\begin_layout Standard
+环形拓扑
+\end_layout
+
+\begin_layout Standard
+物理拓扑描述网络布线的实际布局
+\end_layout
+
+\begin_layout Standard
+逻辑拓扑定义各种网络组件间的业务关系
+\end_layout
+
+\begin_layout Standard
+网络类型
+\end_layout
+
+\begin_layout Standard
+局域网
+\end_layout
+
+\begin_layout Standard
+交换式以太网
+\end_layout
+
+\begin_layout Standard
+无线以太网
+\end_layout
+
+\begin_layout Standard
+基站中心访问点
+\end_layout
+
+\begin_layout Standard
+骨干网
+\end_layout
+
+\begin_layout Standard
+分层局域网
+\end_layout
+
+\begin_layout Standard
+城域网
+\end_layout
+
+\begin_layout Standard
+广域网（WAN）
+\end_layout
+
+\begin_layout Standard
+协议
+\end_layout
+
+\begin_layout Standard
+一个约定好的、能实现通信的基本规则集
+\end_layout
+
+\begin_layout Standard
+开放系统互连参考模型（OSI）
+\end_layout
+
+\begin_layout Standard
+一个理论模型
+\end_layout
+
+\begin_layout Standard
+主要用于研究
+\end_layout
+
+\begin_layout Subsection
+TCP/IP
+\end_layout
+
+\begin_layout Standard
+简介
+\end_layout
+
+\begin_layout Standard
+实用的模型TCP/IP是最流行的协议簇
+\end_layout
+
+\begin_layout Standard
+一个集成套件，由很多协议组成TCP/IP模型由5层组成
+\end_layout
+
+\begin_layout Standard
+物理层
+\end_layout
+
+\begin_layout Standard
+物理层是通信实际发生的层。物理层的通信是由纯位流构成的，位流通过介质从一个节点传送到另一个节点
+\end_layout
+
+\begin_layout Standard
+数据链路层
+\end_layout
+
+\begin_layout Standard
+介质访问控制（MAC）
+\end_layout
+
+\begin_layout Standard
+定义访问信道和检测差错的过程
+\end_layout
+
+\begin_layout Standard
+逻辑链路控制（LLC）
+\end_layout
+
+\begin_layout Standard
+提供业务流量控制、差错校正、IP包/帧转换管理、重传以及数据包重构等功能, 对帧进行编号
+\end_layout
+
+\begin_layout Standard
+网络层
+\end_layout
+
+\begin_layout Standard
+IP是这一层唯一的标准协议IP通过复制IP包（在IP层，数据包也叫IP数据报）并附加上一个帧头构建一个以太网帧，其中每个帧中包含特定节点的MAC地址。
+\end_layout
+
+\begin_layout Standard
+IP是一个不可靠的、尽力而为的传送服务
+\end_layout
+
+\begin_layout Standard
+互联网控制报文协议（ICMP）
+\end_layout
+
+\begin_layout Standard
+当通信过程失败时，它可以产生一个关于差错的报文。ICMP将差错码封装在一个新数据报中，然后将其返回至源IP地址。
+\end_layout
+
+\begin_layout Standard
+的主机不明
+\end_layout
+
+\begin_layout Standard
+存活时间超时
+\end_layout
+
+\begin_layout Standard
+Ping和Traceroute等网络工具就使用ICMP的查询服务，来提供其报告信息
+\end_layout
+
+\begin_layout Standard
+传输层
+\end_layout
+
+\begin_layout Standard
+功能:流量控制数据保证需要时对数据包再排序同目的应用建立连接的功能差错恢复在需要时终止端节点之间的连接多数情况下，传输层还负责对报文打包，也就是将报文拆分成合理
+大小的包
+\end_layout
+
+\begin_layout Standard
+端口号长16位前1024个是标准端口号(这些端口号, Linux 需要Root 才可以使用)
+\end_layout
+
+\begin_layout Standard
+网络端口号不同于I/O端口号。和I/O端口号相反，网络端口号是由协议软件产生和使用的，而I/O端口号是基于硬件的。
+\end_layout
+
+\begin_layout Standard
+套口
+\end_layout
+
+\begin_layout Standard
+每一个新请求在传输层产生一个新套口
+\end_layout
+
+\begin_layout Standard
+包含:源端口号源IP地址目的端口号目的IP地址
+\end_layout
+
+\begin_layout Subsubsection
+TCP
+\end_layout
+
+\begin_layout Subsubsection
+TCP黏包
+\end_layout
+
+\begin_layout Standard
+首先“粘包”是不存在的,“粘包”这一个词主要 是面向低水平或者没有受过比较系统的网络编 程学习的读者。 因为 TCP 是没有包这个概念的,TCP
+ 是流协议。 
+\end_layout
+
+\begin_layout Standard
+那么既然没有包这个概念了,那么“粘包”如何谈起?
+\end_layout
+
+\begin_layout Standard
+显然包这概念就出现在应用层了( TCP/IP 五层网络模型)。“粘包”本质上就是 如何从流里面提取信息出错。导致好像两个信息好像粘连在一起一样。
+ 实际上这是一个解析错误,本质是对二进制数据解析出错。根本不是 TCP 的问题,是应用 层的信息解析器写得太烂了。出现解析错误, 无法正确处理从
+ socket 里面读取的数据。
+\end_layout
+
+\begin_layout Standard
+TCP
+\end_layout
+
+\begin_layout Standard
+可靠传输
+\end_layout
+
+\begin_layout Standard
+逻辑连接
+\end_layout
+
+\begin_layout Standard
+握手(三路)
+\end_layout
+
+\begin_layout Standard
+1.
+ 发送一个控制包(通过网络层,包含一个随机选取的32位的数)SYN=1
+\end_layout
+
+\begin_layout Standard
+服务器: SYN=1,ACK=1的特殊SYNACK序列,服务器的初始序列号,确认号(客户端序列号+1)
+\end_layout
+
+\begin_layout Standard
+用户数据报协议（UDP）
+\end_layout
+
+\begin_layout Standard
+流控制传输协议（SCTP）
+\end_layout
+
+\begin_layout Standard
+应用层
+\end_layout
+
+\begin_layout Standard
+动态主机配置协议（DHCP）
+\end_layout
+
+\begin_layout Standard
+协议栈
+\end_layout
+
+\begin_layout Standard
+ARP协议
+\end_layout
+
+\begin_layout Standard
+地址解析协议，用于发现IP地址和对应的MAC地址之间的关系
+\end_layout
+
+\begin_layout Standard
+TCP/IP和OSI的比较
+\end_layout
+
+\begin_layout Standard
+IPv6
+\end_layout
+
+\begin_layout Standard
+冒号-十六进制表示
+\end_layout
+
+\begin_layout Standard
+缩写方式
+\end_layout
+
+\begin_layout Standard
+一个字段中的前导0可以忽略
+\end_layout
+
+\begin_layout Standard
+单个全0字段可以用一对冒号表示
+\end_layout
+
+\begin_layout Standard
+IPv4
+\end_layout
+
+\begin_layout Standard
+网络地址转换（NAT）
+\end_layout
+
+\begin_layout Standard
+静态地址
+\end_layout
+
+\begin_layout Standard
+动态地址
+\end_layout
+
+\begin_layout Standard
+动态主机配置协议（DHCP）
+\end_layout
+
+\begin_layout Standard
+当一台计算机连接到网上时，它从地址池中选一个地址分配该计算机；当计算机离开网络时，它回收所分配的地址。
+\end_layout
+
+\begin_layout Standard
+续租
+\end_layout
+
+\begin_layout Standard
+动态域名服务（DDNS）
+\end_layout
+
+\begin_layout Standard
+子网掩码
+\end_layout
+
+\begin_layout Standard
+分离地址的不同部分
+\end_layout
+
+\begin_layout Standard
+由若干个1后跟若干个0构成的
+\end_layout
+
+\begin_layout Standard
+IP地址后放置一个斜线，后跟1的个数
+\end_layout
+
+\begin_layout Standard
+域名
+\end_layout
+
+\begin_layout Standard
+DNS服务
+\end_layout
+
+\begin_layout Standard
+DNS根服务器
+\end_layout
+
+\begin_layout Standard
+权威域名服务器
+\end_layout
+
+\begin_layout Standard
+顶级域名
+\end_layout
+
+\begin_layout Standard
+国家代码顶级域名服务器（ccTLD）
+\end_layout
+
+\begin_layout Standard
+一般顶级域名服务器（gTLD）
+\end_layout
+
+\begin_layout Standard
+服务质量（QoS）
+\end_layout
+
+\begin_layout Standard
+差别服务（differentiated service，DS）域(DiffServ)
+\end_layout
+
+\begin_layout Standard
+DS实际上一个8位的字段，在此我们不关心其他两位。
+\end_layout
+
+\begin_layout Standard
+DS字段作为表的一个索引定义了不同类型的服务
+\end_layout
+
+\begin_layout Standard
+网络安全
+\end_layout
+
+\begin_layout Standard
+问题
+\end_layout
+
+\begin_layout Standard
+入侵
+\end_layout
+
+\begin_layout Standard
+探寻IP地址/端口号
+\end_layout
+
+\begin_layout Standard
+机密性
+\end_layout
+
+\begin_layout Standard
+认证
+\end_layout
+
+\begin_layout Standard
+数据完整性和不可抵赖性
+\end_layout
+
+\begin_layout Standard
+确保网络的可用性和访问控制
+\end_layout
+
+\begin_layout Standard
+方法
+\end_layout
+
+\begin_layout Standard
+对系统的物理和逻辑访问限制；
+\end_layout
+
+\begin_layout Standard
+防火墙（逻辑访问控制）
+\end_layout
+
+\begin_layout Standard
+加密技术
+\end_layout
+
+\begin_layout Standard
+对称密钥加密
+\end_layout
+
+\begin_layout Standard
+公开-私有密钥加密
+\end_layout
+
+\begin_layout Standard
+无线以太网
+\end_layout
+
+\begin_layout Standard
+自组织模式
+\end_layout
+
+\begin_layout Standard
+基础设施模式
+\end_layout
+
+\begin_layout Standard
+802.11标准
+\end_layout
+
+\begin_layout Standard
+带碰撞避免的载波侦听多路访问（CSMA/CA）
+\end_layout
+
+\begin_layout Standard
+发送端不是传送数据帧，而是向访问点发送一个小的“请求发送”（RTS）包，并包含发送一帧需要的持续时间。如果信道空闲，则访问点会返回一个“允许发送”（CTS）包，
+然后发送端才开始传送数据帧
+\end_layout
+
+\begin_layout Standard
+通信信道技术
+\end_layout
+
+\begin_layout Standard
+数据传输以数字形式来运载数据
+\end_layout
+
+\begin_layout Standard
+两种不同的电压或电流值
+\end_layout
+
+\begin_layout Standard
+开/关光源(数字信号)
+\end_layout
+
+\begin_layout Standard
+主要特征
+\end_layout
+
+\begin_layout Standard
+使用的信令传输方法带宽或位率容量信号是单向流动还是双向流动噪声、衰减和失真特性由信道和节点连接强加的延时和时间抖动使用的介质
+\end_layout
+
+\begin_layout Standard
+模拟信道
+\end_layout
+
+\begin_layout Standard
+时分复用(TDM)
+\end_layout
+
+\begin_layout Standard
+频分复用（FDM）
+\end_layout
+
+\begin_layout Standard
+数字信道
+\end_layout
+
+\begin_layout Standard
+时分复用（TDM）
+\end_layout
+
+\begin_layout Standard
+信令技术
+\end_layout
+
+\begin_layout Standard
+模拟信号
+\end_layout
+
+\begin_layout Standard
+连续的值
+\end_layout
+
+\begin_layout Standard
+离散信号
+\end_layout
+
+\begin_layout Standard
+离散值
+\end_layout
+
+\begin_layout Standard
+数字信号
+\end_layout
+
+\begin_layout Standard
+正弦波
+\end_layout
+
+\begin_layout Standard
+振幅A
+\end_layout
+
+\begin_layout Standard
+频率
+\end_layout
+
+\begin_layout Standard
+周期
+\end_layout
+
+\begin_layout Standard
+f=1/T
+\end_layout
+
+\begin_layout Standard
+波长(λ)
+\end_layout
+
+\begin_layout Standard
+当无线电波的频率越高时，天线就越短。天线的长短依赖于要接收信号的波长
+\end_layout
+
+\begin_layout Standard
+λ=c/f
+\end_layout
+
+\begin_layout Standard
+c是光速
+\end_layout
+
+\begin_layout Standard
+衰减
+\end_layout
+
+\begin_layout Standard
+放大器
+\end_layout
+
+\begin_layout Standard
+数字信号
+\end_layout
+
+\begin_layout Standard
+异步传输
+\end_layout
+
+\begin_layout Standard
+分组编码（block coding）
+\end_layout
+
+\begin_layout Standard
+曼彻斯特编码
+\end_layout
+
+\begin_layout Standard
+每个字节的边界
+\end_layout
+
+\begin_layout Standard
+模-数转换器
+\end_layout
+
+\begin_layout Standard
+脉冲编码调制（PCM）
+\end_layout
+
+\begin_layout Standard
+脉冲幅值调制（PAM）
+\end_layout
+
+\begin_layout Standard
+中继器
+\end_layout
+
+\begin_layout Standard
+时分复用（TDM）
+\end_layout
+
+\begin_layout Standard
+统计时分复用
+\end_layout
+
+\begin_layout Standard
+调制解调器(调制器/解调器)
+\end_layout
+
+\begin_layout Standard
+调制
+\end_layout
+
+\begin_layout Standard
+振幅移位键控（ASK）
+\end_layout
+
+\begin_layout Standard
+频率移位键控（FSK）
+\end_layout
+
+\begin_layout Standard
+位移位键控（PSK）
+\end_layout
+
+\begin_layout Standard
+调制信号的频谱依赖于所用载波的频率，并包含载波频率本身调制信号的带宽依赖于调制的类型载波频率越高，可用带宽就越多；频率越高，带宽占载波频率的百分比就越小。
+\end_layout
+
+\begin_layout Standard
+传输介质
+\end_layout
+
+\begin_layout Standard
+导向介质
+\end_layout
+
+\begin_layout Standard
+双绞线（twisted pair，TP）
+\end_layout
+
+\begin_layout Standard
+同轴电缆
+\end_layout
+
+\begin_layout Standard
+光缆
+\end_layout
+
+\begin_layout Standard
+无导向介质
+\end_layout
+
+\begin_layout Standard
+电磁波
+\end_layout
+
+\begin_layout Standard
+信噪比
+\end_layout
+
+\begin_layout Standard
+蜂窝式技术
+\end_layout
+
+\begin_layout Standard
+长期演进（LTE
+\end_layout
+
+\begin_layout Standard
+正交幅度调制（QAM）
+\end_layout
+
+\begin_layout Standard
+WiFi
+\end_layout
+
+\begin_layout Standard
+蓝牙
+\end_layout
+
+\begin_layout Standard
+最多七个从节点
+\end_layout
+
+\begin_layout Standard
+跳频扩谱
+\end_layout
+
+\begin_layout Standard
+蓝牙将其频带划分为79个信道每一个后继帧都在不同的信道上传送，信道由主节点随机分配
+\end_layout
+
+\begin_layout Standard
+操作系统(功能分类)
+\end_layout
+
+\begin_layout Standard
+大型机操作系统
+\end_layout
+
+\begin_layout Standard
+服务器操作系统
+\end_layout
+
+\begin_layout Standard
+Solaris、FreeBSD、Linux和Windows Server
+\end_layout
+
+\begin_layout Standard
+多处理器操作系统
+\end_layout
+
+\begin_layout Standard
+个人计算机操作系统
+\end_layout
+
+\begin_layout Standard
+掌上计算机操作系统
+\end_layout
+
+\begin_layout Standard
+嵌入式操作系统
+\end_layout
+
+\begin_layout Standard
+QNX和VxWorks
+\end_layout
+
+\begin_layout Standard
+传感器节点操作系统
+\end_layout
+
+\begin_layout Standard
+TinyOS
+\end_layout
+
+\begin_layout Standard
+机器人操作系统
+\end_layout
+
+\begin_layout Standard
+ROS
+\end_layout
+
+\begin_layout Standard
+实时操作系统
+\end_layout
+
+\begin_layout Standard
+智能卡操作系统
+\end_layout
+
+\begin_layout Standard
+操作系统结构
+\end_layout
+
+\begin_layout Standard
+单体系统
+\end_layout
+
+\begin_layout Standard
+需要一个主程序，用来处理服务过程请求。
+\end_layout
+
+\begin_layout Standard
+需要一套服务过程，用来执行系统调用。
+\end_layout
+
+\begin_layout Standard
+需要一套实用过程，用来辅助服务过程。
+\end_layout
+
+\begin_layout Standard
+层次式系统
+\end_layout
+
+\begin_layout Standard
+处理器分配在第0层中进行当中断发生或定时器到期时，由该层进行进程切换
+\end_layout
+
+\begin_layout Standard
+存储器和磁盘管理
+\end_layout
+
+\begin_layout Standard
+操作员(用户)-进程通信
+\end_layout
+
+\begin_layout Standard
+输入输出管理
+\end_layout
+
+\begin_layout Standard
+用户程序
+\end_layout
+
+\begin_layout Standard
+操作员
+\end_layout
+
+\begin_layout Standard
+微内核
+\end_layout
+
+\begin_layout Standard
+MINIX 3
+\end_layout
+
+\begin_layout Standard
+虚拟机
+\end_layout
+
+\begin_layout Standard
+外核
+\end_layout
+
+\begin_layout Standard
+在底层中，一种称为外核（exokernel，Engler等人，1995）的程序在内核态中运行。它的任务是为虚拟机分配资源，并检查试图使用这些资源的企图，以确保没
+有机器会使用他人的资源
+\end_layout
+
+\begin_layout Standard
+运行模型
+\end_layout
+
+\begin_layout Standard
+操作系统代码都是直接在硬件上执行的
+\end_layout
+
+\begin_layout Standard
+客户机-服务器模式
+\end_layout
+
+\begin_layout Standard
+外内核
+\end_layout
+
+\begin_layout Standard
+真空管和穿孔卡片
+\end_layout
+
+\begin_layout Standard
+晶体管和批处理系统
+\end_layout
+
+\begin_layout Standard
+批处理系统(batch system)
+\end_layout
+
+\begin_layout Standard
+同时(批量)读取,同时(批量)解码,同时(批量)执行指令,同时(批量)输出
+\end_layout
+
+\begin_layout Standard
+单道批处理系统
+\end_layout
+
+\begin_layout Standard
+多道批处理系统
+\end_layout
+
+\begin_layout Standard
+运行方式
+\end_layout
+
+\begin_layout Standard
+多道程序设计(multiprogramming)(进程)
+\end_layout
+
+\begin_layout Standard
+每一部分存放不同的作业，当一个作业等待I/O操作完成时，另一个作业可以使用CPU。如果内存中可以同时存放足够多的作业，则CPU利用率可以接近100%。在内存中同
+时驻留多个作业需要特殊的硬件来对其进行保护，以避免作业的信息被窃取或受到攻击。
+\end_layout
+
+\begin_layout Standard
+同时的外部设备联机操作(Simultaneous Peripheral Operation On Line，SPOOLing）
+\end_layout
+
+\begin_layout Standard
+将作业读入磁盘当上一个作业完成时, 将新作业从磁盘读出
+\end_layout
+
+\begin_layout Standard
+分时系统兼容分时系统（Compatible Time Sharing System，CTSS）
+\end_layout
+
+\begin_layout Standard
+资源共享复用方式
+\end_layout
+
+\begin_layout Standard
+时间上复用(CPU)
+\end_layout
+
+\begin_layout Standard
+空间上复用(Memory)
+\end_layout
+
+\begin_layout Standard
+早期计算机
+\end_layout
+
+\begin_layout Standard
+面向字
+\end_layout
+
+\begin_layout Standard
+面向字符
+\end_layout
+
+\begin_layout Standard
+个人计算机
+\end_layout
+
+\begin_layout Standard
+win
+\end_layout
+
+\begin_layout Standard
+linux
+\end_layout
+
+\begin_layout Standard
+unix
+\end_layout
+
+\begin_layout Standard
+FreeBSD
+\end_layout
+
+\begin_layout Standard
+软件
+\end_layout
+
+\begin_layout Standard
+用户态
+\end_layout
+
+\begin_layout Standard
+用户软件
+\end_layout
+
+\begin_layout Standard
+用户接口程序
+\end_layout
+
+\begin_layout Standard
+内核态
+\end_layout
+
+\begin_layout Standard
+操作系统
+\end_layout
+
+\begin_layout Standard
+计算机硬件
+\end_layout
+
+\begin_layout Standard
+处理器CPU
+\end_layout
+
+\begin_layout Standard
+寄存器
+\end_layout
+
+\begin_layout Standard
+保存关键变量和临时数据的寄存器
+\end_layout
+
+\begin_layout Standard
+寄存器: 程序计数器
+\end_layout
+
+\begin_layout Standard
+保存了将要取出的下一条指令的内存地址。在指令取出之后，程序计数器就被更新以便指向后继的指令。
+\end_layout
+
+\begin_layout Standard
+寄存器: 堆栈指针
+\end_layout
+
+\begin_layout Standard
+指向内存中当前栈的顶端该栈含有已经进入但是还没有退出的每个过程的一个框架。在一个过程的堆栈框架中保存了有关的输入参数、局部变量以及那些没有保存在寄存器中的临时变
+量。
+\end_layout
+
+\begin_layout Standard
+寄存器: 程序状态字Program Status Word，PSW用户程序通常读入整个PSW，但是，只对其中的少量字段写入。
+\end_layout
+
+\begin_layout Standard
+条件码位（由比较指令设置）
+\end_layout
+
+\begin_layout Standard
+CPU优先级
+\end_layout
+
+\begin_layout Standard
+模式（用户态或内核态）
+\end_layout
+
+\begin_layout Standard
+各种其他控制位
+\end_layout
+
+\begin_layout Standard
+指令集
+\end_layout
+
+\begin_layout Standard
+指令周期
+\end_layout
+
+\begin_layout Standard
+特权指令
+\end_layout
+
+\begin_layout Standard
+应用级指令
+\end_layout
+
+\begin_layout Standard
+算术指令
+\end_layout
+
+\begin_layout Standard
+布尔逻辑指令
+\end_layout
+
+\begin_layout Standard
+单操作数操作指令
+\end_layout
+
+\begin_layout Standard
+位操作指令
+\end_layout
+
+\begin_layout Standard
+移位和循环移位指令
+\end_layout
+
+\begin_layout Standard
+程序控制指令
+\end_layout
+
+\begin_layout Standard
+栈指令
+\end_layout
+
+\begin_layout Standard
+多数据指令(SIMD)
+\end_layout
+
+\begin_layout Standard
+多个数据指令对多份数据同时执行单个操作
+\end_layout
+
+\begin_layout Standard
+饱和
+\end_layout
+
+\begin_layout Standard
+指令字格式
+\end_layout
+
+\begin_layout Standard
+流水线
+\end_layout
+
+\begin_layout Standard
+取指单元
+\end_layout
+
+\begin_layout Standard
+解码单元
+\end_layout
+
+\begin_layout Standard
+执行单元
+\end_layout
+
+\begin_layout Standard
+超标量CPU
+\end_layout
+
+\begin_layout Standard
+多个执行单元
+\end_layout
+
+\begin_layout Standard
+多数CPU有两种模式
+\end_layout
+
+\begin_layout Standard
+用户态
+\end_layout
+
+\begin_layout Standard
+用户程序在用户态下运行，仅允许执行整个指令集的一个子集和访问所有功能的一个子集。一般而言，在用户态中有关I/O和内存保护的所有指令是禁止的。当然，将PSW中的模
+式位设置成内核态也是禁止的
+\end_layout
+
+\begin_layout Standard
+内核态
+\end_layout
+
+\begin_layout Standard
+当在内核态运行时，CPU可以执行指令集中的每一条指令，并且使用硬件的每种功能。操作系统在内核态下运行，从而可以访问整个硬件
+\end_layout
+
+\begin_layout Standard
+为了从操作系统中获得服务，用户程序必须使用系统调用（system call）系统调用陷入内核并调用操作系统。TRAP指令把用户态切换成内核态，并启用操作系统。当
+有关工作完成之后，在系统调用后面的指令把控制权返回给用户程序。有必要指出，计算机使用陷阱而不是一条指令来执行系统调用。其他的多数陷阱是由硬件引起的用于警告有异常
+情况发生，诸如试图被零除或浮点下溢等。在所有的情况下，操作系统都得到控制权并决定如何处理异常情况。有时，由于出错的原因程序不得不停止。在其他情况下可以忽略出错（
+如下溢数可以被置为零）。最后，若程序已经提前宣布它希望处理某类条件时，那么控制权还必须返回给该程序，让其处理相关的问题
+\end_layout
+
+\begin_layout Standard
+多线程和多核芯片multithreadinghyperthreading
+\end_layout
+
+\begin_layout Standard
+多线程允许CPU保持两个不同的线程状态，然后在纳秒级的时间尺度内来回切换
+\end_layout
+
+\begin_layout Standard
+因为每个线程在操作系统看来就像是单个的CPU
+\end_layout
+
+\begin_layout Standard
+考虑一个实际有两个CPU的系统，每个CPU有两个线程。这样操作系统将把它看成是4个CPU
+\end_layout
+
+\begin_layout Standard
+多核芯片
+\end_layout
+
+\begin_layout Standard
+每个小芯片都是一个独立的CPU, 需要多处理器操作系统
+\end_layout
+
+\begin_layout Standard
+可以共享或独立使用高速缓存
+\end_layout
+
+\begin_layout Standard
+时钟滴答（即每个时钟中断）
+\end_layout
+
+\begin_layout Standard
+子单元
+\end_layout
+
+\begin_layout Standard
+算术/逻辑单元（ALU）
+\end_layout
+
+\begin_layout Standard
+控制单元（CU）
+\end_layout
+
+\begin_layout Standard
+接口单元
+\end_layout
+
+\begin_layout Standard
+将CPU、内存以及各种I/O模块互连起来。也可以将多个CPU核连接起来
+\end_layout
+
+\begin_layout Standard
+寻址限制
+\end_layout
+
+\begin_layout Standard
+存储器(RAM)
+\end_layout
+
+\begin_layout Standard
+寄存器 (在CPU)中操作系统必须知晓(管理
+\backslash
+获取)所有的寄存器。在时间多路复用（time multiplexing）CPU中，操作系统经常会中止正在运行的某个程序并启动（或再启动）另一个程序。每次停止一个
+运行着的程序时，操作系统必须保存所有的寄存器，这样在稍后该程序被再次运行时，可以把这些寄存器重新装入。
+\end_layout
+
+\begin_layout Standard
+32 位 cpu 中 32x32 位
+\end_layout
+
+\begin_layout Standard
+64位CPU中为64×64位
+\end_layout
+
+\begin_layout Standard
+高速缓存(在CPU)中
+\end_layout
+
+\begin_layout Standard
+在任何缓存系统中，都有若干需要尽快考虑的问题(保持数据一致性)，包括：1)何时把一个新的内容放入缓存。2)把新内容放在缓存的哪一行上。3)在需要时，应该把哪个内
+容从缓存中移走。4)应该把新移走的内容放在某个较大存储器的何处。
+\end_layout
+
+\begin_layout Standard
+主存(Random Access Memory，RAM))
+\end_layout
+
+\begin_layout Standard
+非易失性随机访问存储器(Read Only Memory，ROM)
+\end_layout
+
+\begin_layout Standard
+在工厂中就被编程完毕, 不允许修改断电不丢失内容
+\end_layout
+
+\begin_layout Standard
+有些计算机中，用于启动计算机的引导加载模块就存放在ROM中
+\end_layout
+
+\begin_layout Standard
+EEPROM (Electrically Erasable PROM电可擦除可编程ROM)闪存（flash memory）
+\end_layout
+
+\begin_layout Standard
+可以擦除和重写
+\end_layout
+
+\begin_layout Standard
+速度慢于RAM
+\end_layout
+
+\begin_layout Standard
+CMOS
+\end_layout
+
+\begin_layout Standard
+许多计算机利用CMOS存储器保持当前时间和日期, 以及保存配置参数
+\end_layout
+
+\begin_layout Standard
+易失性, 耗电少
+\end_layout
+
+\begin_layout Standard
+总线一束导线，在不同的部件间传送信号和供电
+\end_layout
+
+\begin_layout Standard
+PCI（Peripheral Component Interconnect）总线
+\end_layout
+
+\begin_layout Standard
+PC ISA（Industry Standard Architecture）总线最大速率为16.67MB/s
+\end_layout
+
+\begin_layout Standard
+IDE总线
+\end_layout
+
+\begin_layout Standard
+通用串行总线（Universal Serial Bus，USB）
+\end_layout
+
+\begin_layout Standard
+SCSI（Small Computer System Interface）总线
+\end_layout
+
+\begin_layout Standard
+IEEE 1394(火线（FireWire）)
+\end_layout
+
+\begin_layout Standard
+类型
+\end_layout
+
+\begin_layout Standard
+数据线
+\end_layout
+
+\begin_layout Standard
+地址线
+\end_layout
+
+\begin_layout Standard
+控制线
+\end_layout
+
+\begin_layout Standard
+电源线
+\end_layout
+
+\begin_layout Standard
+传递数据
+\end_layout
+
+\begin_layout Standard
+单向线叫做双工线（simplex line）
+\end_layout
+
+\begin_layout Standard
+半双工线（half-duplex line）
+\end_layout
+
+\begin_layout Standard
+双向线一次只可沿一个方向传递数据
+\end_layout
+
+\begin_layout Standard
+全双工线（full-duplex line）
+\end_layout
+
+\begin_layout Standard
+母板(双亲版)
+\end_layout
+
+\begin_layout Standard
+基本输入输出系统(Basic Input Output System , BIOS)
+\end_layout
+
+\begin_layout Standard
+底层 I/O 软件 (RAM)
+\end_layout
+
+\begin_layout Standard
+读磁盘
+\end_layout
+
+\begin_layout Standard
+写屏幕
+\end_layout
+
+\begin_layout Standard
+进行磁盘I/O
+\end_layout
+
+\begin_layout Standard
+其它操作
+\end_layout
+
+\begin_layout Standard
+磁盘
+\end_layout
+
+\begin_layout Standard
+磁盘被组织成柱面，每一个柱面包含若干磁道.磁道数与垂直堆叠的磁头个数相同.硬盘由一叠铝的、合金的或玻璃的盘片组成，直径为5.25英寸或3.5英寸在每个盘片上沉积着薄薄的
+可磁化的金属氧化物。在制造出来之后，磁盘上不存在任何信息。
+\end_layout
+
+\begin_layout Standard
+IDE（Integrated Drive Electronics，集成驱动电子设备）
+\end_layout
+
+\begin_layout Standard
+SATA（Serial ATA，串行ATA）
+\end_layout
+
+\begin_layout Standard
+重叠寻道（overlapped seek）
+\end_layout
+
+\begin_layout Standard
+控制器可以同时控制两个或多个驱动器进行寻道控制器和软件等待一个驱动器完成寻道时，控制器可以同时启动另一个驱动器进行寻道。许多控制器也可以在一个驱动器上进行读写操
+作，与此同时再对另一个或多个其他驱动器进行寻道
+\end_layout
+
+\begin_layout Standard
+RAID (Redundant Array of Inexpensive(Independent) Disk（廉价磁盘冗余阵列）)用RAID控制器替换磁盘控制器
+卡，将数据复制到整个RAID上，然后继续常规的操作图片和我之前搜索的似乎不一样
+\end_layout
+
+\begin_layout Standard
+扇区条带
+\end_layout
+
+\begin_layout Standard
+0级RAID
+\end_layout
+
+\begin_layout Standard
+它将RAID模拟的虚拟单个磁盘划分成条带，每个条带具有k个扇区像这样将数据分布在多个驱动器上称为划分条带（striping）如果请求的数据量大于驱动器数乘以条带
+大小，那么某些驱动器将得到多个请求，这样当它们完成了第一个请求之后，就会开始处理第二个请求。控制器的责任是分解请求，并且以正确的顺序将适当的命令提供给适当的磁盘
+，之后还要在内存中将结果正确地装配起来。
+\end_layout
+
+\begin_layout Standard
+1级RAID
+\end_layout
+
+\begin_layout Standard
+这是一个真正的RAID
+\end_layout
+
+\begin_layout Standard
+它复制了所有的磁盘，所以存在四个主磁盘和四个备份磁盘。在执行一次写操作时，每个条带都被写了两次。在执行一次读操作时，则可以使用其中的任意一个副本，从而将负荷分布
+在更多的驱动器上。
+\end_layout
+
+\begin_layout Standard
+4级RAID
+\end_layout
+
+\begin_layout Standard
+5级RAID
+\end_layout
+
+\begin_layout Standard
+字节
+\end_layout
+
+\begin_layout Standard
+将单个虚拟磁盘的每个字节分割成n位的半字节对，然后对每个半字节加入m个汉明码从而形成x位的字，其中(1、2、4)位为奇偶校验位。
+\end_layout
+
+\begin_layout Standard
+要求所有驱动器的旋转必须同步，并且只有在驱动器数量很充裕(校验码占位)的情况下才有意义
+\end_layout
+
+\begin_layout Standard
+由于坏位的位置是已知的，所以这样做完全能够纠正1位错误。如果一个驱动器崩溃了，控制器只需假装该驱动器的所有位为0，如果一个字有奇偶错误，那么来自废弃了的驱动器上
+的位原来一定是1，这样就纠正了错误。
+\end_layout
+
+\begin_layout Standard
+3级RAID
+\end_layout
+
+\begin_layout Standard
+磁盘格式化在磁盘能够使用之前，每个盘片必须经受由软件完成的低级格式化（low-level format）在准备一块磁盘以便于使用的最后一步是对每一个分区分别执行
+一次高级格式化（high-level format）。这一操作要设置一个引导块、空闲存储管理（空闲列表或位图）、根目录和一个空文件系统。这一操作还要将一个代码设
+置在分区表项中，以表明在分区中使用的是哪个文件系统，因为许多操作系统支持多个兼容的文件系统（由于历史原因）。
+\end_layout
+
+\begin_layout Standard
+该格式包含一系列同心的磁道，每个磁道包含若干数目的扇区，扇区间存在短的间隙。
+\end_layout
+
+\begin_layout Standard
+柱面斜进示意图柱面斜进量取决于驱动器的几何规格.柱面斜进一样也存在着磁头斜进（head skew），但是磁头斜进不是非常大。
+\end_layout
+
+\begin_layout Standard
+磁盘臂调度算法
+\end_layout
+
+\begin_layout Standard
+电梯算法（elevator algorithm）
+\end_layout
+
+\begin_layout Standard
+软件维护一个二进制位，即当前方向位：UP（向上）或是DOWN（向下）。当一个请求处理完之后，磁盘或电梯的驱动程序检查该位，如果是UP，磁盘臂或电梯舱移至下一个更
+高的未完成的请求。如果更高的位置没有未完成的请求，则方向位取反。当方向位设置为DOWN时，同时存在一个低位置的请求，则移向该位置。磁盘控制器内部使用
+\end_layout
+
+\begin_layout Standard
+错误处理
+\end_layout
+
+\begin_layout Standard
+坏块
+\end_layout
+
+\begin_layout Standard
+在操作系统中对它们进行处理
+\end_layout
+
+\begin_layout Standard
+创建一个包含所有坏扇区的秘密的文件,隐藏坏块文件
+\end_layout
+
+\begin_layout Standard
+在控制器中对它们进行处理
+\end_layout
+
+\begin_layout Standard
+驱动器安装前
+\end_layout
+
+\begin_layout Standard
+将所有扇区向上移动一个扇区(重写前导码)
+\end_layout
+
+\begin_layout Standard
+备用扇区之一重映射为扇区(通过内部的表来跟踪这一信息（每个磁道一张表）)
+\end_layout
+
+\begin_layout Standard
+安装后
+\end_layout
+
+\begin_layout Standard
+试图再次读
+\end_layout
+
+\begin_layout Standard
+某些读错误是瞬时性的，也就是说是由磁头下的灰尘导致的，在第二次尝试时错误就消失了。
+\end_layout
+
+\begin_layout Standard
+切换到一个备用扇区(重复性的错误)
+\end_layout
+
+\begin_layout Standard
+机械故障
+\end_layout
+
+\begin_layout Standard
+recalibrate（重新校准）命令
+\end_layout
+
+\begin_layout Standard
+控制器实际是一个专用的小计算机
+\end_layout
+
+\begin_layout Standard
+它有软件、变量、缓冲区，偶尔还出现故障
+\end_layout
+
+\begin_layout Standard
+稳定存储器（stable storage）在软件中实现的目标是不惜一切代价保持磁盘的一致性
+\end_layout
+
+\begin_layout Standard
+要么就正确地工作，要么就让旧的数据原封不动
+\end_layout
+
+\begin_layout Standard
+稳定存储器使用一对完全相同的磁盘，对应的块一同工作以形成一个无差错的块。当不存在错误时，在两个驱动器上对应的块是相同的，读取任意一个都可以得到相同的结果。
+\end_layout
+
+\begin_layout Standard
+稳定写（stable write）
+\end_layout
+
+\begin_layout Standard
+在稳定写开始时，用将要被稳定写的块的编号覆盖驱动器1上的一个固定的块，然后读回该块以对其进行校验。在使得该块正确之后，对驱动器2上对应的块进行写和校验。正确地完
+成时，用一个无效的块编号覆盖两个块并进行校验。
+\end_layout
+
+\begin_layout Standard
+稳定读（stable read）
+\end_layout
+
+\begin_layout Standard
+崩溃恢复（crash recovery）
+\end_layout
+
+\begin_layout Standard
+CD
+\end_layout
+
+\begin_layout Standard
+可复刻CD, 写入后无法擦除
+\end_layout
+
+\begin_layout Standard
+可重写CD(CD-RW（CD-ReWritable）)
+\end_layout
+
+\begin_layout Standard
+银、铟、锑和碲合金作为记录层，以取代花菁和酞菁染料。这一合金具有两个稳定的状态：结晶态和非结晶态，两种状态具有不同的反射率。
+\end_layout
+
+\begin_layout Standard
+DVD
+\end_layout
+
+\begin_layout Standard
+更小的凹痕（0.4µm，CD是0.8µm）
+\end_layout
+
+\begin_layout Standard
+更密的螺旋（轨迹间距0.74µm，CD是1.6µm）
+\end_layout
+
+\begin_layout Standard
+红色激光（波长0.65µm，CD是0.78µm）
+\end_layout
+
+\begin_layout Standard
+大多数驱动器都有两种激光器，所以它们能够读取两种类型的介质(CD和DVD)
+\end_layout
+
+\begin_layout Standard
+单面单层
+\end_layout
+
+\begin_layout Standard
+单面双层
+\end_layout
+
+\begin_layout Standard
+双层技术在底部具有一个反射层，在上面加上一个半反射层。激光从一层还是从另一层反射回来取决于激光在何处汇聚。下面一层需要稍微大一些的凹痕和槽脊，以便可靠地读出，所
+以其容量比上面一层稍微小一些。
+\end_layout
+
+\begin_layout Standard
+双面单层
+\end_layout
+
+\begin_layout Standard
+双面双层
+\end_layout
+
+\begin_layout Standard
+Blu-ray（蓝光光盘）
+\end_layout
+
+\begin_layout Standard
+0.405(m（蓝色）激光
+\end_layout
+
+\begin_layout Standard
+HD DVD
+\end_layout
+
+\begin_layout Standard
+时钟(clock, timer)
+\end_layout
+
+\begin_layout Standard
+时钟硬件
+\end_layout
+
+\begin_layout Standard
+晶体振荡器
+\end_layout
+
+\begin_layout Standard
+计数器
+\end_layout
+
+\begin_layout Standard
+存储寄存器
+\end_layout
+
+\begin_layout Standard
+时钟滴答（clock tick）
+\end_layout
+
+\begin_layout Standard
+在一次完成模式（one-shot mode）下当时钟启动时，它把存储寄存器的值复制到计数器中，然后，来自晶体的每一个脉冲使计数器减1。当计数器变为0时，产生一个
+中断，并停止工作，直到软件再一次显式地启动它。在方波模式（square-wave mode）下，当计数器变为0并且产生中断之后，存储寄存器的值自动复制到计数器中
+，并且整个过程无限期地再次重复下去。
+\end_layout
+
+\begin_layout Standard
+电池时钟
+\end_layout
+
+\begin_layout Standard
+时钟软件
+\end_layout
+
+\begin_layout Standard
+维护日时间(实际时间（real time）)
+\end_layout
+
+\begin_layout Standard
+防止进程超时运行。
+\end_layout
+
+\begin_layout Standard
+对CPU的使用情况记账。
+\end_layout
+
+\begin_layout Standard
+处理用户进程提出的alarm系统调用。
+\end_layout
+
+\begin_layout Standard
+用一个物理时钟来模拟多个虚拟时钟
+\end_layout
+
+\begin_layout Standard
+为系统本身的各个部分提供监视定时器(watchdog timer)
+\end_layout
+
+\begin_layout Standard
+只有当时钟驱动程序与被调用的过程处于相同的地址空间时，监视定时器机制才起作用。
+\end_layout
+
+\begin_layout Standard
+完成概要剖析(profiling)、监视和统计信息收集。
+\end_layout
+
+\begin_layout Standard
+软定时器
+\end_layout
+
+\begin_layout Standard
+中断
+\end_layout
+
+\begin_layout Standard
+具有较低的等待时间
+\end_layout
+
+\begin_layout Standard
+轮询
+\end_layout
+
+\begin_layout Standard
+让一个软定时器每隔2µs闹响一次是可行的，虽然这样做偶尔会错过最终时限所以在有些时候比较时间时使用大于等于而不是仅仅等于
+\end_layout
+
+\begin_layout Standard
+软定时器和低频硬件定时器组合
+\end_layout
+
+\begin_layout Standard
+键盘
+\end_layout
+
+\begin_layout Standard
+I/O端口中的数字是键编号，称为扫描码（scan code），而不是ASCII码。键盘所拥有的键不超过128个，所以只需7个位表示键编号。当键按下时，第8位设置
+为0，当键释放时，第8位设置为1。跟踪每个键的状态（按下或弹起）是驱动程序的任务。
+\end_layout
+
+\begin_layout Standard
+原始模式（raw mode）
+\end_layout
+
+\begin_layout Standard
+加工模式（cooked mode）
+\end_layout
+
+\begin_layout Standard
+回显（echoing）
+\end_layout
+
+\begin_layout Standard
+鼠标
+\end_layout
+
+\begin_layout Standard
+代光学鼠标在其中有图像处理芯片并且获取处于它们下方的连续的低分辨率照片，寻找从图像到图像的变化
+\end_layout
+
+\begin_layout Standard
+鼠标步（mickey）
+\end_layout
+
+\begin_layout Standard
+发送到计算机的消息包含三个项目：∆x、∆y、按钮
+\end_layout
+
+\begin_layout Standard
+电源
+\end_layout
+
+\begin_layout Standard
+计算机的某些部件（主要是I/O设备）不用的时候由操作系统关闭它们，因为关闭的设备使用的能量很少或者不使用能量
+\end_layout
+
+\begin_layout Standard
+应用程序使用较少的能量，这样为了延长电池时间可能会降低用户体验的质量
+\end_layout
+
+\begin_layout Standard
+驱动程序接口(ACPI（Advanced Configuration and Power Interface，高级配置与电源接口）)
+\end_layout
+
+\begin_layout Standard
+操作系统可以向任何符合标准的驱动程序发出命令，要求它报告其设备的性能以及它们当前的状态
+\end_layout
+
+\begin_layout Standard
+死锁
+\end_layout
+
+\begin_layout Standard
+资源(resource)
+\end_layout
+
+\begin_layout Standard
+可抢占资源（preemptable resource）
+\end_layout
+
+\begin_layout Standard
+可以从拥有它的进程中抢占而不会产生任何副作用
+\end_layout
+
+\begin_layout Standard
+不可抢占资源（nonpreemptable resource）
+\end_layout
+
+\begin_layout Standard
+指在不引起相关的计算失败的情况下，无法把它从占有它的进程处抢占过来
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+请求资源使用资源释放资源
+\end_layout
+
+\begin_layout Standard
+请求资源，休眠，再请求
+\end_layout
+
+\begin_layout Standard
+如果一个进程集合中的每个进程都在等待只能由该进程集合中的其他进程才能引发的事件，那么，该进程集合就是死锁的。(想到了相关部门)
+\end_layout
+
+\begin_layout Standard
+资源死锁的条件(同时满足)
+\end_layout
+
+\begin_layout Standard
+互斥条件
+\end_layout
+
+\begin_layout Standard
+占有和等待条件
+\end_layout
+
+\begin_layout Standard
+不可抢占条件
+\end_layout
+
+\begin_layout Standard
+环路等待条件
+\end_layout
+
+\begin_layout Standard
+处理死锁
+\end_layout
+
+\begin_layout Standard
+忽略该问题。也许如果你忽略它，它也会忽略你。(鸵鸟算法)检测死锁并恢复。让死锁发生，检测它们是否发生，一旦发生死锁，采取行动解决问题。仔细对资源进行分配，动态地
+避免死锁。通过破坏引起死锁的四个必要条件之一，防止死锁的产生。
+\end_layout
+
+\begin_layout Standard
+从死锁中恢复
+\end_layout
+
+\begin_layout Standard
+利用抢占恢复
+\end_layout
+
+\begin_layout Standard
+利用回滚恢复
+\end_layout
+
+\begin_layout Standard
+通过杀死进程恢复
+\end_layout
+
+\begin_layout Standard
+死锁避免
+\end_layout
+
+\begin_layout Standard
+资源轨迹图
+\end_layout
+
+\begin_layout Standard
+安全状态和不安全状态
+\end_layout
+
+\begin_layout Standard
+从安全状态出发，系统能够保证所有进程都能完成；而从不安全状态出发，就没有这样的保证安全状态: 剩余资源能够满足任一进程的需要, 这样就不会缺少资源而死锁(
+ 零和博弈 )
+\end_layout
+
+\begin_layout Standard
+银行家算法（banker's algorithm）
+\end_layout
+
+\begin_layout Standard
+判断对请求的满足是否会导致进入不安全状态。如果是，就拒绝请求；如果满足请求后系统仍然是安全的，就予以分配
+\end_layout
+
+\begin_layout Standard
+多个资源的银行家算法
+\end_layout
+
+\begin_layout Standard
+死锁预防
+\end_layout
+
+\begin_layout Standard
+破坏互斥条件
+\end_layout
+
+\begin_layout Standard
+（spooling printer）(类似队列)
+\end_layout
+
+\begin_layout Standard
+破坏占有和等待条件
+\end_layout
+
+\begin_layout Standard
+规定所有进程在开始执行前请求所需的全部资源。如果所需的全部资源可用，那么就将它们分配给这个进程，于是该进程肯定能够运行结束。如果有一个或多个资源正被使用，那么就
+不进行分配，进程等待。
+\end_layout
+
+\begin_layout Standard
+当一个进程请求资源时, 先暂时释放其当前占用的所有资源，然后再尝试一次获得所需的全部资源。
+\end_layout
+
+\begin_layout Standard
+破坏不可抢占条件
+\end_layout
+
+\begin_layout Standard
+虚拟化资源
+\end_layout
+
+\begin_layout Standard
+破坏环路等待条件
+\end_layout
+
+\begin_layout Standard
+将所有资源统一编号(理想状态)进程可以在任何时刻提出资源请求，但是所有请求必须按照资源编号的顺序（升序）提出
+\end_layout
+
+\begin_layout Standard
+仅仅要求不允许进程请求比当前所占有资源编号低的资源
+\end_layout
+
+\begin_layout Standard
+两阶段加锁
+\end_layout
+
+\begin_layout Standard
+通信死锁(communication deadlock)
+\end_layout
+
+\begin_layout Standard
+协议（protocol）超时
+\end_layout
+
+\begin_layout Standard
+活锁
+\end_layout
+
+\begin_layout Standard
+忙等待可能导致活锁CPU 在占用, 但是拿不到资源
+\end_layout
+
+\begin_layout Standard
+饥饿
+\end_layout
+
+\begin_layout Standard
+在控制器中对它们进行处理
+\end_layout
+
+\begin_layout Standard
+中断控制器
+\end_layout
+
+\begin_layout Standard
+磁盘管理
+\end_layout
+
+\begin_layout Standard
+访问控制列表(Access Control List，ACL) 结合用户组(域)可以方便管理
+\end_layout
+
+\begin_layout Standard
+互连技术a)单交换机；b)环；c)网格；d)双凸面；e)立方体；f)四维超立方体
+\end_layout
+
+\begin_layout Standard
+I/O软件层次
+\end_layout
+
+\begin_layout Standard
+寻址限制
+\end_layout
+
+\begin_layout Standard
+标准的以太网帧
+\end_layout
+
+\begin_layout Standard
+电磁波
+\end_layout
+
+\end_body
+\end_document

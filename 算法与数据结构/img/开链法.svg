@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="13cm" height="13cm" viewBox="60 101 260 259" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="160" y="140" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="160" y="140" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="164.8">
+      <tspan x="180" y="164.8">A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="200" y="140" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="200" y="140" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="164.8">
+      <tspan x="220" y="164.8">C</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="140" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="240" y="140" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="260" y="164.8">
+      <tspan x="260" y="164.8">A</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="280" y="140" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="280" y="140" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="300" y="164.8">
+      <tspan x="300" y="164.8">B</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="200" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="160" y="200" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="224.8">
+      <tspan x="180" y="224.8">D</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="200" y="260" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="200" y="260" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="284.8">
+      <tspan x="220" y="284.8">H</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="260" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="160" y="260" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="284.8">
+      <tspan x="180" y="284.8">G</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="320" width="40" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #ff0000" x="160" y="320" width="40" height="40"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="344.8">
+      <tspan x="180" y="344.8">M</tspan>
+    </text>
+  </g>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="60" y="120">
+    <tspan x="60" y="120">Hash 值</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="168">
+    <tspan x="80" y="168">1</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="228">
+    <tspan x="80" y="228">2</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="288">
+    <tspan x="80" y="288">3</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="80" y="348">
+    <tspan x="80" y="348">4</tspan>
+  </text>
+  <text font-size="18.4458" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="200" y="120">
+    <tspan x="200" y="120">数据</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="100" y1="160" x2="130.264" y2="160"/>
+    <polygon style="fill: #000000" points="137.764,160 127.764,165 130.264,160 127.764,155 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="137.764,160 127.764,165 130.264,160 127.764,155 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="100" y1="220" x2="130.264" y2="220"/>
+    <polygon style="fill: #000000" points="137.764,220 127.764,225 130.264,220 127.764,215 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="137.764,220 127.764,225 130.264,220 127.764,215 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="100" y1="280" x2="130.264" y2="280"/>
+    <polygon style="fill: #000000" points="137.764,280 127.764,285 130.264,280 127.764,275 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="137.764,280 127.764,285 130.264,280 127.764,275 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="100" y1="340" x2="130.264" y2="340"/>
+    <polygon style="fill: #000000" points="137.764,340 127.764,345 130.264,340 127.764,335 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="137.764,340 127.764,345 130.264,340 127.764,335 "/>
+  </g>
+</svg>

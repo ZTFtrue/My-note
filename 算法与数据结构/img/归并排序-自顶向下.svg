@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="20cm" height="20cm" viewBox="-100 127 382 384" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="40" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="40" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="60" y="159.8">
+      <tspan x="60" y="159.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="0" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="20" y="159.8">
+      <tspan x="20" y="159.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="80" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="80" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100" y="159.8">
+      <tspan x="100" y="159.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="120" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="120" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="140" y="159.8">
+      <tspan x="140" y="159.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="159.8">
+      <tspan x="180" y="159.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="200" y="136" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="200" y="136" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="159.8">
+      <tspan x="220" y="159.8">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="77" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="77" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="97" y="495.8">
+      <tspan x="97" y="495.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="157" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="157" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="177" y="495.8">
+      <tspan x="177" y="495.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="37" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="37" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="57" y="495.8">
+      <tspan x="57" y="495.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="197" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="197" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="217" y="495.8">
+      <tspan x="217" y="495.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="117" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="117" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="137" y="495.8">
+      <tspan x="137" y="495.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-3" y="472" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-3" y="472" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="17" y="495.8">
+      <tspan x="17" y="495.8">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="31.5" y="190.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="31.5" y="190.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="51.5" y="214.1">
+      <tspan x="51.5" y="214.1">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-8.5" y="190.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-8.5" y="190.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="11.5" y="214.1">
+      <tspan x="11.5" y="214.1">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="71.5" y="190.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="71.5" y="190.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="91.5" y="214.1">
+      <tspan x="91.5" y="214.1">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="140" y="190" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="190" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="160" y="213.8">
+      <tspan x="160" y="213.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="180" y="190" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="180" y="190" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="200" y="213.8">
+      <tspan x="200" y="213.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="220" y="190" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="220" y="190" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="240" y="213.8">
+      <tspan x="240" y="213.8">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="20.5" y="250.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="20.5" y="250.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="40.5" y="274.1">
+      <tspan x="40.5" y="274.1">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-19.5" y="250.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-19.5" y="250.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="0.5" y="274.1">
+      <tspan x="0.5" y="274.1">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="70" y="250" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="70" y="250" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="90" y="273.8">
+      <tspan x="90" y="273.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="128.5" y="248.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="128.5" y="248.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="148.5" y="272.1">
+      <tspan x="148.5" y="272.1">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="168.5" y="248.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="168.5" y="248.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="188.5" y="272.1">
+      <tspan x="188.5" y="272.1">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="222.5" y="248.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="222.5" y="248.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="242.5" y="272.1">
+      <tspan x="242.5" y="272.1">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="10" y="300" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="10" y="300" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="30" y="323.8">
+      <tspan x="30" y="323.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-40" y="300" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-40" y="300" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="-20" y="323.8">
+      <tspan x="-20" y="323.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="70" y="300" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="70" y="300" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="90" y="323.8">
+      <tspan x="90" y="323.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="130" y="300" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="130" y="300" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="150" y="323.8">
+      <tspan x="150" y="323.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="180" y="300" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="180" y="300" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="200" y="323.8">
+      <tspan x="200" y="323.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="239.5" y="297.3" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="239.5" y="297.3" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="259.5" y="321.1">
+      <tspan x="259.5" y="321.1">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-20" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-20" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="0" y="373.8">
+      <tspan x="0" y="373.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="20" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="20" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="40" y="373.8">
+      <tspan x="40" y="373.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="80" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #7f7f7f" x="80" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100" y="373.8">
+      <tspan x="100" y="373.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="179" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="179" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="199" y="373.8">
+      <tspan x="199" y="373.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="140" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="160" y="373.8">
+      <tspan x="160" y="373.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="350" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #7f7f7f" x="240" y="350" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="260" y="373.8">
+      <tspan x="260" y="373.8">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="24" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="24" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="44" y="431.8">
+      <tspan x="44" y="431.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="64" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="64" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="84" y="431.8">
+      <tspan x="84" y="431.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-16" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-16" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4" y="431.8">
+      <tspan x="4" y="431.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="204" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="204" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="224" y="431.8">
+      <tspan x="224" y="431.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="164" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="164" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="184" y="431.8">
+      <tspan x="184" y="431.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="124" y="408" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="124" y="408" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="144" y="431.8">
+      <tspan x="144" y="431.8">8</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-100" y="140">
+    <tspan x="-100" y="140">用递归,每一行</tspan>
+    <tspan x="-100" y="156">表示计算一次</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-80" y="200">
+    <tspan x="-80" y="200">先把数据</tspan>
+    <tspan x="-80" y="216">再中间分开</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-80" y="270">
+    <tspan x="-80" y="270">接着分开</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="-80" y="380">
+    <tspan x="-80" y="380">两个</tspan>
+    <tspan x="-80" y="396">排序(合并)</tspan>
+  </text>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="-20" y="180" width="140" height="60"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="50" y="214.8">
+      <tspan x="50" y="214.8"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.2; stroke: #000000" x="130" y="180" width="140" height="60"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="200" y="214.8">
+      <tspan x="200" y="214.8"></tspan>
+    </text>
+  </g>
+</svg>

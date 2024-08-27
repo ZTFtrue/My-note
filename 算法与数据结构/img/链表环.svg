@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="18cm" height="14cm" viewBox="118 201 357 262" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <ellipse style="fill: #ffffff" cx="330" cy="330" rx="70" ry="70"/>
+    <ellipse style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" cx="330" cy="330" rx="70" ry="70"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="330" y="334.8">
+      <tspan x="330" y="334.8"></tspan>
+    </text>
+  </g>
+  <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="120" y1="260" x2="330" y2="260"/>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" d="M 387.553,393.926 A 88.7143,88.7143 0 0 0 340,240"/>
+    <polygon style="fill: #ff0000" points="381.816,398.696 387.024,388.802 387.909,394.322 392.856,396.926 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="381.816,398.696 387.024,388.802 387.909,394.322 392.856,396.926 "/>
+  </g>
+  <text font-size="18.4458" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="440" y="360">
+    <tspan x="440" y="360">y</tspan>
+    <tspan x="440" y="383.058"></tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" x1="120" y1="240" x2="330.264" y2="240"/>
+    <polygon style="fill: #00ff00" points="337.764,240 327.764,245 330.264,240 327.764,235 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #00ff00" points="337.764,240 327.764,245 330.264,240 327.764,235 "/>
+  </g>
+  <text font-size="18.4458" style="fill: #00ff00;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="220">
+    <tspan x="220" y="220">w</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" d="M 330.336,239.257 A 88.671,88.671 0 1 0 380,400"/>
+    <polygon style="fill: #0000ff" points="337.783,239.707 327.214,243.353 330.348,238.724 328.525,233.439 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #0000ff" points="337.783,239.707 327.214,243.353 330.348,238.724 328.525,233.439 "/>
+  </g>
+  <text font-size="18.4458" style="fill: #0000ff;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="360">
+    <tspan x="220" y="360">z</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="420" y1="440" x2="386.094" y2="406.094"/>
+    <polygon style="fill: #000000" points="380.791,400.791 391.397,404.326 386.094,406.094 384.326,411.397 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="380.791,400.791 391.397,404.326 386.094,406.094 384.326,411.397 "/>
+  </g>
+  <text font-size="18.4458" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="420" y="460">
+    <tspan x="420" y="460">相遇点</tspan>
+  </text>
+</svg>

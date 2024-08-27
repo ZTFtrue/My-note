@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="19cm" height="34cm" viewBox="-24 198 367 671" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="40" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="40" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="60" y="223.8">
+      <tspan x="60" y="223.8">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="0" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="20" y="223.8">
+      <tspan x="20" y="223.8">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="80" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="80" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100" y="223.8">
+      <tspan x="100" y="223.8">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="120" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="120" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="140" y="223.8">
+      <tspan x="140" y="223.8">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="160" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="160" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="180" y="223.8">
+      <tspan x="180" y="223.8">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="200" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="200" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="223.8">
+      <tspan x="220" y="223.8">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="240" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="240" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="260" y="223.8">
+      <tspan x="260" y="223.8">9</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="280" y="200" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="280" y="200" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="300" y="223.8">
+      <tspan x="300" y="223.8">17</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x1="140" y1="238" x2="140" y2="272.498"/>
+    <polygon style="fill: #000000" points="140,279.998 135,269.998 140,272.498 145,269.998 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" points="140,279.998 135,269.998 140,272.498 145,269.998 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="70.6559" y="293.012">
+    <tspan x="70.6559" y="293.012">找10个桶 编号0到9,取个位,按序放入桶中</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="64.6523" y="381.693">
+    <tspan x="64.6523" y="381.693">1</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="128.742" y="383.212">
+    <tspan x="128.742" y="383.212">2</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="188.531" y="381.593">
+    <tspan x="188.531" y="381.593">3</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3.9203" y="380.381">
+    <tspan x="3.9203" y="380.381">0</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="312.71" y="379.931">
+    <tspan x="312.71" y="379.931">5</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="60.3894" y="473.293">
+    <tspan x="60.3894" y="473.293">6</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="124.535" y="473.565">
+    <tspan x="124.535" y="473.565">7</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.63" y="380.031">
+    <tspan x="246.63" y="380.031">4</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 160.555 394.695 L 214.024,394.695 L 203.33,449.095 L 171.249,449.095 L 160.555,394.695"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="187.289" y="410.695">
+      <tspan x="187.289" y="410.695">8</tspan>
+      <tspan x="187.289" y="426.695">68</tspan>
+      <tspan x="187.289" y="442.695">88</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="182.845" y="472.162">
+    <tspan x="182.845" y="472.162">8</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 223.855 394.967 L 281.882,394.967 L 270.276,449.237 L 235.46,449.237 L 223.855,394.967"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="252.868" y="418.902">
+      <tspan x="252.868" y="418.902">9</tspan>
+      <tspan x="252.868" y="434.902">19</tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.006" y="471.631">
+    <tspan x="246.006" y="471.631">9</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M -22.2966 304.083 L 31.1719,304.083 L 20.4782,358.483 L -11.6029,358.483 L -22.2966,304.083"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.43763" y="336.083">
+      <tspan x="4.43763" y="336.083"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 38.8675 303.533 L 92.336,303.533 L 81.6423,357.933 L 49.5612,357.933 L 38.8675,303.533"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="65.6018" y="335.533">
+      <tspan x="65.6018" y="335.533">61</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 100.032 302.983 L 153.5,302.983 L 142.806,357.383 L 110.725,357.383 L 100.032,302.983"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="126.766" y="334.983">
+      <tspan x="126.766" y="334.983"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 163.03 303.349 L 216.498,303.349 L 205.805,357.749 L 173.723,357.749 L 163.03,303.349"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="189.764" y="335.349">
+      <tspan x="189.764" y="335.349"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 224.194 302.799 L 277.662,302.799 L 266.969,357.199 L 234.888,357.199 L 224.194,302.799"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="250.928" y="334.799">
+      <tspan x="250.928" y="334.799"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 283.983 301.332 L 337.451,301.332 L 326.757,355.732 L 294.676,355.732 L 283.983,301.332"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="310.717" y="333.332">
+      <tspan x="310.717" y="333.332">85</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 39.1426 395.783 L 92.6111,395.783 L 81.9174,450.183 L 49.8363,450.183 L 39.1426,395.783"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="65.8769" y="427.783">
+      <tspan x="65.8769" y="427.783"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 98.7478 395.783 L 152.216,395.783 L 141.523,450.183 L 109.442,450.183 L 98.7478,395.783"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="125.482" y="427.783">
+      <tspan x="125.482" y="427.783">17</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-7.51458" y="519.379" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-7.51458" y="519.379" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="12.4854" y="543.179">
+      <tspan x="12.4854" y="543.179">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="32.2647" y="519.379" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="32.2647" y="519.379" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="52.2647" y="543.179">
+      <tspan x="52.2647" y="543.179">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="273.657" y="520.296" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="273.657" y="520.296" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="293.657" y="544.096">
+      <tspan x="293.657" y="544.096">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="191.696" y="521.213" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="191.696" y="521.213" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="211.696" y="545.013">
+      <tspan x="211.696" y="545.013">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="151.917" y="520.296" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="151.917" y="520.296" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="171.917" y="544.096">
+      <tspan x="171.917" y="544.096">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="112.137" y="520.296" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="112.137" y="520.296" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="132.137" y="544.096">
+      <tspan x="132.137" y="544.096">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="231.917" y="520.296" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="231.917" y="520.296" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="251.917" y="544.096">
+      <tspan x="251.917" y="544.096">9</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="71.0928" y="519.379" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="71.0928" y="519.379" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="91.0928" y="543.179">
+      <tspan x="91.0928" y="543.179">17</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="99.3981" y="507.466">
+    <tspan x="99.3981" y="507.466">桶子中的数值重新接起来</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="70.6559" y="602.247">
+    <tspan x="70.6559" y="602.247">找10个桶 编号0到9,取十位,按序放入桶中</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="64.6523" y="690.928">
+    <tspan x="64.6523" y="690.928">1</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="128.742" y="692.447">
+    <tspan x="128.742" y="692.447">2</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="188.531" y="690.827">
+    <tspan x="188.531" y="690.827">3</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="3.9203" y="689.616">
+    <tspan x="3.9203" y="689.616">0</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="312.71" y="689.165">
+    <tspan x="312.71" y="689.165">5</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="60.3894" y="782.528">
+    <tspan x="60.3894" y="782.528">6</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="124.535" y="782.8">
+    <tspan x="124.535" y="782.8">7</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.63" y="689.265">
+    <tspan x="246.63" y="689.265">4</tspan>
+  </text>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="182.845" y="781.396">
+    <tspan x="182.845" y="781.396">8</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 227.523 700.533 L 285.55,700.533 L 273.944,754.803 L 239.129,754.803 L 227.523,700.533"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="256.536" y="732.468">
+      <tspan x="256.536" y="732.468"></tspan>
+    </text>
+  </g>
+  <text font-size="12.8" style="fill: #000099;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.006" y="780.865">
+    <tspan x="246.006" y="780.865">9</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M -22.2966 613.317 L 31.1719,613.317 L 20.4782,667.717 L -11.6029,667.717 L -22.2966,613.317"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="4.43763" y="645.317">
+      <tspan x="4.43763" y="645.317">8,9</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 30.9341 702.634 L 94.7674,702.634 L 82.0008,757.034 L 43.7008,757.034 L 30.9341,702.634"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="62.8508" y="734.634">
+      <tspan x="62.8508" y="734.634">61,68</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 100.032 612.217 L 153.5,612.217 L 142.806,666.617 L 110.725,666.617 L 100.032,612.217"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="126.766" y="644.217">
+      <tspan x="126.766" y="644.217"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 163.03 612.584 L 216.498,612.584 L 205.805,666.984 L 173.723,666.984 L 163.03,612.584"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="189.764" y="644.584">
+      <tspan x="189.764" y="644.584"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 224.194 612.034 L 277.662,612.034 L 266.969,666.434 L 234.888,666.434 L 224.194,612.034"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="250.928" y="644.034">
+      <tspan x="250.928" y="644.034"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 155.005 702.788 L 218.838,702.788 L 206.071,754.833 L 167.771,754.833 L 155.005,702.788"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="186.921" y="733.61">
+      <tspan x="186.921" y="733.61">85,88</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 99.6648 702.267 L 153.133,702.267 L 142.44,756.667 L 110.359,756.667 L 99.6648,702.267"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="126.399" y="734.267">
+      <tspan x="126.399" y="734.267"></tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 33.0432 612.4 L 96.8765,612.4 L 84.1099,666.8 L 45.8099,666.8 L 33.0432,612.4"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="64.9599" y="644.4">
+      <tspan x="64.9599" y="644.4">17,19</tspan>
+    </text>
+  </g>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2.4; stroke: #000099" d="M 287.651 613.113 L 341.119,613.113 L 330.425,667.513 L 298.344,667.513 L 287.651,613.113"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="314.385" y="645.113">
+      <tspan x="314.385" y="645.113"></tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="-12.6684" y="828.772" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-12.6684" y="828.772" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="7.33155" y="852.572">
+      <tspan x="7.33155" y="852.572">8</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="27.1109" y="828.772" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="27.1109" y="828.772" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="47.1109" y="852.572">
+      <tspan x="47.1109" y="852.572">9</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="268.503" y="829.689" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="268.503" y="829.689" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="288.503" y="853.489">
+      <tspan x="288.503" y="853.489">88</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="186.542" y="830.606" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="186.542" y="830.606" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="206.542" y="854.406">
+      <tspan x="206.542" y="854.406">68</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="146.763" y="829.689" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="146.763" y="829.689" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="166.763" y="853.489">
+      <tspan x="166.763" y="853.489">61</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="106.983" y="829.689" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="106.983" y="829.689" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="126.983" y="853.489">
+      <tspan x="126.983" y="853.489">19</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="226.763" y="829.689" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="226.763" y="829.689" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="246.763" y="853.489">
+      <tspan x="246.763" y="853.489">85</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="65.9389" y="828.772" width="40" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="65.9389" y="828.772" width="40" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="85.9389" y="852.572">
+      <tspan x="85.9389" y="852.572">17</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="94.2442" y="816.859">
+    <tspan x="94.2442" y="816.859">桶子中的数值重新接起来</tspan>
+  </text>
+</svg>

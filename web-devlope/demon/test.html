@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        @property --m-0 {
+            syntax: "<number>";
+            initial-value: 1;
+            inherits: false;
+        }
+
+        @property --m-1 {
+            syntax: "<number>";
+            initial-value: 1;
+            inherits: false;
+        }
+
+        .img img {
+            width: 300px;
+            height: 300px;
+            /* chrome 测试不通过 */
+            /* mask: linear-gradient(90deg, transparent, #fff); */
+            mask-image: url("img/3.jpg"), linear-gradient(-45deg,
+                    black 20%, transparent 50%);
+            mask-repeat: space;
+        }
+
+        .square {
+            width: 300px;
+            height: 300px;
+            mask-type: luminance;
+            /* white = transparent, grays = semi-transparent, black = opaque */
+            mask:
+                linear-gradient(90deg, rgba(0, 0, 0, var(--m-0)), rgba(0, 0, 0, var(--m-0))),
+                linear-gradient(90deg, rgba(0, 0, 0, var(--m-1)), rgba(0, 0, 0, var(--m-1)));
+            /* mask-size: 50% 50%;
+            mask-position: left top, right top, left bottom, bottom right;
+            mask-repeat: no-repeat; */
+            transition:
+                --m-0 1s,
+                --m-1 5s;
+        }
+
+        .square:hover {
+            /* mask: linear-gradient(135deg, rgba(0, 0, 0, 0), blue);
+            transition: --m-0 0.5s; */
+            --m-0: 0;
+            --m-1: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img">
+        <img src="img/1.jpg" />
+    </div>
+    <div class="square">
+        <img src="img/1.jpg" />
+    </div>
+</body>
+
+</html>

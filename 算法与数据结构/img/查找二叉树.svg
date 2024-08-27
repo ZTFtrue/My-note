@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="45cm" height="26cm" viewBox="-1 215 897 507" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="400" y="260" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="260" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="440" y="284.8">
+      <tspan x="440" y="284.8">Value: "g"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="400" y="300" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="400" y="300" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="440" y="324.8">
+      <tspan x="440" y="324.8">Key:103</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="330.764" y="259.91" width="68.6807" height="80.9491"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="330.764" y="259.91" width="68.6807" height="80.9491"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="365.104" y="297.185">
+      <tspan x="365.104" y="297.185">Left</tspan>
+      <tspan x="365.104" y="313.185">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="479.574" y="260" width="68.3" height="79.75"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="479.574" y="260" width="68.3" height="79.75"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="513.724" y="296.675">
+      <tspan x="513.724" y="296.675">Right</tspan>
+      <tspan x="513.724" y="312.675">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="295.406" y="400.75" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="295.406" y="400.75" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="335.406" y="425.55">
+      <tspan x="335.406" y="425.55">Value: "f"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="295.406" y="440.75" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="295.406" y="440.75" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="335.406" y="465.55">
+      <tspan x="335.406" y="465.55">Key:102</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="375.234" y="399.832" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="375.234" y="399.832" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="409.384" y="436.632">
+      <tspan x="409.384" y="436.632">Right</tspan>
+      <tspan x="409.384" y="452.632">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="556.824" y="399.094" width="82.8" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="556.824" y="399.094" width="82.8" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="598.224" y="423.894">
+      <tspan x="598.224" y="423.894">Value: "m"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="558.224" y="439.094" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="558.224" y="439.094" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="598.224" y="463.894">
+      <tspan x="598.224" y="463.894">Key:109</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="488.824" y="399.094" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="488.824" y="399.094" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="522.974" y="435.894">
+      <tspan x="522.974" y="435.894">Left</tspan>
+      <tspan x="522.974" y="451.894">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="639.886" y="399.094" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="639.886" y="399.094" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="674.036" y="435.894">
+      <tspan x="674.036" y="435.894">Right</tspan>
+      <tspan x="674.036" y="451.894">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="354.881" y1="341.819" x2="342.919" y2="390.301"/>
+    <polygon style="fill: #000000" points="341.122,397.583 338.663,386.676 342.919,390.301 348.372,389.072 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="341.122,397.583 338.663,386.676 342.919,390.301 348.372,389.072 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="530.8" y1="339.75" x2="574.068" y2="390.667"/>
+    <polygon style="fill: #000000" points="578.924,396.382 568.639,392 574.068,390.667 576.259,385.524 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="578.924,396.382 568.639,392 574.068,390.667 576.259,385.524 "/>
+  </g>
+  <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="265.386" y="228.721">
+    <tspan x="265.386" y="228.721">key 可以使用HASH(Value) 获取, 此处Key 使用的是字母的ASCII码</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="143.749" y="521.622" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="143.749" y="521.622" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="183.749" y="546.422">
+      <tspan x="183.749" y="546.422">Value: "c"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="143.749" y="561.622" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="143.749" y="561.622" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="183.749" y="586.422">
+      <tspan x="183.749" y="586.422">Key:99</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="74.3492" y="521.622" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="74.3492" y="521.622" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="108.499" y="558.422">
+      <tspan x="108.499" y="558.422">Left</tspan>
+      <tspan x="108.499" y="574.422">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="222.66" y="521.622" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="222.66" y="521.622" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="256.81" y="558.422">
+      <tspan x="256.81" y="558.422">Right</tspan>
+      <tspan x="256.81" y="574.422">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="260.256" y1="481.124" x2="238.223" y2="515.051"/>
+    <polygon style="fill: #000000" points="234.138,521.341 235.391,510.231 238.223,515.051 243.778,515.677 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="234.138,521.341 235.391,510.231 238.223,515.051 243.778,515.677 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="448.33" y="512.88" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="448.33" y="512.88" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="488.33" y="537.68">
+      <tspan x="488.33" y="537.68">Value: "k"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="448.33" y="552.88" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="448.33" y="552.88" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="488.33" y="577.68">
+      <tspan x="488.33" y="577.68">Key:107</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="379.93" y="511.88" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="379.93" y="511.88" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="414.08" y="548.68">
+      <tspan x="414.08" y="548.68">Left</tspan>
+      <tspan x="414.08" y="564.68">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="528.992" y="513.88" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="528.992" y="513.88" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="563.142" y="550.68">
+      <tspan x="563.142" y="550.68">Right</tspan>
+      <tspan x="563.142" y="566.68">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="699.626" y="512.88" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="699.626" y="512.88" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="739.626" y="537.68">
+      <tspan x="739.626" y="537.68">Value: "p"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="699.626" y="552.88" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="699.626" y="552.88" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="739.626" y="577.68">
+      <tspan x="739.626" y="577.68">Key:112</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="630.226" y="511.88" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="630.226" y="511.88" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="664.376" y="548.68">
+      <tspan x="664.376" y="548.68">Left</tspan>
+      <tspan x="664.376" y="564.68">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="780.372" y="512.88" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="780.372" y="512.88" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="814.522" y="549.68">
+      <tspan x="814.522" y="549.68">Right</tspan>
+      <tspan x="814.522" y="565.68">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="507.83" y1="480.091" x2="499.46" y2="502.751"/>
+    <polygon style="fill: #000000" points="496.861,509.786 495.636,498.673 499.46,502.751 505.016,502.138 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="496.861,509.786 495.636,498.673 499.46,502.751 505.016,502.138 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="708.186" y1="479.094" x2="716.503" y2="503.658"/>
+    <polygon style="fill: #000000" points="718.909,510.762 710.966,502.894 716.503,503.658 720.438,499.687 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="718.909,510.762 710.966,502.894 716.503,503.658 720.438,499.687 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="67.2426" y="639.938" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="67.2426" y="639.938" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="107.243" y="664.738">
+      <tspan x="107.243" y="664.738">Value: "b"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="67.2426" y="679.938" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="67.2426" y="679.938" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="107.243" y="704.738">
+      <tspan x="107.243" y="704.738">Key:98</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="0.0047099" y="640.938" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="0.0047099" y="640.938" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="34.1547" y="677.738">
+      <tspan x="34.1547" y="677.738">Left</tspan>
+      <tspan x="34.1547" y="693.738">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="147.071" y="640.856" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="147.071" y="640.856" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="181.221" y="677.656">
+      <tspan x="181.221" y="677.656">Right</tspan>
+      <tspan x="181.221" y="693.656">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="309.79" y="639.938" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="309.79" y="639.938" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="349.79" y="664.738">
+      <tspan x="349.79" y="664.738">Value: "d"</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="309.79" y="679.938" width="80" height="40"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="309.79" y="679.938" width="80" height="40"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="349.79" y="704.738">
+      <tspan x="349.79" y="704.738">Key:100</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="257.79" y="639.938" width="53.5" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="257.79" y="639.938" width="53.5" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="284.54" y="684.738">
+      <tspan x="284.54" y="684.738">Left</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="390.534" y="639.938" width="68.3" height="80"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="390.534" y="639.938" width="68.3" height="80"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="424.684" y="676.738">
+      <tspan x="424.684" y="676.738">Right</tspan>
+      <tspan x="424.684" y="692.738">比Key大</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="125.574" y1="601.622" x2="116.759" y2="629.664"/>
+    <polygon style="fill: #000000" points="114.51,636.819 112.739,625.78 116.759,629.664 122.279,628.779 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="114.51,636.819 112.739,625.78 116.759,629.664 122.279,628.779 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="290.96" y1="601.622" x2="321.705" y2="632.098"/>
+    <polygon style="fill: #000000" points="327.031,637.378 316.409,633.889 321.705,632.098 323.449,626.787 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="327.031,637.378 316.409,633.889 321.705,632.098 323.449,626.787 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="226.106" y="402.116" width="68.3" height="79.0082"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="226.106" y="402.116" width="68.3" height="79.0082"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="260.256" y="438.42">
+      <tspan x="260.256" y="438.42">Left</tspan>
+      <tspan x="260.256" y="454.42">比Key小</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="820" y="280" width="73.2" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="820" y="280" width="73.2" height="38"/>
+    <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="856.6" y="302">
+      <tspan x="856.6" y="302">删除的点</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x1="820" y1="299" x2="558.613" y2="299.747"/>
+    <polygon style="fill: #ff0000" points="551.113,299.768 561.099,294.74 558.613,299.747 561.128,304.74 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="551.113,299.768 561.099,294.74 558.613,299.747 561.128,304.74 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x1="547.874" y1="299.876" x2="613.256" y2="391.178"/>
+    <polygon style="fill: #ff0000" points="617.622,397.276 607.735,392.057 613.256,391.178 615.865,386.235 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="617.622,397.276 607.735,392.057 613.256,391.178 615.865,386.235 "/>
+  </g>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="600" y="360">
+    <tspan x="600" y="360">向右子树查找</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x1="618.924" y1="399.094" x2="515.616" y2="504.927"/>
+    <polygon style="fill: #ff0000" points="510.377,510.294 513.784,499.646 515.616,504.927 520.94,506.631 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="510.377,510.294 513.784,499.646 515.616,504.927 520.94,506.631 "/>
+  </g>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="520" y="500">
+    <tspan x="520" y="500">不断往左子树查找</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" x1="520" y1="500" x2="520" y2="610.264"/>
+    <polygon style="fill: #ff0000" points="520,617.764 515,607.764 520,610.264 525,607.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="520,617.764 515,607.764 520,610.264 525,607.764 "/>
+  </g>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="488.996" y="631.746">
+    <tspan x="488.996" y="631.746">这个点没有左子树了</tspan>
+  </text>
+  <g>
+    <path style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" d="M 488.33,592.88 A 214.032,214.032 0 1 0 768.949,303.816"/>
+    <polygon style="fill: #ff0000" points="762.076,300.83 773.218,299.9 769.04,303.614 769.506,309.185 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #ff0000" points="762.076,300.83 773.218,299.9 769.04,303.614 769.506,309.185 "/>
+  </g>
+  <text font-size="12.8" style="fill: #ff0000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="740" y="660">
+    <tspan x="740" y="660">用它其换掉删除的点</tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="295.459" y="249.541">
+    <tspan x="295.459" y="249.541">节点还可以加一个值用来记录总共子节点的个数</tspan>
+  </text>
+</svg>

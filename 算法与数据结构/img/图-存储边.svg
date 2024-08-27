@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="11cm" height="8cm" viewBox="83 65 206 155" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="133.5" y="85">
+    <tspan x="133.5" y="85">0</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="191.475" y="65" width="32.15" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="191.475" y="65" width="32.15" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="207.55" y="85.6379">
+      <tspan x="207.55" y="85.6379">C点</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="133.5" y="125">
+    <tspan x="133.5" y="125">2</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="191.475" y="105" width="32.15" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="191.475" y="105" width="32.15" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="207.55" y="125.638">
+      <tspan x="207.55" y="125.638">C点</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="133.5" y="165">
+    <tspan x="133.5" y="165">3</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="191.475" y="145" width="32.15" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="191.475" y="145" width="32.15" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="207.55" y="165.638">
+      <tspan x="207.55" y="165.638">A点</tspan>
+    </text>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="133.5" y="207">
+    <tspan x="133.5" y="207">4</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="190.9" y="187" width="33.3" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="190.9" y="187" width="33.3" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="207.55" y="207.638">
+      <tspan x="207.55" y="207.638">C点</tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x1="153.5" y1="80" x2="175.998" y2="80"/>
+    <polygon style="fill: #000000" points="183.498,80 173.498,85 175.998,80 173.498,75 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" points="183.498,80 173.498,85 175.998,80 173.498,75 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x1="153.5" y1="119" x2="175.998" y2="119"/>
+    <polygon style="fill: #000000" points="183.498,119 173.498,124 175.998,119 173.498,114 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" points="183.498,119 173.498,124 175.998,119 173.498,114 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x1="153.5" y1="159" x2="175.998" y2="159"/>
+    <polygon style="fill: #000000" points="183.498,159 173.498,164 175.998,159 173.498,154 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" points="183.498,159 173.498,164 175.998,159 173.498,154 "/>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x1="153.5" y1="201" x2="175.998" y2="201"/>
+    <polygon style="fill: #000000" points="183.498,201 173.498,206 175.998,201 173.498,196 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" points="183.498,201 173.498,206 175.998,201 173.498,196 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="84.3486" y="67.5164" width="32.1" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="84.3486" y="67.5164" width="32.1" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100.399" y="88.1543">
+      <tspan x="100.399" y="88.1543">A点</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="84.3486" y="107.516" width="32.1" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="84.3486" y="107.516" width="32.1" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100.399" y="128.154">
+      <tspan x="100.399" y="128.154">B点</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="84.3236" y="147.516" width="32.15" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="84.3236" y="147.516" width="32.15" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100.399" y="168.154">
+      <tspan x="100.399" y="168.154">C点</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="83.7486" y="189.516" width="33.3" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="83.7486" y="189.516" width="33.3" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="100.399" y="210.154">
+      <tspan x="100.399" y="210.154">D点</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="223.756" y="144.662" width="32.1" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="223.756" y="144.662" width="32.1" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="239.806" y="165.3">
+      <tspan x="239.806" y="165.3">B点</tspan>
+    </text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="255.945" y="144.999" width="33.3" height="30"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 0.02; stroke: #000000" x="255.945" y="144.999" width="33.3" height="30"/>
+    <text font-size="15.0591" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="272.595" y="165.637">
+      <tspan x="272.595" y="165.637">D点</tspan>
+    </text>
+  </g>
+</svg>
